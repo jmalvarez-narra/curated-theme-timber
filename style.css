@@ -41,6 +41,62 @@
 
 html, body {
   margin: 0;
+  background-color: #2e2e2e;
+}
+
+a, a.nav-link {
+  color: #2e2e2e;
+  text-decoration: none;
+}
+
+header {
+  background: transparent;
+  font-family: 'SweetSansPro';
+}
+
+header a {
+  color: white;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.4rem;
+  margin-bottom: 0;
+}
+
+header h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.28rem;
+}
+
+.nav-item {
+  margin: 0 1.5rem;
+}
+
+a.nav-link {
+  position: relative;
+  font-family: 'SweetSansPro';
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: white;
+}
+
+a.nav-link.active, a.nav-link:hover {
+  color: #f5f5f5;
+}
+
+a.nav-link.active::after, a.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 3px;
+  background-color: #f5f5f5;
+  width: 2rem;
 }
 
 .flex-wrapper {
@@ -76,11 +132,6 @@ footer ul {
 
 footer ul li{
   padding: 0.5rem 0;
-}
-
-footer ul li a {
-  color: #2e2e2e;
-  text-decoration: none;
 }
 
 footer h1 {
