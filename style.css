@@ -91,7 +91,9 @@ header h2 {
 .featured {
   width: 100%;
   min-height: 800px;
-  background: url("assets/img/test.jpeg") no-repeat fixed;
+  background: fixed;
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
   background-position: 50% 70%;
   background-size: 100%;
 }
