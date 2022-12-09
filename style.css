@@ -88,11 +88,11 @@ a.nav-link {
   color: #f5f5f5;
 }
 
-a.nav-link.active, a.nav-link:hover {
+.current_page_item a.nav-link, a.nav-link:hover {
   color: white;
 }
 
-a.nav-link.active::after, a.nav-link:hover::after {
+.current_page_item a.nav-link::after, a.nav-link:hover::after {
   content: '';
   position: absolute;
   bottom: 0;
