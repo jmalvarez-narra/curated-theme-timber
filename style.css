@@ -17,6 +17,85 @@
 
 @font-face {
   font-family: "SweetSansPro";
+  src: url("assets/fonts/SweetSansPro-Heavy.ttf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "SweetSansPro";
   src: url("assets/fonts/SweetSansPro-Bold.ttf");
   font-weight: 700;
+}
+
+@font-face {
+  font-family: "SweetSansPro";
+  src: url("assets/fonts/SweetSansPro-Regular.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "SweetSansPro";
+  src: url("assets/fonts/SweetSansPro-Medium.ttf");
+  font-weight: 600;
+}
+
+html, body {
+  margin: 0;
+}
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.divider {
+  border-bottom: 2px solid #2e2e2e;
+  width: 100%;
+  margin: 30px 0px;
+}
+
+footer {
+  margin-top: auto;
+  background-color: #f5f5f5;
+  color: #2e2e2e;
+  padding: 2rem 0;
+  font-family: 'SweetSansPro';
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: 0;
+  font-family: 'SweetSansPro';
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+footer ul li{
+  padding: 0.5rem 0;
+}
+
+footer ul li a {
+  color: #2e2e2e;
+  text-decoration: none;
+}
+
+footer h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.4rem;
+  margin-bottom: 0;
+}
+
+footer h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.18rem;
+}
+
+footer h6 {
+  font-size: 0.8rem;
 }

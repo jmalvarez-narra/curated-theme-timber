@@ -1,1 +1,63 @@
-Copyright {{"now"|date('Y')}}
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 text-start">
+      <ul>
+        {% for item in footer_menu.items %}
+            <li {{ item.classes|join(' ') }}">
+                <a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+                {% if item.children %}
+                    <ul class="nav-drop">
+                        {% for child in item.children %}
+                            <li class="nav-drop-item">
+                                <a href="{{ child.link }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <h1>CURATED</h1>
+      <h2>VINTAGE SUPERCARS</h2>
+    </div>
+
+    <div class="col-md-4 text-end">
+      <ul>
+        <li>
+          <a>BLOG</a>
+        </li>
+        <li>
+          <a>ARCHIVES</a>
+        </li>
+        <li>
+          <a>COLLABS</a>
+        </li>
+        <li>
+          <a>CONTACT</a>
+        </li>
+        <li>
+          <a>TERMS</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+    <div class="col-md-4 text-start">
+      <h6>Copyright {{"now"|date('Y')}}</h6>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <h6>2100 NE 2ND AVE MIAMA FL 33137</h6>
+    </div>
+
+    <div class="col-md-4 text-end">
+      <h6>WEARECURATED.COM</h6>
+    </div>
+  </div>
+</div>
