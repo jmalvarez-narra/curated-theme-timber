@@ -67,6 +67,10 @@ a, a.nav-link {
   color: #2e2e2e;
 }
 
+.logo:hover {
+  color: initial;
+}
+
 header {
   background: transparent;
   font-family: 'SweetSansPro';
@@ -82,7 +86,7 @@ header {
   color: #fff;
 }
 
-.header-light a.nav-link svg {
+.header-light svg.icon {
   fill: #fff;
 }
 
@@ -173,11 +177,14 @@ footer .icons .nav-item {
   width: 1.5rem;
 }
 
-.current_page_item a.nav-link, a.nav-link:hover {
-  color: white;
+.current_page_item a.nav-link,
+a.nav-link:hover {
+  font-weight: 700;
+  color: #2e2e2e;
 }
 
-.current_page_item a.nav-link::after, a.nav-link:hover::after {
+.current_page_item a.nav-link::after,
+a.nav-link:hover::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -185,8 +192,18 @@ footer .icons .nav-item {
   right: 0;
   margin: auto;
   height: 3px;
-  background-color: white;
+  background-color: #2e2e2e;
   width: 2rem;
+}
+
+.header-light .current_page_item a.nav-link,
+.header-light a.nav-link:hover {
+  color: white;
+}
+
+.header-light .current_page_item a.nav-link::after,
+.header-light a.nav-link:hover::after {
+  background-color: white;
 }
 
 .section-heading > .title {

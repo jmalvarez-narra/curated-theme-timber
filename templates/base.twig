@@ -11,7 +11,9 @@
 
 		<div class="flex-wrapper">
 			{% block header %}
-				{% include 'header.twig' %}
+				<header class="header {{headerClass}}">
+					{% include 'header.twig' %}
+				</header>
 			{% endblock %}
 
 			<section id="content" role="main" class="content-wrapper">
