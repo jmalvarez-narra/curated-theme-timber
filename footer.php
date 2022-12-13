@@ -11,8 +11,6 @@
  * @since   Timber 0.1
  */
 
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-
 $timberContext = $GLOBALS['timberContext']; // @codingStandardsIgnoreFile
 if ( ! isset( $timberContext ) ) {
 	throw new \Exception( 'Timber context not set in footer.' );
