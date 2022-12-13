@@ -75,7 +75,7 @@ header .navbar {
 }
 
 header a {
-  color: white;
+  color: #2e2e2e;
 }
 
 header h1 {
@@ -107,8 +107,8 @@ header h2 {
   background: fixed;
   background-image: var(--bg-image);
   background-repeat: no-repeat;
-  background-position: 50% 70%;
-  background-size: 100%;
+  background-position: 50% 30%;
+  background-size: cover;
 }
 
 .nav-item {
@@ -120,7 +120,18 @@ a.nav-link {
   font-family: 'SweetSansPro';
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: #f5f5f5;
+  color: #2e2e2e;
+}
+
+/* Icons */
+
+.icons .nav-item {
+  margin: 0 0.5rem;
+}
+
+.icon {
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .current_page_item a.nav-link, a.nav-link:hover {
