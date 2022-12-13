@@ -114,7 +114,7 @@ header h2 {
 
 .header .offcanvas .logo,
 .header .offcanvas a.nav-link {
-  color: initial;
+  color: initial !important;
 }
 
 .header .offcanvas .social-icons {
@@ -204,6 +204,11 @@ a.nav-link:hover::after {
 .header-light .current_page_item a.nav-link::after,
 .header-light a.nav-link:hover::after {
   background-color: white;
+}
+
+.offcanvas .current_page_item a.nav-link::after,
+.offcanvas a.nav-link:hover::after {
+  margin: initial;
 }
 
 .section-heading > .title {
