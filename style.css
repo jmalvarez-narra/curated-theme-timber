@@ -124,6 +124,16 @@ a.nav-link {
 }
 
 /* Icons */
+footer .icons {
+  width: 50%;
+  margin: 2rem auto;
+}
+
+footer .icons .nav-item {
+  float: left;
+  width: 3rem;
+  padding: 0;
+}
 
 .icons .nav-item {
   margin: 0 0.5rem;
