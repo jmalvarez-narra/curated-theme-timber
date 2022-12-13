@@ -62,12 +62,29 @@ a, a.nav-link {
   border: 0;
 }
 
+/* Logo */
+.logo {
+  color: #2e2e2e;
+}
+
+
 header {
   background: transparent;
   font-family: 'SweetSansPro';
   padding: 1.2rem;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
   z-index: 9;
+}
+
+.header-light .logo,
+.header-light a.nav-link {
+  color: #fff;
+}
+
+.header-light a.nav-link svg {
+  fill: #fff;
 }
 
 header .navbar {
@@ -91,10 +108,23 @@ header h2 {
   letter-spacing: 0.28rem;
 }
 
+
+.header .offcanvas .logo,
+.header .offcanvas a.nav-link {
+  color: initial;
+}
+
+.header .offcanvas .social-icons {
+  display: flex;
+  flex-direction: row;
+  margin: 0 1rem;
+}
+
+
 .featured-container {
   position: relative;
   z-index: 1;
-  margin-top: -300px;
+  /* margin-top: -300px; */
   width: 100%;
   height: 800px;
   overflow: hidden;
