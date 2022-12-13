@@ -48,6 +48,20 @@ a, a.nav-link {
   text-decoration: none;
 }
 
+/* Buttons */
+
+.btn {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  padding: 0.7rem 1rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #000;
+  border: 0;
+}
+
 header {
   background: transparent;
   font-family: 'SweetSansPro';
@@ -167,7 +181,7 @@ a.nav-link {
 
 .carousel .overlay {
   position: relative;
-  margin-top: -840px;
+  margin-top: -962px;
   margin-right: 200px;
   float: right;
   z-index: 2;
@@ -178,10 +192,48 @@ a.nav-link {
 .carousel .overlay-content {
   position: relative;
   z-index: 3;
+  padding: 10rem 3rem;
 }
 
 .carousel .overlay-content h2 {
-  font-size: 3rem;
+  font-size: 2rem;
+  font-family: 'SweetSansPro';
+  letter-spacing: 0.14rem;
+}
+
+.carousel .overlay-content p {
+  color: grey;
+  font-size: 0.8rem;
+  font-family: 'MerriweatherRegular';
+  margin: 0;
+}
+
+.carousel .overlay-content span {
+  color: #2e2e2e;
+}
+
+.carousel .overlay-content .btn {
+  padding: 1rem;
+  font-family: 'SweetSansPro';
+  font-weight: 700;
+  margin-top: 2rem;
+  font-size: 0.7rem;
+  border-radius: .4rem;
+}
+
+.carousel .overlay-content .btn:hover {
+  background-color: #4a4a4a;
+  color: #fff;
+}
+
+.carousel .overlay-content .btn:active,
+.carousel .overlay-content .btn:focus,
+.carousel .overlay-content .btn.focus,
+.carousel .overlay-content .btn:visited,
+.carousel .overlay-content .btn:focus-visible {
+  background-color: #4a4a4a;
+  color: #fff;
+  border: 0;
 }
 
 .carousel .overlay-background {
@@ -197,7 +249,6 @@ a.nav-link {
   height: 600px;
   overflow: hidden;
 }
-
 
 /* Footer related styles */
 
