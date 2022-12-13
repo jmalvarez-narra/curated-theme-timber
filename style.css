@@ -250,6 +250,10 @@ a.nav-link {
   overflow: hidden;
 }
 
+.multi-carousel.slide {
+  height: auto;
+}
+
 /****** MULTIPLE CAROUSEL ******/
 
 /* medium and up screens */
