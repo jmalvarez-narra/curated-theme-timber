@@ -69,7 +69,21 @@ class StarterSite extends Timber\Site {
 	}
 	/** This is where you can register custom post types. */
 	public function register_post_types() {
-
+		register_post_type( 'cars',
+			// CPT Options
+			array(
+				'labels' => array(
+				'name' => __( 'Cars' ),
+				'singular_name' => __( 'Car' )
+				),
+				'public' => true,
+				'has_archive' => true,
+				'rewrite' => array('slug' => 'cars'),
+				'taxonomies' => array( 'category' ),
+			)
+		);
+		add_theme_support('post-thumbnails');
+		add_post_type_support( 'cars', 'thumbnail' );
 	}
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies() {
