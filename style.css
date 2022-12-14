@@ -73,6 +73,10 @@ p {
 
 /* Logo */
 .logo {
+  color: #fff;
+}
+
+.home .logo {
   color: #000000;
 }
 
@@ -157,12 +161,16 @@ header h2 {
   margin: 0 1.5rem;
 }
 
+.home a.nav-link {
+  color: #000000;
+}
+
 a.nav-link {
   position: relative;
   font-family: 'SweetSansPro';
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: #000000;
+  color: #fff;
 }
 
 /* Icons */
@@ -189,7 +197,12 @@ footer .icons .nav-item {
 .current_page_item a.nav-link,
 a.nav-link:hover {
   font-weight: 700;
-  color: #000000;
+  color: #696969;
+}
+
+.home .current_page_item a.nav-link,
+a.nav-link:hover {
+  color: #696969;
 }
 
 .current_page_item a.nav-link::after,
