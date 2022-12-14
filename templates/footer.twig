@@ -91,7 +91,7 @@
       const minPerSlide = 4
       let next = el.nextElementSibling
       for (var i=1; i<minPerSlide; i++) {
-          if (!next) next = items[0];
+          if (!next) next = latest[0];
 
           let cloneChild = next.cloneNode(true);
 
@@ -105,7 +105,7 @@
       const minPerSlide = 4
       let next = el.nextElementSibling
       for (var i=1; i<minPerSlide; i++) {
-          if (!next) next = items[0];
+          if (!next) next = journal[0];
 
           let cloneChild = next.cloneNode(true);
 
