@@ -255,7 +255,7 @@ a.nav-link:hover::after {
   font-family: 'SweetSansPro';
   font-weight: 400;
   text-align: center;
-  color: #a7a7a7;
+  color: #BFC1BD;
   font-size: 1.5em;
   letter-spacing: 0.2rem;
 }
