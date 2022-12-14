@@ -71,7 +71,7 @@
 				</div>
 
 				<div class="row mx-auto my-auto justify-content-center">
-					<div id="multiCarousel" class="multi-carousel carousel slide" data-bs-ride="carousel">
+					<div id="multiCarousel" class="multi-carousel multi-carousel-latest carousel slide" data-bs-ride="carousel">
 						<div class="carousel-inner" role="listbox">
 							{% set ctr = 0 %}
 							{% for key,post in latest %}
@@ -160,83 +160,30 @@
 				</div>
 
 				<div class="row mx-auto my-auto justify-content-center">
-					<div id="multiCarousel" class="multi-carousel carousel slide" data-bs-ride="carousel">
+					<div id="multiCarousel" class="multi-carousel multi-carousel-journal carousel slide" data-bs-ride="carousel">
 						<div class="carousel-inner" role="listbox">
-								<div class="row gx-2 carousel-item active">
+							{% set ctr = 0 %}
+							{% for key,post in latest %}
+								<div class="row gx-2 carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
 									<div class="col-md-3">
 										<div class="card border-0">
-											<img src="https://images.pexels.com/photos/544542/pexels-photo-544542.jpeg" class="card-img-top img-fluid card-img-fit" alt="...">
-											<div class="card-body">
-												<h5 class="card-title mb-0">2007 Ferrari</h5>
-												<p class="card-text">599 GTB</p>
-											</div>
-										</div>
-									</div>
-								</div>
+											<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
 
-								<div class="row gx-2 carousel-item">
-									<div class="col-md-3">
-										<div class="card border-0">
-											<img src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg" class="card-img-top img-fluid card-img-fit" alt="...">
 											<div class="card-body">
-												<h5 class="card-title mb-0">2008 Ferrari</h5>
-												<p class="card-text">599 GTB</p>
+												<h5 class="card-title mb-0">{{ post.title }}</h5>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="row gx-2 carousel-item">
-									<div class="col-md-3">
-										<div class="card border-0">
-											<img src="https://images.pexels.com/photos/242125/pexels-photo-242125.jpeg" class="card-img-top img-fluid card-img-fit" alt="...">
-											<div class="card-body">
-												<h5 class="card-title mb-0">2009 Ferrari</h5>
-												<p class="card-text">599 GTB</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row gx-2 carousel-item">
-									<div class="col-md-3">
-										<div class="card border-0">
-												<img src="https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg" class="card-img-top img-fluid card-img-fit" alt="...">
-											<div class="card-body">
-												<h5 class="card-title mb-0">2010 Ferrari</h5>
-												<p class="card-text">599 GTB</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row gx-2 carousel-item">
-									<div class="col-md-3">
-										<div class="card border-0">
-											<img src="https://images.pexels.com/photos/461890/pexels-photo-461890.jpeg" class="card-img-top img-fluid card-img-fit" alt="...">
-											<div class="card-body">
-												<h5 class="card-title mb-0">2011 Ferrari</h5>
-												<p class="card-text">599 GTB</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row gx-2 carousel-item">
-									<div class="col-md-3">
-										<div class="card border-0">
-											<img src="https://images.pexels.com/photos/169677/pexels-photo-169677.jpeg" class="card-img-top img-fluid card-img-fit" alt="...">
-											<div class="card-body">
-												<h5 class="card-title mb-0">2012 Ferrari</h5>
-												<p class="card-text">599 GTB</p>
-											</div>
-										</div>
-									</div>
-								</div>
+							{% endfor %}
 						</div>
 
 						<a class="carousel-control-prev bg-transparent w-aut" href="#multiCarousel" role="button" data-bs-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						</a>
 
 						<a class="carousel-control-next bg-transparent w-aut" href="#multiCarousel" role="button" data-bs-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
 						</a>
 					</div>
 				</div>

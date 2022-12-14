@@ -83,9 +83,25 @@
 
 <script src="{{ site.theme.link }}/assets/js/bootstrap.bundle.min.js"></script>
 <script>
-  let items = document.querySelectorAll('.multi-carousel .carousel-item');
+  let latest = document.querySelectorAll('.multi-carousel-latest .carousel-item');
+  let journal = document.querySelectorAll('.multi-carousel-journal .carousel-item');
 
-  items.forEach((el) => {
+  // homepage latest multi-carousel
+  latest.forEach((el) => {
+      const minPerSlide = 4
+      let next = el.nextElementSibling
+      for (var i=1; i<minPerSlide; i++) {
+          if (!next) next = items[0];
+
+          let cloneChild = next.cloneNode(true);
+
+          el.appendChild(cloneChild.children[0]);
+          next = next.nextElementSibling;
+      }
+  });
+
+  // homepage journal multi-carousel
+  journal.forEach((el) => {
       const minPerSlide = 4
       let next = el.nextElementSibling
       for (var i=1; i<minPerSlide; i++) {
