@@ -48,6 +48,10 @@ a, a.nav-link {
   text-decoration: none;
 }
 
+a:hover {
+  color: #696969;
+}
+
 p {
   font-family: 'MerriweatherRegular';
   color: #202021;

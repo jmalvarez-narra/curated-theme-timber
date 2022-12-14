@@ -43,7 +43,9 @@
 										<p>Chassis: <span>#ZHWBU8AH0ALA03832</span></p>
 										<p>Engine: <span>#NA</span></p>
 
-										<button type="button" class="btn btn-primary btn-sm">READ MORE</button>
+										<a href="{{ post.link }}">
+											<button type="button" class="btn btn-primary btn-sm">READ MORE</button>
+										</a>
 									</div>
 
 									<div class="overlay-background">
@@ -77,13 +79,15 @@
 							{% for key,post in latest %}
 								<div class="row gx-2 carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
 									<div class="col-md-3">
-										<div class="card border-0">
-											<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
+										<a href="{{ post.link }}">
+											<div class="card border-0">
+												<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
 
-											<div class="card-body">
-												<h5 class="card-title mb-0">{{ post.title }}</h5>
+												<div class="card-body">
+													<h5 class="card-title mb-0">{{ post.title }}</h5>
+												</div>
 											</div>
-										</div>
+										</a>
 									</div>
 								</div>
 							{% endfor %}
@@ -132,7 +136,9 @@
 										<p>Chassis: <span>#ZHWBU8AH0ALA03832</span></p>
 										<p>Engine: <span>#NA</span></p>
 
-										<button type="button" class="btn btn-primary btn-sm">READ MORE</button>
+										<a href="{{ post.link }}">
+											<button type="button" class="btn btn-primary btn-sm">READ MORE</button>
+										</a>
 									</div>
 
 									<div class="overlay-background">
@@ -163,16 +169,19 @@
 					<div id="multiCarousel2" class="multi-carousel multi-carousel-journal carousel slide" data-bs-ride="carousel">
 						<div class="carousel-inner" role="listbox">
 							{% set ctr = 0 %}
-							{% for key,post in latest %}
+							{% set placeholder = site.theme.link ~ '/assets/img/placeholder.jpeg' %}
+							{% for key,post in journal %}
 								<div class="row gx-2 carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
 									<div class="col-md-3">
-										<div class="card border-0">
-											<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
+										<a href="{{ post.link }}">
+											<div class="card border-0">
+												<img src="{{ post.thumbnail.src|default(placeholder) }}" alt="{{ post.title }}" class="card-img-top img-fluid card-img-fit" alt="...">
 
-											<div class="card-body">
-												<h5 class="card-title mb-0">{{ post.title }}</h5>
+												<div class="card-body">
+													<h5 class="card-title mb-0">{{ post.title }}</h5>
+												</div>
 											</div>
-										</div>
+										</a>
 									</div>
 								</div>
 							{% endfor %}
