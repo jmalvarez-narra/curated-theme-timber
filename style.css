@@ -48,6 +48,11 @@ a, a.nav-link {
   text-decoration: none;
 }
 
+p {
+  font-family: 'MerriweatherRegular';
+  color: #202021;
+}
+
 /* Buttons */
 
 .btn {
