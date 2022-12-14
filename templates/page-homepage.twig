@@ -12,6 +12,7 @@
 			<section class="article-content">
 				<div class="section-heading py-3 mt-5 mb-3">
 					<h3 class="title">NEW & NOW</h3>
+
 					<h5 class="subtitle mb-0">HIGHLIGHTS</h5>
 				</div>
 
@@ -25,10 +26,9 @@
 						{% set ctr = 0 %}
 						{% for key,post in highlights %}
 							<div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
-								<div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }});">
-								</div>
-								<div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');">
-								</div>
+								<div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
+
+								<div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');"></div>
 
 								<div class="overlay">
 									<div class="overlay-content">
@@ -54,16 +54,19 @@
 					</div>
 					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
 						<span class="visually-hidden">Previous</span>
 					</button>
 					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+
 						<span class="visually-hidden">Next</span>
 					</button>
 				</div>
 
 				<div class="section-heading py-3 mt-5 mb-3">
 					<h3 class="title">LATEST ARRIVALS</h3>
+
 					<h5 class="subtitle mb-0">INVENTORY</h5>
 				</div>
 
@@ -76,6 +79,7 @@
 									<div class="col-md-3">
 										<div class="card border-0">
 											<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
+
 											<div class="card-body">
 												<h5 class="card-title mb-0">{{ post.title }}</h5>
 											</div>
@@ -84,17 +88,20 @@
 								</div>
 							{% endfor %}
 						</div>
+
 						<a class="carousel-control-prev bg-transparent w-aut" href="#multiCarousel" role="button" data-bs-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						</a>
+
 						<a class="carousel-control-next bg-transparent w-aut" href="#multiCarousel" role="button" data-bs-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
 						</a>
 					</div>
 				</div>
 
 				<div class="section-heading py-3 mt-5 mb-3">
 					<h3 class="title">FIRST LOOK</h3>
+
 					<h5 class="subtitle mb-0">CURATED</h5>
 				</div>
 
@@ -108,10 +115,9 @@
 						{% set ctr = 0 %}
 						{% for key,post in curated %}
 							<div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
-								<div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }});">
-								</div>
-								<div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');">
-								</div>
+								<div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
+
+								<div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');"></div>
 
 								<div class="overlay">
 									<div class="overlay-content">
@@ -137,16 +143,19 @@
 					</div>
 					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
 						<span class="visually-hidden">Previous</span>
 					</button>
 					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+
 						<span class="visually-hidden">Next</span>
 					</button>
 				</div>
 
 				<div class="section-heading py-3 mt-5 mb-3">
 					<h3 class="title">THE JOURNAL</h3>
+
 					<h5 class="subtitle mb-0">GET UP TO SPEED</h5>
 				</div>
 
@@ -164,6 +173,7 @@
 										</div>
 									</div>
 								</div>
+
 								<div class="row gx-2 carousel-item">
 									<div class="col-md-3">
 										<div class="card border-0">
@@ -220,9 +230,11 @@
 									</div>
 								</div>
 						</div>
+
 						<a class="carousel-control-prev bg-transparent w-aut" href="#multiCarousel" role="button" data-bs-slide="prev">
 								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						</a>
+
 						<a class="carousel-control-next bg-transparent w-aut" href="#multiCarousel" role="button" data-bs-slide="next">
 								<span class="carousel-control-next-icon" aria-hidden="true"></span>
 						</a>
