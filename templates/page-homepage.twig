@@ -169,12 +169,13 @@
 					<div id="multiCarousel2" class="multi-carousel multi-carousel-journal carousel slide" data-bs-ride="carousel">
 						<div class="carousel-inner" role="listbox">
 							{% set ctr = 0 %}
-							{% for key,post in latest %}
+							{% set placeholder = site.theme.link ~ '/assets/img/placeholder.jpeg' %}
+							{% for key,post in journal %}
 								<div class="row gx-2 carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
 									<div class="col-md-3">
 										<a href="{{ post.link }}">
 											<div class="card border-0">
-												<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
+												<img src="{{ post.thumbnail.src|default(placeholder) }}" alt="{{ post.title }}" class="card-img-top img-fluid card-img-fit" alt="...">
 
 												<div class="card-body">
 													<h5 class="card-title mb-0">{{ post.title }}</h5>
