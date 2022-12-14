@@ -260,6 +260,12 @@ a.nav-link:hover::after {
   letter-spacing: 0.2rem;
 }
 
+/* Article body */
+
+.article-body {
+  padding: 4rem 10rem;
+}
+
 /* Slider styles */
 
 .carousel-item .bg-left, .carousel-item .bg-right{
