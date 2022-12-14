@@ -429,6 +429,11 @@ a.nav-link:hover::after {
   max-height: 30vh;
 }
 
+.card-title {
+  font-family: 'SweetSansPro';
+  font-weight: 700;
+}
+
 @media (max-width: 767px) {
   .card-img-fit {
     height: auto;
