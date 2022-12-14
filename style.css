@@ -345,7 +345,7 @@ a.nav-link:hover::after {
   left: 0;
   top: 0;
   bottom: 0;
-  background-color: #f5f5f5;
+  background-color: #E7E9E9;
 }
 
 .carousel.slide {
@@ -446,7 +446,7 @@ a.nav-link:hover::after {
 
 footer {
   margin-top: auto;
-  background-color: #f5f5f5;
+  background-color: #E7E9E9;
   color: #000000;
   padding: 2rem 0;
   font-family: 'SweetSansPro';
