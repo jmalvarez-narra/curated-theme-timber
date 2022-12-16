@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4 text-start">
+    <div class="col-md-4 col-12 order-2 order-md-1 text-md-start text-center">
       <ul>
         {% for item in footer_menu_left.items %}
             <li {{ item.classes|join(' ') }}">
@@ -19,11 +19,11 @@
       </ul>
     </div>
 
-    <div class="col-md-4 text-center">
+    <div class="col-md-4 col-12 order-1 order-md-2 text-center d-flex justify-content-center flex-column">
       <h1>CURATED</h1>
       <h2>VINTAGE SUPERCARS</h2>
 
-      <ul class="icons">
+      <ul class="icons d-flex justify-content-center">
         <li class="nav-item">
           <a class="nav-link" href="#">
             <img class="icon" src="{{ site.theme.link }}/assets/img/youtube.svg">
@@ -44,7 +44,7 @@
       </ul>
     </div>
 
-    <div class="col-md-4 text-end">
+     <div class="col-md-4 col-12 order-3 text-md-end text-center">
       <ul>
         {% for item in footer_menu_right.items %}
             <li {{ item.classes|join(' ') }}">
@@ -66,18 +66,10 @@
 
   <div class="divider"></div>
 
-  <div class="row">
-    <div class="col-md-4 text-start">
-      <h6>Copyright {{"now"|date('Y')}}</h6>
-    </div>
-
-    <div class="col-md-4 text-center">
-      <h6>2100 NE 2ND AVE MIAMA FL 33137</h6>
-    </div>
-
-    <div class="col-md-4 text-end">
-      <h6>WEARECURATED.COM</h6>
-    </div>
+  <div class="row fs-7">
+    <h6 class="col-md-4 text-md-start text-center">© 2022 CURATED. | ALL RIGHTS RESERVE</h6>
+    <h6 class="col-md-4 text-center">2010 NE 2ND AVE MIAMI FL 33137</h6>
+    <h6 class="col-md-4 text-md-end text-center">WEARECURATED.COM</h6>
   </div>
 </div>
 
