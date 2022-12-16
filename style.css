@@ -73,10 +73,6 @@ p {
 
 /* Logo */
 .logo {
-  color: #fff;
-}
-
-.home .logo {
   color: #000000;
 }
 
@@ -177,7 +173,6 @@ a.nav-link {
   font-family: 'SweetSansPro';
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: #fff;
 }
 
 /* Icons */
