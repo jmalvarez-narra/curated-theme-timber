@@ -287,8 +287,8 @@ a.nav-link:hover::after {
 
 .carousel-item .bg-left, .carousel-item .bg-right{
   min-height: 600px;
-  background: fixed;
-  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
   float: left;
   z-index: 1;
 }
