@@ -15,8 +15,100 @@
 				</div>
 				
 				<div class="article-body">
-					{{post.content}}
-				</div>
+					<div class="row">
+						<div class="col-md-5 order-2 order-md-2">
+							<aside class="car-info mb-5">
+								<p><span class="text-uppercase">Year:</span> {{ post.meta('year') ? post.meta('year') : "#NA" }}</p>
+								<p><span class="text-uppercase">Manufacturer:</span> {{ post.meta('manufacturer') ? post.meta('manufacturer') : "#NA" }}</p>
+								<p><span class="text-uppercase">Model Variant:</span> {{ post.meta('model_variant') ? post.meta('model_variant') : "#NA" }}</p>
+								<p><span class="text-uppercase">Exterior Color:</span> {{ post.meta('exterior_color') ? post.meta('exterior_color') : "#NA" }}</p>
+								<p><span class="text-uppercase">Interior Color:</span> {{ post.meta('interior_color') ? post.meta('interior_color') : "#NA" }}</p>
+								<p><span class="text-uppercase">Current Mileage:</span> {{ post.meta('current_mileage') ? post.meta('current_mileage') : "#NA" }}</p>
+								<p><span class="text-uppercase">Version:</span> {{ post.meta('version') ? post.meta('version') : "#NA" }}</p>
+								<p><span class="text-uppercase">Chassis {{ post.meta('chassis') ? post.meta('chassis') : "#NA" }}</p>
+								<p><span class="text-uppercase">Engine Capacity/Power:</span> {{ post.meta('engine_capacity') ? post.meta('engine_capacity') : "#NA" }}</p>
+								<p><span class="text-uppercase">Transmission:</span> {{ post.meta('transmission') ? post.meta('transmission') : "#NA" }}</p>
+								<p><span class="text-uppercase">Top Speed:</span> {{ post.meta('top_speed') ? post.meta('top_speed') : "#NA" }}</p>
+								<p><span class="text-uppercase">Designer:</span> {{ post.meta('designer') ? post.meta('designer') : "#NA" }}</p>
+								<p><span class="text-uppercase">Series:</span> {{ post.meta('series') ? post.meta('series') : "#NA" }}</p>
+								<p><span class="text-uppercase">Parent Company:</span> {{ post.meta('parent_company') ? post.meta('parent_company') : "#NA" }}</p>
+								<p><span class="text-uppercase">Public Debut:</span> {{ post.meta('public_debut') ? post.meta('public_debut') : "#NA" }}</p>
+								<p><span class="text-uppercase">Predecessor:</span> {{ post.meta('predecessor') ? post.meta('predecessor') : "#NA" }}</p>
+								<p><span class="text-uppercase">Successor:</span> {{ post.meta('successor') ? post.meta('successor') : "#NA" }}</p>
+								<p><span class="text-uppercase">Years Produced:</span> {{ post.meta('years_produced') ? post.meta('years_produced') : "#NA" }}</p>
+								<p><span class="text-uppercase">Examples Produced in This Color:</span> {{ post.meta('examples_produced_in_this_color') ? post.meta('examples_produced_in_this_color') : "#NA" }}</p>
+								<p><span class="text-uppercase">Examples Produced in This Interior Package:</span> {{ post.meta('examples_produced_in_this_interior_package') ? post.meta('examples_produced_in_this_interior_package') : "#NA" }}</p>
+								<p><span class="text-uppercase">Examples Produced for U.S.:</span> {{ post.meta('examples_produced_for_us') ? post.meta('examples_produced_for_us') : "#NA" }}</p>
+								<p><span class="text-uppercase">Total Production:</span> {{ post.meta('total_production') ? post.meta('total_production') : "#NA" }}</p>
+								<p><span class="text-uppercase">Books & Tools:</span> {{ post.meta('books_and_tools') ? post.meta('books_and_tools') : "#NA" }}</p>
+								<p><span class="text-uppercase">CarFAX:</span> {{ post.meta('carfax') ? post.meta('carfax') : "#NA" }}</p>
+								<p><span class="text-uppercase">Notable ownership:</span> {{ post.meta('notable_ownership') ? post.meta('notable_ownership') : "#NA" }}</p>
+							</aside>
+
+							<div class="car-details">
+								<h4>MORE DETAILS</h4>
+
+								<div class="content">
+									{{post.content}}
+								</div>
+								<div class="cta">
+									<button class="btn btn-primary btn-sm">INQUIRE</button>
+									<button class="btn btn-primary btn-sm">CREATE PDF</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-7 order-1 order-md-2">
+							<div class="car-featured-image">
+								<img class="img-fluid" alt="ferrari" src="{{ post.meta('featured_gallery_image') ? post.meta('featured_gallery_image') : "#NA" }}" />
+							</div>
+
+							<ul class="car-gallery">
+								<li>
+									<img src="{{ post.meta('gallery_image_1') ? post.meta('gallery_image_1') : "#NA" }}" alt="" />
+									<div class="overlay"></div>
+								</li>
+								<li>
+									<img src="{{ post.meta('gallery_image_2') ? post.meta('gallery_image_2') : "#NA" }}" alt="" />
+									<div class="overlay"></div>
+								</li>
+								<li>
+									<img src="{{ post.meta('gallery_image_3') ? post.meta('gallery_image_3') : "#NA" }}" alt="" />
+									<div class="overlay"></div>
+								</li>
+								<li>
+									<img src="{{ post.meta('gallery_image_4') ? post.meta('gallery_image_4') : "#NA" }}" alt="" />
+									<div class="overlay"></div>
+								</li>
+								<li>
+									<img src="{{ post.meta('gallery_image_5') ? post.meta('gallery_image_5') : "#NA" }}" alt="" />
+									<div class="overlay"></div>
+								</li>
+								<li>
+									<img src="{{ post.meta('gallery_image_6') ? post.meta('gallery_image_6') : "#NA" }}" alt="" />
+									<div class="overlay"></div>
+								</li>
+								<li>
+									<img src="{{ post.meta('gallery_image_7') ? post.meta('gallery_image_7') : "#NA" }}" alt="" />
+									<div class="overlay"></div>
+								</li>
+								<li>
+									<img src="{{ post.meta('gallery_image_8') ? post.meta('gallery_image_8') : "#NA" }}" alt="" />
+									<div class="overlay"></div>
+								</li>
+								<li>
+									<img src="{{ post.meta('gallery_image_9') ? post.meta('gallery_image_9') : "#NA" }}" alt="" />
+									<div class="overlay"></div>
+								</li>
+								<li>
+									<img src="{{ post.meta('gallery_image_10') ? post.meta('gallery_image_10') : "#NA" }}" alt="" />
+									<div class="overlay"></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					{# {{post.content}} #}
+				</div> 
 			</section>
 		</article>
 	</div><!-- /content-wrapper -->
