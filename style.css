@@ -103,6 +103,10 @@ header .navbar {
   margin-top: 1.5rem;
 }
 
+header .navbar-toggler:focus {
+  box-shadow: none;
+}
+
 header a {
   color: #000000;
 }
