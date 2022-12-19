@@ -73,10 +73,6 @@ p {
 
 /* Logo */
 .logo {
-  color: #fff;
-}
-
-.home .logo {
   color: #000000;
 }
 
@@ -105,6 +101,10 @@ header {
 
 header .navbar {
   margin-top: 1.5rem;
+}
+
+header .navbar-toggler:focus {
+  box-shadow: none;
 }
 
 header a {
@@ -161,6 +161,13 @@ header h2 {
   margin: 0 1.5rem;
 }
 
+@media (max-width: 1200px) {
+  .nav-item {
+    margin: 0 0.75rem;
+  }
+}
+
+
 .home a.nav-link {
   color: #000000;
 }
@@ -170,7 +177,6 @@ a.nav-link {
   font-family: 'SweetSansPro';
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: #fff;
 }
 
 /* Icons */
@@ -189,6 +195,14 @@ footer .nav-link {
 .icon {
   height: 1.5rem;
   width: 1.5rem;
+}
+
+.icon-youtube {
+  width: 1.75rem;
+}
+
+.icon-mail {
+  width: 1.75rem;
 }
 
 .current_page_item a.nav-link,
