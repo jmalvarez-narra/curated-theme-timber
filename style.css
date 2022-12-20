@@ -179,7 +179,7 @@ footer .nav-link {
   width: 1.5rem;
 }
 
-.current_page_item a.nav-link,
+/* .current_page_item a.nav-link,
 a.nav-link:hover {
   color: #696969;
 }
@@ -187,7 +187,7 @@ a.nav-link:hover {
 .home .current_page_item a.nav-link,
 a.nav-link:hover {
   color: #696969;
-}
+} */
 
 .current_page_item a.nav-link::after,
 a.nav-link:hover::after {
