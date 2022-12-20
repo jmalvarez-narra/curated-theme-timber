@@ -73,7 +73,12 @@ p {
 
 /* Logo */
 .logo {
-  color: #fff;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.logo img {
+  width: 21rem;
 }
 
 .home .logo {
