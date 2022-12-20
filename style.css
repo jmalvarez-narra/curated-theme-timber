@@ -521,7 +521,8 @@ a.nav-link:hover::after {
 }
 
 .car-info p {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
 }
 
 .car-details h4 {
