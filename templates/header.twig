@@ -11,7 +11,7 @@
 </div>
 
 <nav class="navbar navbar-expand-lg d-none d-lg-block">
-  <div class="container justify-content-between">
+  <div class="container-fluid container-lg justify-content-between align-items-start">
     <ul class="navbar-nav">
       {% for item in main_navigation.items %}
           <li class="nav-item {{ item.classes|join(' ') }}">
@@ -32,19 +32,19 @@
     <ul class="navbar-nav icons">
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <img class="icon" src="{{ site.theme.link }}/assets/img/youtube.png" />
+          <img class="icon icon-youtube" src="{{ site.theme.link }}/assets/img/youtube.png" />
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <img class="icon" src="{{ site.theme.link }}/assets/img/instagram.png" />
+          <img class="icon icon-instagram" src="{{ site.theme.link }}/assets/img/instagram.png" />
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <img class="icon" src="{{ site.theme.link }}/assets/img/newsletter.png" />
+          <img class="icon icon-mail" src="{{ site.theme.link }}/assets/img/newsletter.png" />
         </a>
       </li>
     </ul>
