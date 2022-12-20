@@ -72,6 +72,22 @@ p {
 }
 
 /* Logo */
+.logo.dark {
+  display: none;
+}
+
+.logo.light {
+  display: block;
+}
+
+.page-template-template-home-page .logo.dark {
+  display: block;
+}
+
+.page-template-template-home-page .logo.light {
+  display: none;
+}
+
 .logo {
   margin: 0 auto;
   width: fit-content;
