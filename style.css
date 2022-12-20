@@ -158,6 +158,10 @@ a.nav-link {
 }
 
 /* Icons */
+footer .logo img {
+  width: 16rem;
+}
+
 footer .icons {
   margin: 1rem 0;
 }
@@ -177,7 +181,6 @@ footer .nav-link {
 
 .current_page_item a.nav-link,
 a.nav-link:hover {
-  font-weight: 700;
   color: #696969;
 }
 
