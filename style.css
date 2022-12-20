@@ -72,7 +72,32 @@ p {
 }
 
 /* Logo */
+.logo.dark {
+  display: none;
+}
+
+.logo.light {
+  display: block;
+}
+
+.page-template-template-home-page .logo.dark {
+  display: block;
+}
+
+.page-template-template-home-page .logo.light {
+  display: none;
+}
+
 .logo {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.logo img {
+  width: 21rem;
+}
+
+.home .logo {
   color: #000000;
 }
 
@@ -146,6 +171,9 @@ header h2 {
   }
 }
 
+a.nav-link {
+  color: #ffffff;
+}
 
 .home a.nav-link {
   color: #000000;
@@ -159,6 +187,10 @@ a.nav-link {
 }
 
 /* Icons */
+footer .logo img {
+  width: 16rem;
+}
+
 footer .icons {
   margin: 1rem 0;
 }
@@ -184,15 +216,15 @@ footer .nav-link {
   width: 1.75rem;
 }
 
+
 .current_page_item a.nav-link,
 a.nav-link:hover {
-  font-weight: 700;
   color: #696969;
 }
 
 .home .current_page_item a.nav-link,
 a.nav-link:hover {
-  color: #696969;
+  color: #ffffff;
 }
 
 .current_page_item a.nav-link::after,
@@ -208,6 +240,11 @@ a.nav-link:hover::after {
   width: 2rem;
 }
 
+.home .current_page_item a.nav-link::after,
+a.nav-link:hover::after {
+  background-color: #ffffff;
+}
+
 .header-light .current_page_item a.nav-link,
 .header-light a.nav-link:hover {
   color: white;
@@ -221,6 +258,10 @@ a.nav-link:hover::after {
 .offcanvas .current_page_item a.nav-link::after,
 .offcanvas a.nav-link:hover::after {
   margin: initial;
+}
+
+.section-heading {
+  padding: 3rem 0rem;
 }
 
 .section-heading > .title {
@@ -480,7 +521,8 @@ a.nav-link:hover::after {
 }
 
 .car-info p {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
 }
 
 .car-details h4 {
