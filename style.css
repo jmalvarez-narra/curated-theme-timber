@@ -171,6 +171,9 @@ header h2 {
   }
 }
 
+a.nav-link {
+  color: #ffffff;
+}
 
 .home a.nav-link {
   color: #000000;
@@ -221,7 +224,7 @@ a.nav-link:hover {
 
 .home .current_page_item a.nav-link,
 a.nav-link:hover {
-  color: #696969;
+  color: #ffffff;
 }
 
 .current_page_item a.nav-link::after,
@@ -235,6 +238,11 @@ a.nav-link:hover::after {
   height: 3px;
   background-color: #000000;
   width: 2rem;
+}
+
+.home .current_page_item a.nav-link::after,
+a.nav-link:hover::after {
+  background-color: #ffffff;
 }
 
 .header-light .current_page_item a.nav-link,
