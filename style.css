@@ -233,6 +233,10 @@ a.nav-link:hover::after {
   margin: initial;
 }
 
+.section-heading {
+  padding: 3rem 0rem;
+}
+
 .section-heading > .title {
   font-family: 'SweetSansPro';
   font-weight: 400;
