@@ -7,6 +7,13 @@
 @font-face {
   font-family: "MerriweatherRegular";
   src: url("assets/fonts/Merriweather-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "MerriweatherBold";
+  src: url("assets/fonts/Merriweather-Bold.ttf");
+  font-weight: 600;
 }
 
 @font-face {
@@ -527,14 +534,18 @@ a.nav-link:hover::after {
 /* single post */
 /* left section */
 .car-info {
-  font-family: 'Merriweather-Regular';
+  font-family: 'MerriweatherRegular';
   background-color: #f4f4f4;
   padding: 1.5rem;
 }
 
+.car-info span {
+  font-family: 'MerriweatherBold';
+}
+
 .car-info p {
-  margin-bottom: 0;
-  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
 }
 
 .car-details h4 {
