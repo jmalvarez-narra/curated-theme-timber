@@ -203,6 +203,14 @@ footer .nav-link {
   margin: 0 0.5rem;
 }
 
+.header .navbar .icons .nav-link:hover::after {
+  width: 0;
+}
+
+.icons .nav-link:hover img {
+  opacity: 0.5;
+}
+
 .icon {
   width: 1.5rem;
 }
