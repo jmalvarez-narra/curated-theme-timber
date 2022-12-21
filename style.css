@@ -216,12 +216,16 @@ footer .nav-link {
   width: 1.5rem;
 }
 
-.icon-youtube {
-  width: 1.75rem;
+.icon-instagram {
+  width: 1.18rem;
 }
 
-.icon-mail {
-  width: 1.75rem;
+.icon-dark, .page-template-template-home-page .icon-light {
+  display: none;
+}
+
+.icon-light, .page-template-template-home-page .icon-dark {
+  display: block;
 }
 
 
