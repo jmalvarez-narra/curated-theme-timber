@@ -2,21 +2,19 @@
 
 {% block content %}
 	<div class="content-wrapper">
-		{# {% if post.thumbnail.src %}
-			<div class="featured-container">
-				<div class="measure"></div>
+		<div class="featured-container">
 
-				<div class="featured" style="--bg-image: url({{ post.thumbnail.src }});"></div>
-			
-		{% else %} #}
-			<div class="featured-container">
-				<div class="overlay light-overlay"></div>
+		<div class="overlay light-overlay"></div>
+		{% if post.thumbnail.src %}
+			{# <div class="measure"></div> #}
 
-				<video autoplay muted loop id="myVideo">
-					<source src="{{ site.theme.link }}/assets/img/curated-video.mp4" type="video/mp4">
-				</video>
-			</div>
-		{# {% endif %} #}
+			<div class="featured" style="--bg-image: url({{ post.thumbnail.src }});"></div>
+		{% else %}
+			<video autoplay muted loop id="myVideo">
+				<source src="{{ site.theme.link }}/assets/img/curated-video.mp4" type="video/mp4">
+			</video>
+		{% endif %}
+		</div>
 
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
