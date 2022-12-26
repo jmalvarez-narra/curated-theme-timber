@@ -89,7 +89,11 @@
 									<div class="col-md-3">
 										<a href="{{ post.link }}">
 											<div class="card border-0">
-												<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
+												{% if post.thumbnail.src %}
+													<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
+												{% else %}
+													<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
+												{% endif %}
 
 												<div class="card-body">
 													<h5 class="card-title mb-0">{{ post.title }}</h5>
@@ -183,7 +187,11 @@
 									<div class="col-md-3">
 										<a href="{{ post.link }}">
 											<div class="card border-0">
-												<img src="{{ post.thumbnail.src|default(placeholder) }}" alt="{{ post.title }}" class="card-img-top img-fluid card-img-fit" alt="...">
+												{% if post.thumbnail.src %}
+													<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
+												{% else %}
+													<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
+												{% endif %}
 
 												<div class="card-body">
 													<h5 class="card-title mb-0">{{ post.title }}</h5>
