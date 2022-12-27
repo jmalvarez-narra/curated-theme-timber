@@ -468,6 +468,28 @@ a.nav-link:hover::after {
   height: auto;
 }
 
+img.carousel-tape-vertical {
+  position: absolute;
+  right: -2.5rem;
+  height: 40%;
+  bottom: 50%;
+  top: 50%;
+  z-index: 9999;
+}
+
+img.carousel-tape-horizontal {
+  position: absolute;
+  width: 10rem;
+  height: 13%;
+  top: -2rem;
+  left: 0;
+  z-index: 9999;
+}
+
+.carousel-section {
+  position: relative;
+}
+
 /* INVENTORY */
 
 .inventory-card .card-media {
