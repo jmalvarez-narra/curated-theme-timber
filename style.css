@@ -490,6 +490,17 @@ img.carousel-tape-horizontal {
   position: relative;
 }
 
+
+.carousel .carousel-indicators {
+  z-index: 3;
+}
+
+.carousel .carousel-indicators [data-bs-target] {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 100%;
+}
+
 /* INVENTORY */
 
 .inventory-card .card-media {
