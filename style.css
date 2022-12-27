@@ -78,6 +78,22 @@ p {
   border: 0;
 }
 
+.more-link {
+  font-family: 'SweetSansPro';
+  font-weight: 500;
+  float: right;
+}
+
+.more-link span {
+  font-size: 1.4rem;
+  line-height: 0;
+}
+
+.more-link:hover span {
+  margin-left: 0.1rem;
+  margin-right: -0.1rem;
+}
+
 /* Logo */
 .logo.dark {
   display: none;
