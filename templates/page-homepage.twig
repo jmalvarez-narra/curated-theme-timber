@@ -184,7 +184,7 @@
 				</div>
 
 				<div class="row px-3 text-end">
-					<a class="more-link" href="{{ site.link }}/inventory">
+					<a class="more-link" href="{{ site.link }}/journals">
 						MORE
 						<span>
 							&raquo;
@@ -231,6 +231,8 @@
 				<div class="article-body">
 					{{post.content}}
 				</div>
+
+				{{ wp.do_shortcode('[instagram feed="123"]') }}
 			</section>
 		</article>
 	</div><!-- /content-wrapper -->
