@@ -17,6 +17,12 @@
 }
 
 @font-face {
+  font-family: "ComforterBrush";
+  src: url("assets/fonts/ComforterBrush-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
   font-family: "MerriweatherBold";
   src: url("assets/fonts/Merriweather-Bold.ttf");
   font-weight: 600;
@@ -76,6 +82,12 @@ h2 {
 p {
   font-family: 'MerriweatherRegular';
   color: #202021;
+}
+
+.handwritten {
+  font-family: "ComforterBrush" !important;
+  font-size: 1.2rem;
+  margin-bottom: 0;
 }
 
 .content-wrapper {
@@ -319,7 +331,8 @@ a.nav-link:hover::after {
 }
 
 .section-heading {
-  padding: 3rem 0rem;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
 }
 
 .section-heading > .title {

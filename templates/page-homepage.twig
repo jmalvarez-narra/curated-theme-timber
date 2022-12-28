@@ -24,6 +24,12 @@
 				</div>
 
 				<div id="newAndNowCarousel" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-indicators">
+						{% for key,post in highlights %}
+								<button type="button" data-bs-target="#newAndNowCarousel" data-bs-slide-to="{{key}}" class="{% if key == 0  %} {{ 'active' }} {% endif %}" aria-current="{% if key == 0  %} {{ 'current' }} {% endif %}" aria-label="Slide {{key}}"></button>
+						{% endfor %}
+					</div>
+
 					<div class="carousel-inner">
 						{% set ctr = 0 %}
 						{% for key,post in highlights %}
@@ -38,6 +44,7 @@
 
 								<div class="overlay">
 									<div class="overlay-content">
+										<h2 class="handwritten">2010</h2>
 										<h2>{{ post.title }}</h2>
 
 										<p>Year: <span>{{ post.meta('year') ? post.meta('year') : "#NA" }}</span></p>
