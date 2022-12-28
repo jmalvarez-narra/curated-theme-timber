@@ -151,16 +151,10 @@
 
 									<div class="overlay">
 										<div class="overlay-content">
-											<h2>{{ post.title }}</h2>
+											<h2 class="grafiti">IN THE WORKS</h2>
+											<h2>& COMING SOON</h2>
 
-											<p>Year: <span>2010</span></p>
-											<p>Manufacturer: <span>Lamborghini</span></p>
-											<p>Model: <span>MURCIELAGO</span></p>
-											<p>Model Variant: <span>LP670-4 SuperVeloce</span></p>
-											<p>Exterior Color: <span>Nero Aldebaran</span></p>
-											<p>Current Mileage: <span>610 miles</span></p>
-											<p>Chassis: <span>#ZHWBU8AH0ALA03832</span></p>
-											<p>Engine: <span>#NA</span></p>
+											<p>{{ post.preview.length(100).read_more(false) }}</p>
 
 											<a href="{{ post.link }}">
 												<button type="button" class="btn btn-primary btn-sm">READ MORE</button>

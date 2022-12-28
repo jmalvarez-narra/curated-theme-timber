@@ -90,6 +90,12 @@ p {
   margin-bottom: 0;
 }
 
+.grafiti {
+  font-family: "RockSalt" !important;
+  font-size: 1.2rem !important;
+  margin-bottom: 0.5rem;
+}
+
 .content-wrapper {
   position: relative;
   background-color: #ffffff;
