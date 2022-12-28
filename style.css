@@ -422,6 +422,7 @@ a.nav-link:hover::after {
   background-color: white;
   position: relative;
   margin-top: 900px;
+  padding-bottom: 5rem;
   z-index: 3;
 }
 
