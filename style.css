@@ -119,6 +119,18 @@ p {
   border: 0;
 }
 
+.btn-inquire {
+  position: absolute;
+  bottom: 10rem;
+  left: 10rem;
+  padding: 1rem 3rem;
+  border: 0;
+}
+
+.btn-light:hover {
+  opacity: 0.8;
+}
+
 .more-link {
   font-family: 'SweetSansPro';
   font-weight: 500;
