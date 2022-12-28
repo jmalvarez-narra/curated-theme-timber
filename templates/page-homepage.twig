@@ -30,7 +30,11 @@
 							<div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
 								<div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
 
-								<div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');"></div>
+								{% if post.meta('featured_image_2')  %}
+									<div class="featured" style="--bg-image: url({{ post.meta('featured_image_2') }});"></div>
+								{% else %}
+									<div class="featured" style="--bg-image: url('{{ site.theme.link }}/assets/img/lambo-2-right.jpeg');"></div>
+								{% endif %}
 
 								<div class="overlay">
 									<div class="overlay-content">
