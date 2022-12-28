@@ -11,6 +11,12 @@
 }
 
 @font-face {
+  font-family: "RockSalt";
+  src: url("assets/fonts/RockSalt-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
   font-family: "MerriweatherBold";
   src: url("assets/fonts/Merriweather-Bold.ttf");
   font-weight: 600;
@@ -46,6 +52,8 @@
   font-weight: 600;
 }
 
+/* defaults */
+
 html, body {
   margin: 0;
 }
@@ -59,9 +67,21 @@ a:hover {
   color: #696969;
 }
 
+h2 {
+  font-family: 'RockSalt';
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
 p {
   font-family: 'MerriweatherRegular';
   color: #202021;
+}
+
+.content-wrapper {
+  position: relative;
+  background-color: #ffffff;
+  z-index: 2;
 }
 
 /* Buttons */
@@ -70,6 +90,9 @@ p {
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   padding: 0.7rem 1rem;
+  padding: 1rem;
+  font-family: 'SweetSansPro';
+  font-weight: 700;
 }
 
 .btn-primary {
