@@ -1,6 +1,6 @@
 <?php
 /**
- * Timber starter-theme
+ * Curated
  * https://github.com/timber/starter-theme
  *
  * @package  WordPress
