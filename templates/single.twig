@@ -46,11 +46,14 @@
 							</aside>
 
 							<div class="car-details">
-								<h4>MORE DETAILS</h4>
+								{% if post.content %}
+									<h4>MORE DETAILS</h4>
 
-								<div class="content">
-									{{post.content}}
-								</div>
+									<div class="content">
+										{{post.content}}
+									</div>
+								{% endif %}
+
 								<div class="cta">
 									<button class="btn btn-primary btn-sm">INQUIRE</button>
 									<button class="btn btn-primary btn-sm" onclick="display()">CREATE PDF</button>
@@ -60,48 +63,82 @@
 
 						<div class="col-md-7 order-1 order-md-2">
 							<div class="car-featured-image">
-								<img class="img-fluid" alt="ferrari" src="{{ post.meta('featured_gallery_image') ? post.meta('featured_gallery_image') : "#NA" }}" />
+								{% if post.meta('featured_gallery_image') %}
+									<img class="img-fluid" alt="{{post.title}} ~ ' featured gallery image'" src="{{ post.meta('featured_gallery_image') }}" />
+								{% else %}
+									<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid" alt="{{post.title}} ~ '-placeholder">
+								{% endif %}
 							</div>
 
 							<ul class="car-gallery">
 								<li>
-									<img src="{{ post.meta('gallery_image_1') ? post.meta('gallery_image_1') : "#NA" }}" alt="" />
+									{% if post.meta('gallery_image_1') %}
+										<img src="{{ post.meta('gallery_image_1')}}" alt="{{post.title}} ~ '-image-1'" />
+									{% else %}
+										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
+									{% endif %}
 									<div class="overlay"></div>
 								</li>
 								<li>
-									<img src="{{ post.meta('gallery_image_2') ? post.meta('gallery_image_2') : "#NA" }}" alt="" />
+									{% if post.meta('gallery_image_2') %}
+										<img src="{{ post.meta('gallery_image_2')}}" alt="{{post.title}} ~ '-image-2'" />
+									{% else %}
+										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
+									{% endif %}
 									<div class="overlay"></div>
 								</li>
 								<li>
-									<img src="{{ post.meta('gallery_image_3') ? post.meta('gallery_image_3') : "#NA" }}" alt="" />
+									{% if post.meta('gallery_image_3') %}
+										<img src="{{ post.meta('gallery_image_3')}}" alt="{{post.title}} ~ '-image-3'" />
+									{% else %}
+										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
+									{% endif %}
+
 									<div class="overlay"></div>
 								</li>
 								<li>
-									<img src="{{ post.meta('gallery_image_4') ? post.meta('gallery_image_4') : "#NA" }}" alt="" />
+									{% if post.meta('gallery_image_4') %}
+										<img src="{{ post.meta('gallery_image_4')}}" alt="{{post.title}} ~ '-image-4'" />
+									{% else %}
+										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
+									{% endif %}
+
 									<div class="overlay"></div>
 								</li>
 								<li>
-									<img src="{{ post.meta('gallery_image_5') ? post.meta('gallery_image_5') : "#NA" }}" alt="" />
+									{% if post.meta('gallery_image_5') %}
+										<img src="{{ post.meta('gallery_image_5')}}" alt="{{post.title}} ~ '-image-5'" />
+									{% else %}
+										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
+									{% endif %}
+
 									<div class="overlay"></div>
 								</li>
 								<li>
-									<img src="{{ post.meta('gallery_image_6') ? post.meta('gallery_image_6') : "#NA" }}" alt="" />
+									{% if post.meta('gallery_image_6') %}
+										<img src="{{ post.meta('gallery_image_6')}}" alt="{{post.title}} ~ '-image-6'" />
+									{% else %}
+										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
+									{% endif %}
+
 									<div class="overlay"></div>
 								</li>
 								<li>
-									<img src="{{ post.meta('gallery_image_7') ? post.meta('gallery_image_7') : "#NA" }}" alt="" />
+									{% if post.meta('gallery_image_7') %}
+										<img src="{{ post.meta('gallery_image_7')}}" alt="{{post.title}} ~ '-image-7'" />
+									{% else %}
+										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
+									{% endif %}
+
 									<div class="overlay"></div>
 								</li>
 								<li>
-									<img src="{{ post.meta('gallery_image_8') ? post.meta('gallery_image_8') : "#NA" }}" alt="" />
-									<div class="overlay"></div>
-								</li>
-								<li>
-									<img src="{{ post.meta('gallery_image_9') ? post.meta('gallery_image_9') : "#NA" }}" alt="" />
-									<div class="overlay"></div>
-								</li>
-								<li>
-									<img src="{{ post.meta('gallery_image_10') ? post.meta('gallery_image_10') : "#NA" }}" alt="" />
+									{% if post.meta('gallery_image_8') %}
+										<img src="{{ post.meta('gallery_image_8')}}" alt="{{post.title}} ~ '-image-8'" />
+									{% else %}
+										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
+									{% endif %}
+
 									<div class="overlay"></div>
 								</li>
 							</ul>
