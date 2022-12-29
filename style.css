@@ -377,7 +377,7 @@ a.nav-link:hover::after {
 
 .section-heading {
   padding-top: 4rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 .section-heading > .title {
@@ -456,7 +456,7 @@ a.nav-link:hover::after {
 }
 
 /* Article body */
-.article-content {
+.article-content, .first-look-wrapper {
   background-color: white;
   position: relative;
   margin-top: 1000px;
@@ -751,6 +751,10 @@ img.carousel-tape-horizontal {
 }
 
 /* First look carousel */
+.first-look-wrapper {
+  padding-bottom: 5rem;
+}
+
 /* FROM CURATED THEME */
 
 .carousel-item .bg-left, .carousel-item .bg-right{
