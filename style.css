@@ -750,6 +750,309 @@ img.carousel-tape-horizontal {
   } 
 }
 
+/* First look carousel */
+/* FROM CURATED THEME */
+
+.carousel-item .bg-left, .carousel-item .bg-right{
+  min-height: 650px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  float: left;
+  z-index: 1;
+}
+
+.carousel-item .bg-left {
+  width: 60%;
+  background-image: var(--bg-image);
+  background-position: 0% 30%;
+}
+
+.carousel-item .bg-right {
+  width: 40%;
+  background-image: var(--bg-image);
+  background-position: 0% 30%;
+}
+
+.carousel .overlay {
+  position: absolute;
+  top: 0;
+  right: 20%;
+  bottom: 0;
+  z-index: 2;
+  width: 500px;
+  height: 650px;
+}
+
+.carousel .overlay-content {
+  position: relative;
+  z-index: 3;
+  padding: 10rem 3rem;
+}
+
+.carousel .overlay-content h2 {
+  font-size: 2rem;
+  font-family: 'SweetSansPro';
+  letter-spacing: 0.14rem;
+}
+
+.carousel .overlay-content p {
+  color: grey;
+  font-size: 0.8rem;
+  font-family: 'MerriweatherRegular';
+  /* margin: 0; */
+}
+
+.carousel .overlay-content span {
+  color: #000000;
+}
+
+.carousel .overlay-content .btn {
+  padding: 1rem;
+  font-family: 'SweetSansPro';
+  font-weight: 700;
+  margin-top: 2rem;
+  font-size: 0.7rem;
+  border-radius: .4rem;
+}
+
+.carousel .overlay-content .btn:hover {
+  background-color: #696969;
+  color: #fff;
+}
+
+.carousel .overlay-content .btn:active,
+.carousel .overlay-content .btn:focus,
+.carousel .overlay-content .btn.focus,
+.carousel .overlay-content .btn:visited,
+.carousel .overlay-content .btn:focus-visible {
+  background-color: #4a4a4a;
+  color: #fff;
+  border: 0;
+}
+
+.carousel .overlay-background {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #E7E9E9;
+}
+
+.carousel.slide {
+  height: 650px;
+  overflow: hidden;
+}
+
+.multi-carousel.slide {
+  height: auto;
+}
+
+img.carousel-tape-vertical {
+  position: absolute;
+  right: -4rem;
+  height: 40%;
+  bottom: 50%;
+  top: 50%;
+  z-index: 9999;
+}
+
+img.carousel-tape-horizontal {
+  position: absolute;
+  width: 10rem;
+  height: 13%;
+  top: -2rem;
+  left: 0;
+  z-index: 9999;
+}
+
+.carousel-section {
+  position: relative;
+}
+
+
+.carousel .carousel-indicators {
+  z-index: 3;
+  margin-bottom: 3rem;
+}
+
+.carousel .carousel-indicators [data-bs-target] {
+  height: 0.3rem;
+  width: 0.3rem;
+  border-radius: 100%;
+  border: 2px solid black;
+  background-color: transparent;
+  margin-right: 0.4rem;
+  margin-left: 0.4rem;
+}
+
+.carousel-indicators [data-bs-target].active {
+  opacity: 1;
+  background-color: black;
+}
+
+
+/*** OVERRIDES STARTS HERE ***/
+
+#polaroid {
+  background: #ffffff;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  z-index: 5;
+  overflow: hidden;
+  height: 25rem;
+  width: 25rem;
+  padding: 0.5rem;
+}
+
+#polaroid img {
+  width: 100%;
+  height: 100%
+}
+
+.first-look-carousel .carousel.slide,
+.first-look-carousel .carousel-inner {
+  overflow: unset;
+}
+
+.first-look-feature-v1 div.tape-1 {
+  position: absolute;
+  z-index: 4;
+  background-image: url(assets/img/tape-2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  transform: rotate(270deg);
+  height: 15rem;
+  width: 14rem;
+  top: -3rem;
+  left: 5rem;
+}
+
+.first-look-feature-v1 div.tape-2 {
+  position: absolute;
+  right: -4rem;
+  bottom: -2rem;
+  z-index: 4;
+  background-image: url(assets/img/tape-2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 14rem;
+}
+
+.first-look-feature-v1 #polaroid {
+  position: absolute;
+  top: -3rem;
+  left: -12rem;
+  transform: rotate(355deg);
+}
+
+.first-look-feature-v2 .carousel .overlay {
+  left: 20%;
+}
+
+.first-look-feature-v2 .carousel-item .bg-left {
+  width: 40%;
+}
+
+.first-look-feature-v2 .carousel-item .bg-right {
+  width: 60%;
+}
+
+.first-look-feature-v2 div.tape-1 {
+  position: absolute;
+  top: -1.5rem;
+  left: -3rem;
+  z-index: 4;
+  background-image: url(assets/img/tape-2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 14rem;
+  transform: rotate(5deg);
+}
+
+.first-look-feature-v2 div.tape-2 {
+  position: absolute;
+  right: -3rem;
+  bottom: 5rem;
+  z-index: 4;
+  background-image: url(assets/img/tape-2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 14rem;
+  transform: rotate(178deg);
+}
+
+.first-look-feature-v2 div.tape-3 {
+  position: absolute;
+  z-index: 6;
+  background-image: url(assets/img/tape-1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 11rem;
+  height: 5rem;
+  bottom: -2rem;
+  right: -15rem;
+  transform: rotate(180deg);
+}
+
+.first-look-feature-v2 #polaroid {
+  position: absolute;
+  height: 15rem;
+  width: 15rem;
+  bottom: 0.5rem;
+  right: -13rem;
+  transform: rotate(354deg);
+}
+
+.first-look-feature-v3 div.tape-1 {
+  position: absolute;
+  width: 10rem;
+  height: 13%;
+  top: -2rem;
+  left: 0;
+  z-index: 4;
+  background-image: url(assets/img/tape-3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.first-look-feature-v3 div.tape-2 {
+  position: absolute;
+  z-index: 4;
+  background-image: url(assets/img/tape-1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 11rem;
+  height: 5rem;
+  bottom: -2rem;
+  left: -25rem;
+}
+
+.first-look-feature-v3 div.tape-3 {
+  position: absolute;
+  right: -4rem;
+  bottom: 5rem;
+  z-index: 4;
+  background-image: url(assets/img/tape-2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 14rem;
+}
+
+.first-look-feature-v3 #polaroid {
+  position: absolute;
+  height: 20rem;
+  width: 20rem;
+  bottom: -3rem;
+  left: -18rem;
+}
+
 /* single post */
 /* left section */
 .car-info {
