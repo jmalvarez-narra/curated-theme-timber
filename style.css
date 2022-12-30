@@ -1236,7 +1236,7 @@ div.measure {
 }
 
 /* general styling */
-.carousel-item .card .image-container {
+.card .image-container {
   position: relative;
   height: fit-content;
   width: fit-content;
@@ -1253,11 +1253,11 @@ div.measure {
   left: 0;
 }
 
-.carousel-item .card:hover .image-container {
+.card:hover .image-container {
   border-bottom: 2px solid black;
 }
 
-.carousel-item .card:hover .dark-overlay {
+.card:hover .dark-overlay {
   opacity: 0;
 }
 

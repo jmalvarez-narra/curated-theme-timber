@@ -1,38 +1,32 @@
-<div class="row mx-auto my-auto justify-content-center">
-  <div id="multiCarousel{{ title }}" class="multi-carousel multi-carousel-{{title}} carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner" role="listbox">
-      {% set ctr = 0 %}
-      {% for key,post in posts %}
-        <div class="row gx-2 carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
-          <div class="col-md-3">
-            <a href="{{ post.link }}">
-              <div class="card border-0">
-                <div class="image-container">
-                  <div class="dark-overlay"></div>
+<ul id="lightSlider-{{ title }}">
+  {% set ctr = 0 %}
+  {% for key,post in posts %}
+    <li>
+      <a href="{{ post.link }}">
+        <div class="card border-0">
+          <div class="image-container">
+            <div class="dark-overlay"></div>
 
-                  {% if post.thumbnail.src %}
-                    <img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
-                  {% else %}
-                    <img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
-                  {% endif %}
-                </div>
+            {% if post.thumbnail.src %}
+              <img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
+            {% else %}
+              <img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
+            {% endif %}
+          </div>
 
-                <div class="card-body">
-                  <h5 class="card-title mb-0">{{ post.title }}</h5>
-                </div>
-              </div>
-            </a>
+          <div class="card-body">
+            <h5 class="card-title mb-0">{{ post.title }}</h5>
           </div>
         </div>
-      {% endfor %}
-    </div>
+      </a>
+      </li>
+  {% endfor %}
+</ul>
 
-    <a class="carousel-control-prev bg-transparent w-autoo" href="#multiCarousel{{ title }}" role="button" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </a>
-
-    <a class="carousel-control-next bg-transparent w-autoo" href="#multiCarousel{{ title }}" role="button" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </a>
-  </div>
-</div>
+<script>
+  $(document).ready(function() {
+    $("#lightSlider-{{ title }}").lightSlider({
+      item: 4
+    });
+  });
+</script>
