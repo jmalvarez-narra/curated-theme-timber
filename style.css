@@ -74,14 +74,20 @@ a:hover {
 }
 
 h2 {
-  font-family: 'RockSalt';
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: 'SweetSansPro';
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  line-height: 2rem;
 }
 
 p {
   font-family: 'MerriweatherRegular';
   color: #202021;
+}
+
+.bg-grey {
+  background-color: #f5f5f5;
 }
 
 .handwritten {
@@ -456,7 +462,7 @@ a.nav-link:hover::after {
   min-height: 650px;
   background-image: var(--bg-image);
   background-repeat: no-repeat;
-  background-position: 50% 70%;
+  background-position: 50% 40%;
   background-size: cover;
 }
 
@@ -466,6 +472,8 @@ a.nav-link:hover::after {
   position: relative;
   margin-top: 600px;
   z-index: 3;
+  -webkit-box-shadow: 0px -5px 10px -9px #2e2e2e; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+  box-shadow: 0px -5px 10px -9px #2e2e2e; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
 }
 
 .inner-wrapper {
@@ -527,16 +535,15 @@ a.nav-link:hover::after {
 }
 
 .carousel .overlay-content p {
-  color: grey;
+  color: #000000;
   font-size: 0.83rem;
   font-family: 'MerriweatherRegular';
   margin: 0;
-  text-transform: uppercase;
 }
 
 .carousel .overlay-content span {
-  color: #000000;
-  text-transform: none;
+  color: grey;
+  text-transform: uppercase;
 }
 
 .carousel .overlay-content .btn {
@@ -813,17 +820,6 @@ img.carousel-tape-horizontal {
   font-size: 2rem;
   font-family: 'SweetSansPro';
   letter-spacing: 0.14rem;
-}
-
-.carousel .overlay-content p {
-  color: grey;
-  font-size: 0.8rem;
-  font-family: 'MerriweatherRegular';
-  /* margin: 0; */
-}
-
-.carousel .overlay-content span {
-  color: #000000;
 }
 
 .carousel .overlay-content .btn {
@@ -1241,6 +1237,25 @@ div.measure {
 
 /* template specific styling */
 
+
+/* restoration */
 .page-template-template-restoration .shop-floor-image  {
   width: 100%;
+}
+
+/* about us */
+.page-template-template-about .carousel .overlay-content {
+  position: relative;
+  z-index: 3;
+  padding: 2rem 3rem;
+}
+
+.page-template-template-about .carousel.slide {
+  height: auto;
+}
+
+.bg-image {
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position-y: 50%;
 }
