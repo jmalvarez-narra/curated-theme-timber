@@ -16,6 +16,8 @@
 
 $templates = array( 'archive.twig', 'index.twig' );
 
+global $post;
+$page_slug = $post->post_name;
 $context = Timber::context();
 
 $context['title'] = 'Archive';
@@ -35,6 +37,20 @@ if ( is_day() ) {
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
 }
 
-$context['posts'] = new Timber\PostQuery();
+array_unshift( $templates, 'archive-cars.twig' );
+
+$args = array(
+	// Get post type car
+	'post_type' => 'cars',
+	// Get all posts
+	'posts_per_page' => -1,
+	// Gest post by "featured" category
+	'category_name' => $context['title'],
+	// Order by post date
+	'orderby' => array(
+			'date' => 'DESC',
+));
+
+$context['posts'] = Timber::get_posts( $args );
 
 Timber::render( $templates, $context );
