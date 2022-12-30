@@ -789,24 +789,24 @@ img.carousel-tape-horizontal {
 }
 
 .carousel-item .bg-left {
-  width: 60%;
+  width: 50%;
   background-image: var(--bg-image);
   background-position: 0% 30%;
 }
 
 .carousel-item .bg-right {
-  width: 40%;
-  background-image: var(--bg-image);
+  width: 50%;
+  background-image: var(--bg-image-right);
   background-position: 0% 30%;
 }
 
 .carousel .overlay {
   position: absolute;
   top: 0;
-  right: 20%;
+  left: 50%;
   bottom: 0;
   z-index: 2;
-  width: 500px;
+  width:  40%;
   height: 650px;
 }
 
