@@ -20,9 +20,7 @@
   </div>
 
 	<div class="content-wrapper first-look-wrapper">
-		<div class="section-heading mt-5">
-      <h3 class="title">FIRST LOOK</h3>
-    </div>
+    {% include 'partial/section-heading.twig' with { title: 'FIRST LOOK', customClass: 'mt-5' } %}
     
     <div class="carousel-section first-look-carousel first-look-feature-v1 mb-5">
       <div class="tape-1"></div>
@@ -69,9 +67,7 @@
       </div>
     </div>
 
-    <div class="section-heading">
-      <h3 class="title">MORE FIRST LOOKS</h3>
-    </div>
+    {% include 'partial/section-heading.twig' with { title: 'MORE FIRST LOOKS' } %}
 
     <div class="row mx-auto my-auto justify-content-center">
       <div id="multiCarousel2" class="multi-carousel multi-carousel-journal carousel slide" data-bs-ride="carousel">
