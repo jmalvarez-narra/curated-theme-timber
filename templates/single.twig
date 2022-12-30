@@ -10,9 +10,7 @@
 
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
-				<div class="section-heading">
-					<h3 class="title">{{post.title}}</h3>
-				</div>
+				{% include 'partial/section-heading.twig' with { title: post.title } %}
 				
 				<div class="article-body">
 					<div class="row">
@@ -147,12 +145,7 @@
 					{# {{post.content}} #}
 				</div> 
 
-				
-        <div class="section-heading">
-					<h3 class="title">JUST IN </h3>
-
-					<h5 class="subtitle mb-0">INVENTORY</h5>
-				</div>
+				{% include 'partial/section-heading.twig' with { title: 'JUST IN', subtitle: 'INVENTORY' } %}
 
 				<div class="row mx-auto my-auto justify-content-center">
 					<div id="multiCarousel2" class="multi-carousel multi-carousel-journal carousel slide" data-bs-ride="carousel">

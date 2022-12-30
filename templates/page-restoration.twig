@@ -23,9 +23,7 @@
 
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
-				<div class="section-heading">
-					<h3 class="title">{{post.title}}</h3>
-				</div>
+        {% include 'partial/section-heading.twig' with { title: post.title } %}
 				
 				<div class="article-body">
 					{{post.content}}
@@ -33,9 +31,7 @@
 			</section>
 		</article>
 
-    <div class="section-heading">
-      <h3 class="title">FROM THE SHOP FLOOR</h3>
-    </div>
+    {% include 'partial/section-heading.twig' with { title: 'FROM THE SHOP FLOOR' } %}
 
     {% if post.meta('from_the_shop_floor_image')  %}
       <img src="{{ post.meta('from_the_shop_floor_image') }}">
@@ -45,10 +41,6 @@
       {# <div class="featured" style="--bg-image: url('{{ site.theme.link }}/assets/img/Restoration_Main_Image.png');"></div> #}
     {% endif %}
 
-    <div class="section-heading">
-      <h3 class="title">@WEARECURATED</h3>
-
-			<h5 class="subtitle mb-0">INSTAGRAM</h5>
-    </div>
+    {% include 'partial/section-heading.twig' with { title: '@WEARECURATED', subtitle: 'INSTAGRAM' } %}
 	</div><!-- /content-wrapper -->
 {% endblock %}

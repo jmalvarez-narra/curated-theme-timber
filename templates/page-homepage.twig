@@ -18,10 +18,8 @@
 
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
-				<div class="section-heading">
-					<h3 class="title">NEW & NOW</h3>
-					<h5 class="subtitle mb-0">HIGHLIGHTS</h5>
-				</div>
+
+				{% include 'partial/section-heading.twig' with { title: 'NEW & NOW', subtitle: 'HIGHLIGHTS' } %}
 
 				<div id="newAndNowCarousel" class="carousel slide" data-bs-ride="carousel">
 					<div class="carousel-indicators">
@@ -78,10 +76,7 @@
 					</button>
 				</div>
 
-				<div class="section-heading">
-					<h3 class="title">LATEST ARRIVALS</h3>
-					<h5 class="subtitle mb-0">INVENTORY</h5>
-				</div>
+				{% include 'partial/section-heading.twig' with { title: 'LATEST ARRIVALS', subtitle: 'INVENTORY' } %}
 
 				<div class="row px-3 text-end">
 					<a class="more-link" href="{{ site.link }}/inventory">
@@ -94,10 +89,7 @@
 
 				{% include 'partial/multi-carousel.twig' with { posts: latest, title: 'latest' } %}
 
-				<div class="section-heading">
-					<h3 class="title">FIRST LOOK</h3>
-					<h5 class="subtitle mb-0">CURATED</h5>
-				</div>
+				{% include 'partial/section-heading.twig' with { title: 'FIRST LOOK', subtitle: 'CURATED' } %}
 
 				<div class="carousel-section">
 					<img src="{{ site.theme.link }}/assets/img/tape-3.png" class="carousel-tape-horizontal">
@@ -153,11 +145,7 @@
 					</div>
 				</div>
 
-				<div class="section-heading">
-					<h3 class="title">THE JOURNAL</h3>
-
-					<h5 class="subtitle mb-0">GET UP TO SPEED</h5>
-				</div>
+				{% include 'partial/section-heading.twig' with { title: 'THE JOURNAL', subtitle: 'GET UP TO SPEED' } %}
 
 				<div class="row px-3 text-end">
 					<a class="more-link" href="{{ site.link }}/stories">
@@ -170,11 +158,7 @@
 
 				{% include 'partial/multi-carousel.twig' with { posts: journal, title: 'journal' } %}
 
-				<div class="section-heading">
-					<h3 class="title">OUR CHANNEL</h3>
-
-					<h5 class="subtitle mb-0">YOUTUBE</h5>
-				</div>
+				{% include 'partial/section-heading.twig' with { title: 'OUR CHANNEL', subtitle: 'YOUTUBE' } %}
 
 				<div class="row youtube-container">
 					<iframe width="420" height="650" src="https://www.youtube.com/embed/rI83PMNvljw">

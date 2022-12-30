@@ -22,9 +22,7 @@
 	<div class="inner-wrapper">
 
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-      <div class="section-heading mt-5 mb-4">
-        <h3 class="title">{{ post.title }}</h3>
-      </div>
+      {% include 'partial/section-heading.twig' with { title: post.title } %}
 
       <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
         {# <div class="carousel-indicators">
@@ -183,9 +181,7 @@
         </button>
       </div>
 
-      <div class="section-heading mt-3 mb-4">
-        <h3 class="title">OUR STORY</h3>
-      </div>
+      {% include 'partial/section-heading.twig' with { title: 'OUR STORY', customClass: 'mt-3 mb-4' } %}
 
        <div id="storyCarousel" class="carousel slide" data-bs-ride="carousel">
         {# <div class="carousel-indicators">
@@ -276,9 +272,7 @@
         </button>
       </div>
 
-      <div class="section-heading mb-4">
-        <h3 class="title">OUR FOUNDERS</h3>
-      </div>
+      {% include 'partial/section-heading.twig' with { title: 'OUR FOUNDERS', customClass: 'mb-4' } %}
 
       <div class="row">
         <div class="col-6 bg-image" style="--bg-image: url({{ post.meta('founders_image') }});">
