@@ -1235,6 +1235,32 @@ div.measure {
   float: left;
 }
 
+/* general styling */
+.carousel-item .card .image-container {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+  border: 2px solid transparent;
+}
+
+.dark-overlay {
+  background-color: #2e2e2e;
+  position: absolute;
+  opacity: 0.4;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.carousel-item .card:hover .image-container {
+  border-bottom: 2px solid black;
+}
+
+.carousel-item .card:hover .dark-overlay {
+  opacity: 0;
+}
+
 /* template specific styling */
 
 
