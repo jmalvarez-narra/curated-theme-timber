@@ -26,7 +26,9 @@
 <script>
   $(document).ready(function() {
     $("#lightSlider-{{ title }}").lightSlider({
-      item: 4
+      item: 4,
+      prevHtml: '<span class="carousel-control-prev-icon" aria-hidden="true"></span>',
+      nextHtml: '<span class="carousel-control-next-icon" aria-hidden="true"></span>',
     });
   });
 </script>
