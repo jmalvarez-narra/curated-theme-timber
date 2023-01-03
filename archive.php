@@ -20,6 +20,9 @@ global $post;
 $page_slug = $post->post_name;
 $context = Timber::context();
 
+$category = get_queried_object();
+$cat_id = $category->term_id;
+
 $context['title'] = 'Archive';
 if ( is_day() ) {
 	$context['title'] = 'Archive: ' . get_the_date( 'D M Y' );
@@ -45,7 +48,7 @@ $args = array(
 	// Get all posts
 	'posts_per_page' => -1,
 	// Gest post by "featured" category
-	'category_name' => $context['title'],
+	'category' => $cat_id,
 	// Order by post date
 	'orderby' => array(
 			'date' => 'DESC',
