@@ -47,9 +47,10 @@
                       <div class="details">
                         <h6>DETAILS</h6>
                         <ul>
-                          <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
-                          <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
-                          <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
+                          <li>{{ post.meta('feature_detail_1') ? post.meta('feature_detail_1') : "#NA" }}</li>
+                          <li>{{ post.meta('feature_detail_2') ? post.meta('feature_detail_2') : "#NA" }}</li>
+                          <li>{{ post.meta('feature_detail_3') ? post.meta('feature_detail_3') : "#NA" }}</li>
+                          <li>{{ post.meta('feature_detail_4') ? post.meta('feature_detail_4') : "#NA" }}</li>
                         </ul>
                         <a href="{{post.link}}" class="text-white">MORE →</a>
                       </div>
@@ -58,7 +59,7 @@
                   <div class="card-body">
                     <a href="{{post.link}}">
                       <h5 class="card-title mb-0">{{post.title}}</h5>
-                      <p class="card-text">{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</p>
+                      <p class="card-text">{{ post.meta('model_variant') ? post.meta('model_variant') : "#NA" }}</p>
                     </a>
                   </div>
                 </div>

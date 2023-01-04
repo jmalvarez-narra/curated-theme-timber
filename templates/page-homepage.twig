@@ -36,25 +36,25 @@
 							<div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
 								<div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
 
-								{% if post.meta('featured_image_2')  %}
-									<div class="featured" style="--bg-image: url({{ post.meta('featured_image_2') }});"></div>
+								{% if post.meta('blog-bg') %}
+									<div class="bg-right" style="--bg-image-right: url('{{ post.meta("blog-bg") }}');"></div>
 								{% else %}
-									<div class="featured" style="--bg-image: url('{{ site.theme.link }}/assets/img/lambo-2-right.jpeg');"></div>
+									<div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');"></div>
 								{% endif %}
 
 								<div class="overlay">
 									<div class="overlay-content">
-										<h2 class="handwritten">2010</h2>
+										<h2 class="grafiti">2010</h2>
 										<h2>{{ post.title }}</h2>
 
-										<p>Year: <span>{{ post.meta('year') ? post.meta('year') : "#NA" }}</span></p>
-										<p>Manufacturer: <span>{{ post.meta('manufacturer') ? post.meta('manufacturer') : "#NA" }}</span></p>
-										<p>Model: <span>{{ post.meta('model') ? post.meta('model') : "#NA" }}</span></p>
-										<p>Model Variant: <span>{{ post.meta('model_variant') ? post.meta('model_variant') : "#NA" }}</span></p>
-										<p>Exterior Color: <span>{{ post.meta('exterior_color') ? post.meta('exterior_color') : "#NA" }}</span></p>
-										<p>Current Mileage: <span>{{ post.meta('current_mileage') ? post.meta('current_mileage') : "#NA" }}</span></p>
-										<p>Chassis: <span>{{ post.meta('chassis') ? post.meta('chassis') : "#NA" }}</span></p>
-										<p>Engine: <span>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</span></p>
+										<p><span>Year:</span> {{ post.meta('year') ? post.meta('year') : "#NA" }}</p>
+										<p><span>Manufacturer:</span> {{ post.meta('manufacturer') ? post.meta('manufacturer') : "#NA" }}</p>
+										<p><span>Model:</span> {{ post.meta('model') ? post.meta('model') : "#NA" }}</p>
+										<p><span>Model Variant:</span>{{ post.meta('model_variant') ? post.meta('model_variant') : "#NA" }}</p>
+										<p><span>Exterior Color:</span>{{ post.meta('exterior_color') ? post.meta('exterior_color') : "#NA" }}</p>
+										<p><span>Current Mileage:</span>{{ post.meta('current_mileage') ? post.meta('current_mileage') : "#NA" }}</p>
+										<p><span>Chassis:</span>{{ post.meta('chassis') ? post.meta('chassis') : "#NA" }}</p>
+										<p><span>Engine:</span>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</p>
 
 										<a href="{{ post.link }}">
 											<button type="button" class="btn btn-primary btn-sm">READ MORE</button>
@@ -92,48 +92,14 @@
 					</a>
 				</div>
 
-				<div class="row mx-auto my-auto justify-content-center">
-					<div id="multiCarousel" class="multi-carousel multi-carousel-latest carousel slide" data-bs-ride="carousel">
-						<div class="carousel-inner" role="listbox">
-							{% set ctr = 0 %}
-							{% for key,post in latest %}
-								<div class="row gx-2 carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
-									<div class="col-md-3">
-										<a href="{{ post.link }}">
-											<div class="card border-0">
-												{% if post.thumbnail.src %}
-													<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
-												{% else %}
-													<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
-												{% endif %}
-
-												<div class="card-body">
-													<h5 class="card-title mb-0">{{ post.title }}</h5>
-												</div>
-											</div>
-										</a>
-									</div>
-								</div>
-							{% endfor %}
-						</div>
-
-						<a class="carousel-control-prev bg-transparent w-autoo" href="#multiCarousel" role="button" data-bs-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						</a>
-
-						<a class="carousel-control-next bg-transparent w-autoo" href="#multiCarousel" role="button" data-bs-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						</a>
-					</div>
-				</div>
+				{% include 'partial/multi-carousel.twig' with { posts: latest, title: 'latest' } %}
 
 				<div class="section-heading">
 					<h3 class="title">FIRST LOOK</h3>
 					<h5 class="subtitle mb-0">CURATED</h5>
 				</div>
 
-				<div class="carousel-section">
-					<img src="{{ site.theme.link }}/assets/img/tape-3.png" class="carousel-tape-horizontal">
+				<div class="carousel-section first-look-carousel first-look-feature-v3">
 					<div id="firstLookCarousel" class="carousel slide" data-bs-ride="carousel">
 						<div class="carousel-indicators">
 							{% for key,post in curated %}
@@ -145,9 +111,15 @@
 							{% set ctr = 0 %}
 							{% for key,post in curated %}
 								<div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
+									<div class="tape-1"></div>
+
 									<div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
 
-									<div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');"></div>
+									{% if post.meta('blog-bg') %}
+										<div class="bg-right" style="--bg-image-right: url('{{ post.meta("blog-bg") }}');"></div>
+									{% else %}
+										<div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');"></div>
+									{% endif %}
 
 									<div class="overlay">
 										<div class="overlay-content">
@@ -164,7 +136,7 @@
 										<div class="overlay-background">
 										</div>
 
-										<img src="{{ site.theme.link }}/assets/img/tape-2.png" class="carousel-tape-vertical">
+										<div class="tape-3"></div>
 									</div>
 								</div>
 							{% endfor %}
@@ -197,41 +169,7 @@
 					</a>
 				</div>
 
-				<div class="row mx-auto my-auto justify-content-center">
-					<div id="multiCarousel2" class="multi-carousel multi-carousel-journal carousel slide" data-bs-ride="carousel">
-						<div class="carousel-inner" role="listbox">
-							{% set ctr = 0 %}
-							{% set placeholder = site.theme.link ~ '/assets/img/placeholder.jpeg' %}
-							{% for key,post in journal %}
-								<div class="row gx-2 carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
-									<div class="col-md-3">
-										<a href="{{ post.link }}">
-											<div class="card border-0">
-												{% if post.thumbnail.src %}
-													<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
-												{% else %}
-													<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
-												{% endif %}
-
-												<div class="card-body">
-													<h5 class="card-title mb-0">{{ post.title }}</h5>
-												</div>
-											</div>
-										</a>
-									</div>
-								</div>
-							{% endfor %}
-						</div>
-
-						<a class="carousel-control-prev bg-transparent w-auto" href="#multiCarousel2" role="button" data-bs-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						</a>
-
-						<a class="carousel-control-next bg-transparent w-auto" href="#multiCarousel2" role="button" data-bs-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						</a>
-					</div>
-				</div>
+				{% include 'partial/multi-carousel.twig' with { posts: journal, title: 'journal' } %}
 
 				<div class="section-heading">
 					<h3 class="title">OUR CHANNEL</h3>

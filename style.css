@@ -74,14 +74,20 @@ a:hover {
 }
 
 h2 {
-  font-family: 'RockSalt';
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: 'SweetSansPro';
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  line-height: 2rem;
 }
 
 p {
   font-family: 'MerriweatherRegular';
   color: #202021;
+}
+
+.bg-grey {
+  background-color: #f5f5f5;
 }
 
 .handwritten {
@@ -111,6 +117,7 @@ p {
   padding: 1rem;
   font-family: 'SweetSansPro';
   font-weight: 700;
+  font-size: 0.7rem;
 }
 
 .btn-primary {
@@ -121,8 +128,8 @@ p {
 
 .btn-inquire {
   position: absolute;
-  bottom: 10rem;
-  left: 10rem;
+  bottom: 5rem;
+  left: 6.5rem;
   padding: 1rem 3rem;
   border: 0;
 }
@@ -163,14 +170,19 @@ p {
 
 .youtube-title {
   position: absolute;
-  bottom: 5rem;
+  bottom: 3.75rem;
   left: 5rem;
   width: fit-content;
+}
+
+.youtube-title img {
+  width: 12.5rem;
 }
 
 .youtube-title h2 {
   font-family: "SweetSansPro";
   font-size: 4rem;
+  line-height: 3.5rem;
   color: white;
 }
 
@@ -376,8 +388,8 @@ a.nav-link:hover::after {
 }
 
 .section-heading {
-  padding-top: 4rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 .section-heading > .title {
@@ -393,37 +405,13 @@ a.nav-link:hover::after {
   line-height: 1;
 }
 
-/* Section headers */
-.featured-container {
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  width: 100%;
-  height: 700px;
-  overflow: hidden;
-}
-
-.featured-container .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #ffffff;
-  opacity: 0.3;
-}
-
-.featured-container .dark-overlay {
-  background-color: #000000;
-}
-
-.featured {
-  width: 100%;
-  min-height: 700px;
-  background-image: var(--bg-image);
-  background-repeat: no-repeat;
-  background-position: 50% 30%;
-  background-size: cover;
+.section-heading > .subtitle {
+  font-family: 'SweetSansPro';
+  font-weight: 400;
+  text-align: center;
+  color: #BFC1BD;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
 }
 
 .section-heading > .title:before,
@@ -446,21 +434,54 @@ a.nav-link:hover::after {
   margin-left: 2%;
 }
 
-.section-heading > .subtitle {
-  font-family: 'SweetSansPro';
-  font-weight: 400;
-  text-align: center;
-  color: #BFC1BD;
-  font-size: 1.2rem;
-  letter-spacing: 0.2rem;
+/* Section headers */
+.featured-container {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+}
+
+.featured-container .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  opacity: 0.3;
+}
+
+.featured-container .dark-overlay {
+  background-color: #000000;
+}
+
+.featured {
+  width: 100%;
+  min-height: 650px;
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: 50% 40%;
+  background-size: cover;
 }
 
 /* Article body */
 .article-content, .first-look-wrapper {
   background-color: white;
   position: relative;
-  margin-top: 700px;
+  margin-top: 600px;
+  z-index: 3;
+  -webkit-box-shadow: 0px -5px 10px -9px #2e2e2e; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+  box-shadow: 0px -5px 10px -9px #2e2e2e; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+}
+
+.inner-wrapper {
   padding-bottom: 5rem;
+  background-color: white;
+  position: relative;
+  margin-top: 600px;
   z-index: 3;
 }
 
@@ -507,20 +528,23 @@ a.nav-link:hover::after {
 }
 
 .carousel .overlay-content h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: 'SweetSansPro';
   letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  line-height: 2rem;
 }
 
 .carousel .overlay-content p {
-  color: grey;
-  font-size: 0.8rem;
+  color: #000000;
+  font-size: 0.83rem;
   font-family: 'MerriweatherRegular';
   margin: 0;
 }
 
 .carousel .overlay-content span {
-  color: #000000;
+  color: grey;
+  text-transform: uppercase;
 }
 
 .carousel .overlay-content .btn {
@@ -766,24 +790,24 @@ img.carousel-tape-horizontal {
 }
 
 .carousel-item .bg-left {
-  width: 60%;
+  width: 50%;
   background-image: var(--bg-image);
   background-position: 0% 30%;
 }
 
 .carousel-item .bg-right {
-  width: 40%;
-  background-image: var(--bg-image);
+  width: 50%;
+  background-image: var(--bg-image-right);
   background-position: 0% 30%;
 }
 
 .carousel .overlay {
   position: absolute;
   top: 0;
-  right: 20%;
+  left: 50%;
   bottom: 0;
   z-index: 2;
-  width: 500px;
+  width:  40%;
   height: 650px;
 }
 
@@ -797,17 +821,6 @@ img.carousel-tape-horizontal {
   font-size: 2rem;
   font-family: 'SweetSansPro';
   letter-spacing: 0.14rem;
-}
-
-.carousel .overlay-content p {
-  color: grey;
-  font-size: 0.8rem;
-  font-family: 'MerriweatherRegular';
-  /* margin: 0; */
-}
-
-.carousel .overlay-content span {
-  color: #000000;
 }
 
 .carousel .overlay-content .btn {
@@ -1221,4 +1234,77 @@ div.measure {
   opacity: 0.5;
   z-index: 3;
   float: left;
+}
+
+/* general styling */
+.carousel-item .card .image-container {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+  border: 2px solid transparent;
+}
+
+.dark-overlay {
+  background-color: #2e2e2e;
+  position: absolute;
+  opacity: 0.4;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.carousel-item .card:hover .image-container {
+  border-bottom: 2px solid black;
+}
+
+.carousel-item .card:hover .dark-overlay {
+  opacity: 0;
+}
+
+/* template specific styling */
+
+
+/* restoration */
+.page-template-template-restoration .shop-floor-image  {
+  width: 100%;
+}
+
+/* about us */
+.page-template-template-about .carousel .overlay-content {
+  position: relative;
+  z-index: 3;
+  padding: 2rem 3rem;
+}
+
+.page-template-template-about .carousel.slide {
+  height: auto;
+}
+
+.bg-image {
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position-y: 50%;
+}
+
+/* Contact page */
+#OTMForm .form-btn:hover {
+  color: #000;
+}
+
+#OTMForm .otm-form-response {
+  color: #000;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+}
+
+#OTMForm input {
+  height: 2rem;
+  padding: 1rem;
+}
+
+#OTMForm textarea {
+  height: 50rem;
+  padding: 1rem;
 }
