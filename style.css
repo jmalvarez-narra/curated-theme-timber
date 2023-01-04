@@ -81,6 +81,13 @@ h2 {
   line-height: 2rem;
 }
 
+label {
+  font-size: 1rem;
+  font-family: 'SweetSansPro';
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+}
+
 p {
   font-family: 'MerriweatherRegular';
   color: #202021;
@@ -633,6 +640,41 @@ img.carousel-tape-horizontal {
 }
 
 /* INVENTORY */
+.filter {
+  margin-top: -2.4rem;
+}
+
+.filter ul {
+  padding-left: 0.5rem;
+}
+
+.filter ul li, .filter label {
+  float: left;
+}
+
+.filter label {
+  margin-top: 0.3rem;
+}
+
+.filter select {
+  height: 2rem;
+  border: 0;
+  padding: 0rem 0.5rem;
+  text-transform: uppercase;
+  font-family: 'SweetSansPro';
+}
+
+.filter input[type="submit"] {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-family: 'SweetSansPro';
+  font-weight: 700;
+  font-size: 0.7rem;
+  border-radius: .4rem;
+  color: #fff;
+  background-color: #000;
+  border: 0;
+  text-transform: uppercase;
+}
 
 .inventory-card .card-media {
   position: relative;
