@@ -1308,3 +1308,12 @@ div.measure {
   height: 50rem;
   padding: 1rem;
 }
+
+/* Instagram Partial */
+.col-insta {
+  width: 14.2%;
+}
+
+.col-insta img {
+  width: 100%;
+}
