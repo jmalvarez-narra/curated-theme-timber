@@ -25,7 +25,7 @@
           <div id="journal__list" class="row">
 
             {% for key,post in posts %}
-              <div class="col-md-4 col-6">
+              <div class="col-md-4 col-6 journal-item">
                 <div class="card inventory-card border-0">
                   <div class="card-media">
                    {% if post.thumbnail.src %}
@@ -56,9 +56,9 @@
               </div>
             {% endfor %}
 
-            <div class="row justify-content-end">
-              <a class="more-cta" href="#">MORE</a>
+            <div class="load-more-journal-btn-container justify-content-end">
             </div>
+
           </div>
         </div>
 

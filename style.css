@@ -646,6 +646,12 @@ img.carousel-tape-horizontal {
 
 .filter ul {
   padding-left: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.filter ul li {
+  list-style: none;
 }
 
 .filter ul li, .filter label {
