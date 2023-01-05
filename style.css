@@ -81,6 +81,13 @@ h2 {
   line-height: 2rem;
 }
 
+label {
+  font-size: 1rem;
+  font-family: 'SweetSansPro';
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+}
+
 p {
   font-family: 'MerriweatherRegular';
   color: #202021;
@@ -117,6 +124,7 @@ p {
   padding: 1rem;
   font-family: 'SweetSansPro';
   font-weight: 700;
+  font-size: 0.7rem;
 }
 
 .btn-primary {
@@ -632,6 +640,47 @@ img.carousel-tape-horizontal {
 }
 
 /* INVENTORY */
+.filter {
+  margin-top: -2.4rem;
+}
+
+.filter ul {
+  padding-left: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.filter ul li {
+  list-style: none;
+}
+
+.filter ul li, .filter label {
+  float: left;
+}
+
+.filter label {
+  margin-top: 0.3rem;
+}
+
+.filter select {
+  height: 2rem;
+  border: 0;
+  padding: 0rem 0.5rem;
+  text-transform: uppercase;
+  font-family: 'SweetSansPro';
+}
+
+.filter input[type="submit"] {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-family: 'SweetSansPro';
+  font-weight: 700;
+  font-size: 0.7rem;
+  border-radius: .4rem;
+  color: #fff;
+  background-color: #000;
+  border: 0;
+  text-transform: uppercase;
+}
 
 .inventory-card .card-media {
   position: relative;
@@ -1284,4 +1333,35 @@ div.measure {
   background-image: var(--bg-image);
   background-size: cover;
   background-position-y: 50%;
+}
+
+/* Contact page */
+#OTMForm .form-btn:hover {
+  color: #000;
+}
+
+#OTMForm .otm-form-response {
+  color: #000;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+}
+
+#OTMForm input {
+  height: 2rem;
+  padding: 1rem;
+}
+
+#OTMForm textarea {
+  height: 20rem;
+  padding: 1rem;
+}
+
+/* Instagram Partial */
+.col-insta {
+  width: 14.2%;
+}
+
+.col-insta img {
+  width: 100%;
 }

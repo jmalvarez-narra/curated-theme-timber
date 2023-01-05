@@ -2,30 +2,21 @@
 
 {% block content %}
 	<div class="content-wrapper">
-
-		<div class="featured-container">
-		  <div class="overlay dark-overlay"></div>
-
-      {% if post.thumbnail.src %}
-			  <div class="featured" style="--bg-image: url({{ post.thumbnail.src }});"></div>
-      {% else %}
-        <div class="featured" style="--bg-image: url({{site.theme.link ~ '/assets/img/placeholder.jpeg'}});"></div>
-      {% endif %}
-		</div>
+    {% include 'partial/featured-header.twig' %}
 
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
 				<div class="section-heading">
-					<h3 class="title">LATEST ARRIVALS</h3>
+					<h3 class="title">THE JOURNAL</h3>
 
-					<h5 class="subtitle mb-0">INVENTORY</h5>
+					<h5 class="subtitle mb-0">GET UP TO SPEED</h5>
 				</div>
 
         <div class="container-fluid mb-5">
-          <div class="row">
+          <div id="journal__list" class="row">
 
             {% for key,post in posts %}
-              <div class="col-md-4 col-6">
+              <div class="col-md-4 col-6 journal-item">
                 <div class="card inventory-card border-0">
                   <div class="card-media">
                    {% if post.thumbnail.src %}
@@ -34,7 +25,7 @@
                       <img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
                     {% endif %}
 
-                    <div class="overlay">
+                    {# <div class="overlay">
                       <div class="details">
                         <h6>DETAILS</h6>
                         <ul>
@@ -44,7 +35,7 @@
                         </ul>
                         <a href="{{post.link}}" class="text-white">MORE →</a>
                       </div>
-                    </div>
+                    </div> #}
                   </div>
                   <div class="card-body">
                     <a href="{{post.link}}">
@@ -56,9 +47,9 @@
               </div>
             {% endfor %}
 
-            <div class="row justify-content-end">
-              <a class="more-cta" href="#">MORE</a>
+            <div class="load-more-journal-btn-container justify-content-end">
             </div>
+
           </div>
         </div>
 

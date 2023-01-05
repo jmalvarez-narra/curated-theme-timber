@@ -2,19 +2,7 @@
 
 {% block content %}
 	<div class="content-wrapper">
-		<div class="featured-container">
-
-		<div class="overlay light-overlay"></div>
-		{% if post.thumbnail.src %}
-			{# <div class="measure"></div> #}
-
-			<div class="featured" style="--bg-image: url({{ post.thumbnail.src }});"></div>
-		{% else %}
-			<video autoplay muted loop id="myVideo">
-				<source src="{{ site.theme.link }}/assets/img/curated-video.mp4" type="video/mp4">
-			</video>
-		{% endif %}
-		</div>
+		{% include 'partial/featured-header.twig' %}
 
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
@@ -44,7 +32,7 @@
 
 								<div class="overlay">
 									<div class="overlay-content">
-										<h2 class="handwritten">2010</h2>
+										<h2 class="grafiti">2010</h2>
 										<h2>{{ post.title }}</h2>
 
 										<p><span>Year:</span> {{ post.meta('year') ? post.meta('year') : "#NA" }}</p>
@@ -99,8 +87,7 @@
 					<h5 class="subtitle mb-0">CURATED</h5>
 				</div>
 
-				<div class="carousel-section">
-					<img src="{{ site.theme.link }}/assets/img/tape-3.png" class="carousel-tape-horizontal">
+				<div class="carousel-section first-look-carousel first-look-feature-v3">
 					<div id="firstLookCarousel" class="carousel slide" data-bs-ride="carousel">
 						<div class="carousel-indicators">
 							{% for key,post in curated %}
@@ -112,6 +99,8 @@
 							{% set ctr = 0 %}
 							{% for key,post in curated %}
 								<div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
+									<div class="tape-1"></div>
+
 									<div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
 
 									{% if post.meta('blog-bg') %}
@@ -135,7 +124,7 @@
 										<div class="overlay-background">
 										</div>
 
-										<img src="{{ site.theme.link }}/assets/img/tape-2.png" class="carousel-tape-vertical">
+										<div class="tape-3"></div>
 									</div>
 								</div>
 							{% endfor %}
@@ -188,11 +177,11 @@
 					</div>
 				</div>
 
+				{% include 'partial/instagram-section.twig' %}
+
 				<div class="article-body">
 					{{post.content}}
 				</div>
-
-				{{ wp.do_shortcode('[instagram feed="123"]') }}
 			</section>
 		</article>
 	</div><!-- /content-wrapper -->

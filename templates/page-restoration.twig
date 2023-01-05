@@ -7,17 +7,7 @@
 {% endif %}
 
 {% block content %}
-  <div class="featured-container">
-    {% if post.thumbnail.src %}
-      <div class="featured" style="--bg-image: url({{ post.thumbnail.src }});"></div>
-    {% else %}
-      <div class="featured" style="--bg-image: url({{ site.theme.link }}/assets/img/placeholder.jpeg);"></div>
-    {% endif %}
-
-    <a href="{{ post.link }}">
-      <button type="button" class="btn btn-inquire btn-light btn-sm">INQUIRE</button>
-    </a>
-  </div>
+  {% include 'partial/featured-header.twig' %}
 
 	<div class="inner-wrapper">
 
@@ -45,10 +35,6 @@
       {# <div class="featured" style="--bg-image: url('{{ site.theme.link }}/assets/img/Restoration_Main_Image.png');"></div> #}
     {% endif %}
 
-    <div class="section-heading">
-      <h3 class="title">@WEARECURATED</h3>
-
-			<h5 class="subtitle mb-0">INSTAGRAM</h5>
-    </div>
+    {% include 'partial/instagram-section.twig' %}
 	</div><!-- /content-wrapper -->
 {% endblock %}

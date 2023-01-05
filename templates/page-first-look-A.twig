@@ -7,17 +7,7 @@
 {% endif %}
 
 {% block content %}
-  <div class="featured-container">
-    {% if post.thumbnail.src %}
-      <div class="featured" style="--bg-image: url({{ post.thumbnail.src }});"></div>
-    {% else %}
-      <div class="featured" style="--bg-image: url({{ site.theme.link }}/assets/img/placeholder.jpeg);"></div>
-    {% endif %}
-
-    <a href="{{ post.link }}">
-      <button type="button" class="btn btn-inquire btn-light btn-sm">INQUIRE</button>
-    </a>
-  </div>
+  {% include 'partial/featured-header.twig' %}
 
 	<div class="content-wrapper first-look-wrapper">
 		<div class="section-heading">
@@ -25,11 +15,11 @@
     </div>
 
     <div class="carousel-section first-look-carousel first-look-feature-v3 mb-5">
-      <div class="tape-1"></div>
-
       <div id="mainCarousel" class="single-carousel carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
+            <div class="tape-1"></div>
+
             <div class="bg-left" style="--bg-image: url(https://wearecurated.quickcheck.us/wp-content/uploads/2022/12/lambo-2-right-1536x1024-1.jpeg);"></div>
             <div class="bg-right" style="--bg-image: url(https://wearecurated.quickcheck.us/wp-content/themes/starter-theme-1.x/assets/img/lambo-2-left.jpeg);"></div>
 
