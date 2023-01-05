@@ -2,16 +2,7 @@
 
 {% block content %}
 	<div class="content-wrapper">
-
-		<div class="featured-container">
-		  <div class="overlay dark-overlay"></div>
-
-      {% if post.thumbnail.src %}
-			  <div class="featured" style="--bg-image: url({{ post.thumbnail.src }});"></div>
-      {% else %}
-        <div class="featured" style="--bg-image: url({{site.theme.link ~ '/assets/img/placeholder.jpeg'}});"></div>
-      {% endif %}
-		</div>
+    {% include 'partial/featured-header.twig' %}
 
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">

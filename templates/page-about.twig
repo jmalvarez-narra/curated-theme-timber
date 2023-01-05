@@ -7,20 +7,7 @@
 {% endif %}
 
 {% block content %}
-  <div class="featured-container">
-    {% if post.thumbnail.src %}
-      <div class="featured" style="--bg-image: url({{ post.thumbnail.src }});"></div>
-    {% else %}
-      <div class="featured" style="--bg-image: url({{ site.theme.link }}/assets/img/placeholder.jpeg);"></div>
-    {% endif %}
-
-    <!-- Button trigger modal -->
-    {# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Launch demo modal
-    </button> #}
-
-    <button type="button" class="btn btn-inquire btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">INQUIRE</button>
-  </div>
+  {% include 'partial/featured-header.twig' %}
 
 	<div class="inner-wrapper">
 
