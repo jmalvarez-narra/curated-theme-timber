@@ -1371,3 +1371,8 @@ div.measure {
 .col-insta img {
   width: 100%;
 }
+
+/* Inquiry Modal */
+#inquiryModal {
+  top: 20%;
+}
