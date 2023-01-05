@@ -2,7 +2,7 @@
 
 {% block content %}
 	<div class="content-wrapper">
-		{% include 'partial/featured-header.twig' %}
+		{% include 'partial/featured-header.twig' with { showInquiry: false } %}
 
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
