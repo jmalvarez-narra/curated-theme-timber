@@ -27,6 +27,9 @@
   $(document).ready(function() {
     $("#lightSlider-{{ title }}").lightSlider({
       item: 4,
+      auto: true,
+      pause: 5000,
+      loop: true,
       prevHtml: '<span class="carousel-control-prev-icon" aria-hidden="true"></span>',
       nextHtml: '<span class="carousel-control-next-icon" aria-hidden="true"></span>',
     });
