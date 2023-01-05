@@ -356,45 +356,6 @@ footer .nav-link {
   display: block;
 }
 
-
-.page-template-template-home-page .current_page_item a.nav-link,
-.page-template-template-home-page a.nav-link:hover {
-  color: #696969;
-}
-
-.current_page_item a.nav-link,
-a.nav-link:hover {
-  color: #f5f5f5;
-}
-
-.page-template-template-home-page .current_page_item a.nav-link::after,
-.page-template-template-home-page a.nav-link:hover::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  height: 3px;
-  background-color: #696969;
-  width: 2rem;
-}
-
-.current_page_item a.nav-link::after,
-a.nav-link:hover::after {
-  background-color: #ffffff;
-}
-
-.header-light .current_page_item a.nav-link,
-.header-light a.nav-link:hover {
-  color: white;
-}
-
-.header-light .current_page_item a.nav-link::after,
-.header-light a.nav-link:hover::after {
-  background-color: white;
-}
-
 .offcanvas .current_page_item a.nav-link::after,
 .offcanvas a.nav-link:hover::after {
   margin: initial;
@@ -1375,4 +1336,37 @@ div.measure {
 /* Inquiry Modal */
 #inquiryModal {
   top: 20%;
+}
+
+/* Main Navigation Hover */
+.nav-link {
+  transition: none;
+}
+
+.header .current_page_item a.nav-link,
+.header a.nav-link:hover {
+  color: #ffffff;
+}
+
+header.header-light .current_page_item a.nav-link,
+header.header-light a.nav-link:hover {
+  color: #f5f5f5;
+}
+
+.header .current_page_item a.nav-link::after,
+.header a.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 3px;
+  background-color: #ffffff;
+  width: 2rem;
+}
+
+header.header-light .current_page_item a.nav-link::after,
+header.header-light a.nav-link:hover::after {
+  background-color: #f5f5f5;
 }
