@@ -859,6 +859,11 @@ img.carousel-tape-horizontal {
   text-transform: uppercase;
 }
 
+.card-text {
+  font-family: 'SweetSansPro';
+  letter-spacing: 0.1rem;
+}
+
 @media (max-width: 767px) {
   .card-img-fit {
     height: auto;
@@ -1173,6 +1178,8 @@ img.carousel-tape-horizontal {
 }
 
 .car-details h4 {
+  font-family: 'SweetSansPro';
+  font-size: 1.6rem;
   position: relative;
   line-height: 2;
   margin-bottom: 1.5rem;
@@ -1452,4 +1459,32 @@ header.header-light a.nav-link:hover::after {
 
 .lSAction > a {
   top: 40% !important;
+}
+
+/* Hover styling for car grid details */
+
+.details h6 {
+  font-family: "SweetSansPro";
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+.details ul {
+  padding-left: 1rem;
+}
+
+.details ul li {
+  font-family: "MerriweatherRegular";
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.details .more {
+  font-family: "SweetSansPro";
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+
+.details .more .span {
+  font-size: 1rem;
 }
