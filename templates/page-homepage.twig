@@ -11,60 +11,7 @@
 					<h5 class="subtitle mb-0">HIGHLIGHTS</h5>
 				</div>
 
-				<div id="newAndNowCarousel" class="carousel slide" data-bs-ride="carousel">
-					<div class="carousel-indicators">
-						{% for key,post in highlights %}
-								<button type="button" data-bs-target="#newAndNowCarousel" data-bs-slide-to="{{key}}" class="{% if key == 0  %} {{ 'active' }} {% endif %}" aria-current="{% if key == 0  %} {{ 'current' }} {% endif %}" aria-label="Slide {{key}}"></button>
-						{% endfor %}
-					</div>
-
-					<div class="carousel-inner">
-						{% set ctr = 0 %}
-						{% for key,post in highlights %}
-							<div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
-								<div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
-
-								{% if post.meta('blog-bg') %}
-									<div class="bg-right" style="--bg-image-right: url('{{ post.meta("blog-bg") }}');"></div>
-								{% else %}
-									<div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');"></div>
-								{% endif %}
-
-								<div class="overlay">
-									<div class="overlay-content">
-										<h2 class="grafiti">2010</h2>
-										<h2>{{ post.title }}</h2>
-
-										<p><span>Year:</span> {{ post.meta('year') ? post.meta('year') : "#NA" }}</p>
-										<p><span>Manufacturer:</span> {{ post.meta('manufacturer') ? post.meta('manufacturer') : "#NA" }}</p>
-										<p><span>Model:</span> {{ post.meta('model') ? post.meta('model') : "#NA" }}</p>
-										<p><span>Model Variant:</span>{{ post.meta('model_variant') ? post.meta('model_variant') : "#NA" }}</p>
-										<p><span>Exterior Color:</span>{{ post.meta('exterior_color') ? post.meta('exterior_color') : "#NA" }}</p>
-										<p><span>Current Mileage:</span>{{ post.meta('current_mileage') ? post.meta('current_mileage') : "#NA" }}</p>
-										<p><span>Chassis:</span>{{ post.meta('chassis') ? post.meta('chassis') : "#NA" }}</p>
-										<p><span>Engine:</span>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</p>
-
-										<a href="{{ post.link }}">
-											<button type="button" class="btn btn-primary btn-sm">READ MORE</button>
-										</a>
-									</div>
-
-									<div class="overlay-background">
-									</div>
-								</div>
-							</div>
-						{% endfor %}
-					</div>
-
-					<button class="carousel-control-prev" type="button" data-bs-target="#newAndNowCarousel" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#newAndNowCarousel" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
-					</button>
-				</div>
+				{% include 'partial/cutout-slider.twig' with { posts: highlights, title: 'highlights' } %}
 
 				<div class="section-heading">
 					<h3 class="title">LATEST ARRIVALS</h3>
@@ -87,60 +34,7 @@
 					<h5 class="subtitle mb-0">CURATED</h5>
 				</div>
 
-				<div class="carousel-section first-look-carousel first-look-feature-v3">
-					<div id="firstLookCarousel" class="carousel slide" data-bs-ride="carousel">
-						<div class="carousel-indicators">
-							{% for key,post in curated %}
-								<button type="button" data-bs-target="#firstLookCarousel" data-bs-slide-to="{{key}}" class="active" aria-current="true" aria-label="Slide {{ key }}"></button>
-							{% endfor %}
-						</div>
-
-						<div class="carousel-inner">
-							{% set ctr = 0 %}
-							{% for key,post in curated %}
-								<div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
-									<div class="tape-1"></div>
-
-									<div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
-
-									{% if post.meta('blog-bg') %}
-										<div class="bg-right" style="--bg-image-right: url('{{ post.meta("blog-bg") }}');"></div>
-									{% else %}
-										<div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');"></div>
-									{% endif %}
-
-									<div class="overlay">
-										<div class="overlay-content">
-											<h2 class="grafiti">IN THE WORKS</h2>
-											<h2>& COMING SOON</h2>
-
-											<p>{{ post.preview.length(100).read_more(false) }}</p>
-
-											<a href="{{ post.link }}">
-												<button type="button" class="btn btn-primary btn-sm">READ MORE</button>
-											</a>
-										</div>
-
-										<div class="overlay-background">
-										</div>
-
-										<div class="tape-3"></div>
-									</div>
-								</div>
-							{% endfor %}
-						</div>
-						<button class="carousel-control-prev" type="button" data-bs-target="#firstLookCarousel" data-bs-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-
-							<span class="visually-hidden">Previous</span>
-						</button>
-						<button class="carousel-control-next" type="button" data-bs-target="#firstLookCarousel" data-bs-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-
-							<span class="visually-hidden">Next</span>
-						</button>
-					</div>
-				</div>
+				{% include 'partial/cutout-slider.twig' with { posts: curated, title: 'first-look' } %}
 
 				<div class="section-heading">
 					<h3 class="title">THE JOURNAL</h3>
