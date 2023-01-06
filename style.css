@@ -1343,6 +1343,10 @@ div.measure {
   transition: none;
 }
 
+.navbar-toggler:hover {
+  opacity: 0.5;
+}
+
 .header .current_page_item a.nav-link,
 .header a.nav-link:hover {
   color: #ffffff;

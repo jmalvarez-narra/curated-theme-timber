@@ -25,6 +25,7 @@ $args = array(
 			'date' => 'DESC',
 ));
 
+$context['gallery'] = get_field('main_gallery');
 $context['latest'] = Timber::get_posts( $args );
 
 if ( post_password_required( $timber_post->ID ) ) {

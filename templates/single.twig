@@ -61,83 +61,29 @@
 						<div class="col-md-7 order-1 order-md-2">
 							<div class="car-featured-image">
 								{% if post.meta('featured_gallery_image') %}
-									<img class="img-fluid" alt="{{post.title}} ~ ' featured gallery image'" src="{{ post.meta('featured_gallery_image') }}" />
+									<img class="img-fluid" alt="{{post.title}}-featured-gallery-image'" src="{{ post.meta('featured_gallery_image') }}" />
 								{% else %}
-									<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid" alt="{{post.title}} ~ '-placeholder">
+									<img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid" alt="{{post.title}}-placeholder">
 								{% endif %}
 							</div>
 
 							<ul class="car-gallery">
-								<li>
-									{% if post.meta('gallery_image_1') %}
-										<img src="{{ post.meta('gallery_image_1')}}" alt="{{post.title}} ~ '-image-1'" />
-									{% else %}
-										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
-									{% endif %}
-									<div class="overlay"></div>
-								</li>
-								<li>
-									{% if post.meta('gallery_image_2') %}
-										<img src="{{ post.meta('gallery_image_2')}}" alt="{{post.title}} ~ '-image-2'" />
-									{% else %}
-										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
-									{% endif %}
-									<div class="overlay"></div>
-								</li>
-								<li>
-									{% if post.meta('gallery_image_3') %}
-										<img src="{{ post.meta('gallery_image_3')}}" alt="{{post.title}} ~ '-image-3'" />
-									{% else %}
-										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
-									{% endif %}
+								{% set ctr = 0 %}
+								{% for key,car_image in gallery %}
+									{% set ctr = ctr + 1 %}
 
-									<div class="overlay"></div>
-								</li>
-								<li>
-									{% if post.meta('gallery_image_4') %}
-										<img src="{{ post.meta('gallery_image_4')}}" alt="{{post.title}} ~ '-image-4'" />
-									{% else %}
-										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
+									{# limit gallery to a certain number of images #}
+									{% if ctr <= 10 %}
+										<li>
+											{% if car_image %}
+												<img  src="{{ car_image }}" alt="{{post.title}}-gallery-image-{{ctr}}" />
+											{% else %}
+												<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}}-placeholder">
+											{% endif %}
+											<div class="overlay"></div>
+										</li>
 									{% endif %}
-
-									<div class="overlay"></div>
-								</li>
-								<li>
-									{% if post.meta('gallery_image_5') %}
-										<img src="{{ post.meta('gallery_image_5')}}" alt="{{post.title}} ~ '-image-5'" />
-									{% else %}
-										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
-									{% endif %}
-
-									<div class="overlay"></div>
-								</li>
-								<li>
-									{% if post.meta('gallery_image_6') %}
-										<img src="{{ post.meta('gallery_image_6')}}" alt="{{post.title}} ~ '-image-6'" />
-									{% else %}
-										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
-									{% endif %}
-
-									<div class="overlay"></div>
-								</li>
-								<li>
-									{% if post.meta('gallery_image_7') %}
-										<img src="{{ post.meta('gallery_image_7')}}" alt="{{post.title}} ~ '-image-7'" />
-									{% else %}
-										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
-									{% endif %}
-
-									<div class="overlay"></div>
-								</li>
-								<li>
-									{% if post.meta('gallery_image_8') %}
-										<img src="{{ post.meta('gallery_image_8')}}" alt="{{post.title}} ~ '-image-8'" />
-									{% else %}
-										<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}} ~ '-placeholder">
-									{% endif %}
-
-									<div class="overlay"></div>
-								</li>
+								{% endfor %}
 							</ul>
 						</div>
 					</div>

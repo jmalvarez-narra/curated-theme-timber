@@ -2,9 +2,9 @@
 {% extends "base.twig" %}
 {% set headerClass = "header-light" %}
 
-{% if post.thumbnail.src is empty %}
+{# {% if post.thumbnail.src is empty %}
   {% set headerClass = "position-relative" %}
-{% endif %}
+{% endif %} #}
 
 {% block content %}
   {% include 'partial/featured-header.twig' %}
