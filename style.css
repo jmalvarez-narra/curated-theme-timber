@@ -505,7 +505,7 @@ footer .nav-link {
   left: 9%;
   bottom: 30%;
   z-index: 2;
-  height: fit-content;
+  height: 25rem;
   width: 22rem;
 }
 

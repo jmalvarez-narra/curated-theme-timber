@@ -4,7 +4,7 @@
 {% block content %}
 	<div class="content-wrapper">
 		{% if gallery %}
-			{% include 'partial/product-slider.twig' with { posts: gallery, title: 'product', post: post } %}
+			{% include 'partial/product-slider.twig' with { posts: gallery, title: 'product', post: post, showOverlay: true } %}
 		{% else %}
 			{% include 'partial/featured-header.twig' %}
 		{% endif %}
@@ -57,7 +57,7 @@
 								{% endif %}
 
 								<div class="cta">
-									<button class="btn btn-primary btn-sm">INQUIRE</button>
+									<button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inquiryModal">INQUIRE</button>
 									<button class="btn btn-primary btn-sm" onclick="display()">CREATE PDF</button>
 								</div>
 							</div>
