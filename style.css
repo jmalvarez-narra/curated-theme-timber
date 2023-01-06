@@ -425,7 +425,7 @@ footer .nav-link {
   left: 0;
   right: 0;
   background-color: #ffffff;
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 .featured-container .dark-overlay {
@@ -452,7 +452,11 @@ footer .nav-link {
 }
 
 .single-cars .article-content {
-  margin-top: 0;
+  margin-top: 0px;
+}
+
+.single-cars .article-content.push-top {
+  margin-top: 600px;
 }
 
 .inner-wrapper {
@@ -527,7 +531,7 @@ footer .nav-link {
   line-height: 2rem;
 }
 
-.carousel .overlay-content h2::after {
+.single .carousel .overlay-content h2::after {
   content: '';
   border: 3px solid black;
   display: block;
