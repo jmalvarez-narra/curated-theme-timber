@@ -856,6 +856,7 @@ img.carousel-tape-horizontal {
 .card-title {
   font-family: 'SweetSansPro';
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 @media (max-width: 767px) {
