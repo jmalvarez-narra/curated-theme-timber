@@ -1419,3 +1419,8 @@ header.header-light .current_page_item a.nav-link::after,
 header.header-light a.nav-link:hover::after {
   background-color: #f5f5f5;
 }
+
+/* custom lightSlider */
+.lightSlider {
+  height: 18rem !important;
+}
