@@ -1300,7 +1300,7 @@ div.measure {
 .card .image-container {
   position: relative;
   height: fit-content;
-  width: fit-content;
+  width: 100%;
   border: 2px solid transparent;
 }
 
@@ -1423,4 +1423,8 @@ header.header-light a.nav-link:hover::after {
 /* custom lightSlider */
 .lightSlider {
   height: 18rem !important;
+}
+
+.lSAction > a {
+  top: 40% !important;
 }
