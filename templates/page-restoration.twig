@@ -28,10 +28,10 @@
     </div>
 
     {% if post.meta('from_the_shop_floor_image')  %}
-      <img src="{{ post.meta('from_the_shop_floor_image') }}">
+      <img src="{{ post.meta('from_the_shop_floor_image') }}" width="100%">
       {# <div class="featured" style="--bg-image: url({{  }});"></div> #}
     {% else %}
-      <img class="shop-floor-image" src="{{ site.theme.link }}/assets/img/Restoration_Main_Image.png">
+      <img class="shop-floor-image" src="{{ site.theme.link }}/assets/img/Restoration_Main_Image.png" width="100%">
       {# <div class="featured" style="--bg-image: url('{{ site.theme.link }}/assets/img/Restoration_Main_Image.png');"></div> #}
     {% endif %}
 

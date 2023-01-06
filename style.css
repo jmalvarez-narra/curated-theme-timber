@@ -289,6 +289,22 @@ header h2 {
   margin: 0 1rem;
 }
 
+.navbar .nav-item:first-child {
+  margin-left: 0px;
+}
+
+.navbar .nav-item:first-child a {
+  padding-left: 0px;
+}
+
+.navbar .nav-item:last-child {
+  margin-right: 0px;
+}
+
+.navbar .nav-item:last-child a {
+  padding-right: 0px;
+}
+
 .nav-item {
   margin: 0 1.5rem;
 }
