@@ -26,9 +26,9 @@
         <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
       </ul>
 
-      <a href="{{ post.link }}">
-        <button type="button" class="btn btn-primary btn-sm">INQUIRE</button>
-      </a>
+      <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inquiryModal">
+        INQUIRE
+      </button>
     </div>
 
     <div class="overlay-background">

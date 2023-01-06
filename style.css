@@ -506,7 +506,7 @@ footer .nav-link {
   bottom: 30%;
   z-index: 2;
   height: fit-content;
-  width: 28rem;
+  width: 22rem;
 }
 
 .carousel .overlay-content {
@@ -520,11 +520,34 @@ footer .nav-link {
 }
 
 .carousel .overlay-content h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: 'SweetSansPro';
   letter-spacing: 0.14rem;
   text-transform: uppercase;
   line-height: 2rem;
+}
+
+.carousel .overlay-content h2::after {
+  content: '';
+  border: 3px solid black;
+  display: block;
+  width: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.carousel.product-carousel .overlay-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0rem;
+}
+
+.carousel.product-carousel ul {
+  padding-left: 1rem;
+}
+
+.carousel.product-carousel ul li {
+  font-family: 'MerriweatherRegular';
 }
 
 .carousel .overlay-content p {
@@ -546,6 +569,10 @@ footer .nav-link {
   margin-top: 2rem;
   font-size: 0.7rem;
   border-radius: .4rem;
+}
+
+.carousel.product-carousel .overlay-content .btn {
+  margin-top: 1rem;
 }
 
 .carousel .overlay-content .btn:hover {
@@ -854,12 +881,6 @@ img.carousel-tape-horizontal {
   position: relative;
   z-index: 3;
   padding: 10rem 3rem;
-}
-
-.carousel .overlay-content h2 {
-  font-size: 2rem;
-  font-family: 'SweetSansPro';
-  letter-spacing: 0.14rem;
 }
 
 .carousel .overlay-content .btn {
