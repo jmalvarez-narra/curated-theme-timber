@@ -11,7 +11,7 @@ $args = array(
     // Get post type car
     'post_type' => 'cars',
     // Get all posts
-    'posts_per_page' => -1,
+    'posts_per_page' => 10,
     // Gest post by "featured" category
     'category_name' => 'featured',
     // Order by post date
@@ -25,7 +25,7 @@ $args = array(
     // Get post type car
     'post_type' => 'cars',
     // Get all posts
-    'posts_per_page' => -1,
+    'posts_per_page' => 10,
     // Gest post by "featured" category
     'category_name' => 'curated',
     // Order by post date
@@ -39,7 +39,7 @@ $args = array(
     // Get post type car
     'post_type' => 'cars',
     // Get all posts
-    'posts_per_page' => -1,
+    'posts_per_page' => 10,
     // Gest post by "featured" category
     'category_name' => 'latest',
     // Order by post date
@@ -51,7 +51,7 @@ $context['latest'] = Timber::get_posts( $args );
 
 $args = array(
     // Get all posts
-    'posts_per_page' => -1,
+    'posts_per_page' => 10,
     // Order by post date
     'orderby' => array(
         'date' => 'DESC',

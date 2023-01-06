@@ -2,9 +2,9 @@
 {% extends "base.twig" %}
 {% set headerClass = "header-light" %}
 
-{% if post.thumbnail.src is empty %}
+{# {% if post.thumbnail.src is empty %}
   {% set headerClass = "position-relative" %}
-{% endif %}
+{% endif %} #}
 
 {% block content %}
   {% include 'partial/featured-header.twig' %}
@@ -62,36 +62,6 @@
       <h3 class="title">MORE FIRST LOOKS</h3>
     </div>
 
-    <div class="row mx-auto my-auto justify-content-center">
-      <div id="multiCarousel2" class="multi-carousel multi-carousel-journal carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-          {% set ctr = 0 %}
-          {% set placeholder = site.theme.link ~ '/assets/img/placeholder.jpeg' %}
-          {% for key,post in curated %}
-            <div class="row gx-2 carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
-              <div class="col-md-3">
-                <a href="{{ post.link }}">
-                  <div class="card border-0">
-                    <img src="{{ post.thumbnail.src|default(placeholder) }}" alt="{{ post.title }}" class="card-img-top img-fluid card-img-fit" alt="...">
-
-                    <div class="card-body">
-                      <h5 class="card-title mb-0">{{ post.title }}</h5>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          {% endfor %}
-        </div>
-
-        <a class="carousel-control-prev bg-transparent w-aut" href="#multiCarousel2" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-
-        <a class="carousel-control-next bg-transparent w-aut" href="#multiCarousel2" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-      </div>
-    </div>
+    {% include 'partial/multi-carousel.twig' with { posts: curated, title: 'curated' } %}
 	</div><!-- /content-wrapper -->
 {% endblock %}
