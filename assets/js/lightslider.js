@@ -14,7 +14,7 @@
         speed: 400, //ms'
         auto: false,
         pauseOnHover: false,
-        loop: false,
+        loop: true,
         slideEndAnimation: true,
         pause: 2000,
         keyPress: false,
