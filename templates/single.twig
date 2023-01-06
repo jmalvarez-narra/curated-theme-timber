@@ -4,7 +4,7 @@
 {% block content %}
 	<div class="content-wrapper">
 		{% if gallery %}
-			{% include 'partial/product-slider.twig' with { posts: gallery, title: 'product' } %}
+			{% include 'partial/product-slider.twig' with { posts: gallery, title: 'product', post: post } %}
 		{% else %}
 			{% include 'partial/featured-header.twig' %}
 		{% endif %}

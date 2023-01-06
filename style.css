@@ -499,10 +499,24 @@ footer .nav-link {
   height: 650px;
 }
 
+.carousel.product-carousel .overlay {
+  position: absolute;
+  top: 30%;
+  left: 9%;
+  bottom: 30%;
+  z-index: 2;
+  height: fit-content;
+  width: 28rem;
+}
+
 .carousel .overlay-content {
   position: relative;
   z-index: 3;
   padding: 10rem 3rem;
+}
+
+.carousel.product-carousel .overlay-content {
+  padding: 2rem;
 }
 
 .carousel .overlay-content h2 {
@@ -556,6 +570,12 @@ footer .nav-link {
   top: 0;
   bottom: 0;
   background-color: #E7E9E9;
+}
+
+.carousel.product-carousel .overlay-background {
+  background-color: #E7E9E9;
+  opacity: 0.6;
+  border-radius: 0.5rem;
 }
 
 .carousel.slide {

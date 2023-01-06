@@ -1,4 +1,4 @@
-<div id="carousel-{{ title }}" class="carousel slide" data-bs-ride="carousel">
+<div id="carousel-{{ title }}" class="carousel product-carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     {% for key,post in posts %}
         <button type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide-to="{{key}}" class="{% if key == 0  %} {{ 'active' }} {% endif %}" aria-current="{% if key == 0  %} {{ 'current' }} {% endif %}" aria-label="Slide {{key}}"></button>
@@ -10,31 +10,29 @@
     {% for key,post in posts %}
       <div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
         <div class="bg-left w-100" style="--bg-image: url({{ post }});"></div>
-
-        {# <div class="overlay">
-          <div class="overlay-content">
-            <h2 class="grafiti">2010</h2>
-            <h2>{{ post.title }}</h2>
-
-            <p><span>Year:</span> {{ post.meta('year') ? post.meta('year') : "#NA" }}</p>
-            <p><span>Manufacturer:</span> {{ post.meta('manufacturer') ? post.meta('manufacturer') : "#NA" }}</p>
-            <p><span>Model:</span> {{ post.meta('model') ? post.meta('model') : "#NA" }}</p>
-            <p><span>Model Variant:</span>{{ post.meta('model_variant') ? post.meta('model_variant') : "#NA" }}</p>
-            <p><span>Exterior Color:</span>{{ post.meta('exterior_color') ? post.meta('exterior_color') : "#NA" }}</p>
-            <p><span>Current Mileage:</span>{{ post.meta('current_mileage') ? post.meta('current_mileage') : "#NA" }}</p>
-            <p><span>Chassis:</span>{{ post.meta('chassis') ? post.meta('chassis') : "#NA" }}</p>
-            <p><span>Engine:</span>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</p>
-
-            <a href="{{ post.link }}">
-              <button type="button" class="btn btn-primary btn-sm">READ MORE</button>
-            </a>
-          </div>
-
-          <div class="overlay-background">
-          </div>
-        </div> #}
       </div>
     {% endfor %}
+  </div>
+
+  <div class="overlay">
+    <div class="overlay-content">
+      <h2>{{ post.title }}</h2>
+
+      <ul>
+        <li>{{ post.meta('year') ? post.meta('year') : "#NA" }}</li>
+        <li>{{ post.meta('manufacturer') ? post.meta('manufacturer') : "#NA" }}</li>
+        <li>{{ post.meta('model') ? post.meta('model') : "#NA" }}</li>
+        <li>{{ post.meta('model') ? post.meta('model') : "#NA" }}</li>
+        <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
+      </ul>
+
+      <a href="{{ post.link }}">
+        <button type="button" class="btn btn-primary btn-sm">INQUIRE</button>
+      </a>
+    </div>
+
+    <div class="overlay-background">
+    </div>
   </div>
 
   <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="prev">
