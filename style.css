@@ -203,6 +203,13 @@ p {
   z-index: 2;
 }
 
+@media (max-width: 767px) {
+  .youtube-title h2 {
+    font-size: 2em;
+    line-height: 1;
+  }
+}
+
 /* Logo */
 .logo.dark {
   display: none;
@@ -227,6 +234,12 @@ p {
 
 .logo img {
   width: 21rem;
+}
+
+@media (max-width: 767px) {
+  .logo img {
+    width: 18rem;
+  }
 }
 
 .home .logo {
@@ -469,6 +482,7 @@ footer .nav-link {
   z-index: 3;
   -webkit-box-shadow: 0px -5px 10px -9px #2e2e2e; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
   box-shadow: 0px -5px 10px -9px #2e2e2e; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+  min-height: 70vh;
 }
 
 .single-cars .article-content {
@@ -531,12 +545,6 @@ footer .nav-link {
   z-index: 2;
   height: 25rem;
   width: 22rem;
-}
-
-.carousel .overlay-content {
-  position: relative;
-  z-index: 3;
-  padding: 10rem 3rem;
 }
 
 .carousel.product-carousel .overlay-content {
@@ -722,6 +730,7 @@ img.carousel-tape-horizontal {
   background-color: #000;
   border: 0;
   text-transform: uppercase;
+  margin: 0 0.5rem;
 }
 
 .inventory-card .card-media {
@@ -911,6 +920,17 @@ img.carousel-tape-horizontal {
   position: relative;
   z-index: 3;
   padding: 10rem 3rem;
+}
+
+@media (max-width: 767px) {
+  .carousel .overlay {
+    width: 70%;
+    margin-left: -20%;
+  }
+
+  .carousel .overlay-content {
+    padding: 2rem 1rem;
+  }
 }
 
 .carousel .overlay-content .btn {
@@ -1379,6 +1399,12 @@ div.measure {
   background-position-y: 50%;
 }
 
+@media (max-width: 767px) {
+  .founders-bg-image {
+    height: 20rem;
+  }
+}
+
 /* Contact page */
 #OTMForm .form-btn:hover {
   color: #000;
@@ -1454,7 +1480,7 @@ header.header-light a.nav-link:hover::after {
 
 /* custom lightSlider */
 .lightSlider {
-  height: 18rem !important;
+  height: 20rem !important;
 }
 
 .lSAction > a {
