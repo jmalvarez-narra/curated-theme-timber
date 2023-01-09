@@ -15,7 +15,7 @@
         <h3 class="title">{{ post.title }}</h3>
       </div>
 
-      <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div id="aboutCarousel" class="carousel slide d-none d-md-block" data-bs-ride="carousel">
         {# <div class="carousel-indicators">
           {% for key,post in highlights %}
               <button type="button" data-bs-target="#aboutCarousel" data-bs-slide-to="{{key}}" class="{% if key == 0  %} {{ 'active' }} {% endif %}" aria-current="{% if key == 0  %} {{ 'current' }} {% endif %}" aria-label="Slide {{key}}"></button>
@@ -171,12 +171,68 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      
+      <div class="about-mobile d-block d-md-none">
+        <div class="row">
+          <div class="col-12 bg-image about-bg-image" style="--bg-image: url({{ post.meta('about_us_image_1') }});"></div>
+
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12 bg-grey p-5">
+                <h2>WE ARE CURATED</h2>
+
+                <p>After 12 years of buying and selling hundreds of vintage Lamborghini’s and Ferrari’s, 
+                I partnered with Jordi Ricart and Alan Lazowski to prove that the automobile is a viable and consistent 
+                alternative investment asset class. Ignoring the noise of speculating dealers, “Broadway” Show auction 
+                houses and using reason and passion to build an investment automobile collection portfolio.</p>
+                
+                <h2 class="mt-4 mb-2">SALES</h2>
+
+                <p>We buy, represent and sell Investment quality "blue chip" cars. Low Mileage, High Quality, 
+                Limited Quantity examples of Post War European Exotics and Supercars. Knowledge is everything. 
+                Knowledge of the "Investment," knowledge of the market, knowledge of make/model specific detail,
+                and understanding the liquidity of the product. Curated knows Classic Cars. We are strict about what we buy 
+                and dedicated to our DNA. We only buy, trade and sell cars we know; Lamborghini Countach, Diablo and Miura models. 
+                Specific Ferrari Challenge models. Specific Supercar models from 1980s/1990s. And a few Jaguar E-Types here and there…
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 bg-image" style="--bg-image: url({{ post.meta('about_us_image_1') }});"></div>
+
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12 bg-grey p-5">
+                <h2>WE ARE CURATED</h2>
+
+                <p>After 12 years of buying and selling hundreds of vintage Lamborghini’s and Ferrari’s, 
+                I partnered with Jordi Ricart and Alan Lazowski to prove that the automobile is a viable and consistent 
+                alternative investment asset class. Ignoring the noise of speculating dealers, “Broadway” Show auction 
+                houses and using reason and passion to build an investment automobile collection portfolio.</p>
+                
+                <h2 class="mt-4 mb-2">SALES</h2>
+
+                <p>We buy, represent and sell Investment quality "blue chip" cars. Low Mileage, High Quality, 
+                Limited Quantity examples of Post War European Exotics and Supercars. Knowledge is everything. 
+                Knowledge of the "Investment," knowledge of the market, knowledge of make/model specific detail,
+                and understanding the liquidity of the product. Curated knows Classic Cars. We are strict about what we buy 
+                and dedicated to our DNA. We only buy, trade and sell cars we know; Lamborghini Countach, Diablo and Miura models. 
+                Specific Ferrari Challenge models. Specific Supercar models from 1980s/1990s. And a few Jaguar E-Types here and there…
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="section-heading mt-3 mb-4">
         <h3 class="title">OUR STORY</h3>
       </div>
 
-       <div id="storyCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div id="storyCarousel" class="carousel slide d-none d-md-block" data-bs-ride="carousel">
         {# <div class="carousel-indicators">
           {% for key,post in highlights %}
               <button type="button" data-bs-target="#storyCarousel" data-bs-slide-to="{{key}}" class="{% if key == 0  %} {{ 'active' }} {% endif %}" aria-current="{% if key == 0  %} {{ 'current' }} {% endif %}" aria-label="Slide {{key}}"></button>
@@ -265,14 +321,39 @@
         </button>
       </div>
 
+      <div class="story-mobile d-block d-md-none">
+        <div class="row">
+          <div class="col-12 bg-image about-bg-image" style="--bg-image: url({{ post.meta('about_us_image_3') }});"></div>
+          <div class="col-12 bg-grey p-5">
+            <h2>IN THE BEGINNING...</h2>
+
+            <p>
+              Almost 60 years ago my grandfather started repairing odd and rare European cars in Springfield, Mass.
+              During an era where Ferrari and Lamborghini were building small quantities of hand made cars that rarely 
+              made it onto American soil. Arguably, this moment in history was the most significant time for the automobile, 
+              an era that produced the most iconic cars of our time which became the DNA for todays most famous marques.
+               He bought and sold cars like the Ferrari 250 GTO, Jaguar D-Type and Lamborghini Miura. 
+               (Selling his Ferrari 205 GTO for $9,500. to Robert Sowers has always been a sore spot.) 
+               While my grandfather loved engineering and mechanics. My father loved the automobile. 
+               Working under stewardship of my grandfather, he became a brilliant mechanic and at an early age started 
+               collecting cars. At the New York Auto Show in 1972 he bought a one-off Lamborghini Miura SV from Modena Racing 
+               that he still possess today. In the 1980s, my father became the authorized service in Palm Beach, Florida for 
+               Lamborghini facilitated by Joe Nastasi. Nastasi was the sole distributor for Lamborghini in the Americas.
+            </p>
+
+            <a href="{{ post.link }}">
+              <button type="button" class="btn btn-primary btn-sm">READ MORE</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div class="section-heading mb-4">
         <h3 class="title">OUR FOUNDERS</h3>
       </div>
 
       <div class="row">
-        <div class="col-12 col-md-6 bg-image founders-bg-image" style="--bg-image: url({{ post.meta('founders_image') }});">
-        
-        </div>
+        <div class="col-12 col-md-6 bg-image about-bg-image" style="--bg-image: url({{ post.meta('founders_image') }});"></div>
 
         <div class="col-12 col-md-6 p-5 bg-grey">
           <h2 class="mb-3">John & Jordi</h2>
