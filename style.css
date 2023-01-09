@@ -394,6 +394,7 @@ footer .nav-link {
   margin: initial;
 }
 
+/* Section Headers */
 .section-heading {
   padding-top: 3rem;
   padding-bottom: 1rem;
@@ -441,7 +442,7 @@ footer .nav-link {
   margin-left: 2%;
 }
 
-/* Section headers */
+/* Featured Image */
 .featured-container {
   position: fixed;
   top: 0;
