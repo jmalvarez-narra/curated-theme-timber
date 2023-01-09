@@ -30,8 +30,11 @@
 				{% endif %}
 			</section>
 
-			<!-- Modal -->
+			<!-- Inquiry Modal -->
 			{% include 'partial/inquiry-modal.twig' %}
+
+			{# Newsletter Modal #}
+			{{ function('do_shortcode', '[ninja-popup ID=2469]') }}
 
 			{% block footer %}
 				<footer id="footer">

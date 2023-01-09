@@ -54,7 +54,7 @@
 
 @font-face {
   font-family: "SweetSansPro";
-  src: url("assets/fonts/SweetSansPro-Medium.ttf");
+  src: url("assets/fonts/SweetSansPro-Medium.otf");
   font-weight: 600;
 }
 
@@ -244,6 +244,21 @@ p {
   width: 27rem;
 }
 
+#footer .logo {
+  margin-top: 0.7rem;
+}
+
+#footer .logo img {
+  width: 18rem;
+}
+
+#footer .bottom-footer h6 {
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
 @media (max-width: 767px) {
   .logo img {
     width: 18rem;
@@ -368,7 +383,8 @@ footer .logo img {
 }
 
 footer .icons {
-  margin: 1rem 0;
+  margin-bottom: 0.3rem;
+  margin-top: 2.5rem;
 }
 
 footer .nav-link {
@@ -1334,7 +1350,8 @@ img.carousel-tape-horizontal {
 .divider {
   border-bottom: 2px solid #000000;
   width: 100%;
-  margin: 30px 0px;
+  margin-top: 1.6rem;
+  margin-bottom: 1.8rem;
 }
 
 footer {
@@ -1352,12 +1369,16 @@ footer ul {
   list-style: none;
   padding-left: 0;
   font-family: 'SweetSansPro';
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.8rem;
 }
 
 footer ul li{
   padding: 0.25rem 0;
+}
+
+footer ul li a {
+  letter-spacing: 0.3rem;
 }
 
 footer h1 {
@@ -1469,6 +1490,7 @@ div.measure {
 /* Instagram Partial */
 .col-insta {
   width: 14.2%;
+  padding: 0 0.6rem;
 }
 
 .col-insta img {
