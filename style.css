@@ -253,8 +253,8 @@ p {
 }
 
 #footer .bottom-footer h6 {
-  font-size: 0.8rem;
-  margin-top: 0.3rem;
+  font-size: 0.7rem;
+  margin-top: 0.4rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
 }
@@ -384,7 +384,15 @@ footer .logo img {
 
 footer .icons {
   margin-bottom: 0.3rem;
-  margin-top: 2.5rem;
+  margin-top: 2.9rem;
+}
+
+footer .icons .icon {
+  width: 1.6rem;
+}
+
+footer .icons .instagram .icon {
+  width: 1.3rem;
 }
 
 footer .nav-link {
