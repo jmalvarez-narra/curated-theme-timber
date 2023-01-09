@@ -570,6 +570,24 @@ a.nav-link {
 
 /* Slider styles */
 
+.carousel-control-next,
+.carousel-control-prev {
+  position: absolute;
+  width: 5%;
+  opacity: 1;
+}
+
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+  opacity: 0.5;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
 .carousel-item .bg-left, .carousel-item .bg-right{
   min-height: 650px;
   background-repeat: no-repeat;
@@ -1559,7 +1577,21 @@ header.header-light a.nav-link:hover::after {
 }
 
 .lSAction > a {
-  top: 40% !important;
+  top: 35% !important;
+  opacity: 1 !important;
+}
+
+.lSAction > a:hover {
+  opacity: 0.5 !important;
+}
+
+
+.lSAction > .lSPrev {
+  left: 2% !important;
+}
+
+.lSAction > .lSNext {
+  right: 2% !important;
 }
 
 /* Hover styling for car grid details */
