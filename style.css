@@ -1361,9 +1361,10 @@ img.carousel-tape-horizontal {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 0.25rem;
-  background-color: #333;
-  width: 1.8rem;
+  top: 3.4rem;
+  height: 0.34rem;
+  background-color: black;
+  width: 2rem;
 }
 
 .car-details > .content {
