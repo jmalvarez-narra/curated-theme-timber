@@ -447,6 +447,10 @@ a.nav-link {
   padding-bottom: 1.4rem;
 }
 
+.section-heading.pt-xs {
+  padding-top: 2.5rem;
+}
+
 .section-heading.pt-sm {
   padding-top: 4rem;
 }
@@ -1301,6 +1305,27 @@ img.carousel-tape-horizontal {
 }
 
 /* single post */
+
+.single .article-content {
+  padding-bottom: 1.5rem;
+}
+
+.single .main-heading h3 {
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+}
+
+.single .main-heading .subtitle {
+  margin-top: 0.4rem;
+  font-size: 1.4rem;
+  color: #000000;
+}
+
+.single .article-body {
+  padding: 0;
+  padding-top: 1rem;
+}
+
 /* left section */
 .car-info {
   font-family: 'MerriweatherRegular';
