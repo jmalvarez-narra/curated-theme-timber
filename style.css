@@ -210,6 +210,13 @@ p {
   }
 }
 
+@media (max-width: 767px) {
+  .youtube-title h2 {
+    font-size: 2em;
+    line-height: 1;
+  }
+}
+
 /* Logo */
 .logo.dark {
   display: none;
