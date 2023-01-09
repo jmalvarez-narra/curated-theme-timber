@@ -482,11 +482,17 @@ footer .nav-link {
   background-size: cover;
 }
 
+.article-content,
+.first-look-wrapper,
+.inner-wrapper,
+.single-cars .article-content.push-top {
+  margin-top: 650px;
+}
+
 /* Article body */
 .article-content, .first-look-wrapper {
   background-color: white;
   position: relative;
-  margin-top: 600px;
   z-index: 3;
   -webkit-box-shadow: 0px -5px 10px -9px #2e2e2e; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
   box-shadow: 0px -5px 10px -9px #2e2e2e; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
@@ -497,15 +503,10 @@ footer .nav-link {
   margin-top: 0px;
 }
 
-.single-cars .article-content.push-top {
-  margin-top: 600px;
-}
-
 .inner-wrapper {
   padding-bottom: 5rem;
   background-color: white;
   position: relative;
-  margin-top: 600px;
   z-index: 3;
 }
 
