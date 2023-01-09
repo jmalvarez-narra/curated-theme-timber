@@ -32,6 +32,20 @@
       loop: true,
       prevHtml: '<span class="carousel-control-prev-icon" aria-hidden="true"></span>',
       nextHtml: '<span class="carousel-control-next-icon" aria-hidden="true"></span>',
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            item: 3,
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            item: 2,
+          }
+        }
+      ]
     });
   });
 </script>
