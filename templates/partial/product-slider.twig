@@ -15,41 +15,43 @@
   </div>
 
   <div class="overlay-dark"></div>
+  
+  <div class="container slider-overlay-container">
+    {% if showOverlay %}
+      <div class="overlay">
+        <div class="overlay-content">
+          <h2>{{ post.title }}</h2>
 
-  {% if showOverlay %}
-    <div class="overlay">
-      <div class="overlay-content">
-        <h2>{{ post.title }}</h2>
+          <ul>
+            {% if post.meta('transmission') %}
+              <li>{{ post.meta('transmission') }}</li>
+            {% endif %}
+            {% if post.meta('current_mileage') %}
+              <li>{{ post.meta('current_mileage') }}</li>
+            {% endif %}
+            {% if post.meta('examples_produced_for_us') %}
+              <li>{{ post.meta('examples_produced_for_us') }}</li>
+            {% endif %}
+            <li>$Price on request</li>
+          </ul>
 
-        <ul>
-          {% if post.meta('transmission') %}
-            <li>{{ post.meta('transmission') }}</li>
-          {% endif %}
-          {% if post.meta('current_mileage') %}
-            <li>{{ post.meta('current_mileage') }}</li>
-          {% endif %}
-          {% if post.meta('examples_produced_for_us') %}
-            <li>{{ post.meta('examples_produced_for_us') }}</li>
-          {% endif %}
-          <li>$Price on request</li>
-        </ul>
+          <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inquiryModal">
+            INQUIRE
+          </button>
+        </div>
 
-        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inquiryModal">
-          INQUIRE
-        </button>
-      </div>
-
-      <div class="overlay-background">
+        <div class="overlay-background">
+        </div>
       </div>
     {% endif %}
-  </div>
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </div>

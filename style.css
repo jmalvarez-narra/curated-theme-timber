@@ -651,7 +651,7 @@ a.nav-link {
 
 .single .carousel.product-carousel .overlay {
   top: initial;
-  bottom: 16.5%;
+  bottom: 9.5%;
   height: 25.5rem;
 }
 
@@ -1305,6 +1305,12 @@ img.carousel-tape-horizontal {
 }
 
 /* single post */
+
+.single .slider-overlay-container {
+  position: relative;
+  height: 100%;
+  margin-top: -800px;
+}
 
 .single .article-content {
   padding-bottom: 1.5rem;
