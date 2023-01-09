@@ -21,7 +21,7 @@
 
 <nav class="navbar navbar-expand-lg d-none d-lg-block">
   <div class="container-fluid container-lg justify-content-between align-items-start">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav main-navbar-nav">
       {% for item in main_navigation.items %}
           <li class="nav-item {{ item.classes|join(' ') }}">
               <a class="nav-link" href="{{ item.link }}">{{ item.title }}</a>
@@ -40,16 +40,16 @@
 
     <ul class="navbar-nav icons">
       <li class="nav-item">
-        <a class="nav-link" href="https://www.youtube.com/@CuratedTVbyJohnTemerian" target="_blank">
-          <img class="icon icon-dark icon-youtube" src="{{ site.theme.link }}/assets/img/youtube.png" />
-          <img class="icon icon-light icon-youtube" src="{{ site.theme.link }}/assets/img/youtube-white.png" />
+        <a class="nav-link" href="https://www.instagram.com/wearecurated/" target="_blank">
+          <img class="icon icon-dark icon-instagram" src="{{ site.theme.link }}/assets/img/instagram.png" />
+          <img class="icon icon-light icon-instagram" src="{{ site.theme.link }}/assets/img/instagram-white.png" />
         </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="https://www.instagram.com/wearecurated/" target="_blank">
-          <img class="icon icon-dark icon-instagram" src="{{ site.theme.link }}/assets/img/instagram.png" />
-          <img class="icon icon-light icon-instagram" src="{{ site.theme.link }}/assets/img/instagram-white.png" />
+        <a class="nav-link" href="https://www.youtube.com/@CuratedTVbyJohnTemerian" target="_blank">
+          <img class="icon icon-dark icon-youtube" src="{{ site.theme.link }}/assets/img/youtube.png" />
+          <img class="icon icon-light icon-youtube" src="{{ site.theme.link }}/assets/img/youtube-white.png" />
         </a>
       </li>
 
