@@ -259,6 +259,27 @@ p {
   letter-spacing: 0.1rem;
 }
 
+footer .logo img {
+  width: 16rem;
+}
+
+footer .icons {
+  margin-bottom: 0.3rem;
+  margin-top: 2.9rem;
+}
+
+footer .icons .icon {
+  width: 1.6rem;
+}
+
+footer .icons .instagram .icon {
+  width: 1.3rem;
+}
+
+footer .nav-link {
+  padding: 0.3rem;
+}
+
 @media (max-width: 767px) {
   .logo img {
     width: 18rem;
@@ -378,27 +399,6 @@ a.nav-link {
 }
 
 /* Icons */
-footer .logo img {
-  width: 16rem;
-}
-
-footer .icons {
-  margin-bottom: 0.3rem;
-  margin-top: 2.9rem;
-}
-
-footer .icons .icon {
-  width: 1.6rem;
-}
-
-footer .icons .instagram .icon {
-  width: 1.3rem;
-}
-
-footer .nav-link {
-  padding: 0.3rem;
-}
-
 .icons .nav-item {
   margin: 0 0.5rem;
 }
