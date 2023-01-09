@@ -244,6 +244,14 @@ p {
   width: 27rem;
 }
 
+.offcanvas .logo {
+  margin-top: 4.5rem;
+}
+
+.offcanvas .logo img {
+  width: 18rem;
+}
+
 #footer .logo {
   margin-top: 0.7rem;
 }
