@@ -596,12 +596,21 @@ a.nav-link {
   height: 3rem;
 }
 
-.carousel-item .bg-left, .carousel-item .bg-right{
+.carousel-item .bg-left,
+.carousel-item .bg-right,
+.carousel-item .bg-main {
   min-height: 650px;
   background-repeat: no-repeat;
   background-size: cover;
   float: left;
   z-index: 1;
+}
+
+.single .carousel-item .bg-main{
+  min-height: 800px;
+  width: 100%;
+  background-image: var(--bg-image);
+  background-position: 0% 0%;
 }
 
 .carousel-item .bg-left {
@@ -636,6 +645,22 @@ a.nav-link {
   width: 22rem;
 }
 
+.single .carousel.product-carousel .overlay {
+  top: initial;
+  bottom: 16.5%;
+  height: 25.5rem;
+}
+
+.single .carousel.product-carousel .overlay-dark {
+  position: absolute;
+  background-color: #000000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.2;
+}
+
 .carousel.product-carousel .overlay-content {
   padding: 2rem;
 }
@@ -663,12 +688,13 @@ a.nav-link {
   letter-spacing: 0rem;
 }
 
-.carousel.product-carousel ul {
+.single .carousel.product-carousel ul {
   padding-left: 1rem;
 }
 
-.carousel.product-carousel ul li {
+.single .carousel.product-carousel ul li {
   font-family: 'MerriweatherRegular';
+  margin-bottom: 0.4rem;
 }
 
 .carousel .overlay-content p {
@@ -724,6 +750,11 @@ a.nav-link {
   background-color: #E7E9E9;
   opacity: 0.6;
   border-radius: 0.5rem;
+}
+
+.single .carousel.slide {
+  height: 800px;
+  overflow: hidden;
 }
 
 .carousel.slide {

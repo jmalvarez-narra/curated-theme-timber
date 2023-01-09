@@ -9,10 +9,12 @@
     {% set ctr = 0 %}
     {% for key,post in posts %}
       <div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
-        <div class="bg-left w-100" style="--bg-image: url({{ post }});"></div>
+        <div class="bg-main w-100" style="--bg-image: url({{ post }});"></div>
       </div>
     {% endfor %}
   </div>
+
+  <div class="overlay-dark"></div>
 
   {% if showOverlay %}
     <div class="overlay">
