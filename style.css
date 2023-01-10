@@ -409,10 +409,6 @@ a.nav-link {
   width: 0;
 }
 
-.icons .nav-link:hover img {
-  opacity: 0.5;
-}
-
 .icon {
   width: 1.5rem;
 }
@@ -766,6 +762,12 @@ a.nav-link {
   background-color: #E7E9E9;
   opacity: 0.6;
   border-radius: 0.5rem;
+}
+
+#firstLookCarousel .overlay-background {
+  background-color: white;
+  top: -2px;
+  bottom: -2px;
 }
 
 .single .carousel.slide {
@@ -1773,18 +1775,6 @@ header.header-light a.nav-link:hover::after {
   }
 }
 
-@media only screen and (min-width: 2560px) {
-  .featured-container {
-    height: 1300px;
-  }
-
-  .featured {
-    min-height: 1300px;
-    background-size: cover;
-    background-position: 50% 0%;
-  }
-}
-
 @media only screen and (min-height: 1880px) {
   .featured-container {
     height: 1800px;
@@ -1794,5 +1784,17 @@ header.header-light a.nav-link:hover::after {
     background-size: cover;
     background-position: 50% 0%;
     min-height: 1800px;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .featured-container {
+    height: 1300px;
+  }
+
+  .featured {
+    min-height: 1300px;
+    background-size: cover;
+    background-position: 50% 0%;
   }
 }
