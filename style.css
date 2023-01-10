@@ -1773,6 +1773,18 @@ header.header-light a.nav-link:hover::after {
   }
 }
 
+@media only screen and (min-width: 2560px) {
+  .featured-container {
+    height: 1300px;
+  }
+
+  .featured {
+    min-height: 1300px;
+    background-size: cover;
+    background-position: 50% 0%;
+  }
+}
+
 @media only screen and (min-height: 1880px) {
   .featured-container {
     height: 1800px;
