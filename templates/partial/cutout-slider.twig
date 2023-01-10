@@ -1,4 +1,4 @@
-<div id="carousel-{{ title }}" class="carousel slide" data-bs-ride="carousel">
+<div id="carousel-{{ title }}" class="carousel slide" data-bs-interval="false" data-bs-ride="carousel">
   <div class="carousel-indicators">
     {% for key,post in posts %}
         <button type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide-to="{{key}}" class="{% if key == 0  %} {{ 'active' }} {% endif %}" aria-current="{% if key == 0  %} {{ 'current' }} {% endif %}" aria-label="Slide {{key}}"></button>

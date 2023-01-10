@@ -37,7 +37,7 @@
 				</div>
 
 				<div class="carousel-section first-look-carousel first-look-feature-v3">
-					<div id="firstLookCarousel" class="carousel slide" data-bs-ride="carousel">
+					<div id="firstLookCarousel" class="carousel slide" data-bs-interval="false" data-bs-ride="carousel">
 						<div class="carousel-indicators">
 							{% for key,post in curated %}
 								<button type="button" data-bs-target="#firstLookCarousel" data-bs-slide-to="{{key}}" class="active" aria-current="true" aria-label="Slide {{ key }}"></button>
