@@ -1,11 +1,11 @@
 <div class="container-fluid container-lg d-flex justify-content-center">
-  <div class="navbar-brand flex-grow-1">
+  <div class="navbar-brand m-0 mt-2 flex-grow-1">
     <a href="{{ site.link }}">
       {% include 'partial/logo.twig' %}
     </a>
   </div>
 
-  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+  <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
     {% if headerClass == 'header header-light' %}
       <svg fill="white" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
         <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
