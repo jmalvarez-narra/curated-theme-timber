@@ -152,7 +152,10 @@ p {
 .more-link {
   font-family: 'SweetSansPro';
   font-weight: 500;
-  float: right;
+}
+
+.more-link i {
+  font-size: 0.9rem;
 }
 
 .more-link span {
