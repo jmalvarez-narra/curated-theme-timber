@@ -1476,7 +1476,7 @@ img.carousel-tape-horizontal {
 }
 
 .divider {
-  border-bottom: 2px solid #000000;
+  border-bottom: 1px solid #000000;
   width: 100%;
   margin-top: 1.6rem;
   margin-bottom: 1.8rem;
@@ -1506,7 +1506,7 @@ footer ul li{
 }
 
 footer ul li a {
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.15rem;
 }
 
 footer h1 {
