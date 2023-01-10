@@ -7,10 +7,8 @@
 
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
-				<div class="section-heading">
+				<div class="section-heading pt-sm">
 					<h3 class="title">LATEST ARRIVALS</h3>
-
-					<h5 class="subtitle mb-0">INVENTORY</h5>
 				</div>
 
         <div class="container-fluid pb-5">
@@ -21,12 +19,14 @@
             </div>
           </div>
 
-          <div id="car__list" class="row">
+          <div id="car__list" class="row car-list">
 
             {% for key,post in cars %}
               <div class="col-md-4 col-6 car-item">
                 <div class="card inventory-card border-0">
                   <div class="card-media">
+                    <div class="overlay-dark"></div>
+
                     {% if post.thumbnail.src %}
                       <img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
                     {% else %}
@@ -35,13 +35,14 @@
                     <div class="overlay">
                       <div class="details">
                         <h6>DETAILS</h6>
+
                         <ul>
                           <li>{{ post.meta('feature_detail_1') ? post.meta('feature_detail_1') : "#NA" }}</li>
                           <li>{{ post.meta('feature_detail_2') ? post.meta('feature_detail_2') : "#NA" }}</li>
                           <li>{{ post.meta('feature_detail_3') ? post.meta('feature_detail_3') : "#NA" }}</li>
-                          <li>{{ post.meta('feature_detail_4') ? post.meta('feature_detail_4') : "#NA" }}</li>
                         </ul>
-                        <a href="{{post.link}}" class="text-white more">MORE →</a>
+
+                         <a href="{{post.link}}" class="text-white more">MORE →</a>
                       </div>
                     </div>
                   </div>

@@ -222,7 +222,7 @@ p {
   display: none;
 }
 
-.logo.light {
+.logo.light, .offcanvas .logo.dark {
   display: block;
 }
 
@@ -814,6 +814,84 @@ img.carousel-tape-horizontal {
 }
 
 /* INVENTORY */
+.page-template-template-inventory .card-img-fit {
+  height: initial;
+  max-height: initial;
+}
+
+.page-template-template-inventory .details h6 {
+  font-family: "SweetSansPro";
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  font-size: 1.4rem;
+}
+
+.car-list {
+  padding-top: 1rem;
+}
+
+.inventory-card .card-media {
+  position: relative;
+}
+
+.inventory-card .card-media .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: all 0.2s 0.1s ease-in-out;
+  color: white;
+  opacity: 0;
+}
+
+.inventory-card .card-media .overlay-dark {
+  position: absolute;
+  background-color: black;
+  transition: all 0.2s 0.1s ease-in-out;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.inventory-card:hover .card-media .overlay-dark {
+  opacity: 0.4;
+  transition: all 0.2s 0.1s ease-in-out;
+}
+
+.inventory-card:hover {
+  cursor:pointer;
+}
+
+.inventory-card:hover .card-media .overlay {
+  opacity: 1;
+}
+
+.inventory-card .card-media .overlay .sold{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 1.75rem;
+}
+
+.inventory-card .card-media .overlay .details {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+
+.inventory-card .card-media .overlay .details a {
+  color: #fff;
+  text-decoration: none;
+  text-align: right;
+}
+
 .filter {
   margin-top: -2.4rem;
 }
@@ -855,53 +933,6 @@ img.carousel-tape-horizontal {
   border: 0;
   text-transform: uppercase;
   margin: 0 0.5rem;
-}
-
-.inventory-card .card-media {
-  position: relative;
-}
-
-.inventory-card .card-media .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(57, 57, 57, 0.502);
-  top: 0;
-  left: 0;
-  transition: all 0.2s 0.1s ease-in-out;
-  opacity: 0;
-  color: white;
-}
-
-.inventory-card:hover {
-  cursor:pointer;
-}
-
-.inventory-card:hover .card-media .overlay {
-  opacity: 1;
-}
-
-.inventory-card .card-media .overlay .sold{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  font-size: 1.75rem;
-}
-
-.inventory-card .card-media .overlay .details {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 80%;
-  margin: auto;
-}
-
-.inventory-card .card-media .overlay .details a {
-  color: #fff;
-  text-decoration: none;
-  text-align: right;
 }
 
 .more-cta {
@@ -1675,18 +1706,33 @@ header.header-light a.nav-link:hover::after {
 
 .details ul {
   padding-left: 1rem;
+  padding-top: 1rem;
 }
 
 .details ul li {
   font-family: "MerriweatherRegular";
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   margin-bottom: 0.2rem;
 }
 
-.details .more {
+.page-template-template-inventory .inventory-card .more {
   font-family: "SweetSansPro";
-  font-size: 0.8rem;
+  font-size: 1rem;
   letter-spacing: 0.1rem;
+  margin-top: 1rem;
+}
+
+.page-template-template-inventory .inventory-card .car-item {
+  margin-bottom: 
+}
+
+.page-template-template-inventory .inventory-card .card-title {
+  font-size: 1.4rem;
+}
+
+.page-template-template-inventory .inventory-card .card-text {
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
 .details .more .span {
