@@ -149,6 +149,11 @@ p {
   opacity: 0.8;
 }
 
+.more {
+  --bs-gutter-x: 1.5rem !important;
+  margin-right: 0;
+}
+
 .more-link {
   font-family: 'SweetSansPro';
   font-weight: 500;
@@ -521,7 +526,7 @@ a.nav-link {
 
 /* Featured Image */
 .featured-container {
-  position: fixed;
+  position: relative;
   top: 0;
   z-index: 2;
   width: 100%;
@@ -550,9 +555,9 @@ a.nav-link {
   background-repeat: no-repeat;
   background-position: 50% 40%;
   background-size: cover;
+  background-attachment: fixed;
 }
 
-.article-content,
 .first-look-wrapper,
 .inner-wrapper,
 .single-cars .article-content.push-top {
