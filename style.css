@@ -392,6 +392,14 @@ header h2 {
   /* margin-left: 1.96rem !important; */
 }
 
+.home .header .icons .nav-item:hover .icon-dark {
+  display: none;
+}
+
+.home .header .icons .nav-item:hover .icon-light {
+  display: block;
+}
+
 @media (max-width: 1200px) {
   .nav-item {
     margin: 0 0.75rem;
