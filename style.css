@@ -1555,7 +1555,6 @@ div.measure {
   position: relative;
   height: fit-content;
   width: 100%;
-  border: 2px solid transparent;
 }
 
 .dark-overlay {
@@ -1569,14 +1568,8 @@ div.measure {
 }
 
 .lSSlideOuter .card:hover .dark-overlay {
-  border: 0px;
-  border-bottom: 5px solid black;
   background-color: initial;
   opacity: 1;
-}
-
-.card:hover .image-container {
-  border-bottom: 2px solid black;
 }
 
 .card:hover .dark-overlay {
@@ -1799,6 +1792,11 @@ header.header-light a.nav-link:hover::after {
 .lightslider-range-container {
   margin-top: 2rem;
   padding: 0 8rem
+}
+
+#lightSlider-latest,
+#lightSlider-journal {
+  height: fit-content !important;
 }
 
 /* Responsiveness */
