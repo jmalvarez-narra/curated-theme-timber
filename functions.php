@@ -207,7 +207,7 @@ class StarterSite extends Timber\Site {
 		$args = array(
 			// Get post type car
 			'post_type' => 'cars',
-			// Order by post date
+			// Order by
 			'orderby' => $orderby,
 			// Limit posts
 			'posts_per_page' => 9,
