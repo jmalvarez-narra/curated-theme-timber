@@ -873,8 +873,8 @@ img.carousel-tape-horizontal {
 /* carousel card */
 .card-img-fit {
   object-fit: cover;
-  height: 33.5vh;
-  max-height: 33.5vh;
+  height: 35.5vh;
+  max-height: 35.5vh;
 }
 
 .card-title {

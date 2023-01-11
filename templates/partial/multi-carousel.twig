@@ -44,6 +44,7 @@
       loop: false,
       enableTouch: false,
       enableDrag: false,
+      slideMargin: 10,
       freeMove: false,
       responsive: [
         {
@@ -80,7 +81,7 @@
     const carouselItem = currentSlider.querySelector("li");
     const carouselItemWidth = carouselItem.offsetWidth;
     const extraWidth = carouselItemWidth * itemShown;
-    const actualMaxWidth = maxWidth - extraWidth;
+    const actualMaxWidth = maxWidth - extraWidth - (50);
     console.log(actualMaxWidth);
     
     $("#lightSlider-range-{{ title }}").slider({
