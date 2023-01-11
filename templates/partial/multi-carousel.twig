@@ -23,15 +23,20 @@
   {% endfor %}
 </ul>
 
+<div id="lightSlider-range-container-{{ title }}" class="lightslider-range-container">
+  <div id="lightSlider-range-{{ title }}"></div>
+</div>
+
 <script>
   $(document).ready(function() {
-    $("#lightSlider-{{ title }}").lightSlider({
+    const lightSlider = $("#lightSlider-{{ title }}").lightSlider({
       item: 4,
       auto: false,
       pause: 5000,
-      loop: true,
-      prevHtml: '<span class="carousel-control-prev-icon" aria-hidden="true"></span>',
-      nextHtml: '<span class="carousel-control-next-icon" aria-hidden="true"></span>',
+      loop: false,
+      enableTouch: false,
+      enableDrag: false,
+      freeMove: false,
       responsive: [
         {
           breakpoint: 992,
@@ -45,7 +50,37 @@
             item: 2,
           }
         }
-      ]
+      ],
+      onSliderLoad: function (el) {
+        const pagerParent = document.querySelector("#lightSlider-{{ title }}").parentElement.parentElement;
+        const pager = pagerParent.querySelector(".lSPager");
+        const isPagerActive = pager.querySelector("li");
+
+        if (!isPagerActive) {
+          const rangeContainer = document.getElementById("lightSlider-range-container-{{ title }}");
+          rangeContainer.style = "display: none;";
+        }
+
+        pager.style = "display: none;";
+      },
+    });
+
+    $("#lightSlider-range-{{ title }}").slider({
+      step: 1,
+      max: lightSlider.getTotalSlideCount(),
+      slide: function( event, ui ) {
+        const windowWidth = document.body.offsetWidth;
+
+        let item = 4;
+
+        if (windowWidth <= 992) {
+          item = 3;
+        } else if (windowWidth <= 600) {
+          item = 2;
+        }
+
+        lightSlider.goToSlide(+ui.value - item);
+      },
     });
   });
 </script>
