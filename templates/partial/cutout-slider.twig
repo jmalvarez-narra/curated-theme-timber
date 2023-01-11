@@ -8,36 +8,52 @@
   <div class="carousel-inner">
     {% set ctr = 0 %}
     {% for key,post in posts %}
+      {% set ctr = ctr + 1 %}
       <div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
-        <div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
+        <div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }}); width: 50%"></div> 
 
-        {% if post.meta('blog-bg') %}
-          <div class="bg-right" style="--bg-image-right: url('{{ post.meta("blog-bg") }}');"></div>
-        {% else %}
-          <div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');"></div>
-        {% endif %}
+        <div class="right-side" style="width: 50%; overflow: hidden; position: relative;">
+          <div class="content" style="overflow: hidden; width: 78%; float: left; position: relative;">
+            <div class="overlay-background">
+            </div>
 
-        <div class="overlay">
-          <div class="overlay-content">
-            <h2 class="grafiti">2010</h2>
-            <h2>{{ post.title }}</h2>
+            <div class="overlay-content" style="height: 770px;">
+              <h2 class="grafiti">{{ post.meta('year') }}</h2>
 
-            <p><span>Year:</span> {{ post.meta('year') ? post.meta('year') : "#NA" }}</p>
-            <p><span>Manufacturer:</span> {{ post.meta('manufacturer') ? post.meta('manufacturer') : "#NA" }}</p>
-            <p><span>Model:</span> {{ post.meta('model') ? post.meta('model') : "#NA" }}</p>
-            <p><span>Model Variant:</span>{{ post.meta('model_variant') ? post.meta('model_variant') : "#NA" }}</p>
-            <p><span>Exterior Color:</span>{{ post.meta('exterior_color') ? post.meta('exterior_color') : "#NA" }}</p>
-            <p><span>Current Mileage:</span>{{ post.meta('current_mileage') ? post.meta('current_mileage') : "#NA" }}</p>
-            <p><span>Chassis:</span>{{ post.meta('chassis') ? post.meta('chassis') : "#NA" }}</p>
-            <p><span>Engine:</span>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</p>
+              {% if post.meta('simplified_name') %}
+                <h2>{{ post.meta('simplified_name') }}</h2>
+              {% else %}
+                <h2>{{ post.title }}</h2>
+              {% endif %}
 
-            <a href="{{ post.link }}">
-              <button type="button" class="btn btn-primary btn-sm">READ MORE</button>
-            </a>
+              <p><span>Year:</span> {{ post.meta('year') ? post.meta('year') : "#NA" }}</p>
+              <p><span>Manufacturer:</span> {{ post.meta('manufacturer') ? post.meta('manufacturer') : "#NA" }}</p>
+              <p><span>Model:</span> {{ post.meta('model') ? post.meta('model') : "#NA" }}</p>
+              <p><span>Model Variant:</span>{{ post.meta('model_variant') ? post.meta('model_variant') : "#NA" }}</p>
+              <p><span>Exterior Color:</span>{{ post.meta('exterior_color') ? post.meta('exterior_color') : "#NA" }}</p>
+              <p><span>Current Mileage:</span>{{ post.meta('current_mileage') ? post.meta('current_mileage') : "#NA" }}</p>
+              <p><span>Chassis:</span>{{ post.meta('chassis') ? post.meta('chassis') : "#NA" }}</p>
+              <p><span>Engine:</span>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</p>
+
+              <a href="{{ post.link }}">
+                <button type="button" class="btn btn-primary btn-sm">READ MORE</button>
+              </a>
+            </div>
           </div>
 
-          <div class="overlay-background">
-          </div>
+          {% if post.meta('blog-bg') %}
+            <div class="bg-right" style="--bg-image-right: url({{ post.meta('blog-bg') }}); float: left; width: 22%;"></div>
+          {% else %}
+            <div class="bg-right" style="--bg-image-right: url({{ post.thumbnail.src }}); float: left; width: 22%;"></div>
+          {% endif %}
+
+          <h5 class="extra-overlay year">
+            {{ post.meta('year') }}
+          </h5>
+
+          <h5 class="extra-overlay count">
+            0{{ ctr }}
+          </h5>
         </div>
       </div>
     {% endfor %}
