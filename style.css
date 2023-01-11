@@ -982,7 +982,7 @@ img.carousel-tape-horizontal {
 
 .carousel .overlay-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   padding: 0 3.4rem;
   padding-right: 3rem;
   padding-bottom: 1rem;
@@ -1650,7 +1650,7 @@ div.measure {
 /* about us */
 .page-template-template-about .carousel .overlay-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   padding: 2rem 3rem;
 }
 
