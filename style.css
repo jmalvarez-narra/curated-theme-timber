@@ -97,6 +97,11 @@ p {
   color: #202021;
 }
 
+.article-body ul li {
+  font-family: 'MerriweatherRegular';
+  color: #202021;
+}
+
 .bg-grey {
   background-color: #f5f5f5;
 }
