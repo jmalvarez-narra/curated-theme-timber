@@ -437,7 +437,7 @@ a.nav-link {
 
 /* Section Headers */
 .section-heading {
-  padding-top: 4.3rem;
+  padding-top: 3.2rem;
   padding-bottom: 1.4rem;
 }
 
@@ -467,6 +467,7 @@ a.nav-link {
   position: relative;
   text-transform: uppercase;
   font-size: 2.6rem;
+  letter-spacing: 0.32px;
   z-index: 1;
   overflow: hidden;
   text-align: center;
@@ -561,11 +562,11 @@ a.nav-link {
   background-size: cover;
 }
 
-.first-look-wrapper,
+/* .first-look-wrapper,
 .inner-wrapper,
 .single-cars .article-content.push-top {
   margin-top: 770px;
-}
+} */
 
 /* Article body */
 .article-content, .first-look-wrapper {
