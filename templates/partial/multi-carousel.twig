@@ -29,6 +29,14 @@
 
 <script>
   $(document).ready(function() {
+    const windowWidth = document.body.offsetWidth;
+    let itemShown = 4;
+    if (windowWidth <= 992) {
+      itemShown = 3;
+    } else if (windowWidth <= 600) {
+      itemShown = 2;
+    }
+
     const lightSlider = $("#lightSlider-{{ title }}").lightSlider({
       item: 4,
       auto: false,
@@ -54,9 +62,11 @@
       onSliderLoad: function (el) {
         const pagerParent = document.querySelector("#lightSlider-{{ title }}").parentElement.parentElement;
         const pager = pagerParent.querySelector(".lSPager");
-        const isPagerActive = pager.querySelector("li");
+        const numberOfCards = pagerParent.querySelectorAll(".lslide");
 
-        if (!isPagerActive) {
+        console.log('number of cards: ' + numberOfCards.length);
+
+        if (numberOfCards.length <= itemShown) {
           const rangeContainer = document.getElementById("lightSlider-range-container-{{ title }}");
           rangeContainer.style = "display: none;";
         }
@@ -65,21 +75,21 @@
       },
     });
 
+    let currentSlider = $("#lightSlider-{{ title }}")[0];
+    const maxWidth = currentSlider.clientWidth;
+    const carouselItem = currentSlider.querySelector("li");
+    const carouselItemWidth = carouselItem.offsetWidth;
+    const extraWidth = carouselItemWidth * itemShown;
+    const actualMaxWidth = maxWidth - extraWidth;
+    console.log(actualMaxWidth);
+    
     $("#lightSlider-range-{{ title }}").slider({
       step: 1,
-      max: lightSlider.getTotalSlideCount(),
+      max: actualMaxWidth,
       slide: function( event, ui ) {
-        const windowWidth = document.body.offsetWidth;
-
-        let item = 4;
-
-        if (windowWidth <= 992) {
-          item = 3;
-        } else if (windowWidth <= 600) {
-          item = 2;
-        }
-
-        lightSlider.goToSlide(+ui.value - item);
+        console.log('max: ' + actualMaxWidth);
+        console.log("translate3d(-"+ ui.value +"px, 0px, 0px)");
+        currentSlider.style.transform = "translate3d(-"+ ui.value +"px, 0px, 0px)";
       },
     });
   });
