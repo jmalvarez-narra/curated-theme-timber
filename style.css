@@ -1918,3 +1918,12 @@ header.header-light a.nav-link:hover::after {
 body:hover .home-spec {
   display: none;
 }
+
+.load-more-btn {
+	float: right;
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  color: #fff;
+  background-color: #000;
+  border: 0;
+}

@@ -21,46 +21,59 @@
 
           <div id="car__list" class="row car-list">
 
-            {% for key,post in cars %}
-              <div class="col-md-4 col-6 car-item">
-                <div class="card inventory-card border-0">
-                  <div class="card-media">
-                    <div class="overlay-dark"></div>
+            {% include 'partial/car-list.twig' with { cars: cars } %}
 
-                    {% if post.thumbnail.src %}
-                      <img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
-                    {% else %}
-                      <img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
-                    {% endif %}
-                    <div class="overlay">
-                      <div class="details">
-                        <h6>DETAILS</h6>
+          </div>
 
-                        <ul>
-                          <li>{{ post.meta('feature_detail_1') ? post.meta('feature_detail_1') : "#NA" }}</li>
-                          <li>{{ post.meta('feature_detail_2') ? post.meta('feature_detail_2') : "#NA" }}</li>
-                          <li>{{ post.meta('feature_detail_3') ? post.meta('feature_detail_3') : "#NA" }}</li>
-                        </ul>
-
-                         <a href="{{post.link}}" class="text-white more">MORE →</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <a href="{{post.link}}">
-                      <h5 class="card-title mb-0">{{post.title}}</h5>
-                      <p class="card-text">{{ post.meta('model_variant') ? post.meta('model_variant') : "#NA" }}</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            {% endfor %}
-
-            <div class="load-more-btn-container justify-content-end">
-            </div>
+          <div class="justify-content-end mb-4">
+            <button id="load-more-car-btn" class="btn load-more-btn">More</button>
           </div>
         </div>
 			</section>
 		</article>
 	</div><!-- /content-wrapper -->
+
+  <script>
+    $(document).ready(function() {
+      let page = 1;
+
+      $("#load-more-car-btn").click((e) => {
+        e.preventDefault();
+
+        page++;
+
+        $("#load-more-car-btn").attr('disabled', true);
+
+        $.ajax({
+          type: 'POST',
+          url: '/wp-admin/admin-ajax.php',
+          dataType: 'html',
+          data: {
+            action : 'get_cars',
+            page : page,
+          },
+          success: function(data) {
+            const carsCount = $('<div></div>').html(data).find('.car-item').size();
+
+            if (carsCount < 9) {
+              $("#load-more-car-btn").parent().hide();
+            }
+
+            if (carsCount) $('#car__list').append(data);
+
+            $("#load-more-car-btn").attr('disabled', false);
+          },
+          error: function(data) {
+            $("#load-more-car-btn").attr('disabled', false);
+          }
+        });
+      });
+
+      const carsCount = $('#car__list').find('.car-item').size();
+
+      if (carsCount < 9) {
+        $("#load-more-car-btn").parent().show();
+      }
+    });
+  </script>
 {% endblock %}
