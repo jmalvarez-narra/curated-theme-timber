@@ -186,12 +186,29 @@ class StarterSite extends Timber\Site {
 	function get_cars() {
 		$context = Timber::get_context();
 		$context['page'] = empty($_POST['page']) ? 1 : $_POST['page'];
+		$context['sort'] = empty($_POST['sort']) ? 'date-desc' : $_POST['sort'];
+		$orderby = array('date' => 'DESC');
+
+		switch ($context['sort']) {
+			case 'date-desc':
+				$orderby = array('date' => 'DESC');
+				break;
+			case 'date-asc':
+				$orderby = array('date' => 'ASC');
+				break;
+			case 'title-asc':
+				$orderby = array('title' => 'ASC');
+				break;
+			case 'title-desc':
+				$orderby = array('title' => 'DESC');
+				break;
+		}
 
 		$args = array(
 			// Get post type car
 			'post_type' => 'cars',
 			// Order by post date
-			'orderby' => array('date' => 'DESC'),
+			'orderby' => $orderby,
 			// Limit posts
 			'posts_per_page' => 9,
 			// current page

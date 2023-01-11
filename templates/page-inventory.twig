@@ -17,6 +17,19 @@
               <label>FILTER BY:</label>
               {{post.content}}
             </div>
+
+            <div class="col-12 col-md-6 sort">
+              <div class="float-end">
+                <label>SORT BY:</label>
+
+                <select id="sort-car" class="sort">
+                  <option value="date-desc" selected>Newest to Oldest</option>
+                  <option value="date-asc">Oldest to Newest</option>
+                  <option value="title-asc">Title — A to Z</option>
+                  <option value="title-desc">Title — Z to A</option>
+                <select>
+              </div>
+            </div>
           </div>
 
           <div id="car__list" class="row car-list">
@@ -25,7 +38,9 @@
 
           </div>
 
-          <div class="justify-content-end mb-4">
+          {% include 'partial/list-loader.twig' %}
+
+          <div class="justify-content-end mb-4" style="display: none;">
             <button id="load-more-car-btn" class="btn load-more-btn">More</button>
           </div>
         </div>
@@ -43,14 +58,15 @@
         page++;
 
         $("#load-more-car-btn").attr('disabled', true);
+        $(".list-loader").removeClass("d-none");
 
         $.ajax({
           type: 'POST',
           url: '/wp-admin/admin-ajax.php',
           dataType: 'html',
           data: {
-            action : 'get_cars',
-            page : page,
+            action: 'get_cars',
+            page: page,
           },
           success: function(data) {
             const carsCount = $('<div></div>').html(data).find('.car-item').size();
@@ -62,16 +78,58 @@
             if (carsCount) $('#car__list').append(data);
 
             $("#load-more-car-btn").attr('disabled', false);
+            $(".list-loader").addClass("d-none");
           },
           error: function(data) {
             $("#load-more-car-btn").attr('disabled', false);
+            $(".list-loader").addClass("d-none");
+          }
+        });
+      });
+
+      $("#sort-car").change((e) => {
+        e.preventDefault();
+
+        page = 1;
+
+        $('#car__list').html('');
+        $("#load-more-car-btn").parent().hide();
+        $(".list-loader").removeClass("d-none");
+
+        $.ajax({
+          type: 'POST',
+          url: '/wp-admin/admin-ajax.php',
+          dataType: 'html',
+          data: {
+            action: 'get_cars',
+            page: page,
+            sort: e.target.value
+          },
+          success: function(data) {
+            const carsCount = $('<div></div>').html(data).find('.car-item').size();
+
+            if (carsCount < 9) {
+              $("#load-more-car-btn").parent().hide();
+            } else {
+              $("#load-more-car-btn").parent().show();
+            }
+
+            if (carsCount) {
+              $('#car__list').html(data);
+            }
+
+            $(".list-loader").addClass("d-none");
+          },
+          error: function(data) {
+            $("#load-more-car-btn").parent().show();
+            $(".list-loader").addClass("d-none");
           }
         });
       });
 
       const carsCount = $('#car__list').find('.car-item').size();
 
-      if (carsCount < 9) {
+      if (carsCount === 9) {
         $("#load-more-car-btn").parent().show();
       }
     });
