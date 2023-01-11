@@ -973,15 +973,15 @@ img.carousel-tape-horizontal {
   .multi-carousel .carousel-inner .carousel-item-next {
     transform: translateX(25%);
   }
-  
-  .multi-carousel .carousel-inner .carousel-item-start.active, 
+
+  .multi-carousel .carousel-inner .carousel-item-start.active,
   .multi-carousel .carousel-inner .carousel-item-prev {
     transform: translateX(-25%);
   }
 }
 
 .multi-carousel .carousel-inner .carousel-item-end,
-.multi-carousel .carousel-inner .carousel-item-start { 
+.multi-carousel .carousel-inner .carousel-item-start {
   transform: translateX(0);
 }
 
@@ -1006,15 +1006,15 @@ img.carousel-tape-horizontal {
   .multi-carousel .carousel-inner .carousel-item-next {
     transform: translateX(25%);
   }
-  
-  .multi-carousel .carousel-inner .carousel-item-start.active, 
+
+  .multi-carousel .carousel-inner .carousel-item-start.active,
   .multi-carousel .carousel-inner .carousel-item-prev {
     transform: translateX(-25%);
   }
 }
 
 .multi-carousel .carousel-inner .carousel-item-end,
-.multi-carousel .carousel-inner .carousel-item-start { 
+.multi-carousel .carousel-inner .carousel-item-start {
   transform: translateX(0);
 }
 
@@ -1045,7 +1045,7 @@ img.carousel-tape-horizontal {
 @media (max-width: 767px) {
   .card-img-fit {
     height: auto;
-  } 
+  }
 }
 
 /* First look carousel */
@@ -1744,7 +1744,7 @@ header.header-light a.nav-link:hover::after {
 }
 
 .page-template-template-inventory .inventory-card .car-item {
-  margin-bottom: 
+  margin-bottom:
 }
 
 .page-template-template-inventory .inventory-card .card-title {
@@ -1758,6 +1758,47 @@ header.header-light a.nav-link:hover::after {
 
 .details .more .span {
   font-size: 1rem;
+}
+
+.light-slider-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 5px;
+  height: 20px;
+  margin-top: -6px;
+  background: black;
+  cursor: pointer;
+}
+
+.ui-widget.ui-widget-content {
+  height: 0.25rem !important;
+  border: none !important;
+  background: #c5c5c5 !important;
+}
+
+.ui-slider-handle {
+  width: 0.75rem !important;
+  height: 1.75rem !important;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  top: -0.7em !important;
+}
+
+.ui-state-active {
+  border: 1px solid #ccc !important;
+  background: #ededed !important;
+}
+
+.ui-state-focus {
+  border: 1px solid #ccc !important;
+  background: #ededed !important;
+  outline: 0 none !important;
+}
+
+.lightslider-range-container {
+  margin-top: 2rem;
+  padding: 0 8rem
 }
 
 /* Responsiveness */
