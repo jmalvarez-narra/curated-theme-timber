@@ -1806,13 +1806,13 @@ header.header-light a.nav-link:hover::after {
 /* for sumo sized (mac) screens */
 @media only screen and (min-width: 1920px) {
   .featured-container {
-    height: 850px;
+    height: 950px;
   }
 
   .featured {
-    min-height: 850px;
-    background-size: initial;
-    background-position: 50% 400%;
+    min-height: 950px;
+    background-size: cover;
+    background-position: 50% 0%;
   }
 }
 
