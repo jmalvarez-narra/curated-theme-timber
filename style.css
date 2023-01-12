@@ -1762,6 +1762,17 @@ div.measure {
   padding: 0px;
 }
 
+.navbar-float-toggler {
+  position: fixed;
+  top: 2rem;
+  right: 4rem;
+  z-index: 1;
+}
+
+.navbar-float-toggler > svg.icon {
+  fill: #000;
+}
+
 .navbar-toggler:hover {
   opacity: 0.5;
 }
