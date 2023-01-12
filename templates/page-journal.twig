@@ -15,41 +15,12 @@
         <div class="container-fluid mb-5">
           <div id="journal__list" class="row">
 
-            {% for key,post in posts %}
-              <div class="col-md-4 col-6 journal-item">
-                <div class="card inventory-card border-0">
-                  <div class="card-media">
-                   {% if post.thumbnail.src %}
-                      <img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
-                    {% else %}
-                      <img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
-                    {% endif %}
+            {% include 'partial/journal-list.twig' with { posts: posts } %}
 
-                    {# <div class="overlay">
-                      <div class="details">
-                        <h6>DETAILS</h6>
-                        <ul>
-                          <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
-                          <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
-                          <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
-                        </ul>
-                        <a href="{{post.link}}" class="text-white">MORE →</a>
-                      </div>
-                    </div> #}
-                  </div>
-                  <div class="card-body">
-                    <a href="{{post.link}}">
-                      <h5 class="card-title mb-0">{{post.title}}</h5>
-                      <p class="card-text">{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            {% endfor %}
+          </div>
 
-            <div class="load-more-journal-btn-container justify-content-end">
-            </div>
-
+          <div class="justify-content-end mb-4" style="display: none;">
+            <button id="load-more-journal-btn" class="btn load-more-btn">More</button>
           </div>
         </div>
 
@@ -59,4 +30,48 @@
 			</section>
 		</article>
 	</div><!-- /content-wrapper -->
+
+  <script>
+    $(document).ready(function() {
+      let page = 1;
+
+      $("#load-more-journal-btn").click((e) => {
+        e.preventDefault();
+
+        page++;
+
+        $("#load-more-journal-btn").attr('disabled', true);
+
+        $.ajax({
+          type: 'POST',
+          url: '/wp-admin/admin-ajax.php',
+          dataType: 'html',
+          data: {
+            action : 'get_journals',
+            page : page,
+          },
+          success: function(data) {
+            const journalsCount = $('<div></div>').html(data).find('.journal-item').size();
+
+            if (journalsCount < 9) {
+              $("#load-more-journal-btn").parent().hide();
+            }
+
+            if (journalsCount) $('#journal__list').append(data);
+
+            $("#load-more-journal-btn").attr('disabled', false);
+          },
+          error: function(data) {
+            $("#load-more-journal-btn").attr('disabled', false);
+          }
+        });
+      });
+
+      const journalsCount = $('#journal__list').find('.journal-item').size();
+
+      if (journalsCount === 9) {
+        $("#load-more-journal-btn").parent().show();
+      }
+    });
+  </script>
 {% endblock %}

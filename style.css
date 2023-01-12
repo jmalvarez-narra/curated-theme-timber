@@ -1225,8 +1225,9 @@ img.carousel-tape-horizontal {
   text-align: right;
 }
 
-.filter {
+.filter, .sort {
   margin-top: -2.4rem;
+  z-index: 1;
 }
 
 .filter ul {
@@ -1247,12 +1248,13 @@ img.carousel-tape-horizontal {
   margin-top: 0.3rem;
 }
 
-.filter select {
+.filter select, .sort select {
   height: 2rem;
   border: 0;
   padding: 0rem 0.5rem;
   text-transform: uppercase;
   font-family: 'SweetSansPro';
+  outline: none;
 }
 
 .filter input[type="submit"] {
@@ -1959,4 +1961,13 @@ header.header-light a.nav-link:hover::after {
 
 body:hover .home-spec {
   display: none;
+}
+
+.load-more-btn {
+	float: right;
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  color: #fff;
+  background-color: #000;
+  border: 0;
 }

@@ -8,15 +8,15 @@
 $context = Timber::context();
 
 $args = array(
-    // Get post type car
-    'post_type' => 'cars',
-    // Get all posts
-    'posts_per_page' => -1,
-    // Gest post by "featured" category
-    // Order by post date
-    'orderby' => array(
-        'date' => 'DESC',
-));
+  // Get post type car
+  'post_type' => 'cars',
+  // Order by post date
+  'orderby' => array('date' => 'DESC'),
+  // Limit posts
+  'posts_per_page' => 9,
+  // current page
+  'paged' => 1
+);
 
 $context['cars'] = Timber::get_posts( $args );
 
