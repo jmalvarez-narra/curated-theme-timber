@@ -1313,14 +1313,13 @@ img.carousel-tape-horizontal {
 .carousel-item-v1 div.tape-1 {
   position: absolute;
   z-index: 4;
-  background-image: url(assets/img/tape-2.png);
+  background-image: url(assets/img/tape-1-c.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
-  transform: rotate(270deg);
   height: 15rem;
-  width: 14rem;
-  top: -3rem;
+  width: 20rem;
+  top: -7rem;
   left: 5rem;
 }
 
@@ -1329,11 +1328,11 @@ img.carousel-tape-horizontal {
   right: -4rem;
   bottom: -2rem;
   z-index: 4;
-  background-image: url(assets/img/tape-2.png);
+  background-image: url(assets/img/tape-2-c.png);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 5rem;
-  height: 14rem;
+  width: 7rem;
+  height: 19rem;
 }
 
 .carousel-item-v1 #polaroid {
@@ -1360,46 +1359,44 @@ img.carousel-tape-horizontal {
   top: -1.5rem;
   left: -3rem;
   z-index: 4;
-  background-image: url(assets/img/tape-2.png);
+  background-image: url(assets/img/tape-1-b.png);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 5rem;
-  height: 14rem;
+  width: 7rem;
+  height: 17rem;
   transform: rotate(5deg);
 }
 
 .carousel-item-v2 div.tape-2 {
   position: absolute;
-  right: -3rem;
+  right: -5rem;
   bottom: 5rem;
   z-index: 4;
-  background-image: url(assets/img/tape-2.png);
+  background-image: url(assets/img/tape-2-b.png);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 5rem;
-  height: 14rem;
-  transform: rotate(178deg);
+  width: 8rem;
+  height: 16rem;
 }
 
 .carousel-item-v2 div.tape-3 {
   position: absolute;
   z-index: 6;
-  background-image: url(assets/img/tape-1.png);
+  background-image: url(assets/img/tape-3-b.png);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 11rem;
-  height: 5rem;
-  bottom: -2rem;
-  right: -15rem;
-  transform: rotate(180deg);
+  width: 14rem;
+  height: 7rem;
+  bottom: -7rem;
+  right: -21rem;
 }
 
 .carousel-item-v2 #polaroid {
   position: absolute;
-  height: 15rem;
-  width: 15rem;
-  bottom: 0.5rem;
-  right: -13rem;
+  height: 18rem;
+  width: 18rem;
+  bottom: -4.5rem;
+  right: -15rem;
   transform: rotate(354deg);
 }
 
