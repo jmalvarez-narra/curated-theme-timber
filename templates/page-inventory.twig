@@ -13,16 +13,23 @@
 
         <div class="container-fluid pb-5">
           <div class="row">
-            <div class="col-12 col-md-6 filter">
+            <div class="col-12 col-md-6 filter-container">
               <label>FILTER BY:</label>
-              {{post.content}}
+
+              <select id="filter-car" class="filter-container">
+                <option value="" selected>ALL CATEGORIES</option>
+
+                {% for category in categories %}
+                  <option value="{{ category.name }}">{{ category.name }}</option>
+                {% endfor %}
+              <select>
             </div>
 
-            <div class="col-12 col-md-6 sort">
+            <div class="col-12 col-md-6 filter-container">
               <div class="float-end">
                 <label>SORT BY:</label>
 
-                <select id="sort-car" class="sort">
+                <select id="sort-car" class="filter-container">
                   <option value="date-desc" selected>Newest to Oldest</option>
                   <option value="date-asc">Oldest to Newest</option>
                   <option value="title-asc">Title — A to Z</option>
@@ -67,6 +74,8 @@
           data: {
             action: 'get_cars',
             page: page,
+            sort: $("#sort-car").val(),
+            'filter-category': $("#filter-car").val()
           },
           success: function(data) {
             const carsCount = $('<div></div>').html(data).find('.car-item').size();
@@ -87,6 +96,12 @@
         });
       });
 
+      const carsCount = $('#car__list').find('.car-item').size();
+
+      if (carsCount === 9) {
+        $("#load-more-car-btn").parent().show();
+      }
+
       $("#sort-car").change((e) => {
         e.preventDefault();
 
@@ -103,7 +118,8 @@
           data: {
             action: 'get_cars',
             page: page,
-            sort: e.target.value
+            sort: e.target.value,
+            'filter-category': $("#filter-car").val()
           },
           success: function(data) {
             const carsCount = $('<div></div>').html(data).find('.car-item').size();
@@ -127,11 +143,46 @@
         });
       });
 
-      const carsCount = $('#car__list').find('.car-item').size();
+      $("#filter-car").change((e) => {
+        e.preventDefault();
 
-      if (carsCount === 9) {
-        $("#load-more-car-btn").parent().show();
-      }
+        page = 1;
+
+        $('#car__list').html('');
+        $("#load-more-car-btn").parent().hide();
+        $(".list-loader").removeClass("d-none");
+
+        $.ajax({
+          type: 'POST',
+          url: '/wp-admin/admin-ajax.php',
+          dataType: 'html',
+          data: {
+            action: 'get_cars',
+            page: page,
+            sort: $("#sort-car").val(),
+            'filter-category': e.target.value
+          },
+          success: function(data) {
+            const carsCount = $('<div></div>').html(data).find('.car-item').size();
+
+            if (carsCount < 9) {
+              $("#load-more-car-btn").parent().hide();
+            } else {
+              $("#load-more-car-btn").parent().show();
+            }
+
+            if (carsCount) {
+              $('#car__list').html(data);
+            }
+
+            $(".list-loader").addClass("d-none");
+          },
+          error: function(data) {
+            $("#load-more-car-btn").parent().show();
+            $(".list-loader").addClass("d-none");
+          }
+        });
+      });
     });
   </script>
 {% endblock %}

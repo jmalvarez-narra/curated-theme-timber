@@ -187,6 +187,7 @@ class StarterSite extends Timber\Site {
 		$context = Timber::get_context();
 		$context['page'] = empty($_POST['page']) ? 1 : $_POST['page'];
 		$context['sort'] = empty($_POST['sort']) ? 'date-desc' : $_POST['sort'];
+		$context['filter-category'] = empty($_POST['filter-category']) ? '' : $_POST['filter-category'];
 		$orderby = array('date' => 'DESC');
 
 		switch ($context['sort']) {
@@ -207,6 +208,8 @@ class StarterSite extends Timber\Site {
 		$args = array(
 			// Get post type car
 			'post_type' => 'cars',
+			// Get post category,
+			'category_name' => $context['filter-category'],
 			// Order by
 			'orderby' => $orderby,
 			// Limit posts
