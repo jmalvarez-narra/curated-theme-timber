@@ -10,9 +10,7 @@
 
 			<div class="featured" style="--bg-image: url({{ post.thumbnail.src }});"></div>
 		{% else %}
-			<video autoplay muted loop id="myVideo">
-				<source src="{{ site.theme.link }}/assets/img/curated-video.mp4" type="video/mp4">
-			</video>
+			<div class="featured" style="--bg-image: url({{ site.theme.link }}/assets/img/default.png);"></div>
 		{% endif %}
 		</div>
 
