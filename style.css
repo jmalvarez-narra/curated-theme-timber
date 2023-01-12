@@ -1423,7 +1423,7 @@ img.carousel-tape-horizontal {
   background-repeat: no-repeat;
   width: 15rem;
   height: 7rem;
-  bottom: -2.5rem;
+  bottom: -6.5rem;
   left: -32rem;
 }
 
@@ -1441,7 +1441,7 @@ img.carousel-tape-horizontal {
 
 #firstLookCarousel .polaroid {
   position: absolute;
-  bottom: -5.3rem;
+  bottom: -9.3rem;
   left: -25.5rem;
   background: initial;
   z-index: 5;
