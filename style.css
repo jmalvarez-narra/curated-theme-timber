@@ -1720,8 +1720,8 @@ div.measure {
 
 .navbar-float-toggler {
   position: fixed;
-  top: 19px;
-  right: 31px;
+  top: 2rem;
+  right: 4rem;
   z-index: 1;
 }
 
