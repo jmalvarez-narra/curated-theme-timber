@@ -276,6 +276,43 @@ footer .nav-link {
   padding: 0.3rem;
 }
 
+footer ul li ul.nav-drop {
+  display: none;
+}
+
+footer ul li:hover ul.nav-drop {
+  display: block;
+}
+
+footer ul li {
+  position: relative;
+}
+
+footer ul li ul.nav-drop {
+  width: 300px;
+  background-color: white;
+  overflow: hidden;
+  padding: 30px;
+  text-align: left;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+footer ul li ul.nav-drop li {
+  float: left;
+  width: 50%;
+  font-size: 0.8rem;
+}
+
+footer ul li ul.nav-drop li.odd {
+  text-align: left;
+}
+
+footer ul li ul.nav-drop li.even {
+  text-align: right;
+}
+
 @media (max-width: 767px) {
   .logo img {
     width: 18rem;
