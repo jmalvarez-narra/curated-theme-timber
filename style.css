@@ -1310,7 +1310,7 @@ img.carousel-tape-horizontal {
   overflow: unset;
 }
 
-.first-look-feature-v1 div.tape-1 {
+.carousel-item-v1 div.tape-1 {
   position: absolute;
   z-index: 4;
   background-image: url(assets/img/tape-2.png);
@@ -1324,7 +1324,7 @@ img.carousel-tape-horizontal {
   left: 5rem;
 }
 
-.first-look-feature-v1 div.tape-2 {
+.carousel-item-v1 div.tape-2 {
   position: absolute;
   right: -4rem;
   bottom: -2rem;
@@ -1336,26 +1336,26 @@ img.carousel-tape-horizontal {
   height: 14rem;
 }
 
-.first-look-feature-v1 #polaroid {
+.carousel-item-v1 #polaroid {
   position: absolute;
   top: -3rem;
   left: -12rem;
   transform: rotate(355deg);
 }
 
-.first-look-feature-v2 .carousel .overlay {
+.carousel-item-v2 .overlay {
   left: 20%;
 }
 
-.first-look-feature-v2 .carousel-item .bg-left {
+.carousel-item-v2 .bg-left {
   width: 40%;
 }
 
-.first-look-feature-v2 .carousel-item .bg-right {
+.carousel-item-v2 .bg-right {
   width: 60%;
 }
 
-.first-look-feature-v2 div.tape-1 {
+.carousel-item-v2 div.tape-1 {
   position: absolute;
   top: -1.5rem;
   left: -3rem;
@@ -1368,7 +1368,7 @@ img.carousel-tape-horizontal {
   transform: rotate(5deg);
 }
 
-.first-look-feature-v2 div.tape-2 {
+.carousel-item-v2 div.tape-2 {
   position: absolute;
   right: -3rem;
   bottom: 5rem;
@@ -1381,7 +1381,7 @@ img.carousel-tape-horizontal {
   transform: rotate(178deg);
 }
 
-.first-look-feature-v2 div.tape-3 {
+.carousel-item-v2 div.tape-3 {
   position: absolute;
   z-index: 6;
   background-image: url(assets/img/tape-1.png);
@@ -1394,7 +1394,7 @@ img.carousel-tape-horizontal {
   transform: rotate(180deg);
 }
 
-.first-look-feature-v2 #polaroid {
+.carousel-item-v2 #polaroid {
   position: absolute;
   height: 15rem;
   width: 15rem;
@@ -1403,7 +1403,7 @@ img.carousel-tape-horizontal {
   transform: rotate(354deg);
 }
 
-.first-look-feature-v3 div.tape-1 {
+.carousel-item-v3 div.tape-1 {
   position: absolute;
   width: 13.5rem;
   height: 17%;
@@ -1415,7 +1415,7 @@ img.carousel-tape-horizontal {
   background-repeat: no-repeat;
 }
 
-.first-look-feature-v3 div.tape-2 {
+.carousel-item-v3 div.tape-2 {
   position: absolute;
   z-index: 4;
   background-image: url(assets/img/tape-1.png);
@@ -1427,7 +1427,7 @@ img.carousel-tape-horizontal {
   left: -32rem;
 }
 
-.first-look-feature-v3 div.tape-3 {
+.carousel-item-v3 div.tape-3 {
   position: absolute;
   right: -4rem;
   bottom: 10rem;
@@ -1760,17 +1760,6 @@ div.measure {
   height: fit-content;
   margin-top: 1rem;
   padding: 0px;
-}
-
-.navbar-float-toggler {
-  position: fixed;
-  top: 2rem;
-  right: 4rem;
-  z-index: 1;
-}
-
-.navbar-float-toggler > svg.icon {
-  fill: #000;
 }
 
 .navbar-toggler:hover {

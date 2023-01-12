@@ -36,7 +36,7 @@
 					<h5 class="subtitle mb-0">CURATED</h5>
 				</div>
 
-				<div class="carousel-section first-look-carousel first-look-feature-v3">
+				<div class="carousel-section first-look-carousel">
 					<div id="firstLookCarousel" class="carousel slide" data-bs-interval="false" data-bs-ride="carousel">
 						<div class="carousel-indicators">
 							{% for key,post in curated %}
@@ -45,9 +45,9 @@
 						</div>
 
 						<div class="carousel-inner">
-							{% set ctr = 0 %}
-							{% for key,post in curated %}
-								<div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
+							{# {% set ctr = 0 %}
+							{% for key,post in curated %} #}
+								<div class="carousel-item carousel-item-v3 {% if key == 0  %} {{ 'active' }} {% endif %}">
 									<div class="tape-1"></div>
 
 									<div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
@@ -95,7 +95,93 @@
 										<div class="tape-3"></div>
 									</div>
 								</div>
-							{% endfor %}
+
+								{# B FIRST LOOK #}
+								<div class="carousel-item carousel-item-v2">
+									<div class="bg-left" style="--bg-image: url('{{ site.theme.link }}/assets/img/default.png');"></div>
+									<div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');"></div>
+									
+									<div class="overlay">
+										<div class="overlay-content">
+											<h2 class="grafiti">IN THE WORKS</h2>
+											<h2>& COMING SOON</h2>
+
+											{# <p>{{ post.preview.length(100).read_more(false) }}</p> #}
+
+											<p>
+												After 12 years of buying and selling hundreds of vintage Lamborghini’s and Ferrari’s,
+												I partnered with Jordi Ricart and Alan Lazowski to prove that the automobile is a viable and consistent alternative investment asset class.
+												Ignoring the noise of speculating dealers, “Broadway” to Show auction houses and using reason and passion to build an investment automobile collection portfolio.</br></br>
+
+												We are in the constant pursuit of pairing the worlds greatest automobiles with the worlds greatest collections. We buy, trade and sell ONLY very specific cars.</br></br>
+
+												After 12 years of buying and selling hundreds of vintage Lamborghini’s and Ferrari’s,
+												I partnered with Jordi Ricart and Alan Lazowski to prove that the automobile is a viable and consistent</br></br>
+
+												We are in the constant pursuit of pairing the worlds greatest automobiles with the worlds greatest collections.
+											</p>
+
+											<a href="#">
+												<button type="button" class="btn btn-primary btn-sm">READ MORE</button>
+											</a>
+										</div>
+
+										<div class="overlay-background">
+										</div>
+
+										<div class="tape-1"></div>
+										<div class="tape-2"></div>
+										<div id="polaroid">
+											<img height="250" src="https://images.unsplash.com/photo-1462396881884-de2c07cb95ed" />
+										</div>
+										<div class="tape-3"></div>
+									</div>
+								</div>
+
+								{# C FIRST LOOK #}
+								<div class="carousel-item carousel-item-v1">
+									<div class="tape-1"></div>
+
+									<div id="polaroid">
+										<img height="250" src="https://images.unsplash.com/photo-1462396881884-de2c07cb95ed" />
+									</div>
+
+									<div class="bg-left" style="--bg-image: url('{{ site.theme.link }}/assets/img/default.png');"></div>
+									<div class="bg-right" style="--bg-image-right: url('{{ site.theme.link }}/assets/img/lambo-2-left.jpeg');"></div>
+									
+									<div class="overlay">
+										<div class="overlay-content">
+											<h2 class="grafiti">IN THE WORKS</h2>
+											<h2>& COMING SOON</h2>
+
+											{# <p>{{ post.preview.length(100).read_more(false) }}</p> #}
+
+											<p>
+												After 12 years of buying and selling hundreds of vintage Lamborghini’s and Ferrari’s,
+												I partnered with Jordi Ricart and Alan Lazowski to prove that the automobile is a viable and consistent alternative investment asset class.
+												Ignoring the noise of speculating dealers, “Broadway” to Show auction houses and using reason and passion to build an investment automobile collection portfolio.</br></br>
+
+												We are in the constant pursuit of pairing the worlds greatest automobiles with the worlds greatest collections. We buy, trade and sell ONLY very specific cars.</br></br>
+
+												After 12 years of buying and selling hundreds of vintage Lamborghini’s and Ferrari’s,
+												I partnered with Jordi Ricart and Alan Lazowski to prove that the automobile is a viable and consistent</br></br>
+
+												We are in the constant pursuit of pairing the worlds greatest automobiles with the worlds greatest collections.
+											</p>
+
+											<a href="#">
+												<button type="button" class="btn btn-primary btn-sm">READ MORE</button>
+											</a>
+										</div>
+
+										<div class="overlay-background">
+										</div>
+
+										<div class="tape-2"></div>
+									</div>
+								</div>
+
+							{# {% endfor %} #}
 						</div>
 						<button class="carousel-control-prev" type="button" data-bs-target="#firstLookCarousel" data-bs-slide="prev">
 							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
