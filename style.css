@@ -437,11 +437,15 @@ a.nav-link {
 
 /* Section Headers */
 .section-heading {
-  padding-top: 3.2rem;
-  padding-bottom: 1.4rem;
+  /* padding-top: 3.2rem;
+  padding-bottom: 1.4rem; */
+  padding-top: 104px;
+  padding-bottom: 35px;
+  /* border: 1px solid red; */
 }
 
-.section-heading.pt-xs {
+/* temporarily remove */
+/* .section-heading.pt-xs {
   padding-top: 2.5rem;
 }
 
@@ -459,7 +463,7 @@ a.nav-link {
 
 .section-heading.pb-md {
   padding-bottom: 2.3rem;
-}
+} */
 
 .section-heading > .title {
   font-family: 'SweetSansPro';
@@ -1857,8 +1861,9 @@ header.header-light a.nav-link:hover::after {
 }
 
 .lightslider-range-container {
-  margin-top: 2rem;
-  padding: 0 15rem
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+  padding: 0 15rem;
 }
 
 #lightSlider-latest,
