@@ -65,6 +65,10 @@ class StarterSite extends Timber\Site {
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'wp_ajax_nopriv_get_cars', array( $this, 'get_cars' ) );
+		add_action( 'wp_ajax_get_cars', array( $this, 'get_cars' ) );
+		add_action( 'wp_ajax_nopriv_get_journals', array( $this, 'get_journals' ) );
+		add_action( 'wp_ajax_get_journals', array( $this, 'get_journals' ) );
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -177,6 +181,65 @@ class StarterSite extends Timber\Site {
 		$twig->addFilter( new Twig\TwigFilter( 'myfoo', array( $this, 'myfoo' ) ) );
 		$twig->addFunction( new Timber\Twig_Function( 'slb_activate',  array( $this, 'slb_activate' ) ) );
 		return $twig;
+	}
+
+	function get_cars() {
+		$context = Timber::get_context();
+		$context['page'] = empty($_POST['page']) ? 1 : $_POST['page'];
+		$context['sort'] = empty($_POST['sort']) ? 'date-desc' : $_POST['sort'];
+		$orderby = array('date' => 'DESC');
+
+		switch ($context['sort']) {
+			case 'date-desc':
+				$orderby = array('date' => 'DESC');
+				break;
+			case 'date-asc':
+				$orderby = array('date' => 'ASC');
+				break;
+			case 'title-asc':
+				$orderby = array('title' => 'ASC');
+				break;
+			case 'title-desc':
+				$orderby = array('title' => 'DESC');
+				break;
+		}
+
+		$args = array(
+			// Get post type car
+			'post_type' => 'cars',
+			// Order by
+			'orderby' => $orderby,
+			// Limit posts
+			'posts_per_page' => 9,
+			// current page
+			'paged' => $context['page']
+		);
+
+		$context['cars'] = Timber::get_posts( $args );
+
+		Timber::render('partial/car-list.twig', $context);
+
+		die();
+	}
+
+	function get_journals() {
+		$context = Timber::get_context();
+		$context['page'] = empty($_POST['page']) ? 1 : $_POST['page'];
+
+		$args = array(
+			// Order by post date
+			'orderby' => array('date' => 'DESC'),
+			// Limit posts
+			'posts_per_page' => 9,
+			// current page
+			'paged' => $context['page']
+		);
+
+		$context['posts'] = Timber::get_posts( $args );
+
+		Timber::render('partial/journal-list.twig', $context);
+
+		die();
 	}
 
 }

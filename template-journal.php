@@ -8,13 +8,16 @@
 $context = Timber::context();
 
 $args = array(
-    // Get all posts
-    'posts_per_page' => -1,
-    // Gest post by "featured" category
-    // Order by post date
-    'orderby' => array(
-        'date' => 'DESC',
-));
+  // Get all posts
+  'posts_per_page' => -1,
+  // Gest post by "featured" category
+  // Order by post date
+  'orderby' => array('date' => 'DESC'),
+  // Limit posts
+  'posts_per_page' => 9,
+  // current page
+  'paged' => 1
+);
 
 $context['posts'] = Timber::get_posts( $args );
 
