@@ -1763,6 +1763,17 @@ div.measure {
   opacity: 0.5;
 }
 
+.navbar-float-toggler {
+  position: fixed;
+  top: 2rem;
+  right: 4rem;
+  z-index: 1;
+}
+
+.navbar-float-toggler > svg.icon {
+  fill: #000;
+}
+
 .header .current_page_item a.nav-link,
 .header a.nav-link:hover {
   color: #ffffff;
