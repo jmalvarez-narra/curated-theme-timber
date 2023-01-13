@@ -19,6 +19,7 @@ $args = array(
 );
 
 $context['cars'] = Timber::get_posts( $args );
+$context['categories']= get_categories();
 
 $timber_post     = new Timber\Post();
 $context['post'] = $timber_post;
