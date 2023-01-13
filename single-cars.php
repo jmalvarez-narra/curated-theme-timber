@@ -26,7 +26,8 @@ $args = array(
 ));
 
 $gallery = get_field('main_gallery');
-$context['gallery'] = json_encode($gallery ? $gallery : []);
+$context['gallery_array'] = json_encode($gallery ? $gallery : []);
+$context['gallery'] = $gallery;
 $context['latest'] = Timber::get_posts( $args );
 
 if ( post_password_required( $timber_post->ID ) ) {

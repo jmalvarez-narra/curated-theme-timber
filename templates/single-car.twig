@@ -118,7 +118,7 @@
 		let pageSize = 6;
 
 		function fetchGallery(pageSize, pageNumber) {
-			const gallery = paginate({{ gallery }}, pageSize);
+			const gallery = paginate({{ gallery_array }}, pageSize);
 			return gallery[pageNumber - 1] || [];
 		}
 
