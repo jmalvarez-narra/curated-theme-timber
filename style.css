@@ -1046,6 +1046,19 @@ img.carousel-tape-horizontal {
   padding-bottom: 1rem;
 }
 
+#carousel-highlights .overlay-content {
+  position: relative;
+  z-index: 2;
+  padding: 0px;
+}
+
+.carousel .overlay-content .inner-content {
+  padding: 0 3.4rem;
+  padding-right: 0rem;
+  padding-bottom: 1rem;
+  padding-top: 13rem;
+}
+
 .carousel .extra-overlay {
   color: black;
   opacity: 0.1;
@@ -1063,7 +1076,7 @@ img.carousel-tape-horizontal {
 }
 
 .carousel .extra-overlay.year {
-  right: 10.7rem;
+  right: -0.9rem;
   bottom: 0;
 }
 
