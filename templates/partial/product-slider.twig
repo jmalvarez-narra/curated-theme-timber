@@ -1,16 +1,19 @@
 <div id="carousel-{{ title }}" class="carousel product-carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     {% for key,post in posts %}
+      {% if key <= 3 %}
         <button type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide-to="{{key}}" class="{% if key == 0  %} {{ 'active' }} {% endif %}" aria-current="{% if key == 0  %} {{ 'current' }} {% endif %}" aria-label="Slide {{key}}"></button>
+      {% endif %}
     {% endfor %}
   </div>
 
   <div class="carousel-inner">
-    {% set ctr = 0 %}
     {% for key,post in posts %}
-      <div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
-        <div class="bg-main w-100" style="--bg-image: url({{ post }});"></div>
-      </div>
+      {% if key <= 3 %}
+        <div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
+          <div class="bg-main w-100" style="--bg-image: url({{ post }});"></div>
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
 
