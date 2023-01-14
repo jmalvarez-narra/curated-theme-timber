@@ -1,0 +1,50 @@
+.divider {
+  border-bottom: 1px solid #000000;
+  width: 100%;
+  margin-top: 1.6rem;
+  margin-bottom: 1.8rem;
+}
+
+footer {
+  z-index: 3;
+  margin-top: auto;
+  background-color: #E7E9E9;
+  color: #000000;
+  padding: 2rem 0;
+  font-family: 'SweetSansPro';
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: 0;
+  font-family: 'SweetSansPro';
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+footer ul li{
+  padding: 0.25rem 0;
+}
+
+footer ul li a {
+  letter-spacing: 0.15rem;
+}
+
+footer h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.4rem;
+  margin-bottom: 0;
+}
+
+footer h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.18rem;
+}
+
+footer h6 {
+  font-size: 0.8rem;
+}

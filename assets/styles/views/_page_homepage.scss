@@ -1,0 +1,191 @@
+.page-template-template-home-page {
+  #polaroid {
+    background: #ffffff;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    z-index: 5;
+    overflow: hidden;
+    height: 25rem;
+    width: 25rem;
+    padding: 0.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .first-look-carousel {
+    .carousel.slide, .carousel-inner {
+      overflow: unset;
+    }
+  }
+
+  .carousel-item-v1 {
+    .bg-left {
+      position: relative;
+
+      .tape-1 {
+        position: absolute;
+        z-index: 4;
+        background-image: url(/wp-content/themes/curated/dist/assets/img/tape-1-c.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        height: 15rem;
+        width: 20rem;
+        top: -7rem;
+        left: 5rem;
+      }
+
+      #polaroid {
+        position: absolute;
+        top: -3rem;
+        left: -12rem;
+        transform: rotate(355deg);
+      }
+    }
+
+    .bg-right {
+      position: relative;
+
+      .tape-2 {
+        position: absolute;
+        right: -4rem;
+        bottom: -2rem;
+        z-index: 4;
+        background-image: url(/wp-content/themes/curated/dist/assets/img/tape-2-c.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 7rem;
+        height: 19rem;
+      }
+    }
+  }
+
+  .carousel-item-v2 {
+    .overlay {
+      left: 20%;
+    }
+
+    .bg-left {
+      width: 40%;
+      position: relative;
+
+      .tape-1 {
+        position: absolute;
+        top: -1.5rem;
+        right: -3rem;
+        z-index: 4;
+        background-image: url(/wp-content/themes/curated/dist/assets/img/tape-1-b.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 7rem;
+        height: 17rem;
+        transform: rotate(5deg);
+      }
+    }
+
+    .bg-right {
+      width: 60%;
+      position: relative;
+
+      .tape-2 {
+        position: absolute;
+        left: -2.5rem;
+        top: 16rem;
+        z-index: 6;
+        background-image: url(/wp-content/themes/curated/dist/assets/img/tape-2-b.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 8rem;
+        height: 16rem;
+      }
+
+      .tape-3 {
+        position: absolute;
+        z-index: 6;
+        background-image: url(/wp-content/themes/curated/dist/assets/img/tape-3-b.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 14rem;
+        height: 7rem;
+        bottom: 2rem;
+        left: 7.15rem;
+      }
+
+      #polaroid {
+        position: absolute;
+        height: 18rem;
+        width: 18rem;
+        bottom: 4.5rem;
+        left: -2.75rem;
+        transform: rotate(354deg);
+      }
+    }
+  }
+
+  .carousel-item-v3 {
+    .bg-left {
+      position: relative;
+
+      .tape-1 {
+        position: absolute;
+        width: 13.5rem;
+        height: 17%;
+        top: -2.5rem;
+        left: 0;
+        z-index: 4;
+        background-image: url(/wp-content/themes/curated/dist/assets/img/tape-3.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .tape-2 {
+        position: absolute;
+        z-index: 4;
+        background-image: url(/wp-content/themes/curated/dist/assets/img/tape-1.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 15rem;
+        height: 7rem;
+        bottom: -2.5rem;
+        right: 20rem;
+      }
+
+      .polaroid {
+        position: absolute;
+        bottom: -43px;
+        right: -56px;
+        background: initial;
+        z-index: 5;
+        overflow: hidden;
+        height: 28.5rem;
+        width: 29rem;
+        padding: 0.5rem;
+
+        img {
+          width: 100%;
+          height: 100%
+        }
+      }
+    }
+
+    .bg-right {
+      position: relative;
+
+      .tape-1 {
+        position: absolute;
+        left: -2.5rem;
+        bottom: 6rem;
+        z-index: 4;
+        background-image: url(/wp-content/themes/curated/dist/assets/img/tape-2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 7rem;
+        height: 18rem;
+      }
+    }
+  }
+}

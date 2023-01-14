@@ -5,7 +5,7 @@
         {% if post.thumbnail.src %}
           <img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
         {% else %}
-          <img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
+          <img src="{{ site.theme.link }}/dist/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
         {% endif %}
 
         {# <div class="overlay">
@@ -20,6 +20,7 @@
           </div>
         </div> #}
       </div>
+
       <div class="card-body">
         <a href="{{post.link}}">
           <h5 class="card-title mb-0">{{post.title}}</h5>

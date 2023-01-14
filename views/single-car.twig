@@ -75,9 +75,7 @@
 									{% endif %}
 								</div>
 
-								<ul class="car-gallery">
-
-								</ul>
+								<ul class="car-gallery"></ul>
 
 								<div class="justify-content-end" style="display: none">
 									<button id="load-more-gallery-btn" class="btn load-more-btn mb-4">More</button>
@@ -143,7 +141,7 @@
 				} else {
 					$(".car-gallery").append(`
 						<li>
-							<img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}}-placeholder">
+							<img src="{{ site.theme.link }}/dist/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}}-placeholder">
 							<div class="overlay"></div>
 						</li>
 					`);

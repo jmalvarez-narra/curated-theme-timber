@@ -6,7 +6,7 @@
 
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
-				<div class="section-heading">
+				<div class="section-heading first-heading">
 					<h3 class="title">NEW & NOW</h3>
 					<h5 class="subtitle mb-0">HIGHLIGHTS</h5>
 				</div>
@@ -48,9 +48,13 @@
 							{# {% set ctr = 0 %}
 							{% for key,post in curated %} #}
 								<div class="carousel-item carousel-item-v3 {% if key == 0  %} {{ 'active' }} {% endif %}">
-									<div class="tape-1"></div>
-
-									<div class="bg-left" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-left-a.png);"></div>
+									<div class="bg-left" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-left-a.png);">
+										<div class="tape-1"></div>
+										<div class="tape-2"></div>
+										<div class="polaroid">
+											<img height="250" src="{{ site.theme.link }}/assets/img/first-look-polaroid-v3.png" />
+										</div>
+									</div>
 
 									<div class="right-side" style="width: 50%; position: relative; float: left;">
 										<div class="content" style="width: 78%; float: left; position: relative;">
@@ -83,20 +87,16 @@
 
 											<div class="overlay-background">
 											</div>
-
-											<div class="tape-2"></div>
-
-											<div class="polaroid">
-												<img height="250" src="{{ site.theme.link }}/assets/img/first-look-polaroid-v3.png" />
-											</div>
-
-											<div class="tape-3"></div>
 										</div>
 
 										{% if post.meta('blog-bg') %}
-											<div class="bg-right" style="--bg-image-right: url({{ post.meta('blog-bg') }}); float: left; width: 22%;"></div>
+											<div class="bg-right" style="--bg-image-right: url({{ post.meta('blog-bg') }}); float: left; width: 22%;">
+												<div class="tape-1"></div>
+											</div>
 										{% else %}
-											<div class="bg-right" style="--bg-image-right: url({{ site.theme.link }}/assets/img/first-look-right-a.png); float: left; width: 22%;"></div>
+											<div class="bg-right" style="--bg-image-right: url({{ site.theme.link }}/assets/img/first-look-right-a.png); float: left; width: 22%;">
+												<div class="tape-1"></div>
+											</div>
 										{% endif %}
 									</div>
 								</div>
@@ -105,7 +105,8 @@
 								<div class="carousel-item carousel-item-v2">
 									<div class="bg-left" style="width: 50%;">
 
-										<div class="right-side bg-left" style="width: 22%; position: relative; float: left; --bg-image: url('{{ site.theme.link }}/assets/img/first-look-left-b.png');">
+										<div class="bg-left" style="width: 22%; position: relative; float: left; --bg-image: url('{{ site.theme.link }}/assets/img/first-look-left-b.png');">
+											<div class="tape-1"></div>
 										</div>
 
 										<div class="content" style="width: 78%; float: left; position: relative;">
@@ -135,13 +136,6 @@
 													<button type="button" class="btn btn-primary btn-sm">READ MORE</button>
 												</a>
 											</div>
-
-											<div class="tape-1"></div>
-											<div class="tape-2"></div>
-											<div id="polaroid">
-												<img height="250" src="https://images.unsplash.com/photo-1462396881884-de2c07cb95ed" />
-											</div>
-										<div class="tape-3"></div>
 										</div>
 										{# <h5 class="extra-overlay count">
 											0{{ ctr }}
@@ -149,6 +143,11 @@
 									</div>
 
 									<div class="right-side bg-right" style="width: 50%; position: relative; float: left; --bg-image-right: url('{{ site.theme.link }}/assets/img/first-look-right-b.png');">
+										<div class="tape-2"></div>
+										<div id="polaroid">
+											<img height="250" src="https://images.unsplash.com/photo-1462396881884-de2c07cb95ed" />
+										</div>
+										<div class="tape-3"></div>
 									</div>
 								</div>
 
@@ -193,18 +192,16 @@
 
 								{# C FIRST LOOK #}
 								<div class="carousel-item carousel-item-v1">
-									<div class="tape-1"></div>
-
-									<div id="polaroid">
-										<img height="250" src="https://images.unsplash.com/photo-1462396881884-de2c07cb95ed" />
+									<div class="bg-left" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-right-c.png);">
+										<div class="tape-1"></div>
+										<div id="polaroid">
+											<img height="250" src="https://images.unsplash.com/photo-1462396881884-de2c07cb95ed" />
+										</div>
 									</div>
-
-									<div class="bg-left" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-right-c.png);"></div>
 
 									<div class="right-side" style="width: 50%; position: relative; float: left;">
 										<div class="content" style="width: 78%; float: left; position: relative;">
-											<div class="overlay-background">
-											</div>
+											<div class="overlay-background"></div>
 
 											<div class="overlay-content">
 												<h2 class="grafiti">IN THE WORKS</h2>
@@ -230,16 +227,17 @@
 												</a>
 											</div>
 
-											<div class="overlay-background">
-											</div>
-
-											<div class="tape-2"></div>
+											<div class="overlay-background"></div>
 										</div>
 
 										{% if post.meta('blog-bg') %}
-											<div class="bg-right" style="--bg-image-right: url({{ post.meta('blog-bg') }}); float: left; width: 22%;"></div>
+											<div class="bg-right" style="--bg-image-right: url({{ post.meta('blog-bg') }}); float: left; width: 22%;">
+												<div class="tape-2"></div>
+											</div>
 										{% else %}
-											<div class="bg-right" style="--bg-image-right: url({{ site.theme.link }}/assets/img/first-look-left-c.png); float: left; width: 22%;"></div>
+											<div class="bg-right" style="--bg-image-right: url({{ site.theme.link }}/assets/img/first-look-left-c.png); float: left; width: 22%;">
+												<div class="tape-2"></div>
+											</div>
 										{% endif %}
 									</div>
 								</div>
@@ -284,10 +282,25 @@
 					<h5 class="subtitle mb-0">YOUTUBE</h5>
 				</div>
 
-				{# <div class="row youtube-container"> #}
-					<iframe width="100%" height="700" src="https://www.youtube.com/embed/rI83PMNvljw?controls=0">
-					</iframe>
-				{# </div> #}
+				<div class="youtube-container youtube-container-xs">
+					<iframe width="100%" height="500" src="https://www.youtube.com/embed/rI83PMNvljw?controls=0"></iframe>
+				</div>
+
+				<div class="youtube-container youtube-container-sm">
+					<iframe width="100%" height="550" src="https://www.youtube.com/embed/rI83PMNvljw?controls=0"></iframe>
+				</div>
+
+				<div class="youtube-container youtube-container-md">
+					<iframe width="100%" height="725" src="https://www.youtube.com/embed/rI83PMNvljw?controls=0"></iframe>
+				</div>
+
+				<div class="youtube-container youtube-container-lg">
+					<iframe width="100%" height="800" src="https://www.youtube.com/embed/rI83PMNvljw?controls=0"></iframe>
+				</div>
+
+				<div class="youtube-container youtube-container-xl">
+					<iframe width="100%" height="1000" src="https://www.youtube.com/embed/rI83PMNvljw?controls=0"></iframe>
+				</div>
 
 				{% include 'partial/instagram-section.twig' %}
 

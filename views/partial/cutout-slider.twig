@@ -10,14 +10,14 @@
     {% for key,post in posts %}
       {% set ctr = ctr + 1 %}
       <div class="carousel-item {% if key == 0  %} {{ 'active' }} {% endif %}">
-        <div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }}); width: 50%"></div> 
+        <div class="bg-left" style="--bg-image: url({{ post.thumbnail.src }}); width: 50%"></div>
 
         <div class="right-side" style="width: 50%; overflow: hidden; position: relative;">
           <div class="content" style="overflow: hidden; width: 78%; float: left; position: relative;">
             <div class="overlay-background">
             </div>
 
-            <div class="overlay-content" style="height: 770px;">
+            <div class="overlay-content">
               <div class="inner-content">
                 <h2 class="grafiti">{{ post.meta('year') }}</h2>
 

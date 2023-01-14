@@ -1,3 +1,6 @@
+import './scss/bootstrap.min.scss';
+import './scss/lightgallery.min.scss';
+import './scss/lightslider.min.scss';
 import './main.scss';
 
 function importAll (r) {

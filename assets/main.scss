@@ -1,4 +1,14 @@
-@import 'scss/**.scss';
 @import
   'styles/base',
   'styles/override';
+
+@import
+  'styles/views/partial/footer';
+
+@import
+  'styles/views/page_homepage',
+  'styles/views/page_restoration',
+  'styles/views/single',
+  'styles/views/contact';
+
+@import 'styles/responsive';
