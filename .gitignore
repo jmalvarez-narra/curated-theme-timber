@@ -1,6 +1,7 @@
 .DS_Store
 assets/.DS_Store
 vendor
+!assets/vendor
 wp-content
 composer.lock.DS_Store
 dist
