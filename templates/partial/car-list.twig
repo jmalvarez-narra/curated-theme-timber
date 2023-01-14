@@ -1,34 +1,37 @@
 {% for key,post in cars %}
-    <div class="col-md-4 col-6 car-item">
-      <div class="card inventory-card border-0">
-        <div class="card-media">
-          <div class="overlay-dark"></div>
+    <div class="col-md-4 col-6 car-item g-3">
+      <a href="{{post.link}}">
+        <div class="card inventory-card border-0">
+          <div class="card-media">
+            <div class="overlay-dark"></div>
 
-          {% if post.thumbnail.src %}
-            <img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
-          {% else %}
-            <img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
-          {% endif %}
-          <div class="overlay">
-            <div class="details">
-              <h6>DETAILS</h6>
+            {% if post.thumbnail.src %}
+              <img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
+            {% else %}
+              <img src="{{ site.theme.link }}/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
+            {% endif %}
+            <div class="overlay">
+              <div class="details">
+                <h6>DETAILS</h6>
 
-              <ul>
-                <li>{{ post.meta('feature_detail_1') ? post.meta('feature_detail_1') : "#NA" }}</li>
-                <li>{{ post.meta('feature_detail_2') ? post.meta('feature_detail_2') : "#NA" }}</li>
-                <li>{{ post.meta('feature_detail_3') ? post.meta('feature_detail_3') : "#NA" }}</li>
-              </ul>
+                <ul>
+                  <li>{{ post.meta('feature_detail_1') ? post.meta('feature_detail_1') : "#NA" }}</li>
+                  <li>{{ post.meta('feature_detail_2') ? post.meta('feature_detail_2') : "#NA" }}</li>
+                  <li>{{ post.meta('feature_detail_3') ? post.meta('feature_detail_3') : "#NA" }}</li>
+                </ul>
 
-                <a href="{{post.link}}" class="text-white more">MORE →</a>
+                <span class="text-white more text-end">MORE →</span>
+              </div>
             </div>
           </div>
+         
+          <div class="card-body">
+              <h5 class="card-title mb-0">{{post.title}}</h5>
+              {% if post.meta('manufacturer') %}
+                <p class="card-text">{{ post.meta('manufacturer') }}</p>
+              {% endif %}
+          </div>
         </div>
-        <div class="card-body">
-          <a href="{{post.link}}">
-            <h5 class="card-title mb-0">{{post.title}}</h5>
-            <p class="card-text">{{ post.meta('model_variant') ? post.meta('model_variant') : "#NA" }}</p>
-          </a>
-        </div>
-      </div>
+      </a>
     </div>
   {% endfor %}

@@ -380,7 +380,23 @@ header h2 {
 .header .offcanvas .social-icons {
   display: flex;
   flex-direction: row;
-  margin: 0 1rem;
+  margin: 0 2rem;
+}
+
+.header .offcanvas .social-icons .nav-item:hover .icon-dark,
+footer .icons .nav-item:hover {
+  display: block !important;
+  opacity: 0.5;
+}
+
+.header .offcanvas .social-icons .nav-item:hover .icon-light {
+  display: none !important;
+}
+
+.offcanvas-header .btn-close {
+  top: 3rem;
+  right: 1rem;
+  position: absolute;
 }
 
 .header .main-navbar-nav {
@@ -1030,6 +1046,19 @@ img.carousel-tape-horizontal {
   padding-bottom: 1rem;
 }
 
+#carousel-highlights .overlay-content {
+  position: relative;
+  z-index: 2;
+  padding: 0px;
+}
+
+.carousel .overlay-content .inner-content {
+  padding: 0 3.4rem;
+  padding-right: 0rem;
+  padding-bottom: 1rem;
+  padding-top: 13rem;
+}
+
 .carousel .extra-overlay {
   color: black;
   opacity: 0.1;
@@ -1047,7 +1076,7 @@ img.carousel-tape-horizontal {
 }
 
 .carousel .extra-overlay.year {
-  right: 5rem;
+  right: -0.9rem;
   bottom: 0;
 }
 
