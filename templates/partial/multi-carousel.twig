@@ -82,14 +82,11 @@
     const carouselItemWidth = carouselItem.offsetWidth;
     const extraWidth = carouselItemWidth * itemShown;
     const actualMaxWidth = maxWidth - extraWidth - (50);
-    console.log(actualMaxWidth);
-    
+
     $("#lightSlider-range-{{ title }}").slider({
       step: 1,
       max: actualMaxWidth,
       slide: function( event, ui ) {
-        console.log('max: ' + actualMaxWidth);
-        console.log("translate3d(-"+ ui.value +"px, 0px, 0px)");
         currentSlider.style.transform = "translate3d(-"+ ui.value +"px, 0px, 0px)";
       },
     });

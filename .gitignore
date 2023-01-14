@@ -3,3 +3,5 @@ assets/.DS_Store
 vendor
 wp-content
 composer.lock.DS_Store
+dist
+node_modules

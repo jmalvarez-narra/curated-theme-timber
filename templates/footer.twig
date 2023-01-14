@@ -30,7 +30,7 @@
             <img class="icon" src="{{ site.theme.link }}/assets/img/instagram.png">
           </a>
         </li>
-        
+
         <li class="nav-item youtube">
           <a class="nav-link" href="https://www.youtube.com/@CuratedTVbyJohnTemerian" target="_blank">
             <img class="icon" src="{{ site.theme.link }}/assets/img/youtube.png">
@@ -77,37 +77,3 @@
 </div>
 
 {# <img class="home-spec" src="{{ site.theme.link }}/assets/img/designed-homepage.jpeg" /> #}
-
-<script src="{{ site.theme.link }}/assets/js/bootstrap.bundle.min.js"></script>
-<script>
-  let latest = document.querySelectorAll('.multi-carousel-latest .carousel-item');
-  let journal = document.querySelectorAll('.multi-carousel-journal .carousel-item');
-
-  // homepage latest multi-carousel
-  latest.forEach((el) => {
-      const minPerSlide = 4
-      let next = el.nextElementSibling
-      for (var i=1; i<minPerSlide; i++) {
-          if (!next) next = latest[0];
-
-          let cloneChild = next.cloneNode(true);
-
-          el.appendChild(cloneChild.children[0]);
-          next = next.nextElementSibling;
-      }
-  });
-
-  // homepage journal multi-carousel
-  journal.forEach((el) => {
-      const minPerSlide = 4
-      let next = el.nextElementSibling
-      for (var i=1; i<minPerSlide; i++) {
-          if (!next) next = journal[0];
-
-          let cloneChild = next.cloneNode(true);
-
-          el.appendChild(cloneChild.children[0]);
-          next = next.nextElementSibling;
-      }
-  });
-</script>
