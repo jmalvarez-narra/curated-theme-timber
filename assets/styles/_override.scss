@@ -215,14 +215,14 @@ header.header-light a.nav-link:hover::after {
 }
 
 .ui-widget.ui-widget-content {
-  height: 0.12rem !important;
+  height: 1px !important;
   border: none !important;
   background: #c5c5c5 !important;
 }
 
 .ui-slider-handle {
-  width: 12px !important;
-  height: 46px !important;
+  width: 1.47vh !important;
+  height: 5.78vh !important;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
