@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-12 order-2 order-md-1 text-md-start text-center">
+      <ul>
+        {% for item in footer_menu_left.items %}
+            <li {{ item.classes|join(' ') }}">
+                <a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+                {% if item.children %}
+                    <ul class="nav-drop">
+                        {% for child in item.children %}
+                            <li class="nav-drop-item">
+                                <a href="{{ child.link }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="col-md-4 col-12 order-1 order-md-2 text-center d-flex justify-content-center flex-column">
+      <div class="logo">
+        <img src="{{ site.theme.link }}/dist/assets/img/curated_vintage_cars-dark.png"></img>
+      </div>
+
+      <ul class="icons d-flex justify-content-center">
+        <li class="nav-item instagram">
+          <a class="nav-link" href="https://www.instagram.com/wearecurated/" target="_blank">
+            <img class="icon" src="{{ site.theme.link }}/dist/assets/img/instagram.png">
+          </a>
+        </li>
+
+        <li class="nav-item youtube">
+          <a class="nav-link" href="https://www.youtube.com/@CuratedTVbyJohnTemerian" target="_blank">
+            <img class="icon" src="{{ site.theme.link }}/dist/assets/img/youtube.png">
+          </a>
+        </li>
+
+        <li class="nav-item newsletter">
+          <a class="nav-link" href="#ninja-popup-2469">
+            <img class="icon" src="{{ site.theme.link }}/dist/assets/img/newsletter.png">
+          </a>
+        </li>
+      </ul>
+    </div>
+
+     <div class="col-md-4 col-12 order-3 text-md-end text-center">
+      <ul>
+        {% for item in footer_menu_right.items %}
+            <li {{ item.classes|join(' ') }}">
+                <a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+                {% if item.children %}
+                    <ul class="nav-drop">
+                        {% set ctr = 0 %}
+                        {% for child in item.children %}
+                            {% set ctr = ctr + 1 %}
+                            <li class="nav-drop-item {{ ctr % 2 == 0 ? 'even' : 'odd' }}">
+                                <a href="{{ child.link }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="bottom-footer row fs-7">
+    <h6 class="col-md-4 text-md-start text-center">© 2023 CURATED. | ALL RIGHTS RESERVED</h6>
+    <h6 class="col-md-4 text-center">2100 NE 2ND AVE MIAMI FL 33137</h6>
+    <h6 class="col-md-4 text-md-end text-center">WEARECURATED.COM</h6>
+  </div>
+</div>
+
+{# <img class="home-spec" src="{{ site.theme.link }}/dist/assets/img/designed-homepage.jpeg" /> #}

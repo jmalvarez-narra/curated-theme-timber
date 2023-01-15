@@ -1,0 +1,70 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<div class="featured-container">
+
+		<div class="overlay dark-overlay"></div>
+		{% if post.thumbnail.src %}
+			{# <div class="measure"></div> #}
+
+			<div class="featured" style="--bg-image: url({{ post.thumbnail.src }});"></div>
+		{% else %}
+			<div class="featured" style="--bg-image: url({{ site.theme.link }}/dist/assets/img/default.png);"></div>
+		{% endif %}
+		</div>
+
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				<div class="section-heading">
+					<h3 class="title">{{ title }}</h3>
+
+					<h5 class="subtitle mb-0">INVENTORY</h5>
+				</div>
+
+        <div class="container-fluid mb-5">
+          <div id="car__list" class="row">
+
+            {% for key,post in posts %}
+              <div class="col-md-4 col-6 car-item">
+                <div class="card inventory-card border-0">
+                  <div class="card-media">
+                    {% if post.thumbnail.src %}
+                      <img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
+                    {% else %}
+                      <img src="{{ site.theme.link }}/dist/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
+                    {% endif %}
+                    <div class="overlay">
+                      <div class="details">
+                        <h6>DETAILS</h6>
+                        <ul>
+                          <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
+                          <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
+                          <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
+                        </ul>
+                        <a href="{{post.link}}" class="text-white">MORE →</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <a href="{{post.link}}">
+                      <h5 class="card-title mb-0">{{post.title}}</h5>
+                      <p class="card-text">{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+
+            <div class="load-more-btn-container justify-content-end">
+            </div>
+          </div>
+        </div>
+
+				<div class="article-body">
+					{{post.content}}
+				</div>
+			</section>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

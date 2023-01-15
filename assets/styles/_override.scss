@@ -1,0 +1,278 @@
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+// div.measure {
+//   background-color: black;
+//   position: relative;
+//   width: 300px;
+//   height: 400px;
+//   opacity: 0.5;
+//   z-index: 3;
+//   float: left;
+// }
+
+/* general styling */
+.card .image-container {
+  position: relative;
+  height: fit-content;
+  width: 100%;
+}
+
+.dark-overlay {
+  background-color: #2e2e2e;
+  position: absolute;
+  opacity: 0.4;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.lSSlideOuter .card:hover .dark-overlay {
+  background-color: initial;
+  opacity: 1;
+}
+
+.card:hover .dark-overlay {
+  opacity: 0;
+}
+
+/* template specific styling */
+
+
+/* restoration */
+.page-template-template-restoration .shop-floor-image  {
+  width: 100%;
+}
+
+/* about us */
+.page-template-template-about .carousel .overlay-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 3rem;
+}
+
+.page-template-template-about .carousel.slide {
+  height: auto;
+}
+
+.bg-image {
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position-y: 50%;
+}
+
+@media (max-width: 767px) {
+  .founders-bg-image {
+    height: 20rem;
+  }
+}
+
+
+/* Instagram Partial */
+.col-insta {
+  width: 14.2%;
+  padding: 0 0.6rem;
+}
+
+.col-insta img {
+  width: 100%;
+}
+
+/* Inquiry Modal */
+#inquiryModal {
+  top: 20%;
+}
+
+/* Main Navigation Hover */
+.nav-link {
+  transition: none;
+}
+
+.navbar-toggler {
+  height: fit-content;
+  margin-top: 1rem;
+  padding: 0px;
+}
+
+.navbar-toggler:hover {
+  opacity: 0.5;
+}
+
+.navbar-float-toggler {
+  position: fixed;
+  top: 2rem;
+  right: 4rem;
+  z-index: 1;
+}
+
+.navbar-float-toggler > svg.icon {
+  fill: #000;
+}
+
+.header .current_page_item a.nav-link,
+.header a.nav-link:hover {
+  color: #ffffff;
+}
+
+header.header-light .current_page_item a.nav-link,
+header.header-light a.nav-link:hover {
+  color: #f5f5f5;
+}
+
+.header .current_page_item a.nav-link::after,
+.header a.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 3px;
+  background-color: #ffffff;
+  width: 2rem;
+}
+
+header.header-light .current_page_item a.nav-link::after,
+header.header-light a.nav-link:hover::after {
+  background-color: #f5f5f5;
+}
+
+/* custom lightSlider */
+.lightSlider {
+  height: 22rem !important;
+}
+
+.lSAction > a {
+  top: 35% !important;
+  opacity: 1 !important;
+}
+
+.lSAction > a:hover {
+  opacity: 0.5 !important;
+}
+
+
+.lSAction > .lSPrev {
+  left: 2% !important;
+}
+
+.lSAction > .lSNext {
+  right: 2% !important;
+}
+
+/* Hover styling for car grid details */
+
+.details h6 {
+  font-family: "SweetSansPro";
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+.details ul {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+
+.details ul li {
+  font-family: "MerriweatherRegular";
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.page-template-template-inventory .inventory-card .more {
+  font-family: "SweetSansPro";
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  margin-top: 1rem;
+}
+
+.page-template-template-inventory .inventory-card .card-title {
+  font-size: 1.4rem;
+}
+
+.page-template-template-inventory .inventory-card .card-text {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.details .more .span {
+  font-size: 1rem;
+}
+
+.light-slider-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 5px;
+  height: 20px;
+  margin-top: -6px;
+  background: black;
+  cursor: pointer;
+}
+
+.ui-widget.ui-widget-content {
+  height: 0.12rem !important;
+  border: none !important;
+  background: #c5c5c5 !important;
+}
+
+.ui-slider-handle {
+  width: 12px !important;
+  height: 46px !important;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  background-color: #a0a0a0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  top: -1.3rem !important;
+}
+
+.ui-state-active {
+  border: 1px solid #ccc !important;
+  background: #ededed !important;
+}
+
+.ui-state-focus {
+  border: 1px solid #ccc !important;
+  background: #ededed !important;
+  outline: 0 none !important;
+}
+
+.lightslider-range-container {
+  margin-top: 15px;
+  padding: 0 9rem;
+}
+
+#lightSlider-latest,
+#lightSlider-journal {
+  height: fit-content !important;
+}
+
+.home-spec {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  opacity: 0.5;
+  width: 100%;
+}
+
+body:hover .home-spec {
+  display: none;
+}
+
+.load-more-btn {
+	float: right;
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  color: #fff;
+  background-color: #000;
+  border: 0;
+}

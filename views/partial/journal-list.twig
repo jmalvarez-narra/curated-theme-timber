@@ -1,0 +1,32 @@
+{% for key,post in posts %}
+  <div class="col-md-4 col-6 journal-item">
+    <div class="card inventory-card border-0">
+      <div class="card-media">
+        {% if post.thumbnail.src %}
+          <img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
+        {% else %}
+          <img src="{{ site.theme.link }}/dist/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
+        {% endif %}
+
+        {# <div class="overlay">
+          <div class="details">
+            <h6>DETAILS</h6>
+            <ul>
+              <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
+              <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
+              <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
+            </ul>
+            <a href="{{post.link}}" class="text-white">MORE →</a>
+          </div>
+        </div> #}
+      </div>
+
+      <div class="card-body">
+        <a href="{{post.link}}">
+          <h5 class="card-title mb-0">{{post.title}}</h5>
+          <p class="card-text">{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+{% endfor %}
