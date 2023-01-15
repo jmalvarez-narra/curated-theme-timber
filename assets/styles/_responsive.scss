@@ -1,3 +1,50 @@
+// 320x658
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 60%;
+  }
+
+  .bg-left {
+    display: none;
+  }
+
+  .bg-right {
+    display: none;
+  }
+
+  .right-side {
+    width: 100% !important;
+
+    .content {
+      width: 100% !important;
+    }
+  }
+
+  .carousel.slide {
+    height: 70vh;
+  }
+
+  .featured-container {
+    height: 83vh;
+
+    .featured {
+      min-height: 100%;
+      background-size: cover;
+      background-position: 47.5% 23%;
+    }
+  }
+
+  .youtube-container {
+    &.youtube-container-md {
+      display: none;
+    }
+
+    &.youtube-container-xs {
+      display: block;
+    }
+  }
+}
+
 // 1280×800 , 1280×720
 @media only screen and (min-width: 1263px) and (max-width: 1349px) {
   html {
