@@ -502,12 +502,12 @@ a.nav-link {
 .section-heading {
   /* padding-top: 3.2rem;
   padding-bottom: 1.4rem; */
-  padding-top: 104px;
+  padding-top: 11vh;
   padding-bottom: 35px;
   /* border: 1px solid red; */
 
   &.first-heading {
-    padding-top: 75px;
+    padding-top: 8vh;
   }
 }
 
@@ -1023,6 +1023,7 @@ img.carousel-tape-horizontal {
   .carousel-item,
   .right-side,
   .bg-left,
+  .bg-right,
   .overlay-background,
   .content,
   .overlay-content {
@@ -1150,7 +1151,7 @@ img.carousel-tape-horizontal {
 }
 
 .carousel.slide {
-  height: 770px;
+  height: 87vh;
   overflow: hidden;
 }
 
@@ -1295,7 +1296,7 @@ img.carousel-tape-horizontal {
 
 .more-cta {
   width: auto;
-  background-image: url(/wp-content/themes/curated/dist/assets/images/chevron-right.png);
+  background-image: url(./images/chevron-right.png);
   background-repeat: no-repeat;
   background-position: right -23% bottom 50%;
   background-size: 3rem;
