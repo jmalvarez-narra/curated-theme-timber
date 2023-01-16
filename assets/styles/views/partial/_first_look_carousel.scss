@@ -1,11 +1,11 @@
 .first-look-carousel {
-  height: 1132px !important;
   overflow: visible !important;
 
   .bg-image {
     background-image: var(--bg-image);
     background-size: cover;
     background-position: 50% 50%;
+    min-height: 1132px !important;
   }
 
   .first-look-content {

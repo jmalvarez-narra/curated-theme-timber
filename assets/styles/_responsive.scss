@@ -3,6 +3,20 @@
     font-size: 70%;
   }
 
+  .founders-section {
+    .bg-image {
+      min-height: 50vh !important;
+    }
+  }
+
+  .cutout-slider {
+    height: unset !important;
+
+    .bg-image {
+      min-height: 30vh !important;
+    }
+  }
+
   .right-side {
     width: 100% !important;
 

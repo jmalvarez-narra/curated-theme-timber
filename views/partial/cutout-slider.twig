@@ -11,7 +11,7 @@
       {% set ctr = ctr + 1 %}
       <div class="carousel-item h-100 {% if key == 0  %} {{ 'active' }} {% endif %}">
         <div class="row h-100">
-          <div class="d-none d-lg-block col-6 bg-image" style="--bg-image: url({{ post.thumbnail.src }});"></div>
+          <div class="col-12 col-lg-6 bg-image bg-image-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
 
           <div class="col-12 col-lg-6">
             <div class="row h-100">
@@ -44,7 +44,7 @@
                 </h5>
               </div>
 
-              <div class="d-none d-lg-block col-2 bg-image" style="--bg-image: url({{ post.thumbnail.src }});"></div>
+              <div class="col-12 col-lg-2 bg-image bg-image-right" style="--bg-image: url({{ post.thumbnail.src }});"></div>
             </div>
           </div>
         </div>

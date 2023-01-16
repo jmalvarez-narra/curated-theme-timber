@@ -9,8 +9,10 @@
     overflow-y: auto;
   }
 
-  #aboutCarousel {
-    // height: 110vh;
+  .carousel-about {
+    .bg-image {
+      min-height: 110vh;
+    }
 
     &.carousel .extra-overlay {
       color: black;
@@ -33,8 +35,21 @@
     }
   }
 
-  #storyCarousel {
-    // height: 95vh;
+  .about-mobile {
+    .bg-image-left {
+      min-height: 60vh;
+    }
+
+    .bg-image-right {
+      min-height: 20vh;
+      width: 100%;
+    }
+  }
+
+  .carousel-story {
+    .bg-image {
+      min-height: 110vh;
+    }
 
     .carousel-inner {
       overflow: visible;
@@ -96,6 +111,23 @@
           }
         }
       }
+    }
+  }
+
+  .story-mobile {
+    .bg-image-left {
+      min-height: 20vh;
+      background-position: 50% 58%;
+    }
+
+    .bg-image-right {
+      min-height: 60vh;
+    }
+  }
+
+  .founders-section {
+    .bg-image {
+      min-height: 110vh;
     }
   }
 
