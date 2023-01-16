@@ -281,3 +281,7 @@ body:hover .home-spec {
   background-color: #000;
   border: 0;
 }
+
+.carousel-item a {
+  z-index: 1 !important;
+}
