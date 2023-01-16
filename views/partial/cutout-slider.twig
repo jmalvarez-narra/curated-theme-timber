@@ -42,6 +42,15 @@
                 <h5 class="extra-overlay year">
                   {{ post.meta('year') }}
                 </h5>
+
+                <button class="d-block d-lg-none carousel-control-prev" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="d-block d-lg-none carousel-control-next" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
               </div>
 
               <div class="col-12 col-lg-2 bg-image bg-image-right" style="--bg-image: url({{ post.thumbnail.src }});"></div>
@@ -52,11 +61,11 @@
     {% endfor %}
   </div>
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="prev">
+  <button class="d-none d-lg-block carousel-control-prev" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="next">
+  <button class="d-none d-lg-block carousel-control-next" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
