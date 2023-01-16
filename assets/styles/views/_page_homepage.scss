@@ -1,4 +1,10 @@
 .page-template-template-home-page {
+  section {
+    .section-heading {
+      padding-top: 9vh;
+    }
+  }
+
   #polaroid {
     background: #ffffff;
     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
@@ -112,7 +118,7 @@
         width: 14rem;
         height: 7rem;
         bottom: 2rem;
-        left: 7.15rem;
+        left: 7.90rem;
       }
 
       #polaroid {
@@ -120,7 +126,7 @@
         height: 18rem;
         width: 18rem;
         bottom: 4.5rem;
-        left: -2.75rem;
+        left: -2rem;
         transform: rotate(354deg);
       }
     }

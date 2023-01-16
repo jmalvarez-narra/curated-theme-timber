@@ -63,7 +63,7 @@
 .bg-image {
   background-image: var(--bg-image);
   background-size: cover;
-  background-position-y: 50%;
+  background-position: 50% 50%;
 }
 
 @media (max-width: 767px) {
@@ -221,15 +221,19 @@ header.header-light a.nav-link:hover::after {
 }
 
 .ui-slider-handle {
-  width: 12px !important;
-  height: 46px !important;
+  width: 1vh !important;
+  height: 4vh !important;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
   background-color: #a0a0a0 !important;
   border: 0 !important;
   border-radius: 0 !important;
-  top: -1.3rem !important;
+  top: -1.9vh !important;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  margin: 0;
 }
 
 .ui-state-active {
@@ -244,8 +248,9 @@ header.header-light a.nav-link:hover::after {
 }
 
 .lightslider-range-container {
-  margin-top: 15px;
-  padding: 0 9rem;
+  margin-top: 3vh !important;
+  width: 80%;
+  margin: auto;
 }
 
 #lightSlider-latest,
