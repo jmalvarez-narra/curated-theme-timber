@@ -1,4 +1,3 @@
-import './vendor/font-awesome.min.scss';
 import './vendor/bootstrap.min.scss';
 import './vendor/jquery-ui.min.scss';
 import './vendor/lightslider.min.scss';
