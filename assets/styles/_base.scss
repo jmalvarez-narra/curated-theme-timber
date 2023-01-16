@@ -668,7 +668,8 @@ a.nav-link {
 .carousel-control-next,
 .carousel-control-prev {
   position: absolute;
-  width: 5%;
+  // width: 5%;
+  width: 10vh;
   opacity: 1;
   z-index: 10;
 }

@@ -50,14 +50,17 @@
   }
 
   .header-carousel {
-    height: 97vh !important;
+    height: 50vh !important;
 
     .overlay {
       height: 30rem !important;
     }
 
     .header-details {
-      left: 4.5rem !important;
+      display: none !important;
+      left: unset !important;
+      bottom: 5rem !important;
+      width: 50% !important;
     }
   }
 }

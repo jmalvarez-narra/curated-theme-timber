@@ -20,7 +20,30 @@
   <div class="overlay-dark"></div>
 
   {% if showOverlay %}
-    <div class="header-details">
+    <div class="d-none d-lg-block header-details">
+      <div class="header-details-content">
+        <h2>{{ post.title }}</h2>
+
+        <ul>
+          {% if post.meta('transmission') %}
+            <li>{{ post.meta('transmission') }}</li>
+          {% endif %}
+          {% if post.meta('current_mileage') %}
+            <li>{{ post.meta('current_mileage') }}</li>
+          {% endif %}
+          {% if post.meta('examples_produced_for_us') %}
+            <li>{{ post.meta('examples_produced_for_us') }}</li>
+          {% endif %}
+          <li>$Price on request</li>
+        </ul>
+
+        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inquiryModal">
+          INQUIRE
+        </button>
+      </div>
+    </div>
+
+    <div class="d-block d-lg-none header-details">
       <div class="header-details-content">
         <h2>{{ post.title }}</h2>
 
