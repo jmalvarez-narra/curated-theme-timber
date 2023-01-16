@@ -215,6 +215,7 @@ class StarterSite extends Timber\Site {
 
 	function get_cars() {
 		$context = Timber::get_context();
+		$context['limit'] = empty($_POST['limit']) ? 9 : $_POST['limit'];
 		$context['page'] = empty($_POST['page']) ? 1 : $_POST['page'];
 		$context['sort'] = empty($_POST['sort']) ? 'date-desc' : $_POST['sort'];
 		$context['filter-category'] = empty($_POST['filter-category']) ? '' : $_POST['filter-category'];
@@ -243,7 +244,7 @@ class StarterSite extends Timber\Site {
 			// Order by
 			'orderby' => $orderby,
 			// Limit posts
-			'posts_per_page' => 9,
+			'posts_per_page' => $context['limit'],
 			// current page
 			'paged' => $context['page']
 		);

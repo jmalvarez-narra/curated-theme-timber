@@ -14,7 +14,7 @@
         <div class="container-fluid pb-5">
           <div class="row">
             <div class="col-12 col-md-6 filter-container">
-              
+
             </div>
 
             <div class="col-12 col-md-6 filter-container">
@@ -51,10 +51,9 @@
   <script>
     $(document).ready(function() {
       let page = 1;
+      let page_limit = window.innerWidth <= 992 ? 8 : 9;
 
-      $("#load-more-car-btn").click((e) => {
-        e.preventDefault();
-
+      const getCars = () => {
         page++;
 
         $("#load-more-car-btn").attr('disabled', true);
@@ -66,6 +65,7 @@
           dataType: 'html',
           data: {
             action: 'get_cars',
+            limit: page_limit,
             page: page,
             sort: $("#sort-car").val(),
             'filter-category': $("#filter-car").val()
@@ -73,8 +73,10 @@
           success: function(data) {
             const carsCount = $('<div></div>').html(data).find('.car-item').size();
 
-            if (carsCount < 9) {
+            if (carsCount < page_limit) {
               $("#load-more-car-btn").parent().hide();
+            } else {
+              $("#load-more-car-btn").parent().show();
             }
 
             if (carsCount) $('#car__list').append(data);
@@ -87,6 +89,12 @@
             $(".list-loader").addClass("d-none");
           }
         });
+      }
+
+      $("#load-more-car-btn").click((e) => {
+        e.preventDefault();
+
+        getCars();
       });
 
       const carsCount = $('#car__list').find('.car-item').size();
@@ -110,6 +118,7 @@
           dataType: 'html',
           data: {
             action: 'get_cars',
+            limit: page_limit,
             page: page,
             sort: e.target.value,
             'filter-category': $("#filter-car").val()
@@ -117,7 +126,7 @@
           success: function(data) {
             const carsCount = $('<div></div>').html(data).find('.car-item').size();
 
-            if (carsCount < 9) {
+            if (carsCount < page_limit) {
               $("#load-more-car-btn").parent().hide();
             } else {
               $("#load-more-car-btn").parent().show();
@@ -151,6 +160,7 @@
           dataType: 'html',
           data: {
             action: 'get_cars',
+            limit: page_limit,
             page: page,
             sort: $("#sort-car").val(),
             'filter-category': e.target.value
@@ -158,7 +168,7 @@
           success: function(data) {
             const carsCount = $('<div></div>').html(data).find('.car-item').size();
 
-            if (carsCount < 9) {
+            if (carsCount < page_limit) {
               $("#load-more-car-btn").parent().hide();
             } else {
               $("#load-more-car-btn").parent().show();
@@ -176,6 +186,8 @@
           }
         });
       });
+
+      getCars();
     });
   </script>
 {% endblock %}

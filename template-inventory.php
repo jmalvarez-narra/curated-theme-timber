@@ -18,7 +18,7 @@ $args = array(
   'paged' => 1
 );
 
-$context['cars'] = Timber::get_posts( $args );
+// $context['cars'] = Timber::get_posts( $args );
 $context['categories']= get_categories( array(
   'name' => ['Available', 'Sold', 'Latest'],
   'hide_empty' => false,

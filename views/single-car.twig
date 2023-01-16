@@ -157,6 +157,17 @@
 				appendGallery(6, pageGallery++);
 			});
 
+			document.querySelectorAll('.car-featured-image').forEach((el) => el.addEventListener('click', (e) => {
+				e.preventDefault();
+
+				const lightbox = new Lightbox(el, {
+					gallery: {{ gallery_array }},
+					size: 'fullscreen'
+				});
+
+				lightbox.show();
+			}));
+
 			document.querySelectorAll('.car-gallery').forEach((el) => el.addEventListener('click', (e) => {
 				e.preventDefault();
 
