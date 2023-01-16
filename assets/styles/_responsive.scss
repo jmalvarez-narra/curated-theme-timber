@@ -80,10 +80,12 @@
   .section-heading.main-heading {
     & > .title::before {
       margin-left: -57% !important;
+      display: none !important;
     }
 
     & > .title::after {
       margin-left: 38% !important;
+      display: none !important;
     }
   }
 }

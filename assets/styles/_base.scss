@@ -575,6 +575,16 @@ a.nav-link {
   margin-left: 2%;
 }
 
+.section-heading.main-heading.main-heading-mobile .title{
+  &:before, &:after {
+    display: none;
+  }
+}
+
+.section-heading > .title::after {
+  margin-left: 2%;
+}
+
 /* More Links */
 .more {
   margin-top: -2.4rem;
