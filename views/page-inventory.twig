@@ -50,7 +50,7 @@
 
   <script>
     $(document).ready(function() {
-      let page = 1;
+      let page = 0;
       let page_limit = window.innerWidth <= 992 ? 8 : 9;
 
       const getCars = () => {
@@ -89,19 +89,13 @@
             $(".list-loader").addClass("d-none");
           }
         });
-      }
+      };
 
       $("#load-more-car-btn").click((e) => {
         e.preventDefault();
 
         getCars();
       });
-
-      const carsCount = $('#car__list').find('.car-item').size();
-
-      if (carsCount === 9) {
-        $("#load-more-car-btn").parent().show();
-      }
 
       $("#sort-car").change((e) => {
         e.preventDefault();

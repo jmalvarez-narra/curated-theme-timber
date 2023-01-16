@@ -259,12 +259,13 @@ class StarterSite extends Timber\Site {
 	function get_journals() {
 		$context = Timber::get_context();
 		$context['page'] = empty($_POST['page']) ? 1 : $_POST['page'];
+		$context['limit'] = empty($_POST['limit']) ? 9 : $_POST['limit'];
 
 		$args = array(
 			// Order by post date
 			'orderby' => array('date' => 'DESC'),
 			// Limit posts
-			'posts_per_page' => 9,
+			'posts_per_page' => $context['limit'],
 			// current page
 			'paged' => $context['page']
 		);

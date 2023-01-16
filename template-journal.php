@@ -19,7 +19,8 @@ $args = array(
   'paged' => 1
 );
 
-$context['posts'] = Timber::get_posts( $args );
+// $context['posts'] = Timber::get_posts( $args );
+$context['posts'] = [];
 
 $timber_post     = new Timber\Post();
 $context['post'] = $timber_post;
