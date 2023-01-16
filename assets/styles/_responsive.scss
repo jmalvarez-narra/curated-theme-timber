@@ -62,11 +62,25 @@
       bottom: 5rem !important;
       width: 50% !important;
     }
+
+    .carousel-item .bg-main {
+      min-height: 110% !important;
+    }
   }
 
   .cutout-slider .cutout-slider-content {
     padding-left: 10vh !important;
     padding-right: 10vh !important;
+  }
+
+  .section-heading.main-heading {
+    & > .title::before {
+      margin-left: -57% !important;
+    }
+
+    & > .title::after {
+      margin-left: 38% !important;
+    }
   }
 }
 
