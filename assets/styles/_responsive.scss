@@ -98,6 +98,17 @@
   }
 }
 
+@media only screen and (max-width: 991px) {
+  html {
+    .first-look-carousel {
+      .carousel-control-next-icon,
+      .carousel-control-prev-icon {
+      background-color: rgba(0,0,0,0.1) !important;
+    }
+    }
+  }
+}
+
 // 800x1280
 @media only screen and (min-width: 800px) and (max-width: 1262px) {
   html {
