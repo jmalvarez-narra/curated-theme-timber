@@ -1,60 +1,63 @@
 .header-carousel {
   .carousel-control-prev {
-    padding-left: 6vh;
-  }
-
-  .carousel-control-next {
     padding-right: 6vh;
   }
 
+  .carousel-control-next {
+    padding-left: 6vh;
+  }
+
+  .overlay {
+    top:  calc(5vh + 210px) !important;
+    bottom: unset !important;
+    height: unset !important;
+  }
+
   .header-details {
-    position: absolute;
-    top: 16rem !important;
-    left: 8rem !important;
+    // top: 16rem !important;
+    // left: 8rem !important;
     background: rgba(256,256,256,0.5);
     border-radius: 0.5rem;
     width: 23rem;
     padding: 2rem;
 
-    .header-details-content {
-      h2 {
-        font-weight: 700;
+    h2 {
+      font-weight: 700;
 
-        &::after {
-          content: '';
-          border: 3px solid black;
-          display: block;
-          width: 2rem;
-          margin-top: 0.5rem;
-          margin-bottom: 0.5rem;
-        }
+      &::after {
+        content: '';
+        border: 3px solid black;
+        display: block;
+        width: 2rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    ul {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .btn {
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+
+      &:hover {
+        background-color: #696969;
+        color: #fff;
       }
 
-      ul {
-        overflow-x: hidden;
-        overflow-y: auto;
-      }
-
-      .btn {
-        border-radius: 0.5rem;
-        margin-top: 1rem;
-
-        &:hover {
-          background-color: #696969;
-          color: #fff;
-        }
-
-        &:active,
-        &:focus,
-        &.focus,
-        &:visited,
-        &:focus-visible {
-          background-color: #4a4a4a;
-          color: #fff;
-          border: 0;
-          outline: none !important;
-          box-shadow: none;
-        }
+      &:active,
+      &:focus,
+      &.focus,
+      &:visited,
+      &:focus-visible {
+        background-color: #4a4a4a;
+        color: #fff;
+        border: 0;
+        outline: none !important;
+        box-shadow: none;
       }
     }
   }

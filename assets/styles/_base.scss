@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  font-family: "RockSalt";
-  src: url("../assets/fonts/RockSalt-Regular.ttf");
+  font-family: "Newport";
+  src: url("../assets/fonts/Newport-Regular.ttf");
   font-weight: 400;
 }
 
@@ -109,8 +109,8 @@ p {
 }
 
 .grafiti {
-  font-family: "RockSalt" !important;
-  font-size: 1.2rem !important;
+  font-family: "Newport" !important;
+  font-size: 2.75rem !important;
   margin-bottom: 0.5rem;
 }
 
@@ -129,7 +129,7 @@ p {
   padding: 1rem;
   font-family: 'SweetSansPro';
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.7rem;
   border-radius: 0.5rem;
 }
 
@@ -798,7 +798,7 @@ a.nav-link {
 
 .carousel .overlay-content p {
   color: #000000;
-  font-size: 1rem;
+  font-size: 0.83rem;;
   line-height: 1.4rem;
   font-family: 'MerriweatherRegular';
   margin: 0;

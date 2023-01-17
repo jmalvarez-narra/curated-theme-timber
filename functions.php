@@ -92,9 +92,11 @@ class StarterSite extends Timber\Site {
 	}
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies() {
-		wp_enqueue_style('my_assets' , StarterSite::get('assets/main.css'));
-		wp_register_script('my_assets' , StarterSite::get('assets/main.js'));
-		wp_enqueue_script('my_assets');
+		if( !is_admin() ) {
+			wp_enqueue_style('my_assets' , StarterSite::get('assets/main.css'));
+			wp_register_script('my_assets' , StarterSite::get('assets/main.js'));
+			wp_enqueue_script('my_assets');
+		}
 	}
 
 	protected static $assetManifest;

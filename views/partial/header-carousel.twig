@@ -20,7 +20,40 @@
   <div class="overlay-dark"></div>
 
   {% if showOverlay %}
-    <div class="d-none d-lg-block header-details">
+    <div class="container slider-overlay-container">
+      <div class="overlay header-details">
+        <h2>{{ post.title }}</h2>
+
+        <ul>
+          {% if post.meta('transmission') %}
+            <li>{{ post.meta('transmission') }}</li>
+          {% endif %}
+          {% if post.meta('current_mileage') %}
+            <li>{{ post.meta('current_mileage') }}</li>
+          {% endif %}
+          {% if post.meta('examples_produced_for_us') %}
+            <li>{{ post.meta('examples_produced_for_us') }}</li>
+          {% endif %}
+          <li>$Price on request</li>
+        </ul>
+
+        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inquiryModal">
+          INQUIRE
+        </button>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="d-none header-details">
       <div class="header-details-content">
         <h2>{{ post.title }}</h2>
 
@@ -66,14 +99,4 @@
       </div>
     </div>
   {% endif %}
-
-  <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-
-  <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>
