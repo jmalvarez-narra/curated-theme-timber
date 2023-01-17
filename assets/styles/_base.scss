@@ -772,6 +772,19 @@ a.nav-link {
   line-height: 2.4rem;
 }
 
+.product-carousel .overlay-content h2 {
+  line-height: 1.9rem;
+}
+
+.product-carousel .overlay-content h2 span {
+  font-weight: 400;
+  color: black;
+}
+
+.product-carousel .overlay-content .btn {
+  width: fit-content;
+}
+
 .single .carousel .overlay-content h2::after {
   content: '';
   border: 3px solid black;

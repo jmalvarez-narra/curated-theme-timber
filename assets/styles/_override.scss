@@ -285,3 +285,42 @@ body:hover .home-spec {
 .carousel-item a {
   z-index: 1 !important;
 }
+
+.carousel.product-carousel .overlay {
+  top: unset !important;
+  bottom: 9.5% !important;
+  height: fit-content !important;
+  width: 43vh !important;
+  padding: 2.5rem;
+}
+
+.product-carousel .overlay h2 {
+  line-height: 2.2rem;
+}
+
+.product-carousel .overlay h2 span {
+  font-weight: 400;
+  color: black;
+}
+
+.product-carousel .overlay h2::after {
+  margin-top: 0.9rem !important;
+}
+
+.carousel.product-carousel ul {
+  padding-left: 1rem;
+  margin-top: 1.2rem;
+}
+
+.single .carousel.product-carousel ul li {
+  font-family: 'MerriweatherRegular';
+  margin-bottom: 0.6rem;
+  font-size: 1.2rem;
+}
+
+.product-carousel .overlay .btn {
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+}

@@ -20,7 +20,13 @@
     {% if showOverlay %}
       <div class="overlay">
         <div class="overlay-content">
-          <h2>{{ post.title }}</h2>
+          <h2>
+            {{ post.meta('year') }} {{ post.meta('manufacturer') }}
+            <span>
+              {{ post.meta('model') }}
+              {{ post.meta('model_variant') }}
+            </span>
+          </h2>
 
           <ul>
             {% if post.meta('transmission') %}
