@@ -42,25 +42,7 @@
     }
 
     .btn {
-      border-radius: 0.5rem;
       margin-top: 1rem;
-
-      &:hover {
-        background-color: #696969;
-        color: #fff;
-      }
-
-      &:active,
-      &:focus,
-      &.focus,
-      &:visited,
-      &:focus-visible {
-        background-color: #4a4a4a;
-        color: #fff;
-        border: 0;
-        outline: none !important;
-        box-shadow: none;
-      }
     }
   }
 

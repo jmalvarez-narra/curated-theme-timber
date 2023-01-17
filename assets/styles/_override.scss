@@ -324,3 +324,27 @@ body:hover .home-spec {
   padding: 1.2rem;
   font-size: 0.9rem;
 }
+
+.btn.btn-primary {
+  font-family: 'SweetSansPro' !important;
+  font-weight: 700 !important;
+  border-radius: 0.5rem !important;
+
+  &:hover {
+    background-color: #696969 !important;
+    color: #fff !important;
+  }
+
+  &:active,
+  &:disabled,
+  &:focus,
+  &.focus,
+  &:visited,
+  &:focus-visible {
+    background-color: #4a4a4a !important;
+    color: #fff !important;
+    border: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
