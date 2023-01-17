@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "checkVersion": "check-node-version --package -p",
-    "clean": "rimraf ./dist",
+    "clean": "rm -rf ./dist",
     "start": "run-s --silent checkVersion clean watch",
     "watch": "run-s --silent clean build:watch",
     "build:watch": "node bs-server.js",
