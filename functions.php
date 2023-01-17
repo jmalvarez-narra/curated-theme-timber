@@ -71,6 +71,7 @@ class StarterSite extends Timber\Site {
 		add_action( 'wp_ajax_get_journals', array( $this, 'get_journals' ) );
 		parent::__construct();
 	}
+
 	/** This is where you can register custom post types. */
 	public function register_post_types() {
 		register_post_type( 'cars',
@@ -91,7 +92,36 @@ class StarterSite extends Timber\Site {
 	}
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies() {
+		wp_enqueue_style('my_assets' , StarterSite::get('assets/main.css'));
+		wp_register_script('my_assets' , StarterSite::get('assets/main.js'));
+		wp_enqueue_script('my_assets');
+	}
 
+	protected static $assetManifest;
+
+	function get($asset)
+	{
+		$distPath = get_template_directory() . '/dist';
+
+		$manifestPath = $distPath . '/rev-manifest.json';
+
+		if (!isset(StarterSite::$assetManifest)) {
+			$manifestPath = $distPath . '/rev-manifest.json';
+			if (is_file($manifestPath)) {
+				StarterSite::$assetManifest = json_decode(file_get_contents($manifestPath), true);
+			} else {
+				StarterSite::$assetManifest = [];
+			}
+		}
+
+		if (array_key_exists($asset, StarterSite::$assetManifest)) {
+				$assetSuffix = StarterSite::$assetManifest[$asset];
+		} else {
+				$assetSuffix = $asset;
+		}
+
+		$distUrl = get_template_directory_uri() . '/dist';
+		return $distUrl . '/' . $assetSuffix;
 	}
 
 	/** This is where you add some context
@@ -185,6 +215,7 @@ class StarterSite extends Timber\Site {
 
 	function get_cars() {
 		$context = Timber::get_context();
+		$context['limit'] = empty($_POST['limit']) ? 9 : $_POST['limit'];
 		$context['page'] = empty($_POST['page']) ? 1 : $_POST['page'];
 		$context['sort'] = empty($_POST['sort']) ? 'date-desc' : $_POST['sort'];
 		$context['filter-category'] = empty($_POST['filter-category']) ? '' : $_POST['filter-category'];
@@ -213,7 +244,7 @@ class StarterSite extends Timber\Site {
 			// Order by
 			'orderby' => $orderby,
 			// Limit posts
-			'posts_per_page' => 9,
+			'posts_per_page' => $context['limit'],
 			// current page
 			'paged' => $context['page']
 		);
@@ -228,12 +259,13 @@ class StarterSite extends Timber\Site {
 	function get_journals() {
 		$context = Timber::get_context();
 		$context['page'] = empty($_POST['page']) ? 1 : $_POST['page'];
+		$context['limit'] = empty($_POST['limit']) ? 9 : $_POST['limit'];
 
 		$args = array(
 			// Order by post date
 			'orderby' => array('date' => 'DESC'),
 			// Limit posts
-			'posts_per_page' => 9,
+			'posts_per_page' => $context['limit'],
 			// current page
 			'paged' => $context['page']
 		);

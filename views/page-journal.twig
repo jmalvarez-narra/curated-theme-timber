@@ -13,11 +13,9 @@
 				</div>
 
         <div class="container-fluid mb-5">
-          <div id="journal__list" class="row">
+          <div id="journal__list" class="row"></div>
 
-            {% include 'partial/journal-list.twig' with { posts: posts } %}
-
-          </div>
+          {% include 'partial/list-loader.twig' %}
 
           <div class="justify-content-end mb-4" style="display: none;">
             <button id="load-more-journal-btn" class="btn load-more-btn">More</button>
@@ -33,14 +31,14 @@
 
   <script>
     $(document).ready(function() {
-      let page = 1;
+      let page = 0;
+      let page_limit = window.innerWidth <= 992 ? 8 : 9;
 
-      $("#load-more-journal-btn").click((e) => {
-        e.preventDefault();
-
+      const getJournals = () => {
         page++;
 
         $("#load-more-journal-btn").attr('disabled', true);
+        $(".list-loader").removeClass("d-none");
 
         $.ajax({
           type: 'POST',
@@ -48,30 +46,37 @@
           dataType: 'html',
           data: {
             action : 'get_journals',
+            limit: page_limit,
             page : page,
           },
           success: function(data) {
             const journalsCount = $('<div></div>').html(data).find('.journal-item').size();
 
-            if (journalsCount < 9) {
+            if (journalsCount < page_limit) {
               $("#load-more-journal-btn").parent().hide();
+            } else {
+              $("#load-more-journal-btn").parent().show();
             }
 
             if (journalsCount) $('#journal__list').append(data);
 
             $("#load-more-journal-btn").attr('disabled', false);
+            $(".list-loader").addClass("d-none");
           },
           error: function(data) {
             $("#load-more-journal-btn").attr('disabled', false);
+            $(".list-loader").addClass("d-none");
           }
         });
+      };
+
+      $("#load-more-journal-btn").click((e) => {
+        e.preventDefault();
+
+        getJournals();
       });
 
-      const journalsCount = $('#journal__list').find('.journal-item').size();
-
-      if (journalsCount === 9) {
-        $("#load-more-journal-btn").parent().show();
-      }
+      getJournals();
     });
   </script>
 {% endblock %}

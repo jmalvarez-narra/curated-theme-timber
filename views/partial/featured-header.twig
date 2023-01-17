@@ -12,13 +12,9 @@
     <div class="featured" style="--bg-image: url({{ site.theme.link }}/dist/assets/img/default.png);"></div>
   {% endif %}
 
-  <div class="container" style="position: relative;">
-    {% if hideInquiry %}
-
-    {% else %}
-      <button type="button" class="btn btn-inquire btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#inquiryModal">
-        INQUIRE
-      </button>
-    {% endif %}
-  </div>
+  {% if not hideInquiry %}
+    <button type="button" class="btn btn-inquire btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#inquiryModal">
+      INQUIRE
+    </button>
+  {% endif %}
 </div>

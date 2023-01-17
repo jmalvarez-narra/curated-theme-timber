@@ -1,3 +1,102 @@
+@media only screen and (max-width: 1262px) {
+  html {
+    font-size: 70%;
+  }
+
+  .founders-section {
+    .bg-image {
+      min-height: 50vh !important;
+    }
+  }
+
+  .cutout-slider {
+    height: unset !important;
+
+    .bg-image {
+      min-height: 30vh !important;
+    }
+  }
+
+  .right-side {
+    width: 100% !important;
+
+    .content {
+      width: 100% !important;
+    }
+  }
+
+  .page-template-template-home-page section .section-heading {
+    padding-top: 5vh !important;
+  }
+
+  // .carousel.slide {
+  //   height: 70vh;
+  // }
+
+  .featured-container {
+    height: 50vh !important;
+
+    .featured {
+      min-height: 100%;
+      background-size: cover;
+      background-position: 47.5% 23%;
+    }
+  }
+
+  .youtube-container {
+    &.youtube-container-md {
+      display: none;
+    }
+
+    &.youtube-container-xs {
+      display: block;
+    }
+  }
+
+  .header-carousel {
+    height: 50vh !important;
+
+    .overlay {
+      height: 30rem !important;
+    }
+
+    .header-details {
+      display: none !important;
+      left: unset !important;
+      bottom: 5rem !important;
+      width: 50% !important;
+    }
+
+    .carousel-item .bg-main {
+      min-height: 110% !important;
+    }
+  }
+
+  .cutout-slider .cutout-slider-content {
+    padding-left: 10vh !important;
+    padding-right: 10vh !important;
+  }
+
+  .section-heading.main-heading {
+    & > .title::before {
+      margin-left: -57% !important;
+      display: none !important;
+    }
+
+    & > .title::after {
+      margin-left: 38% !important;
+      display: none !important;
+    }
+  }
+}
+
+// 800x1280
+@media only screen and (min-width: 800px) and (max-width: 1262px) {
+  html {
+    font-size: 90%;
+  }
+}
+
 // 1280×800 , 1280×720
 @media only screen and (min-width: 1263px) and (max-width: 1349px) {
   html {
@@ -5,7 +104,7 @@
   }
 
   .featured-container {
-    height: 78vh;
+    height: 97vh !important;
 
     .featured {
       min-height: 100%;
@@ -23,6 +122,18 @@
       display: block;
     }
   }
+
+  .header-carousel {
+    height: 100vh !important;
+
+    .overlay {
+      height: 30rem !important;
+    }
+
+    .header-details {
+      top: 13rem !important;
+    }
+  }
 }
 
 // 1366×768
@@ -32,12 +143,12 @@
   }
 
   .featured-container {
-    height: 79.5vh;
+    height: 97vh !important;
 
     .featured {
-      min-height: 120%;
+      min-height: 100%;
       background-size: cover;
-      background-position: 50% 60%;
+      background-position: 50% 25%;
     }
   }
 
@@ -50,6 +161,14 @@
       display: block;
     }
   }
+
+  .header-carousel {
+    height: 97vh !important;
+
+    .overlay {
+      height: 30rem !important;
+    }
+  }
 }
 
 // 1440×900
@@ -59,12 +178,12 @@
   }
 
   .featured-container {
-    height: 81vh;
+    height: 97vh !important;
 
     .featured {
       min-height: 100%;
       background-size: cover;
-      background-position: 50% 40%;
+      background-position: 50% 30%;
     }
   }
 
@@ -77,6 +196,14 @@
       display: block;
     }
   }
+
+  .header-carousel {
+    height: 97vh !important;
+
+    .overlay {
+      height: 30rem !important;
+    }
+  }
 }
 
 // 1536×864
@@ -86,7 +213,7 @@
   }
 
   .featured-container {
-    height: 80vh;
+    height: 97vh !important;
 
     .featured {
       min-height: 115%;
@@ -104,6 +231,14 @@
       display: block;
     }
   }
+
+  .header-carousel {
+    height: 97vh !important;
+
+    .overlay {
+      height: 30rem !important;
+    }
+  }
 }
 
 // 1680×1050
@@ -113,12 +248,20 @@
   }
 
   .featured-container {
-    height: 85vh;
+    height: 97vh !important;
 
     .featured {
       min-height: 100%;
       background-size: cover;
-      background-position: 50% 40%;
+      background-position: 50% 30%;
+    }
+  }
+
+  .header-carousel {
+    height: 97vh !important;
+
+    .overlay {
+      height: 30rem !important;
     }
   }
 }
@@ -130,7 +273,7 @@
   }
 
   .featured-container {
-    height: 86vh;
+    height: 97vh !important;
 
     .featured {
       min-height: 100%;
@@ -148,6 +291,14 @@
       display: block;
     }
   }
+
+  .header-carousel {
+    height: 97vh !important;
+
+    .overlay {
+      height: 30rem !important;
+    }
+  }
 }
 
 
@@ -158,12 +309,20 @@
   }
 
   .featured-container {
-    height: 84vh;
+    height: 97vh !important;
 
     .featured {
       min-height: 100%;
       background-size: cover;
-      background-position: 50% 55%;
+      background-position: 50% 50%;
+    }
+  }
+
+  .header-carousel {
+    height: 97vh !important;
+
+    .overlay {
+      height: 30rem !important;
     }
   }
 }
@@ -179,12 +338,12 @@
   }
 
   .featured-container {
-    height: 86.5vh;
+    height: 97vh !important;
 
     .featured {
       min-height: 100%;
       background-size: cover;
-      background-position: 50% 55%;
+      background-position: 50% 50%;
     }
   }
 
@@ -195,6 +354,15 @@
 
     &.youtube-container-xl {
       display: block;
+    }
+  }
+
+  .header-carousel {
+    height: 97vh !important;
+
+    .overlay {
+      height: 30rem !important;
+      bottom: 3rem !important;
     }
   }
 }

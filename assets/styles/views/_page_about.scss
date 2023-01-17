@@ -1,3 +1,163 @@
-.about-bg-image {
-  min-height: 800px;
+.page-about {
+  .carousel-inner, .carousel-item, .carousel-item .row, .bg-main {
+    height: 100%;
+  }
+
+  p {
+    line-height: 2rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .carousel-about {
+    .bg-image {
+      min-height: 110vh;
+    }
+
+    &.carousel .extra-overlay {
+      color: black;
+      opacity: 0.1;
+      letter-spacing: 0.4rem;
+      line-height: 5rem;
+      position: absolute;
+      font-size: 10rem;
+      font-family: 'SweetSansPro';
+      font-weight: 700;
+    }
+
+    &.carousel .extra-overlay.sale {
+      right: 2rem;
+      bottom: 0;
+    }
+
+    .about-carousel-content {
+      position: relative;
+    }
+  }
+
+  .about-mobile {
+    .bg-image-left {
+      min-height: 60vh;
+    }
+
+    .bg-image-right {
+      min-height: 20vh;
+      width: 100%;
+    }
+  }
+
+  .carousel-story {
+    .bg-image {
+      min-height: 110vh;
+    }
+
+    .carousel-inner {
+      overflow: visible;
+    }
+
+    .bg-image-left {
+      min-height: 115%;
+      background-size: cover;
+      background-position: 51% 50%;
+    }
+
+    .carousel-item-1 {
+      .bg-image-left {
+        .tape-1 {
+          position: absolute;
+          bottom: -110px;
+          left: -80px;
+          z-index: 4;
+          background-image: url(./img/tape-1-b.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 7rem;
+          height: 17rem;
+          transform: rotate(-90deg);
+        }
+      }
+
+      .bg-image-right {
+        position: relative;
+
+        .tape-1 {
+          position: absolute;
+          z-index: 6;
+          background-image: url(./img/tape-3-b.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 14rem;
+          height: 7rem;
+          top: -25px;
+          right: -60px;
+          transform: rotate(-90deg);
+        }
+
+        .polaroid {
+          position: absolute;
+          bottom: -50px;
+          left: -80px;
+          background: initial;
+          z-index: 5;
+          overflow: hidden;
+          height: 28.5rem;
+          width: 29rem;
+          padding: 0.5rem;
+          transform: rotate(5deg);
+
+          img {
+            width: 100%;
+            height: 100%
+          }
+        }
+      }
+    }
+  }
+
+  .story-mobile {
+    .bg-image-left {
+      min-height: 20vh;
+      background-position: 50% 58%;
+    }
+
+    .bg-image-right {
+      min-height: 60vh;
+    }
+  }
+
+  .founders-section {
+    .bg-image {
+      min-height: 110vh;
+    }
+  }
+
+  .section-heading {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+    padding: 0 !important;
+  }
+
+  .btn {
+    font-family: 'SweetSansPro';
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+
+    &:hover {
+      background-color: #696969;
+      color: #fff;
+    }
+
+    &:active,
+    &:focus,
+    &.focus,
+    &:visited,
+    &:focus-visible {
+      background-color: #4a4a4a;
+      color: #fff;
+      border: 0;
+      outline: none !important;
+      box-shadow: none;
+    }
+  }
 }

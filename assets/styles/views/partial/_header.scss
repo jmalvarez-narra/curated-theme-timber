@@ -1,0 +1,27 @@
+.header {
+  .navbar {
+    margin-top: 5vh;
+
+    .container-fluid {
+      padding: 0 5vh;
+
+      .navbar-nav {
+        &.main-navbar-nav > .nav-item {
+          margin: 0 8vh;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+
+        &.icons > .nav-item {
+          margin: 0 1vh;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

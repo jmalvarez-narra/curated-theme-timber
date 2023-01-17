@@ -3,13 +3,18 @@
   'styles/override';
 
 @import
-  'styles/views/partial/footer';
-
-@import
   'styles/views/page_homepage',
   'styles/views/page_about',
   'styles/views/page_restoration',
   'styles/views/single',
-  'styles/views/contact';
+  'styles/views/contact',
+  'styles/views/single_car';
+
+@import
+  'styles/views/partial/footer',
+  'styles/views/partial/header',
+  'styles/views/partial/header_carousel',
+  'styles/views/partial/cutout_slider',
+  'styles/views/partial/first_look_carousel';
 
 @import 'styles/responsive';

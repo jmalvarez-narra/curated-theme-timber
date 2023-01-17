@@ -1,5 +1,5 @@
 import './vendor/bootstrap.min.scss';
-import './vendor/lightgallery.min.scss';
+import './vendor/jquery-ui.min.scss';
 import './vendor/lightslider.min.scss';
 import './main.scss';
 

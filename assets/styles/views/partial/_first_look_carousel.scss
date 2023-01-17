@@ -1,0 +1,221 @@
+.first-look-carousel {
+  overflow: visible !important;
+
+  .bg-image {
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: 50% 50%;
+    min-height: 1132px !important;
+  }
+
+  .first-look-content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding: 3rem 5rem !important;
+
+    .btn {
+      font-family: 'SweetSansPro';
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+
+      &:hover {
+        background-color: #696969;
+        color: #fff;
+      }
+
+      &:active,
+      &:focus,
+      &.focus,
+      &:visited,
+      &:focus-visible {
+        background-color: #4a4a4a;
+        color: #fff;
+        border: 0;
+        outline: none !important;
+        box-shadow: none;
+      }
+    }
+  }
+
+  p {
+    line-height: 2rem;
+
+    span {
+      color: grey;
+      text-transform: uppercase;
+    }
+  }
+
+  h2.grafiti {
+    line-height: 2rem !important;
+    font-size: 1.5rem !important;
+  }
+
+  h2.content-title {
+    line-height: 3rem !important;
+    font-size: 2.5rem !important;
+  }
+
+  .carousel-item-1 {
+    .bg-image-left {
+      position: relative;
+
+      .tape-1 {
+        position: absolute;
+        width: 13.5rem;
+        height: 17%;
+        top: -2.5rem;
+        left: 0;
+        z-index: 4;
+        background-image: url(./img/tape-3.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .tape-2 {
+        position: absolute;
+        z-index: 4;
+        background-image: url(./img/tape-1.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 15rem;
+        height: 7rem;
+        bottom: -2.5rem;
+        right: 20rem;
+      }
+
+      .polaroid {
+        position: absolute;
+        bottom: -43px;
+        right: -56px;
+        background: initial;
+        z-index: 5;
+        overflow: hidden;
+        height: 28.5rem;
+        width: 29rem;
+        padding: 0.5rem;
+
+        img {
+          width: 100%;
+          height: 100%
+        }
+      }
+    }
+
+    .bg-image-right {
+      position: relative;
+
+      .tape-1 {
+        position: absolute;
+        left: -2.5rem;
+        bottom: 15rem;
+        z-index: 4;
+        background-image: url(./img/tape-2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 7rem;
+        height: 18rem;
+      }
+    }
+  }
+
+  .carousel-item-2 {
+    .bg-image-left {
+      position: relative;
+
+      .tape-1 {
+        position: absolute;
+        top: -1.5rem;
+        right: -2.25rem;
+        z-index: 4;
+        background-image: url(./img/tape-1-b.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 7rem;
+        height: 17rem;
+        transform: rotate(5deg);
+      }
+    }
+
+    .bg-image-right {
+      position: relative;
+
+      .tape-1 {
+        position: absolute;
+        left: -2.5rem;
+        bottom: 20rem;
+        z-index: 6;
+        background-image: url(./img/tape-2-b.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 8rem;
+        height: 16rem;
+      }
+
+      .tape-2 {
+        position: absolute;
+        z-index: 6;
+        background-image: url(./img/tape-3-b.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 14rem;
+        height: 7rem;
+        bottom: 4rem;
+        left: 4.8rem;
+      }
+
+      .polaroid {
+        position: absolute;
+        height: 18rem;
+        width: 18rem;
+        bottom: 5rem;
+        left: -2rem;
+        transform: rotate(354deg);
+      }
+    }
+  }
+
+  .carousel-item-3 {
+    .bg-image-left {
+      position: relative;
+
+      .tape-1 {
+        position: absolute;
+        z-index: 4;
+        background-image: url(./img/tape-1-c.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        height: 15rem;
+        width: 20rem;
+        top: -7rem;
+        left: 13rem;
+      }
+
+      .polaroid {
+        position: absolute;
+        top: -3rem;
+        left: 0;
+        transform: rotate(355deg);
+      }
+    }
+
+    .bg-image-right {
+      position: relative;
+
+      .tape-1 {
+        position: absolute;
+        left: -2.5rem;
+        bottom: 10rem;
+        z-index: 4;
+        background-image: url(./img/tape-2-c.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 7rem;
+        height: 19rem;
+      }
+    }
+  }
+}

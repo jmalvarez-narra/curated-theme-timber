@@ -4,15 +4,14 @@
 {% block content %}
 	<div class="content-wrapper">
 		{% if gallery %}
-			{% include 'partial/product-slider.twig' with { posts: gallery, title: 'product', post: post, showOverlay: true } %}
+			{% include 'partial/header-carousel.twig' with { posts: gallery, title: 'product', post: post, showOverlay: true } %}
 		{% else %}
 			{% include 'partial/featured-header.twig' %}
 		{% endif %}
 
-
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<article class="post-type-{{post.post_type}} single-car" id="post-{{post.ID}}">
 			<section class="article-content {{ gallery ? '' : 'push-top'}}">
-				<div class="section-heading main-heading pt-xs">
+				<div class="section-heading main-heading pt-xs px-2 px-lg-0">
 					<h3 class="title">{{post.title}}</h3>
 					<h6 class="subtitle">AVAILABLE</h6>
 				</div>
@@ -66,7 +65,7 @@
 								</div>
 							</div>
 
-							<div class="col-md-7 order-1 order-md-2">
+							<div class="col-md-7 order-1 order-md-2 car-gallery-container">
 								<div class="car-featured-image">
 									{% if post.meta('featured_gallery_image') %}
 										<img class="img-fluid" alt="{{post.title}}-featured-gallery-image'" src="{{ post.meta('featured_gallery_image') }}" />
@@ -134,14 +133,14 @@
 				if (car_image) {
 					$(".car-gallery").append(`
 						<li>
-							<img src=${car_image} alt="{{post.title}}-gallery-image-{{ctr}}" />
+							<img src=${car_image} data-src=${car_image} alt="{{post.title}}-gallery-image-{{ctr}}" />
 							<div class="overlay"></div>
 						</li>
 					`);
 				} else {
 					$(".car-gallery").append(`
 						<li>
-							<img src="{{ site.theme.link }}/dist/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}}-placeholder">
+							<img src="{{ site.theme.link }}/dist/assets/img/placeholder.png" data-src="{{ site.theme.link }}/dist/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="{{post.title}}-placeholder">
 							<div class="overlay"></div>
 						</li>
 					`);
@@ -157,6 +156,28 @@
 			$("#load-more-gallery-btn").click((e) => {
 				appendGallery(6, pageGallery++);
 			});
+
+			document.querySelectorAll('.car-featured-image').forEach((el) => el.addEventListener('click', (e) => {
+				e.preventDefault();
+
+				const lightbox = new Lightbox(el, {
+					gallery: {{ gallery_array }},
+					size: 'fullscreen'
+				});
+
+				lightbox.show();
+			}));
+
+			document.querySelectorAll('.car-gallery').forEach((el) => el.addEventListener('click', (e) => {
+				e.preventDefault();
+
+				const lightbox = new Lightbox(el, {
+					gallery: {{ gallery_array }},
+					size: 'fullscreen'
+				});
+
+				lightbox.show();
+			}));
 		});
    </script>
 {% endblock %}
