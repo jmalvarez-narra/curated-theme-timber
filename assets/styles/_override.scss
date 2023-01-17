@@ -215,21 +215,22 @@ header.header-light a.nav-link:hover::after {
 }
 
 .ui-widget.ui-widget-content {
-  height: 1px !important;
+  height: 1.91px !important;
   border: none !important;
   background: #c5c5c5 !important;
 }
 
 .ui-slider-handle {
-  width: 1vh !important;
-  height: 4vh !important;
+  width: 1.61vh !important;
+  height: 6.17vh !important;
+  margin-left: -0.6em !important;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
   background-color: #a0a0a0 !important;
   border: 0 !important;
   border-radius: 0 !important;
-  top: -1.9vh !important;
+  top: -2.8vh !important;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
