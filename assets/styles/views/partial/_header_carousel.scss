@@ -8,9 +8,11 @@
   }
 
   .overlay {
-    top:  calc(5vh + 210px) !important;
+    top:  calc(5vh + 225px) !important;
     bottom: unset !important;
-    height: unset !important;
+    // height: unset !important;
+    height: fit-content !important;
+    padding: 2.5rem !important;
   }
 
   .header-details {

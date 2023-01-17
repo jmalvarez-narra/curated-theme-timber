@@ -132,7 +132,7 @@
   }
 
   .header-carousel {
-    height: 99vh !important;
+    height: 110vh !important;
 
     .overlay {
       height: 23rem !important;
@@ -143,12 +143,14 @@
     }
 
     .slider-overlay-container {
-      margin-top: -99vh;
+      margin-top: -110vh;
     }
   }
 
   .header-carousel .overlay {
-    top: calc(5vh + 200px) !important;
+    top: calc(5vh + 190px) !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
 }
 
@@ -189,6 +191,12 @@
       margin-top: -97vh;
     }
   }
+
+  .header-carousel .overlay {
+    top: calc(5vh + 175px) !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
 }
 
 // 1440×900
@@ -218,15 +226,21 @@
   }
 
   .header-carousel {
-    height: 97vh !important;
+    height: 100vh !important;
 
     .overlay {
       height: 27rem !important;
     }
 
     .slider-overlay-container {
-      margin-top: -97vh;
+      margin-top: -100vh;
     }
+  }
+
+  .header-carousel .overlay {
+    top: calc(5vh + 210px) !important;
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
   }
 }
 
@@ -266,6 +280,12 @@
     .slider-overlay-container {
       margin-top: -97vh;
     }
+  }
+
+  .header-carousel .overlay {
+    top: calc(5vh + 180px) !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
 }
 
@@ -335,6 +355,10 @@
       margin-top: -97vh;
     }
   }
+
+  .header-carousel .overlay {
+    top: calc(5vh + 250px) !important;
+  }
 }
 
 
@@ -364,6 +388,10 @@
     .slider-overlay-container {
       margin-top: -97vh;
     }
+  }
+
+  .header-carousel .overlay {
+    top: calc(5vh + 250px) !important;
   }
 }
 
@@ -415,6 +443,6 @@
   }
 
   .header-carousel .overlay {
-    top: calc(5vh + 275px) !important;
+    top: calc(5vh + 300px) !important;
   }
 }
