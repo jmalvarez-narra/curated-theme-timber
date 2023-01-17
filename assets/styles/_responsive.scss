@@ -205,8 +205,6 @@
 
   .header-carousel .overlay {
     top: calc(5vh + 175px) !important;
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
   }
 }
 
@@ -237,21 +235,15 @@
   }
 
   .header-carousel {
-    height: 100vh !important;
+    height: 107.24vh !important;
 
     .overlay {
       height: 27rem !important;
     }
 
     .slider-overlay-container {
-      margin-top: -100vh;
+      margin-top: -107.24vh;
     }
-  }
-
-  .header-carousel .overlay {
-    top: calc(5vh + 210px) !important;
-    padding-top: 1.25rem !important;
-    padding-bottom: 1.25rem !important;
   }
 }
 
