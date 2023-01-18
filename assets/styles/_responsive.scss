@@ -56,16 +56,12 @@
   .header-carousel {
     height: 50vh !important;
 
-    .overlay {
-      height: 24rem !important;
-    }
-
-    .header-details {
-      display: none !important;
-      left: unset !important;
-      bottom: 5rem !important;
-      width: 50% !important;
-    }
+    // .header-details {
+    //   display: none !important;
+    //   left: unset !important;
+    //   bottom: 5rem !important;
+    //   width: 50% !important;
+    // }
 
     .carousel-item .bg-main {
       min-height: 110% !important;
@@ -91,10 +87,6 @@
       margin-left: 38% !important;
       display: none !important;
     }
-  }
-
-  .header-carousel .overlay {
-    top: calc(5vh + 200px) !important;
   }
 }
 
@@ -141,28 +133,6 @@
       display: block;
     }
   }
-
-  .header-carousel {
-    height: 110vh !important;
-
-    .overlay {
-      height: 23rem !important;
-    }
-
-    .header-details {
-      top: 13rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -110vh;
-    }
-  }
-
-  .header-carousel .overlay {
-    top: calc(5vh + 190px) !important;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
 }
 
 // 1366×768
@@ -190,22 +160,6 @@
       display: block;
     }
   }
-
-  .header-carousel {
-    height: 97vh !important;
-
-    .overlay {
-      height: 26rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -97vh;
-    }
-  }
-
-  .header-carousel .overlay {
-    top: calc(5vh + 175px) !important;
-  }
 }
 
 // 1440×900
@@ -231,18 +185,6 @@
 
     &.youtube-container-sm {
       display: block;
-    }
-  }
-
-  .header-carousel {
-    height: 107.24vh !important;
-
-    .overlay {
-      height: 27rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -107.24vh;
     }
   }
 }
@@ -272,24 +214,6 @@
       display: block;
     }
   }
-
-  .header-carousel {
-    height: 97vh !important;
-
-    .overlay {
-      height: 25rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -97vh;
-    }
-  }
-
-  .header-carousel .overlay {
-    top: calc(5vh + 180px) !important;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
 }
 
 // 1680×1050
@@ -305,18 +229,6 @@
       min-height: 100%;
       background-size: cover;
       background-position: 50% 30%;
-    }
-  }
-
-  .header-carousel {
-    height: 97vh !important;
-
-    .overlay {
-      height: 30rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -97vh;
     }
   }
 }
@@ -346,22 +258,6 @@
       display: block;
     }
   }
-
-  .header-carousel {
-    height: 97vh !important;
-
-    .overlay {
-      height: 30rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -97vh;
-    }
-  }
-
-  .header-carousel .overlay {
-    top: calc(5vh + 250px) !important;
-  }
 }
 
 
@@ -379,22 +275,6 @@
       background-size: cover;
       background-position: 50% 50%;
     }
-  }
-
-  .header-carousel {
-    height: 97vh !important;
-
-    .overlay {
-      height: 30rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -97vh;
-    }
-  }
-
-  .header-carousel .overlay {
-    top: calc(5vh + 250px) !important;
   }
 }
 
@@ -428,24 +308,13 @@
     }
   }
 
-  .header-carousel {
-    height: 97vh !important;
-
-    .overlay {
-      height: 30rem !important;
-      bottom: 3rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -97vh;
-    }
-  }
-
   .container {
     max-width: 1768px !important;
   }
 
-  .header-carousel .overlay {
-    top: calc(5vh + 300px) !important;
+  .header-carousel {
+    .overlay {
+      top:  calc(5vh + 320px) !important;
+    }
   }
 }
