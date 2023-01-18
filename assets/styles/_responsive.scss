@@ -56,15 +56,11 @@
   .header-carousel {
     height: 50vh !important;
 
-    .overlay {
-      height: 24rem !important;
-    }
-
     .header-details {
       display: none !important;
-      left: unset !important;
-      bottom: 5rem !important;
-      width: 50% !important;
+      // left: unset !important;
+      // bottom: 5rem !important;
+      // width: 50% !important;
     }
 
     .carousel-item .bg-main {
@@ -92,9 +88,16 @@
       display: none !important;
     }
   }
+}
 
-  .header-carousel .overlay {
-    top: calc(5vh + 200px) !important;
+@media only screen and (max-width: 991px) {
+  html {
+    .first-look-carousel {
+      .carousel-control-next-icon,
+      .carousel-control-prev-icon {
+      background-color: rgba(0,0,0,0.1) !important;
+    }
+    }
   }
 }
 
@@ -120,16 +123,6 @@
 @media only screen and (min-width: 1263px) and (max-width: 1349px) {
   html {
     font-size: 100%;
-  }
-
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 23%;
-    }
   }
 
   .youtube-container {
@@ -171,16 +164,6 @@
     font-size: 100%;
   }
 
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 25%;
-    }
-  }
-
   .youtube-container {
     &.youtube-container-md {
       display: none;
@@ -190,38 +173,12 @@
       display: block;
     }
   }
-
-  .header-carousel {
-    height: 97vh !important;
-
-    .overlay {
-      height: 26rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -97vh;
-    }
-  }
-
-  .header-carousel .overlay {
-    top: calc(5vh + 175px) !important;
-  }
 }
 
 // 1440×900
 @media only screen and (min-width: 1423px) and (max-width: 1518px) {
   html {
     font-size: 100%;
-  }
-
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 30%;
-    }
   }
 
   .youtube-container {
@@ -231,18 +188,6 @@
 
     &.youtube-container-sm {
       display: block;
-    }
-  }
-
-  .header-carousel {
-    height: 107.24vh !important;
-
-    .overlay {
-      height: 27rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -107.24vh;
     }
   }
 }
@@ -253,16 +198,6 @@
     font-size: 100%;
   }
 
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 115%;
-      background-size: cover;
-      background-position: 50%, 100%;
-    }
-  }
-
   .youtube-container {
     &.youtube-container-md {
       display: none;
@@ -272,24 +207,6 @@
       display: block;
     }
   }
-
-  .header-carousel {
-    height: 97vh !important;
-
-    .overlay {
-      height: 25rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -97vh;
-    }
-  }
-
-  .header-carousel .overlay {
-    top: calc(5vh + 180px) !important;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
 }
 
 // 1680×1050
@@ -297,44 +214,12 @@
   html {
     font-size: 100%;
   }
-
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 30%;
-    }
-  }
-
-  .header-carousel {
-    height: 97vh !important;
-
-    .overlay {
-      height: 30rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -97vh;
-    }
-  }
 }
 
 // 1792×1120
 @media only screen and (min-width: 1775px) and (max-width: 1904px) {
   html {
     font-size: 100%;
-  }
-
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 50%;
-    }
   }
 
   .youtube-container {
@@ -346,22 +231,6 @@
       display: block;
     }
   }
-
-  .header-carousel {
-    height: 97vh !important;
-
-    .overlay {
-      height: 30rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -97vh;
-    }
-  }
-
-  .header-carousel .overlay {
-    top: calc(5vh + 250px) !important;
-  }
 }
 
 
@@ -369,32 +238,6 @@
 @media only screen and (min-width: 1905px) and (max-width: 2544px) {
   html {
     font-size: 100%;
-  }
-
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 50%;
-    }
-  }
-
-  .header-carousel {
-    height: 97vh !important;
-
-    .overlay {
-      height: 30rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -97vh;
-    }
-  }
-
-  .header-carousel .overlay {
-    top: calc(5vh + 250px) !important;
   }
 }
 
@@ -408,16 +251,6 @@
     min-width: 82.5rem;
   }
 
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 50%;
-    }
-  }
-
   .youtube-container {
     &.youtube-container-md {
       display: none;
@@ -428,24 +261,13 @@
     }
   }
 
-  .header-carousel {
-    height: 97vh !important;
-
-    .overlay {
-      height: 30rem !important;
-      bottom: 3rem !important;
-    }
-
-    .slider-overlay-container {
-      margin-top: -97vh;
-    }
-  }
-
   .container {
     max-width: 1768px !important;
   }
 
-  .header-carousel .overlay {
-    top: calc(5vh + 300px) !important;
+  .header-carousel {
+    .overlay {
+      top:  calc(5vh + 320px) !important;
+    }
   }
 }

@@ -1,4 +1,12 @@
+$header-carousel-base-height: 54.5rem;
+
 .header-carousel {
+  height: $header-carousel-base-height;
+
+  .slider-overlay-container {
+    margin-top: -$header-carousel-base-height;
+  }
+
   .carousel-control-prev {
     padding-right: 6vh;
   }
@@ -8,9 +16,9 @@
   }
 
   .overlay {
-    top:  calc(5vh + 265px) !important;
+    top:  calc(5vh + 235px) !important;
     bottom: unset !important;
-    // height: unset !important;
+    height: 30rem !important;
     height: fit-content !important;
     padding: 2rem !important;
 
