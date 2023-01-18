@@ -56,12 +56,12 @@
   .header-carousel {
     height: 50vh !important;
 
-    // .header-details {
-    //   display: none !important;
-    //   left: unset !important;
-    //   bottom: 5rem !important;
-    //   width: 50% !important;
-    // }
+    .header-details {
+      display: none !important;
+      // left: unset !important;
+      // bottom: 5rem !important;
+      // width: 50% !important;
+    }
 
     .carousel-item .bg-main {
       min-height: 110% !important;
