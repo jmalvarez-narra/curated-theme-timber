@@ -291,11 +291,14 @@ footer .nav-link {
 }
 
 footer ul li ul.nav-drop {
+  opacity: 0;
   display: none;
 }
 
 footer ul li:hover ul.nav-drop {
+  opacity: 1;
   display: block;
+  animation: fadeIn ease 0.7s;
 }
 
 footer ul li {
