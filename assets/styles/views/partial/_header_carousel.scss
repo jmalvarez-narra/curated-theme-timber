@@ -1,4 +1,12 @@
+$header-carousel-base-height: 54.5rem;
+
 .header-carousel {
+  height: $header-carousel-base-height;
+
+  .slider-overlay-container {
+    margin-top: -$header-carousel-base-height;
+  }
+
   .carousel-control-prev {
     padding-right: 6vh;
   }
@@ -8,9 +16,17 @@
   }
 
   .overlay {
-    top:  calc(5vh + 210px) !important;
+    top:  calc(5vh + 235px) !important;
     bottom: unset !important;
-    height: unset !important;
+    height: 30rem !important;
+    height: fit-content !important;
+    padding: 2rem !important;
+
+    h2 {
+      font-size: 1.8rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0 !important;
+    }
   }
 
   .header-details {
@@ -34,31 +50,8 @@
       }
     }
 
-    ul {
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-
     .btn {
-      border-radius: 0.5rem;
       margin-top: 1rem;
-
-      &:hover {
-        background-color: #696969;
-        color: #fff;
-      }
-
-      &:active,
-      &:focus,
-      &.focus,
-      &:visited,
-      &:focus-visible {
-        background-color: #4a4a4a;
-        color: #fff;
-        border: 0;
-        outline: none !important;
-        box-shadow: none;
-      }
     }
   }
 

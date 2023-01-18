@@ -13,30 +13,7 @@
     flex-direction: column !important;
     justify-content: center !important;
     padding: 8rem 5rem !important;
-
-    .btn {
-      font-family: 'SweetSansPro';
-      font-weight: 700;
-      // font-size: 1rem;
-      border-radius: 0.5rem;
-
-      &:hover {
-        background-color: #696969;
-        color: #fff;
-      }
-
-      &:active,
-      &:focus,
-      &.focus,
-      &:visited,
-      &:focus-visible {
-        background-color: #4a4a4a;
-        color: #fff;
-        border: 0;
-        outline: none !important;
-        box-shadow: none;
-      }
-    }
+    padding: 8.3rem 3.9rem 4.5rem 3.9rem !important;
 
     p {
       line-height: 1.6rem;
