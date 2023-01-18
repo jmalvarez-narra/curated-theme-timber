@@ -101,6 +101,17 @@
   }
 }
 
+@media only screen and (max-width: 991px) {
+  html {
+    .first-look-carousel {
+      .carousel-control-next-icon,
+      .carousel-control-prev-icon {
+      background-color: rgba(0,0,0,0.1) !important;
+    }
+    }
+  }
+}
+
 // 800x1280
 @media only screen and (min-width: 800px) and (max-width: 1262px) {
   html {
@@ -122,6 +133,28 @@
     &.youtube-container-xs {
       display: block;
     }
+  }
+
+  .header-carousel {
+    height: 110vh !important;
+
+    .overlay {
+      height: 23rem !important;
+    }
+
+    .header-details {
+      top: 13rem !important;
+    }
+
+    .slider-overlay-container {
+      margin-top: -110vh;
+    }
+  }
+
+  .header-carousel .overlay {
+    top: calc(5vh + 190px) !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
 }
 

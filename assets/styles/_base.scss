@@ -288,15 +288,18 @@ footer .icons .instagram .icon {
 
 footer .nav-link {
   padding: 0.3rem;
+  cursor: pointer;
 }
 
 footer ul li ul.nav-drop {
-  display: none;
+  opacity: 0;
+  margin-top: -5px;
 }
 
 footer ul li:hover ul.nav-drop {
-  display: block;
-  animation: fadeIn ease 0.7s;
+  opacity: 1;
+  margin-top: 0px;
+  transition: all 0.25s ease;
 }
 
 footer ul li {
