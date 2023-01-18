@@ -1,10 +1,10 @@
-$base-height: 54.5rem;
+$header-carousel-base-height: 54.5rem;
 
 .header-carousel {
-  height: $base-height;
+  height: $header-carousel-base-height;
 
   .slider-overlay-container {
-    margin-top: -$base-height;
+    margin-top: -$header-carousel-base-height;
   }
 
   .carousel-control-prev {

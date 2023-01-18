@@ -114,16 +114,6 @@
     font-size: 100%;
   }
 
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 23%;
-    }
-  }
-
   .youtube-container {
     &.youtube-container-md {
       display: none;
@@ -139,16 +129,6 @@
 @media only screen and (min-width: 1349px) and (max-width: 1422px) {
   html {
     font-size: 100%;
-  }
-
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 25%;
-    }
   }
 
   .youtube-container {
@@ -168,16 +148,6 @@
     font-size: 100%;
   }
 
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 30%;
-    }
-  }
-
   .youtube-container {
     &.youtube-container-md {
       display: none;
@@ -193,16 +163,6 @@
 @media only screen and (min-width: 1519px) and (max-width: 1662px) {
   html {
     font-size: 100%;
-  }
-
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 115%;
-      background-size: cover;
-      background-position: 50%, 100%;
-    }
   }
 
   .youtube-container {
@@ -221,32 +181,12 @@
   html {
     font-size: 100%;
   }
-
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 30%;
-    }
-  }
 }
 
 // 1792×1120
 @media only screen and (min-width: 1775px) and (max-width: 1904px) {
   html {
     font-size: 100%;
-  }
-
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 50%;
-    }
   }
 
   .youtube-container {
@@ -266,16 +206,6 @@
   html {
     font-size: 100%;
   }
-
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 50%;
-    }
-  }
 }
 
 // 2560×1440
@@ -286,16 +216,6 @@
 
   .container-fluid {
     min-width: 82.5rem;
-  }
-
-  .featured-container {
-    height: 97vh !important;
-
-    .featured {
-      min-height: 100%;
-      background-size: cover;
-      background-position: 50% 50%;
-    }
   }
 
   .youtube-container {
