@@ -238,13 +238,6 @@ class StarterSite extends Timber\Site {
 				break;
 		}
 
-		$categories = get_categories( array(
-			'name' => ['Inventory'],
-			'hide_empty' => false,
-		));
-		$inventory = $categories[0];
-		$sub_cats = get_term_children( $inventory->cat_ID, 'category' );
-
 		$args = array(
 			// Get post type car
 			'post_type' => 'cars',
@@ -255,13 +248,7 @@ class StarterSite extends Timber\Site {
 			// Limit posts
 			'posts_per_page' => $context['limit'],
 			// current page
-			'paged' => $context['page'],
-			'tax_query' => array(
-				array(
-				'taxonomy' => 'category',
-				'field'    => 'id',
-				'terms'    => $sub_cats
-			))
+			'paged' => $context['page']
 		);
 
 		$context['cars'] = Timber::get_posts( $args );
