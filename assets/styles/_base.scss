@@ -298,12 +298,15 @@ footer ul li ul.nav-drop {
   top: -30px;
 }
 
-footer ul li:hover ul.nav-drop {
+footer ul li ul.nav-drop {
+  display: none;
+}
+
+footer ul li.menu-item-has-children:hover ul.nav-drop {
+  display: block;
   opacity: 1;
-  margin-top: 0px;
-  z-index: 1;
-  top: 0px;
-  transition: all 0.5s ease;
+  margin-top: 0;
+  animation: fadeIn ease 0.5s;
 }
 
 footer ul li {
