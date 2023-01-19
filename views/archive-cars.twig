@@ -40,13 +40,19 @@
                   <option value="Available">CURRENT INVENTORY</option>
                   <option value="Sold">PREVIOUSLY SOLD</option>
 
-                  {% for category in categories %}
-                    <option value="{{ category.name }}">{{ category.name }}</option>
+                  {% for item in footer_menu_right.items %}
+                    {% if item.name == 'Brands' and item.children %}
+                      <ul class="nav-drop">
+                        {% for child in item.children %}
+                          <option value="{{ child.title }}">{{ child.title }}</option>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
                   {% endfor %}
                 </select>
 
                 <select id="width_tmp_select">
-                  <option id="width_tmp_option"></option>
+                  <option id="width_tmp_option">{{ title }}</option>
                 </select>
               </div>
             </div>
@@ -200,6 +206,8 @@
         });
       });
 
+      $("#filter-car").val('{{ title }}');
+      $("#filter-car").change();
       getCars();
     });
   </script>
