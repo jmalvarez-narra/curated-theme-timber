@@ -17,15 +17,22 @@
 
             <div class="col-12 col-md-6 filter-container">
               <div class="float-end">
-                <label>FILTER BY:</label>
+                <label>SORT BY:</label>
 
                 <select id="filter-car" class="filter-container">
-                  <option value="" selected>ALL CATEGORIES</option>
+                  <option value="Inventory" selected>VIEW ALL</option>
+                  <option value="Latest">LATEST ARRIVALS</option>
+                  <option value="Available">CURRENT INVENTORY</option>
+                  <option value="Sold">PREVIOUSLY SOLD</option>
 
                   {% for category in categories %}
                     <option value="{{ category.name }}">{{ category.name }}</option>
                   {% endfor %}
                 <select>
+
+                <select id="width_tmp_select">
+                  <option id="width_tmp_option"></option>
+                </select>
               </div>
             </div>
           </div>
@@ -133,8 +140,11 @@
         });
       });
 
-      $("#filter-car").change((e) => {
+      $("#filter-car").change(function (e) {
         e.preventDefault();
+
+        $("#width_tmp_option").html($('#filter-car option:selected').text());
+        $(this).css("width", `calc(5rem + ${$("#width_tmp_select").width()}px)`);
 
         page = 1;
 

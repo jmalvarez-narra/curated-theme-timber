@@ -27,44 +27,180 @@
 				</div>
 
         <div class="container-fluid mb-5">
-          <div id="car__list" class="row">
+          <div class="row">
+            <div class="col-12 col-md-6 filter-container"></div>
 
-            {% for key,post in posts %}
-              <div class="col-md-4 col-6 car-item">
-                <div class="card inventory-card border-0">
-                  <div class="card-media">
-                    {% if post.thumbnail.src %}
-                      <img src="{{ post.thumbnail.src }}" class="card-img-top img-fluid card-img-fit" alt="...">
-                    {% else %}
-                      <img src="{{ site.theme.link }}/dist/assets/img/placeholder.png" class="card-img-top img-fluid card-img-fit" alt="...">
-                    {% endif %}
-                    <div class="overlay">
-                      <div class="details">
-                        <h6>DETAILS</h6>
-                        <ul>
-                          <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
-                          <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
-                          <li>{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</li>
-                        </ul>
-                        <a href="{{post.link}}" class="text-white">MORE →</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <a href="{{post.link}}">
-                      <h5 class="card-title mb-0">{{post.title}}</h5>
-                      <p class="card-text">{{ post.meta('engine') ? post.meta('engine') : "#NA" }}</p>
-                    </a>
-                  </div>
-                </div>
+            <div class="col-12 col-md-6 filter-container">
+              <div class="float-end">
+                <label class="sort-by">SORT BY:</label>
+
+                <select id="filter-car" class="filter-container">
+                  <option id="option-inventory" value="Inventory" selected>VIEW ALL</option>
+                  <option id="option-available" value="Latest">LATEST ARRIVALS</option>
+                  <option id="option-sold" value="Available">CURRENT INVENTORY</option>
+                  <option id="option-lates" value="Sold">PREVIOUSLY SOLD</option>
+
+                  {% for category in categories %}
+                    <option id="option-{{ category.name|lower }}" value="{{ category.name }}">{{ category.name }}</option>
+                  {% endfor %}
+                </select>
+
+                <select id="width_tmp_select">
+                  <option id="width_tmp_option"></option>
+                </select>
               </div>
-            {% endfor %}
-
-            <div class="load-more-btn-container justify-content-end">
             </div>
+          </div>
+
+          <div id="car__list" class="row car-list"></div>
+
+          {% include 'partial/list-loader.twig' %}
+
+          <div class="justify-content-end mb-4" style="display: none;">
+            <button id="load-more-car-btn" class="btn btn-primary load-more-btn">More</button>
           </div>
         </div>
 			</section>
 		</article>
 	</div><!-- /content-wrapper -->
+
+  <script>
+    $(document).ready(function() {
+      let page = 0;
+      let page_limit = window.innerWidth <= 992 ? 8 : 9;
+
+      const getCars = () => {
+        page++;
+
+        $("#load-more-car-btn").attr('disabled', true);
+        $(".list-loader").removeClass("d-none");
+
+        $.ajax({
+          type: 'POST',
+          url: '/wp-admin/admin-ajax.php',
+          dataType: 'html',
+          data: {
+            action: 'get_cars',
+            limit: page_limit,
+            page: page,
+            sort: $("#sort-car").val(),
+            'filter-category': $("#filter-car").val()
+          },
+          success: function(data) {
+            const carsCount = $('<div></div>').html(data).find('.car-item').size();
+
+            if (carsCount < page_limit) {
+              $("#load-more-car-btn").parent().hide();
+            } else {
+              $("#load-more-car-btn").parent().show();
+            }
+
+            if (carsCount) $('#car__list').append(data);
+
+            $("#load-more-car-btn").attr('disabled', false);
+            $(".list-loader").addClass("d-none");
+          },
+          error: function(data) {
+            $("#load-more-car-btn").attr('disabled', false);
+            $(".list-loader").addClass("d-none");
+          }
+        });
+      };
+
+      $("#load-more-car-btn").click((e) => {
+        e.preventDefault();
+
+        getCars();
+      });
+
+      $("#sort-car").change((e) => {
+        e.preventDefault();
+
+        page = 1;
+
+        $('#car__list').html('');
+        $("#load-more-car-btn").parent().hide();
+        $(".list-loader").removeClass("d-none");
+
+        $.ajax({
+          type: 'POST',
+          url: '/wp-admin/admin-ajax.php',
+          dataType: 'html',
+          data: {
+            action: 'get_cars',
+            limit: page_limit,
+            page: page,
+            sort: e.target.value,
+            'filter-category': $("#filter-car").val()
+          },
+          success: function(data) {
+            const carsCount = $('<div></div>').html(data).find('.car-item').size();
+
+            if (carsCount < page_limit) {
+              $("#load-more-car-btn").parent().hide();
+            } else {
+              $("#load-more-car-btn").parent().show();
+            }
+
+            if (carsCount) {
+              $('#car__list').html(data);
+            }
+
+            $(".list-loader").addClass("d-none");
+          },
+          error: function(data) {
+            $("#load-more-car-btn").parent().show();
+            $(".list-loader").addClass("d-none");
+          }
+        });
+      });
+
+      $("#filter-car").change(function (e) {
+        e.preventDefault();
+
+        $("#width_tmp_option").html($('#filter-car option:selected').text());
+        $(this).css("width", `calc(5rem + ${$("#width_tmp_select").width()}px)`);
+
+        page = 1;
+
+        $('#car__list').html('');
+        $("#load-more-car-btn").parent().hide();
+        $(".list-loader").removeClass("d-none");
+
+        $.ajax({
+          type: 'POST',
+          url: '/wp-admin/admin-ajax.php',
+          dataType: 'html',
+          data: {
+            action: 'get_cars',
+            limit: page_limit,
+            page: page,
+            sort: $("#sort-car").val(),
+            'filter-category': e.target.value
+          },
+          success: function(data) {
+            const carsCount = $('<div></div>').html(data).find('.car-item').size();
+
+            if (carsCount < page_limit) {
+              $("#load-more-car-btn").parent().hide();
+            } else {
+              $("#load-more-car-btn").parent().show();
+            }
+
+            if (carsCount) {
+              $('#car__list').html(data);
+            }
+
+            $(".list-loader").addClass("d-none");
+          },
+          error: function(data) {
+            $("#load-more-car-btn").parent().show();
+            $(".list-loader").addClass("d-none");
+          }
+        });
+      });
+
+      getCars();
+    });
+  </script>
 {% endblock %}
