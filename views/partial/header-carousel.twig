@@ -31,15 +31,9 @@
         </h2>
 
         <ul>
-          {% if post.meta('transmission') %}
-            <li>{{ post.meta('transmission') }}</li>
-          {% endif %}
-          {% if post.meta('current_mileage') %}
-            <li>{{ post.meta('current_mileage') }}</li>
-          {% endif %}
-          {% if post.meta('examples_produced_for_us') %}
-            <li>{{ post.meta('examples_produced_for_us') }}</li>
-          {% endif %}
+          {% for contact in post.meta('car_box_details') %}
+            <li>{{ contact.detail }}</li>
+          {% endfor %}
         </ul>
 
         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#inquiryModal">
