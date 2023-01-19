@@ -20,12 +20,16 @@
                 <label>SORT BY:</label>
 
                 <select id="filter-car" class="filter-container">
-                  <option value="Inventory" selected>VIEW ALL</option>
+                  <option value="" selected>VIEW ALL</option>
                   <option value="Latest">LATEST ARRIVALS</option>
                   <option value="Available">CURRENT INVENTORY</option>
                   <option value="Sold">PREVIOUSLY SOLD</option>
 
-                  {% for item in footer_menu_right.items %}
+                  {% for category in categories %}
+                    <option value="{{ category.name }}">{{ category.name }}</option>
+                  {% endfor %}
+
+                  {# {% for item in footer_menu_right.items %}
                     {% if item.name == 'Brands' and item.children %}
                       <ul class="nav-drop">
                         {% for child in item.children %}
@@ -33,7 +37,7 @@
                         {% endfor %}
                       </ul>
                     {% endif %}
-                  {% endfor %}
+                  {% endfor %} #}
                 <select>
 
                 <select id="width_tmp_select">

@@ -241,8 +241,6 @@ class StarterSite extends Timber\Site {
 		$args = array(
 			// Get post type car
 			'post_type' => 'cars',
-			// Get post category,
-			'category_name' => $context['filter-category'],
 			// Order by
 			'orderby' => $orderby,
 			// Limit posts
@@ -250,6 +248,11 @@ class StarterSite extends Timber\Site {
 			// current page
 			'paged' => $context['page']
 		);
+
+		if ($context['filter-category']) {
+			$categoryID = get_categories(array('name' => $context['filter-category'], 'hide_empty' => 0))[0]->cat_ID;
+			$args['category'] = array($categoryID);
+		}
 
 		$context['cars'] = Timber::get_posts( $args );
 
