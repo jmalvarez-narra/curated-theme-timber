@@ -35,13 +35,13 @@
                 <label class="sort-by">SORT BY:</label>
 
                 <select id="filter-car" class="filter-container">
-                  <option id="option-inventory" value="Inventory" selected>VIEW ALL</option>
-                  <option id="option-available" value="Latest">LATEST ARRIVALS</option>
-                  <option id="option-sold" value="Available">CURRENT INVENTORY</option>
-                  <option id="option-lates" value="Sold">PREVIOUSLY SOLD</option>
+                  <option value="Inventory" selected>VIEW ALL</option>
+                  <option value="Latest">LATEST ARRIVALS</option>
+                  <option value="Available">CURRENT INVENTORY</option>
+                  <option value="Sold">PREVIOUSLY SOLD</option>
 
                   {% for category in categories %}
-                    <option id="option-{{ category.name|lower }}" value="{{ category.name }}">{{ category.name }}</option>
+                    <option value="{{ category.name }}">{{ category.name }}</option>
                   {% endfor %}
                 </select>
 
