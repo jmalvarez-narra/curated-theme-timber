@@ -171,6 +171,24 @@
         $("#width_tmp_option").html($('#filter-car option:selected').text());
         $(this).css("width", `calc(5rem + ${$("#width_tmp_select").width()}px)`);
 
+        let title;
+
+        switch(e.target.value) {
+          case 'Latest':
+            title = "LATEST ARRIVALS"
+            break;
+          case 'Available':
+            title = "CURRENT INVENTORY"
+            break;
+          case 'Sold':
+            title = "PREVIOUSLY SOLD"
+            break;
+          default:
+            title = e.target.value ? e.target.value : "View All"
+        }
+
+        $(".title").text(title);
+
         page = 1;
 
         $('#car__list').html('');
