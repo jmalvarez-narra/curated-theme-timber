@@ -34,16 +34,16 @@
 
               <form id="OTMForm" class="bg-grey px-4 py-3 page-contact-container">
                 <div class="row">
-                  <div class="input-wrapper col-12 col-md-5 mt-2">
+                  <div class="input-wrapper col-12 col-md-5">
                     <i class="icon-user form-icon" aria-hidden="true"></i>
-                    <label for="msg">Name:</label>
-                    <input class="w-100 border-0 form-control" type="text" name="from" required>
+                    <label class="mb-1" for="msg">Name:</label>
+                    <input class="w-100 border-0 form-control" type="text" name="from" placeholder="Name" required>
                   </div>
 
-                  <div class="input-wrapper col-12 col-md-7 mt-2">
+                  <div class="input-wrapper col-12 col-md-7">
                     <i class="icon-envelope form-icon" aria-hidden="true"></i>
-                    <label for="sender">Email:</label>
-                    <input class="w-100 border-0 form-control" type="email" name="sender" required>
+                    <label class="mb-1" for="sender">Email:</label>
+                    <input class="w-100 border-0 form-control" type="email" name="sender" placeholder="Email" required>
                   </div>
 
                   {# <div class="input-wrapper col-12 mt-2">
@@ -55,8 +55,8 @@
                 <div class="row">
                   <div class="input-wrapper col-12 mt-2">
                     <i class="icon-pencil form-icon" aria-hidden="true"></i>
-                    <label for="msg">Messsage:</label>
-                    <textarea class="text w-100 border-0 bg-white form-control" name="msg" rows="5" required></textarea>
+                    <label class="mb-1" for="msg">Messsage:</label>
+                    <textarea class="text w-100 border-0 bg-white form-control" name="msg" rows="5" placeholder="Message" required></textarea>
                   </div>
                 </div>
                 <input type="hidden" name="suburl" id="sub-url" value="">
