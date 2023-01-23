@@ -23,11 +23,9 @@ $context['highlights'] = Timber::get_posts( $args );
 
 $args = array(
     // Get post type car
-    'post_type' => 'cars',
+    'post_type' => 'firstlook',
     // Get all posts
     'posts_per_page' => 10,
-    // Gest post by "featured" category
-    'category_name' => 'curated',
     // Order by post date
     'orderby' => array(
         'date' => 'DESC',

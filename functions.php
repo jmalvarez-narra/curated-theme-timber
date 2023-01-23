@@ -91,6 +91,22 @@ class StarterSite extends Timber\Site {
 		);
 		add_theme_support('post-thumbnails');
 		add_post_type_support( 'cars', 'thumbnail' );
+
+		register_post_type( 'firstlook',
+			// CPT Options
+			array(
+				'labels' => array(
+				'name' => __( 'First Looks' ),
+				'singular_name' => __( 'First Look' )
+				),
+				'public' => true,
+				'has_archive' => true,
+				'rewrite' => array('slug' => 'first_look'),
+				'taxonomies' => array( 'category' ),
+			)
+		);
+		add_theme_support('post-thumbnails');
+		add_post_type_support( 'firstlook', 'thumbnail' );
 	}
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies() {
