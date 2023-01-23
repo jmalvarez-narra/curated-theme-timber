@@ -31,12 +31,14 @@
 
 				{% include 'partial/multi-carousel.twig' with { posts: latest, title: 'latest' } %}
 
-				<div class="section-heading pt-sm mb-md">
-					<h3 class="title">FIRST LOOK</h3>
-					<h5 class="subtitle mb-0">CURATED</h5>
-				</div>
+				{% if curated %}
+					<div class="section-heading pt-sm mb-md">
+						<h3 class="title">FIRST LOOK</h3>
+						<h5 class="subtitle mb-0">CURATED</h5>
+					</div>
 
-				{% include 'partial/first-look-carousel.twig' with { post: post, posts: curated, title: 'first-look' } %}
+					{% include 'partial/first-look-carousel.twig' with { post: post, posts: curated, title: 'first-look' } %}
+				{% endif %}
 
 				<div class="section-heading">
 					<h3 class="title">THE JOURNAL</h3>
