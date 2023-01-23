@@ -69,6 +69,8 @@ class StarterSite extends Timber\Site {
 		add_action( 'wp_ajax_get_cars', array( $this, 'get_cars' ) );
 		add_action( 'wp_ajax_nopriv_get_journals', array( $this, 'get_journals' ) );
 		add_action( 'wp_ajax_get_journals', array( $this, 'get_journals' ) );
+		add_action( 'wp_ajax_nopriv_contact_us', array( $this, 'contact_us' ) );
+		add_action( 'wp_ajax_contact_us', array( $this, 'contact_us' ) );
 		parent::__construct();
 	}
 
@@ -278,6 +280,29 @@ class StarterSite extends Timber\Site {
 		$context['posts'] = Timber::get_posts( $args );
 
 		Timber::render('partial/journal-list.twig', $context);
+
+		die();
+	}
+
+	function contact_us() {
+		$name = empty($_POST['name']) ? '' : $_POST['name'];
+		$email = empty($_POST['email']) ? '' : $_POST['email'];
+		$message = empty($_POST['message']) ? '' : $_POST['message'];
+
+		$subject = 'Curated | New Contact Message';
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+
+		$email_to = "jm@narralabs.com";
+    $mail = wp_mail($email_to, $subject, Timber::compile(
+			'views/email/contact-us.twig',
+			[
+				'name' => $name,
+				'email' => $email,
+				'message' => $message,
+			]
+    ), $headers);
+
+		echo "OK";
 
 		die();
 	}

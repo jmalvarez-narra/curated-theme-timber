@@ -37,13 +37,13 @@
                   <div class="input-wrapper col-12 col-md-5">
                     <i class="icon-user form-icon" aria-hidden="true"></i>
                     <label class="mb-1" for="msg">Name:</label>
-                    <input class="w-100 border-0 form-control" type="text" name="from" placeholder="Name" required>
+                    <input class="w-100 border-0 form-control" type="text" name="name" placeholder="Name" required>
                   </div>
 
                   <div class="input-wrapper col-12 col-md-7">
                     <i class="icon-envelope form-icon" aria-hidden="true"></i>
                     <label class="mb-1" for="sender">Email:</label>
-                    <input class="w-100 border-0 form-control" type="email" name="sender" placeholder="Email" required>
+                    <input class="w-100 border-0 form-control" type="email" name="email" placeholder="Email" required>
                   </div>
 
                   {# <div class="input-wrapper col-12 mt-2">
@@ -56,14 +56,20 @@
                   <div class="input-wrapper col-12 mt-2">
                     <i class="icon-pencil form-icon" aria-hidden="true"></i>
                     <label class="mb-1" for="msg">Messsage:</label>
-                    <textarea class="text w-100 border-0 bg-white form-control" name="msg" rows="5" placeholder="Message" required></textarea>
+                    <textarea class="text w-100 border-0 bg-white form-control" name="message" rows="5" placeholder="Message" required></textarea>
                   </div>
                 </div>
                 <input type="hidden" name="suburl" id="sub-url" value="">
                 <input type="hidden" name="submitted-from" id="submitted-from" value="">
+
+                <button class="btn btn-primary btn-sm mt-4 px-5 otm-form-submit" type="submit" >
+                  SEND
+                </button>
               </form>
 
-              <button class="btn btn-primary btn-sm mt-4 px-5" type="submit" >SEND</button>
+              <div class="spinner-border spinner-border-sm inquiry-loader" role="status" style="display: none;">
+                <span class="visually-hidden">Loading...</span>
+              </div>
             </div>
           </div>
         </div>
@@ -76,4 +82,42 @@
 			</section>
 		</article>
 	</div><!-- /content-wrapper -->
+
+  <script>
+    $(document).ready(function() {
+      $("#OTMForm").submit(function( event ) {
+        event.preventDefault();
+
+        const name = $("#OTMForm input[name=\"name\"]").val();
+        const email = $("#OTMForm input[name=\"email\"]").val();
+        const message = $("#OTMForm textarea[name=\"message\"]").val();
+
+        $(".otm-form-submit").attr('disabled', true);
+        $(".inquiry-loader").show();
+
+        $.ajax({
+          type: 'POST',
+          url: '/wp-admin/admin-ajax.php',
+          dataType: 'html',
+          data: {
+            action: 'contact_us',
+            name,
+            email,
+            message,
+          },
+          success: function(data) {
+            $(".otm-form-submit").attr('disabled', false);
+            $(".inquiry-loader").hide();
+
+            const modalSubmitSuccess = new bootstrap.Modal(document.getElementById('inquiry-submit-success'));
+            modalSubmitSuccess.show();
+          },
+          error: function(data) {
+            $(".otm-form-submit").attr('disabled', false);
+            $(".inquiry-loader").hide();
+          }
+        });
+      });
+    })
+  </script>
 {% endblock %}
