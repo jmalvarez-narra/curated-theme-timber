@@ -1092,6 +1092,14 @@ img.carousel-tape-horizontal {
   }
 }
 
+.first-look-carousel {
+  margin-top: 1rem;
+
+  .carousel.slide, .carousel-inner {
+    overflow: unset !important;
+  }
+}
+
 // #firstLookCarousel .bg-left,
 // #firstLookCarousel .bg-right,
 // #firstLookCarousel .overlay {
