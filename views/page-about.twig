@@ -1,5 +1,6 @@
 
 {% extends "base.twig" %}
+{% set headerClass = "header-light" %}
 
 {% block content %}
   {% include 'partial/featured-header.twig' with { hideInquiry: true } %}
@@ -38,10 +39,6 @@
                     </p>
 
                     {# <button type="button" data-bs-target="#aboutCarousel" data-bs-slide="next" class="btn btn-primary btn-sm mt-4">READ MORE</button> #}
-
-                    <h5 class="extra-overlay sale">
-                      SALE
-                    </h5>
                   </div>
 
                   <div class="col-2 bg-image" style="--bg-image: url({{ post.meta('about_us_image_2') }});"></div>
