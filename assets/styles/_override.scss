@@ -221,8 +221,8 @@ header.header-light a.nav-link:hover::after {
 }
 
 .ui-slider-handle {
-  width: 1.47vh !important;
-  height: 5.78vh !important;
+  width: 12px !important;
+  height: 46px !important;
   margin-left: -0.6em !important;
 }
 
@@ -230,7 +230,7 @@ header.header-light a.nav-link:hover::after {
   background-color: #a0a0a0 !important;
   border: 0 !important;
   border-radius: 0 !important;
-  top: -2.8vh !important;
+  top: -2.5vh !important;
 }
 
 .ui-slider-horizontal .ui-slider-handle {
@@ -278,6 +278,7 @@ body:hover .home-spec {
 	float: right;
   width: fit-content;
   padding: 0.5rem 2rem;
+  margin-top: 20px !important;
   color: #fff;
   background-color: #000;
   border: 0;

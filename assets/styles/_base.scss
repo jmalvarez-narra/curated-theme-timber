@@ -416,6 +416,10 @@ footer .icons .nav-item:hover {
   display: none !important;
 }
 
+.header-light .social-icons .nav-item:hover .icon-light {
+  opacity: 0.5;
+}
+
 .offcanvas-header .btn-close {
   top: 3rem;
   right: 1rem;
@@ -547,7 +551,7 @@ a.nav-link {
   position: relative;
   text-transform: uppercase;
   font-size: 2.6rem;
-  letter-spacing: 0.32px;
+  letter-spacing: 0.76px;
   z-index: 1;
   overflow: hidden;
   text-align: center;
@@ -612,6 +616,10 @@ a.nav-link {
 
 .more-link i {
   font-size: 0.9rem;
+}
+
+.more-link .fa-angle-right {
+  font-size: 0.8rem;
 }
 
 .more-link:hover span {
