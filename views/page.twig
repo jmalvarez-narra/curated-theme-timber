@@ -20,16 +20,18 @@
 					{{post.content}}
 				</div>
 
-				{% for key,section in post.meta('additional_sections') %}
-					<div class="section-heading">
-						<h3 class="title">{{section.subsection_title}}</h3>
-						<h5 class="subtitle mb-0">{{section.subsection_subtitle}}</h5>
-					</div>
+				{% if post.meta('additional_sections') %}
+					{% for key,section in post.meta('additional_sections') %}
+						<div class="section-heading">
+							<h3 class="title">{{section.subsection_title}}</h3>
+							<h5 class="subtitle mb-0">{{section.subsection_subtitle}}</h5>
+						</div>
 
-					<div class="article-body">
-						{{section.subsection_content}}
-					</div>
-				{% endfor %}
+						<div class="article-body">
+							{{section.subsection_content}}
+						</div>
+					{% endfor %}
+				{% endif %}
 			</section>
 		</article>
 	</div><!-- /content-wrapper -->
