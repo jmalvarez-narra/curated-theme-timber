@@ -153,22 +153,15 @@ p {
 
 .youtube-container {
   position: relative;
+  padding-bottom: 56.25%;
+}
 
-  &.youtube-container-xs {
-    display: none;
-  }
-
-  &.youtube-container-sm {
-    display: none;
-  }
-
-  &.youtube-container-lg {
-    display: none;
-  }
-
-  &.youtube-container-xl {
-    display: none;
-  }
+.youtube-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .youtube-overlay {
