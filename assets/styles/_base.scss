@@ -263,6 +263,10 @@ p {
   letter-spacing: 0.1rem;
 }
 
+footer {
+  padding-bottom: 6rem;
+}
+
 footer .logo img {
   width: 16rem;
 }
@@ -295,7 +299,7 @@ footer ul li ul.nav-drop {
   display: none;
 }
 
-footer ul li.menu-item-has-children:hover ul.nav-drop {
+footer ul li:hover ul.nav-drop {
   display: block;
   opacity: 1;
   margin-top: 0;
@@ -313,7 +317,7 @@ footer ul li ul.nav-drop {
   padding: 30px;
   text-align: left;
   position: absolute;
-  right: 0;
+  left: 0;
   z-index: 2;
 }
 
