@@ -1273,6 +1273,8 @@ img.carousel-tape-horizontal {
 
 .inventory-card .card-media {
   position: relative;
+  height: 360px;
+  overflow: hidden;
 }
 
 .inventory-card .card-media .overlay {
