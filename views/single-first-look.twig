@@ -20,7 +20,11 @@
           {% if post.meta('template') == 'a' %}
             <div class="carousel-item carousel-item-1 h-100 active">
               <div class="row h-100 m-0">
-                <div class="d-none d-lg-block col-6 bg-image bg-image-left" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-left-a.png);">
+                {% if post.meta('left_image') %}
+                  <div class="d-none d-lg-block col-6 bg-image bg-image-left" style="--bg-image: url({{ post.meta('left_image') }});">
+                {% else %}
+                  <div class="d-none d-lg-block col-6 bg-image bg-image-left" style="--bg-image: url({{ site.theme.link ~ '/assets/img/first-look-left-a.png' }});">
+                {% endif %}  
                   <div class="tape-1"></div>
                   <div class="tape-2"></div>
                   <div class="polaroid">
@@ -40,12 +44,16 @@
                         </p>
                       </div>
 
-                      <a href="{{ post.link }}">
+                      {# <a href="{{ post.link }}">
                         <button type="button" class="btn btn-primary btn-sm">READ MORE</button>
-                      </a>
+                      </a> #}
                     </div>
 
-                    <div class="d-none d-lg-block col-2 bg-image  bg-image-right" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-right-a.png);">
+                    {% if post.meta('right_image') %}
+                      <div class="d-none d-lg-block col-2 bg-image  bg-image-right" style="--bg-image: url({{ post.meta('right_image') }});">
+                    {% else %}
+                      <div class="d-none d-lg-block col-2 bg-image  bg-image-right" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-right-a.png);">
+                    {% endif %}
                       <div class="tape-1"></div>
                     </div>
                   </div>
@@ -57,7 +65,11 @@
               <div class="row h-100 m-0">
                 <div class="col-12 col-lg-6">
                   <div class="row h-100">
-                    <div class="d-none d-lg-block col-2 bg-image bg-image-left" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-left-b.png);">
+                    {% if post.meta('left_image') %}
+                      <div class="d-none d-lg-block col-2 bg-image bg-image-left" style="--bg-image: url({{ post.meta('left_image') }});">
+                    {% else %}
+                      <div class="d-none d-lg-block col-2 bg-image bg-image-left" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-left-b.png);">
+                    {% endif %}
                       <div class="tape-1"></div>
                     </div>
 
@@ -80,14 +92,18 @@
                         </p>
                       </div>
 
-                      <a href="{{ post.link }}">
+                      {# <a href="{{ post.link }}">
                         <button type="button" class="btn btn-primary btn-sm">READ MORE</button>
-                      </a>
+                      </a> #}
                     </div>
                   </div>
                 </div>
 
-                <div class="d-none d-lg-block col-6 bg-image bg-image-right" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-right-b.png);">
+                {% if post.meta('right_image') %}
+                  <div class="d-none d-lg-block col-6 bg-image bg-image-right" style="--bg-image: url({{ post.meta('right_image') }});">
+                {% else %}
+                  <div class="d-none d-lg-block col-6 bg-image bg-image-right" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-right-b.png);">
+                {% endif %}
                   <div class="tape-1"></div>
                   <div class="tape-2"></div>
                   <div class="polaroid">
@@ -99,7 +115,11 @@
           {% elseif post.meta('template') == 'c' %}
             <div class="carousel-item carousel-item-3 h-100 active">
               <div class="row h-100 m-0">
-                <div class="d-none d-lg-block col-6 bg-image bg-image-left" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-right-c.png);">
+                {% if post.meta('left_image') %}
+                  <div class="d-none d-lg-block col-6 bg-image bg-image-left" style="--bg-image: url({{ post.meta('left_image') }});">
+                {% else %}
+                  <div class="d-none d-lg-block col-6 bg-image bg-image-left" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-right-c.png);">
+                {% endif %}
                   <div class="tape-1"></div>
                   <div class="polaroid">
                     <img height="250" src="https://images.unsplash.com/photo-1462396881884-de2c07cb95ed" />
@@ -127,12 +147,16 @@
                         </p>
                       </div>
 
-                      <a href="{{ post.link }}">
+                      {# <a href="{{ post.link }}">
                         <button type="button" class="btn btn-primary btn-sm">READ MORE</button>
-                      </a>
+                      </a> #}
                     </div>
 
-                    <div class="d-none d-lg-block col-2 bg-image bg-image-right" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-left-c.png);">
+                    {% if post.meta('right_image') %}
+                      <div class="d-none d-lg-block col-2 bg-image bg-image-right" style="--bg-image: url({{ post.meta('right_image') }});">
+                    {% else %}
+                      <div class="d-none d-lg-block col-2 bg-image bg-image-right" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-left-c.png);">
+                    {% endif %}
                       <div class="tape-1"></div>
                     </div>
                   </div>

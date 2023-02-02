@@ -10,8 +10,8 @@
       {% if post.meta('template') == 'a' %}  
         <div class="carousel-item carousel-item-1 h-100  {% if key == 0  %} {{ 'active' }} {% endif %}">
           <div class="row h-100 m-0">
-            {% if post.meta('first_look_a_left') %}
-              <div class="d-none d-lg-block col-6 bg-image bg-image-left" style="--bg-image: url({{ post.meta('first_look_a_left') }});">
+            {% if post.meta('left_image') %}
+              <div class="d-none d-lg-block col-6 bg-image bg-image-left" style="--bg-image: url({{ post.meta('left_image') }});">
             {% else %}
               <div class="d-none d-lg-block col-6 bg-image bg-image-left" style="--bg-image: url({{ site.theme.link ~ '/assets/img/first-look-left-a.png' }});">
             {% endif %}  
@@ -39,8 +39,8 @@
                   </a>
                 </div>
 
-                {% if post.meta('first_look_a_right') %}
-                  <div class="d-none d-lg-block col-2 bg-image  bg-image-right" style="--bg-image: url({{ post.meta('first_look_a_right') }});">
+                {% if post.meta('right_image') %}
+                  <div class="d-none d-lg-block col-2 bg-image  bg-image-right" style="--bg-image: url({{ post.meta('right_image') }});">
                 {% else %}
                   <div class="d-none d-lg-block col-2 bg-image  bg-image-right" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-right-a.png);">
                 {% endif %}
@@ -55,8 +55,8 @@
           <div class="row h-100 m-0">
             <div class="col-12 col-lg-6">
               <div class="row h-100">
-                {% if post.meta('first_look_b_left') %}
-                  <div class="d-none d-lg-block col-2 bg-image bg-image-left" style="--bg-image: url({{ post.meta('first_look_b_left') }});">
+                {% if post.meta('left_image') %}
+                  <div class="d-none d-lg-block col-2 bg-image bg-image-left" style="--bg-image: url({{ post.meta('left_image') }});">
                 {% else %}
                   <div class="d-none d-lg-block col-2 bg-image bg-image-left" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-left-b.png);">
                 {% endif %}
@@ -80,8 +80,8 @@
               </div>
             </div>
 
-            {% if post.meta('first_look_b_right') %}
-              <div class="d-none d-lg-block col-6 bg-image bg-image-right" style="--bg-image: url({{ post.meta('first_look_b_right') }});">
+            {% if post.meta('right_image') %}
+              <div class="d-none d-lg-block col-6 bg-image bg-image-right" style="--bg-image: url({{ post.meta('right_image') }});">
             {% else %}
               <div class="d-none d-lg-block col-6 bg-image bg-image-right" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-right-b.png);">
             {% endif %}
@@ -96,8 +96,8 @@
       {% elseif post.meta('template') == 'c' %}
         <div class="carousel-item carousel-item-3 h-100 {% if key == 0  %} {{ 'active' }} {% endif %}">
           <div class="row h-100 m-0">
-            {% if post.meta('first_look_c_left') %}
-              <div class="d-none d-lg-block col-6 bg-image bg-image-left" style="--bg-image: url({{ post.meta('first_look_c_left') }});">
+            {% if post.meta('left_image') %}
+              <div class="d-none d-lg-block col-6 bg-image bg-image-left" style="--bg-image: url({{ post.meta('left_image') }});">
             {% else %}
               <div class="d-none d-lg-block col-6 bg-image bg-image-left" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-right-c.png);">
             {% endif %}
@@ -124,8 +124,8 @@
                   </a>
                 </div>
 
-                {% if post.meta('first_look_c_right') %}
-                  <div class="d-none d-lg-block col-2 bg-image bg-image-right" style="--bg-image: url({{ post.meta('first_look_c_right') }});">
+                {% if post.meta('right_image') %}
+                  <div class="d-none d-lg-block col-2 bg-image bg-image-right" style="--bg-image: url({{ post.meta('right_image') }});">
                 {% else %}
                   <div class="d-none d-lg-block col-2 bg-image bg-image-right" style="--bg-image: url({{ site.theme.link }}/assets/img/first-look-left-c.png);">
                 {% endif %}
