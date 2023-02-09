@@ -12,14 +12,17 @@
       <div class="carousel-item h-100 {% if key == 0  %} {{ 'active' }} {% endif %}">
         <div class="row h-100">
           {% if post.meta('highlights_left_image') %}
-            <div class="col-12 col-lg-6 bg-image bg-image-left" style="--bg-image: url({{ post.meta('highlights_left_image') }});"></div>
+            <div class="col-12 col-md-6 bg-image bg-image-left d-none d-md-block" style="--bg-image: url({{ post.meta('highlights_left_image') }});"></div>
+            <div class="col-12 col-md-6 bg-image bg-image-left d-xs-block d-sm-block d-md-none">
+              <img src="{{ post.thumbnail.src }}" style="width: 100%;" />
+            </div>
           {% else %}
-            <div class="col-12 col-lg-6 bg-image bg-image-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
+            <div class="col-12 col-md-6 bg-image bg-image-left" style="--bg-image: url({{ post.thumbnail.src }});"></div>
           {% endif %}
 
-          <div class="col-12 col-lg-6">
+          <div class="col-12 col-md-6">
             <div class="row h-100">
-              <div class="col-12 col-lg-10 bg-grey cutout-slider-content">
+              <div class="col-12 col-md-10 bg-grey cutout-slider-content">
                 <h2 class="grafiti">{{ post.meta('year') }}</h2>
 
                 {% if post.meta('simplified_name') %}
@@ -58,9 +61,9 @@
               </div>
 
               {% if post.meta('highlights_right_image') %}
-                <div class="col-12 col-lg-2 d-none d-md-block bg-image bg-image-right" style="--bg-image: url({{ post.meta('highlights_right_image') }});"></div>
+                <div class="col-12 col-md-2 d-none d-md-block bg-image bg-image-right" style="--bg-image: url({{ post.meta('highlights_right_image') }});"></div>
               {% else %}
-                <div class="col-12 col-lg-2 bg-image bg-image-right" style="--bg-image: url({{ post.thumbnail.src }});"></div>
+                <div class="col-12 col-md-2 d-none d-md-block bg-image bg-image-right" style="--bg-image: url({{ post.thumbnail.src }});"></div>
               {% endif %}
             </div>
           </div>
