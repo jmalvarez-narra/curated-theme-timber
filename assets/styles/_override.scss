@@ -357,7 +357,8 @@ body:hover .home-spec {
 }
 
 .snp-theme-html {
-  background-color: black !important;
+  background-color: #e7e9e9 !important;
+  border-radius: 0px !important;
 }
 
 .snp-newtheme1 .snp-newsletter-content {
@@ -365,21 +366,21 @@ body:hover .home-spec {
 }
 
 .snp-theme-html h2 {
-  font-size: 36px !important;
+  font-size: 39px !important;
+  line-height: 39.5px !important;
   font-family: 'SweetSansPro' !important;
-  font-weight: 300 !important;
-  color: white;
+  font-weight: 400 !important;
+  color: black;
   text-align: center;
   letter-spacing: 0.4rem !important;
 }
 
 .snp-theme-html p {
   font-family: 'SweetSansPro' !important;
-  line-height: 0.8rem !important;
-  font-weight: 300 !important;
-  margin-top: 1rem !important;
-  font-size: 16px !important;
-  color: white !important;
+  line-height: 1.5rem !important;
+  font-weight: 400 !important;
+  font-size: 14.5px !important;
+  color: black !important;
   text-align: center !important;
   letter-spacing: 0.1rem !important;
 }
@@ -393,24 +394,23 @@ body:hover .home-spec {
   background-color: white !important;
   width: 100% !important;
   height: 3rem !important;
-  font-size: 16px !important;
+  font-size: 12.4px !important;
   padding: 1rem !important;
   margin-top: 2rem !important;
   color: black !important;
-  letter-spacing: 0.1rem !important;
+  letter-spacing: 0.18rem !important;
 }
 
 .snp-theme-html .snp-subscribe-button {
   /* width: 136px; */
-  padding: 0 15px;
-  float: left;
-  background-color: white !important;
+  padding: 0.8rem 2rem !important;
+  background-color: #000 !important;
   background-image: unset !important;
-  color: black !important;
-  padding: 0.8rem 1rem !important;
+  color: white !important;
   text-shadow: unset !important;
-  margin-top: 1rem !important;
-  float: left;
+  font-family: 'SweetSansPro' !important;
+  font-weight: 400 !important;
+  margin-top: 60px !important;
   letter-spacing: 0.1rem !important;
 }
 
@@ -424,12 +424,21 @@ body:hover .home-spec {
 }
 
 .snp-theme-html  img {
-  width: 60%;
+  width: 300px !important;
   position: absolute;
   bottom: 90px;
   left: 0;
   right: 0;
   margin: 0 auto !important;
+}
+
+.fancybox-close {
+  top: 15px !important;
+  right: 15px !important;
+  background-image: url('img/X.png') !important;
+  background-size: contain;
+  height: 20px !important;
+  width: 20px !important;
 }
 
 #inquiryModal {
