@@ -103,6 +103,15 @@
   .filter-container {
     margin-top: 0 !important;
   }
+
+  .custom-select {
+    width: 240px;
+    float: right;
+  }
+
+  .custom-select .select-items {
+    position: relative;
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -120,6 +129,10 @@
 @media only screen and (min-width: 800px) and (max-width: 1262px) {
   html {
     font-size: 90%;
+  }
+
+  .custom-select-right {
+    width: 200px;
   }
 }
 
@@ -159,6 +172,10 @@
     top: calc(5vh + 190px) !important;
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
+  }
+
+  .custom-select-right {
+    width: 200px;
   }
 }
 
