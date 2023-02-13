@@ -90,6 +90,41 @@
   }
 }
 
+@media only screen and (max-width: 576px) {
+  .offcanvas-end {
+    width: 100%;
+  }
+
+  .offcanvas .logo img {
+      margin: 0 0.75rem;
+  }
+
+  .header .offcanvas .social-icons {
+    margin: 0 0.75rem;
+  }
+}
+
+// 1366×768
+@media only screen and (min-width: 576px) and (max-width: 991px) {
+  html {
+    font-size: 100%;
+  }
+
+  .youtube-container {
+    &.youtube-container-md {
+      display: none;
+    }
+
+    &.youtube-container-xs {
+      display: block;
+    }
+  }
+
+  .offcanvas-end {
+    width: 50%;
+  }
+}
+
 @media only screen and (max-width: 991px) {
   html {
     .first-look-carousel {
@@ -111,6 +146,10 @@
 
   .custom-select .select-items {
     position: relative;
+  }
+
+  .offcanvas .logo img, .header .offcanvas .social-icons {
+    margin: 0 0.75rem;
   }
 }
 
