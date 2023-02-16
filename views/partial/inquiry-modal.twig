@@ -1,9 +1,12 @@
-<div id="inquiryModal" class="modal fade" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
+<div id="inquiryModal" class="modal fade" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true" style="top: 10%;">
   <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="inquiryModalLabel">
-          Inquire - 
+    <div style="text-align: center; font-family: 'SweetSansPro'; background-color: #E7E9E9; border-radius: 0rem;" class="modal-content">
+      <div style="border-bottom: 0px;" class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="padding: 30px 60px; padding-top: 15px;">
+        <h2 style="width: 100%; text-align: center; font-size: 2.5rem; margin-bottom: 0.8rem;">INQUIRE ABOUT</h2>
+        <h4 style="width: 100%; text-align: center;  font-size: 1.5rem; margin-bottom: 1.5rem; padding: 0 2rem; line-height: 1.7rem; font-weight: 300;" class="modal-title" id="inquiryModalLabel">
           {% if customTitle is defined %}
             {{ customTitle }}
           {% elseif wp_title %}
@@ -11,11 +14,11 @@
           {% else %}
             {{ site.name }}
           {% endif %}
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
+        </h4>
+
         {{ function('do_shortcode', '[caldera_form id="CF5cdc60958653d"]') }}
+
+        <img width="250px" style="margin: 2rem; auto;"  src="{{ site.theme.link }}/dist/assets/img/curated_vintage_cars-dark.png" alt="{{post.title}}" />
       </div>
     </div>
   </div>

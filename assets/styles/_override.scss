@@ -556,3 +556,34 @@ select.filter-container {
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+.caldera-grid .btn-default {
+  color: #fff !important;
+  background-color: #000 !important;
+  padding: 1.2rem !important;
+  border-radius: 10px !important;
+  margin-top: 0.5rem;
+}
+
+.caldera-grid .form-group, .cf-color-picker .form-group {
+  margin-bottom: 5px;
+}
+
+.caldera-grid .form-control {
+  padding-bottom: 30px !important;
+  color: #000 !important;
+  padding-top: 15px !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 10px !important;
+}
+
+.caldera-grid .form-group, .cf-color-picker .form-group {
+  margin-bottom: 8px !important;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 576px;
+  }
+}
