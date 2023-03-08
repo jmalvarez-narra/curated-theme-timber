@@ -582,6 +582,10 @@ select.filter-container {
   margin-bottom: 8px !important;
 }
 
+.caldera-grid textarea.form-control {
+  resize: none !important;
+}
+
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 576px;
