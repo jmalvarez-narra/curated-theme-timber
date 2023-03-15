@@ -21,7 +21,7 @@ $page_slug = $post->post_name;
 $context = Timber::context();
 
 $category = get_queried_object();
-$cat_id = $category->term_id;
+$cat_slug = $category->slug;
 
 $context['title'] = 'Archive';
 if ( is_day() ) {
@@ -47,12 +47,13 @@ $args = array(
 	'post_type' => 'cars',
 	// Get all posts
 	'posts_per_page' => -1,
-	// Gest post by "featured" category
-	'category' => $cat_id,
 	// Order by post date
 	'orderby' => array(
 			'date' => 'DESC',
 ));
+
+$categoryID = get_categories(array('slug' => $cat_slug, 'hide_empty' => 0))[0]->cat_name;
+$args['category'] = array($categoryID);
 
 $categories = get_categories( array(
   'name' => ['Inventory'],
@@ -62,10 +63,19 @@ $inventory = $categories[0];
 $context['categories'] = get_categories(
   array( 'parent' => $inventory->cat_ID )
 );
+
+$context['year'] = array_filter($context['categories'], function ($item) {
+  return is_numeric($item->name[0]) && strtolower($item->name) !== 'available' && strtolower($item->name) !== 'sold';
+});
+
+$context['brand'] = array_filter($context['categories'], function ($item) {
+  return !is_numeric($item->name[0]) && strtolower($item->name) !== 'available' && strtolower($item->name) !== 'sold';
+});
+
 $context['categories'] = array_filter($context['categories'], function ($item) {
   return !is_numeric($item->name[0]) && strtolower($item->name) !== 'available' && strtolower($item->name) !== 'sold';
 });
 
-$context['posts'] = Timber::get_posts( $args );
+$context['carname'] = $categoryID;
 
 Timber::render( $templates, $context );
