@@ -156,8 +156,10 @@
       </div>
 
       <div id="storyCarousel" class="carousel carousel-story slide d-none d-lg-block" data-bs-ride="carousel">
-        <div class="carousel-inner overflow-hidden py-5">
+        <div class="carousel-inner overflow-hidden py-5" style="padding-bottom: 4rem !important;">
           <div class="carousel-item carousel-item-1 active">
+            <div class="tape-4"></div>
+
             <div class="row">
               <div class="col-6">
                 <div class="row overflow-hidden">
@@ -189,10 +191,18 @@
                 </div>
               </div>
 
-              <div class="col-6 bg-image bg-image-right" style="--bg-image: url({{ post.meta('about_us_image_4') }});">
-                <div class="tape-1"></div>
-                <div class="polaroid">
-                  <img height="250" src="{{ site.theme.link }}/assets/img/first-look-polaroid-v3.png" />
+              <div class="col-6">
+                <div class="row" style="height: 60%;">
+                  <video width="100%" controls>
+                    <source src="{{ site.theme.link }}/dist/assets/legacy_movie.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video>
+                </div>
+
+                <div class="row bg-image bg-image-right" style="--bg-image: url({{ post.meta('about_us_image_4') }}); min-height: 50vh; height: 40%;">
+                  <div class="polaroid">
+                    <img height="250" src="{{ site.theme.link }}/assets/img/first-look-polaroid-v3.png" />
+                  </div>
                 </div>
               </div>
             </div>

@@ -80,19 +80,6 @@
       .bg-image-right {
         position: relative;
 
-        .tape-1 {
-          position: absolute;
-          z-index: 6;
-          background-image: url(./img/tape-3-b.png);
-          background-size: contain;
-          background-repeat: no-repeat;
-          width: 14rem;
-          height: 7rem;
-          top: -25px;
-          right: -60px;
-          transform: rotate(-90deg);
-        }
-
         .polaroid {
           position: absolute;
           bottom: -50px;
