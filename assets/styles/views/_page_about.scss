@@ -57,7 +57,8 @@
 
     .bg-image-left {
       min-height: 115%;
-      background-size: cover;
+      background-size: contain;
+      background-repeat: no-repeat;
       background-position: 51% 50%;
     }
 

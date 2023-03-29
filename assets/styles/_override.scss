@@ -606,14 +606,17 @@ select.filter-container {
 }
 
 ul.main-navbar-nav li ul {
-  display: none;
+  overflow: hidden;
+  height: 0;
   opacity: 0;
+  background-color: rgba(255, 255, 255, 0);
   transition: opacity 0.25s ease-in;
 }
 
 ul.main-navbar-nav li:hover ul {
-  display: block;
+  height: fit-content;
   opacity: 1;
+  background-color: rgba(255, 255, 255, 0.55);
   transition: opacity 0.25s ease-in;
 }
 
@@ -666,4 +669,5 @@ ul.main-navbar-nav li ul li a {
 ul.main-navbar-nav li ul li a:hover {
   color: white;
   transition: opacity 0.5s ease-in;
+  transition: color 0.25s  ease-in;
 }
