@@ -57,8 +57,12 @@ html, body {
 }
 
 a, a.nav-link {
-  color: #ffffff;
+  color: #000;
   text-decoration: none;
+}
+
+header a.nav-link {
+  color: #fff;
 }
 
 a:hover {
@@ -410,7 +414,17 @@ footer .icons .nav-item:hover {
   display: none !important;
 }
 
-.header .social-icons .nav-item:hover .icon {
+.header-dark .social-icons .nav-item .icon-light,
+.header-dark .social-icons .nav-item:hover .icon-dark {
+  display: none;
+}
+
+.header-dark .social-icons .nav-item .icon-dark,
+.header-dark .social-icons .nav-item:hover .icon-light {
+  display: block;
+}
+
+.header-light .social-icons .nav-item:hover .icon {
   opacity: 0.5;
 }
 
