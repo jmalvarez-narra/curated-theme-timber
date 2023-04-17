@@ -6,24 +6,24 @@
   </div>
 
   <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-    {% if post.meta('header_theme') == 'header-light' %}
-      <svg fill="white" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+    {% if post.meta('header_theme') == 'header-darkt' %}
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
         <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
       </svg>
     {% else %}
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <svg fill="white" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
         <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
       </svg>
     {% endif %}
   </button>
 
   <button id="float-toggler" class="navbar-float-toggler navbar-toggler d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-    {% if post.meta('header_theme') == 'header-light' %}
-      <svg fill="white" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+    {% if post.meta('header_theme') == 'header-dark' %}
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
         <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
       </svg>
     {% else %}
-      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <svg fill="white" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
         <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
       </svg>
     {% endif %}
@@ -50,25 +50,7 @@
     </ul>
 
     <ul class="navbar-nav icons social-icons">
-    {% if post.meta('header_theme') == 'header-light' %}
-      <li class="nav-item">
-        <a class="nav-link" href="https://www.instagram.com/wearecurated/" target="_blank">
-          <img class="icon icon-light icon-instagram" src="{{ site.theme.link }}/dist/assets/img/instagram-white.svg" style="height: 1.2rem !important; width: unset !important;" />
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="https://www.youtube.com/@CuratedTVbyJohnTemerian" target="_blank">
-          <img class="icon icon-light icon-youtube" src="{{ site.theme.link }}/dist/assets/img/youtube-white.svg" style="height: 1.2rem !important; width: unset !important;" />
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#ninja-popup-2469">
-          <img class="icon icon-light icon-mail" src="{{ site.theme.link }}/dist/assets/img/newsletter-white.svg" />
-        </a>
-      </li>
-    {% else %}
+    {% if post.meta('header_theme') == 'header-dark' %}
       <li class="nav-item">
         <a class="nav-link" href="https://www.instagram.com/wearecurated/" target="_blank">
           <img class="icon icon-dark icon-instagram" src="{{ site.theme.link }}/dist/assets/img/instagram.svg" style="height: 1.2rem !important; width: unset !important;" />
@@ -84,6 +66,24 @@
       <li class="nav-item">
         <a class="nav-link" href="#ninja-popup-2469">
           <img class="icon icon-dark icon-mail" src="{{ site.theme.link }}/dist/assets/img/newsletter.svg" />
+        </a>
+      </li>
+    {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.instagram.com/wearecurated/" target="_blank">
+          <img class="icon icon-light icon-instagram" src="{{ site.theme.link }}/dist/assets/img/instagram-white.svg" style="height: 1.2rem !important; width: unset !important;" />
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.youtube.com/@CuratedTVbyJohnTemerian" target="_blank">
+          <img class="icon icon-light icon-youtube" src="{{ site.theme.link }}/dist/assets/img/youtube-white.svg" style="height: 1.2rem !important; width: unset !important;" />
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#ninja-popup-2469">
+          <img class="icon icon-light icon-mail" src="{{ site.theme.link }}/dist/assets/img/newsletter-white.svg" />
         </a>
       </li>
     {% endif %}
