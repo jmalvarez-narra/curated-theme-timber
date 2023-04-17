@@ -1,7 +1,9 @@
-<div class="logo dark">
-  <img src="{{ site.theme.link }}/dist/assets/img/curated_vintage_cars-dark.png"></img>
-</div>
-
-<div class="logo light">
-  <img src="{{ site.theme.link }}/dist/assets/img/curated_vintage_cars-light.png"></img>
-</div>
+{% if post.meta('header_theme') == 'header-light' %}
+  <div class="logo light">
+    <img src="{{ site.theme.link }}/dist/assets/img/curated_vintage_cars-light.png"></img>
+  </div>
+{% else %}
+  <div class="logo dark">
+    <img src="{{ site.theme.link }}/dist/assets/img/curated_vintage_cars-dark.png"></img>
+  </div>
+{% endif %}

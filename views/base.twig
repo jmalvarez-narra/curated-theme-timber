@@ -11,8 +11,8 @@
 
 		<div class="flex-wrapper" style="position: relative;">
 			{% block header %}
-				<header class="header {{headerClass}}">
-					{% include 'header.twig' %}
+				<header class="header {{ post.meta('header_theme') }}">
+					{% include 'header.twig' with { post: post } %}
 				</header>
 			{% endblock %}
 

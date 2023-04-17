@@ -59,24 +59,7 @@
 
 				{% include 'partial/multi-carousel.twig' with { posts: journal, title: 'journal' } %}
 
-				{% if post.meta('youtube_video') %}
-					<div class="section-heading pb-sm">
-						<h3 class="title">OUR CHANNEL</h3>
-
-						<h5 class="subtitle mb-0">YOUTUBE</h5>
-					</div>
-
-					<div class="youtube-container">
-						<iframe src="{{ post.meta('youtube_video') }}"
-							frameborder="0"
-							allow="accelerometer;
-							autoplay;
-							encrypted-media; gyroscope;"
-							allowfullscreen
-						>
-						</iframe>
-					</div>
-				{% endif %}
+				{% include 'partial/youtube.twig' %}
 
 				{% include 'partial/instagram-section.twig' %}
 
