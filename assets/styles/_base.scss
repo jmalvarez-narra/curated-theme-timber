@@ -639,6 +639,15 @@ $featured-container-base-height: 90vh;
   opacity: 0.1;
 }
 
+.featured-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000; 
+}
+
 .featured-container .dark-overlay {
   background-color: #000000;
 }

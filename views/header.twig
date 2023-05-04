@@ -40,7 +40,7 @@
             <ul class="nav-drop">
               {% for child in item.children %}
                 <li class="nav-drop-item">
-                    <a href="{{ child.link }}">{{ child.title }}</a>
+                    <a href="{{ child.link }}" target="{{ child.meta( '_menu_item_target' ) ? child.meta( '_menu_item_target' ) : '_self' }}">{{ child.title }}</a>
                 </li>
               {% endfor %}
             </ul>

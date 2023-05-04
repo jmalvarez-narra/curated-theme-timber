@@ -1,4 +1,8 @@
 <div class="featured-container">
+  <!-- provides overlay for different header themes -->
+  {% if post.meta('featured_overlay') %}
+    <div class="featured-image-overlay" style="opacity: {{ post.meta('featured_overlay') }};"></div>
+  {% endif %}
 
   {% if post.meta('light_overlay') %}
     <div class="overlay dark-overlay"></div>

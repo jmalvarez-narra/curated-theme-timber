@@ -341,13 +341,11 @@
       </div>
 
       {# Testimonials Section #}
-      {% if post.meta('testimonials_image')  %}
-        <div class="section-heading mb-4">
-          <h3 class="title">TESTIMONIALS</h3>
-        </div>
-
-        <div class="featured" style="--bg-image: url({{ post.meta('testimonials_image') }}); background-attachment: fixed;"></div>
-      {% endif %}
+      <div id="testimonialsSection" class="row m-0">
+        <a href="/testimonials">
+          <img width="100%" style="margin-top: 10vh;" src="{{ site.theme.link }}/assets/img/curated_testimonials.jpg">
+        </a>
+      </div>
 
       {% include 'partial/instagram-section.twig' %}
     </article>
