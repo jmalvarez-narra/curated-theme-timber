@@ -96,6 +96,7 @@ p {
   font-family: 'MerriweatherRegular';
   color: #202021;
   text-align: justify;
+  line-height: 2rem;
   // letter-spacing: 0.07rem;
   // line-height: 2rem;
 }
@@ -506,6 +507,11 @@ a.nav-link {
   padding-top: 5vh;
   padding-bottom: 3vh;
   /* border: 1px solid red; */
+}
+
+.page-template-default .section-heading {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
 }
 
 /* temporarily remove */
