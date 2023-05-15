@@ -586,7 +586,7 @@ select.filter-container {
   resize: none !important;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .modal-dialog {
     max-width: 576px;
   }
@@ -670,4 +670,40 @@ ul.main-navbar-nav li ul li a:hover {
   color: white;
   transition: opacity 0.5s ease-in;
   transition: color 0.25s  ease-in;
+}
+
+// Testimonials cards
+
+.comment-cards {
+  background-color: #f5f5f5;
+  margin: 15px 30px;
+  padding: 60px 30px;
+}
+
+.comment-cards p {
+  text-align: justify;
+}
+
+.comment-cards h6 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.comment-cards-2 {
+  background-color: white;
+  box-shadow: 0px 4px 6px 3px #f5f5f5;
+}
+
+@media screen and (min-width: 2000px) {
+  .snp-theme-html .snp-subscribe-button {
+    margin-top: 1.5vh !important;
+  }
+  
+  .snp-theme-html  img {
+    bottom: 2vh;
+  }
+
+  footer ul li ul.nav-drop {
+    width: fit-content;
+  }
 }

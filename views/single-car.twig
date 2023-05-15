@@ -13,7 +13,7 @@
 			<section class="article-content {{ gallery ? '' : 'push-top'}}">
 				<div class="section-heading main-heading pt-xs px-2 px-lg-0">
 					<h3 class="title">{{post.title}}</h3>
-					<h6 class="subtitle">AVAILABLE</h6>
+					{# <h6 class="subtitle">AVAILABLE</h6> #}
 				</div>
 
 				<div class="article-body">
@@ -193,7 +193,7 @@
 			return gallery[pageNumber - 1] || [];
 		}
 
-		function appendGallery(pageNumber) {
+		async function appendGallery(pageNumber) {
 			const gallery = fetchGallery(pageSize, pageGallery);
 			const galleryCount = gallery.length;
 
@@ -203,14 +203,27 @@
 				$("#load-more-gallery-btn").parent().show();
 			}
 
-			gallery.forEach((car_image) => {
+			let galleryCounter = 0;
+
+			await gallery.forEach((car_image) => {
+				galleryCounter++;
+
+				let imageTag = document.createElement("img");
+				imageTag.setAttribute("src", car_image);
+
+				let anchorTag = document.createElement("a");
+				anchorTag.setAttribute("href", car_image);
+				anchorTag.setAttribute("data-toggle", "lightbox");
+				anchorTag.setAttribute("data-gallery", "example-gallery");
+
+				let currentNode = document.createElement("li");
+				currentNode.setAttribute("class", "car-gallery-image-"+galleryCounter);
+
+				anchorTag.append(imageTag);
+				currentNode.append(anchorTag);
+
 				if (car_image) {
-					$(".car-gallery").append(`
-						<li>
-							<img src=${car_image} data-src=${car_image} alt="{{post.title}}-gallery-image-{{ctr}}" />
-							<div class="overlay"></div>
-						</li>
-					`);
+					$(".car-gallery").append(currentNode);
 				} else {
 					$(".car-gallery").append(`
 						<li>
@@ -219,7 +232,19 @@
 						</li>
 					`);
 				}
+
+				currentNode.addEventListener('click', (e) => {
+					e.preventDefault();
+
+					const lightbox = new Lightbox(anchorTag, {
+						size: 'fullscreen',
+					});
+
+					lightbox.show();
+				});
 			});
+
+			galleryCounter = 0;
 		}
 
 		let pageGallery = 1;
@@ -230,28 +255,6 @@
 			$("#load-more-gallery-btn").click((e) => {
 				appendGallery(6, pageGallery++);
 			});
-
-			document.querySelectorAll('.car-featured-image').forEach((el) => el.addEventListener('click', (e) => {
-				e.preventDefault();
-
-				const lightbox = new Lightbox(el, {
-					gallery: {{ gallery_array }},
-					size: 'fullscreen'
-				});
-
-				lightbox.show();
-			}));
-
-			document.querySelectorAll('.car-gallery').forEach((el) => el.addEventListener('click', (e) => {
-				e.preventDefault();
-
-				const lightbox = new Lightbox(el, {
-					gallery: {{ gallery_array }},
-					size: 'fullscreen'
-				});
-
-				lightbox.show();
-			}));
 		});
    </script>
 {% endblock %}
