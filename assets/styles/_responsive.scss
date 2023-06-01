@@ -311,6 +311,11 @@
     min-width: 82.5rem;
   }
 
+  .car-gallery li {
+    max-height: 244px;
+    overflow: hidden;
+  }
+
   .youtube-container {
     &.youtube-container-md {
       display: none;

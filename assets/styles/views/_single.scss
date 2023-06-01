@@ -107,6 +107,8 @@
     cursor: pointer;
     list-style-type: none;
     margin-bottom: 2%;
+    max-height: 244px;
+    overflow: hidden;
 
     img {
       object-fit: cover;
