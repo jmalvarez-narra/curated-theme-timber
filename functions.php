@@ -260,6 +260,14 @@ class StarterSite extends Timber\Site {
 				break;
 		}
 
+		$categories = 'inventory';
+		if ($context['filter-category']) {
+			foreach($context['filter-category'] as $categoryitem) {
+				$categoryID = get_categories(array('name' => $categoryitem, 'hide_empty' => 0))[0]->slug;
+				$categories = $categories.'+'.$categoryID;
+			}
+		}
+
 		$args = array(
 			// Get post type car
 			'post_type' => 'cars',
@@ -269,14 +277,10 @@ class StarterSite extends Timber\Site {
 			'posts_per_page' => $context['limit'],
 			// current page
 			'paged' => $context['page'],
+			'category_name' => $categories,
 			// post status
 			'post_status' => 'publish',
 		);
-
-		if ($context['filter-category']) {
-			$categoryID = get_categories(array('name' => $context['filter-category'], 'hide_empty' => 0))[0]->cat_ID;
-			$args['category'] = array($categoryID);
-		}
 
 		$context['cars'] = Timber::get_posts( $args );
 
@@ -310,8 +314,10 @@ class StarterSite extends Timber\Site {
 
 		$categories = 'sold';
 		if ($context['filter-category']) {
-			$categoryID = get_categories(array('name' => $context['filter-category'], 'hide_empty' => 0))[0]->slug;
-			$categories = $categories.'+'.$categoryID;
+			foreach($context['filter-category'] as $categoryitem) {
+				$categoryID = get_categories(array('name' => $categoryitem, 'hide_empty' => 0))[0]->slug;
+				$categories = $categories.'+'.$categoryID;
+			}
 		}
 
 		$args = array(
@@ -366,8 +372,10 @@ class StarterSite extends Timber\Site {
 
 		$available_categories = 'available';
 		if ($context['filter-category']) {
-			$availableCategoryID = get_categories(array('name' => $context['filter-category'], 'hide_empty' => 0))[0]->slug;
-			$available_categories = $available_categories.'+'.$availableCategoryID;
+			foreach($context['filter-category'] as $categoryitem) {
+				$categoryID = get_categories(array('name' => $categoryitem, 'hide_empty' => 0))[0]->slug;
+				$categories = $categories.'+'.$categoryID;
+			}
 		}
 
 		$args = array(
