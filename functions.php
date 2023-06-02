@@ -312,11 +312,11 @@ class StarterSite extends Timber\Site {
 				break;
 		}
 
-		$categories = 'sold';
+		$sold_categories = 'sold';
 		if ($context['filter-category']) {
 			foreach($context['filter-category'] as $categoryitem) {
 				$categoryID = get_categories(array('name' => $categoryitem, 'hide_empty' => 0))[0]->slug;
-				$categories = $categories.'+'.$categoryID;
+				$sold_categories = $sold_categories.'+'.$categoryID;
 			}
 		}
 
@@ -329,7 +329,7 @@ class StarterSite extends Timber\Site {
 			'posts_per_page' => $context['limit'],
 			// current page
 			'paged' => $context['page'],
-			'category_name' => $categories,
+			'category_name' => $sold_categories,
 			// post status
 			'post_status' => 'publish',
 		);
@@ -374,7 +374,7 @@ class StarterSite extends Timber\Site {
 		if ($context['filter-category']) {
 			foreach($context['filter-category'] as $categoryitem) {
 				$categoryID = get_categories(array('name' => $categoryitem, 'hide_empty' => 0))[0]->slug;
-				$categories = $categories.'+'.$categoryID;
+				$available_categories = $available_categories.'+'.$categoryID;
 			}
 		}
 

@@ -331,6 +331,10 @@
                     },
                     success: function(data) {
                       const carsCount = $('<div></div>').html(data).find('.car-item').size();
+                      const element = document.getElementById("car__list");
+                      const invalidDiv = document.createElement("div");
+                      invalidDiv.innerHTML = "No results...";
+                      invalidDiv.style.textAlign = 'center';
 
                       if (carsCount < page_limit) {
                         $("#load-more-car-btn").parent().hide();
@@ -341,8 +345,12 @@
                       if (carsCount) {
                         $('#car__list').html(data);
                       }
+                      else {
+                        element.innerHTML = "";
+                        element.appendChild(invalidDiv);
+                      }
 
-                      $categories1 = [];
+                      categories.length = 0
                       $(".list-loader").addClass("d-none");
                     },
                     error: function(data) {
