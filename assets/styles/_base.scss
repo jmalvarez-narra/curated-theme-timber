@@ -69,9 +69,23 @@ a:hover {
   color: #696969;
 }
 
-b, strong {
+b {
   font-family: 'MerriweatherBold';
 }
+
+strong {
+  font-family: 'SweetSansPro';
+}
+
+form input[type=button] {
+  font-family: SweetSansPro;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
 
 h2 {
   font-size: 2rem;
@@ -117,8 +131,9 @@ p {
 }
 
 .grafiti {
-  font-family: "Newport" !important;
-  font-size: 2.8rem !important;
+  font-family: "SweetSansPro" !important;
+  color: white;
+  font-size: 2rem !important;
   margin-bottom: 0.5rem;
 }
 

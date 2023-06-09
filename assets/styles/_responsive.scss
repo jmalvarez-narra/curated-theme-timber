@@ -90,6 +90,14 @@
   }
 }
 
+@media only screen and (max-width: 800px) {
+  .cutout-slider .cutout-slider-content {
+    justify-content: auto !important;
+    min-height: 30vh !important;
+    padding: 2vh 10vh !important;
+  }
+}
+
 @media only screen and (max-width: 576px) {
   .offcanvas-end {
     width: 100%;

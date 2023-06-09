@@ -24,7 +24,8 @@
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
-    padding: 13rem 3.5rem 7.9rem 3.5rem !important;
+    padding: 13rem 3.5rem 0 3.5rem !important;
+    min-height: 80vh;
     position: relative;
 
     .btn {

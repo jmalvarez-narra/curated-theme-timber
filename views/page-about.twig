@@ -344,7 +344,11 @@
       {# Testimonials Section #}
       <div id="testimonialsSection" class="row m-0" style="position: relative;">
         <a href="/testimonials">
-          <img width="100%" style="margin-top: 10vh;" src="{{ site.theme.link }}/assets/img/curated_testimonials.jpg">
+          {% if post.meta('testimonials_image') %}
+            <img width="100%" style="margin-top: 10vh;" src="{{ post.meta('testimonials_image') }}">
+          {% else %}
+            <img width="100%" style="margin-top: 10vh;" src="{{ site.theme.link }}/assets/img/curated_testimonials.jpg">
+          {% endif %}
 
           <a href="{{ site.link }}/testimonials" style="position: absolute; bottom: 1%; right: 38%; left: 62%;">
             <button class="btn btn-primary btn-sm">

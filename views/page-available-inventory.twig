@@ -183,10 +183,49 @@
         });
       };
 
+      const getAvailableNextAllCars = () => {
+        page++;
+
+        $("#load-more-car-btn").attr('disabled', true);
+        $(".list-loader").removeClass("d-none");
+
+        $.ajax({
+          type: 'POST',
+          url: '/wp-admin/admin-ajax.php',
+          dataType: 'html',
+          data: {
+            action: 'get_available_next_all_cars',
+            limit: page_limit,
+            post_status: 'publish',
+            sort: $("#sort-car").val(),
+            'filter-category': categories
+          },
+          success: function(data) {
+            const carsCount = $('<div></div>').html(data).find('.car-item').size();
+            console.log("debug this");
+
+            if (carsCount < page_limit) {
+              $("#load-more-car-btn").parent().hide();
+            } else {
+              $("#load-more-car-btn").parent().show();
+            }
+
+            if (carsCount) $('#car__list').append(data);
+
+            $("#load-more-car-btn").attr('disabled', false);
+            $(".list-loader").addClass("d-none");
+          },
+          error: function(data) {
+            $("#load-more-car-btn").attr('disabled', false);
+            $(".list-loader").addClass("d-none");
+          }
+        });
+      };
+
       $("#load-more-car-btn").click((e) => {
         e.preventDefault();
 
-        getCars();
+        getAvailableNextAllCars();
       });
 
       $("#sort-car").change((e) => {

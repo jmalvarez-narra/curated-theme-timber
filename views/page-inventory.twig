@@ -8,7 +8,7 @@
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
 				<div class="section-heading pt-sm">
-					<h3 class="title">Inventory</h3>
+					<h3 id="inventory-page-title" class="title">{{post.title}}</h3>
 				</div>
 
         <div class="container-fluid pb-5">
@@ -104,7 +104,80 @@
       let categories = [];
       let page_limit = window.innerWidth <= 992 ? 8 : 9;
 
+      const getNextAllCars = () => {
+        // get page title here
+        // if not equal to inventory set it as the default category
+        const inventory_page_title = $("#inventory-page-title").text();
+        if (inventory_page_title != "Inventory") {
+          console.log(inventory_page_title);
+          console.log("not inventory");
+          categories1.push(inventory_page_title);
+
+          categories.length = 0;
+          categories = [...categories1, ...categories2];
+        }
+
+        page++;
+
+        $("#load-more-car-btn").attr('disabled', true);
+        $(".list-loader").removeClass("d-none");
+
+        $.ajax({
+          type: 'POST',
+          url: '/wp-admin/admin-ajax.php',
+          dataType: 'html',
+          data: {
+            action: 'get_next_all_cars',
+            limit: page_limit,
+            page: page,
+            post_status: 'publish',
+            sort: $("#sort-car").val(),
+            'filter-category': categories
+          },
+          success: function(data) {
+            const carsCount = $('<div></div>').html(data).find('.car-item').size();
+            const element = document.getElementById("car__list");
+            const invalidDiv = document.createElement("div");
+            invalidDiv.innerHTML = "No results...";
+            invalidDiv.style.textAlign = 'center';
+
+            if (carsCount < page_limit) {
+              $("#load-more-car-btn").parent().hide();
+            } else {
+              $("#load-more-car-btn").parent().show();
+            }
+
+            if (carsCount) {
+              $('#car__list').append(data);
+            }
+            else {
+              element.innerHTML = "";
+              element.appendChild(invalidDiv);
+            }
+
+            $("#load-more-car-btn").attr('disabled', false);
+            $(".list-loader").addClass("d-none");
+          },
+          error: function(data) {
+            $("#load-more-car-btn").attr('disabled', false);
+            $(".list-loader").addClass("d-none");
+          }
+        });
+      };
+
       const getCars = () => {
+        // get page title here
+        // if not equal to inventory set it as the default category
+        const inventory_page_title = $("#inventory-page-title").text();
+        if (inventory_page_title != "Inventory") {
+          console.log(inventory_page_title);
+          console.log("not inventory");
+          categories1.push(inventory_page_title);
+
+          categories.length = 0;
+          categories = [...categories1, ...categories2];
+        }
+
         page++;
 
         $("#load-more-car-btn").attr('disabled', true);
@@ -124,6 +197,10 @@
           },
           success: function(data) {
             const carsCount = $('<div></div>').html(data).find('.car-item').size();
+            const element = document.getElementById("car__list");
+            const invalidDiv = document.createElement("div");
+            invalidDiv.innerHTML = "No results...";
+            invalidDiv.style.textAlign = 'center';
 
             if (carsCount < page_limit) {
               $("#load-more-car-btn").parent().hide();
@@ -131,7 +208,13 @@
               $("#load-more-car-btn").parent().show();
             }
 
-            if (carsCount) $('#car__list').append(data);
+            if (carsCount) {
+              $('#car__list').append(data);
+            }
+            else {
+              element.innerHTML = "";
+              element.appendChild(invalidDiv);
+            }
 
             $("#load-more-car-btn").attr('disabled', false);
             $(".list-loader").addClass("d-none");
@@ -146,7 +229,7 @@
       $("#load-more-car-btn").click((e) => {
         e.preventDefault();
 
-        getCars();
+        getNextAllCars();
       });
 
       $("#sort-car").change((e) => {
