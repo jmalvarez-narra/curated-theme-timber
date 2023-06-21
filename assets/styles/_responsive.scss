@@ -241,6 +241,17 @@
       display: block;
     }
   }
+  
+  .first-look-carousel .carousel-item-1 .bg-image-left .tape-2 {
+    z-index: 9;
+  }
+
+  .first-look-carousel .carousel-item-1 .bg-image-left .polaroid {
+    height: 40vh;
+    bottom: -65px;
+    right: 124px;
+    width: auto;
+  }
 }
 
 // 1440×900
@@ -307,10 +318,21 @@
   html {
     font-size: 100%;
   }
+
+  .first-look-carousel .carousel-item-1 .bg-image-left .tape-2 {
+    z-index: 9;
+  }
+
+  .first-look-carousel .carousel-item-1 .bg-image-left .polaroid {
+    height: 30vh;
+    bottom: -84px;
+    right: 120px;
+    width: auto;
+  }
 }
 
 // 2560×1440
-@media only screen and (min-width: 2545px) {
+@media only screen and (min-width: 2545px) and (max-width: 2870px) {
   html {
     font-size: 135%;
   }
@@ -334,15 +356,15 @@
     }
   }
 
-  .polaroid {
-    height: 39vh;
-    bottom: -66px;
-    right: 80px;
-    width: auto;
+  .first-look-carousel .carousel-item-1 .bg-image-left .tape-2 {
+    z-index: 9;
+  }
 
-    img {
-      height: 300px;
-    }
+  .first-look-carousel .carousel-item-1 .bg-image-left .polaroid {
+    height: 30vh;
+    bottom: -120px;
+    right: 120px;
+    width: auto;
   }
 
   .container {
@@ -353,5 +375,19 @@
     .overlay {
       top:  calc(5vh + 320px) !important;
     }
+  }
+}
+
+@media only screen and (min-width: 2871px) {
+  .first-look-carousel .carousel-item-1 .bg-image-left .tape-2 {
+    z-index: 9;
+  }
+
+  .first-look-carousel .carousel-item-1 .bg-image-left .polaroid {
+    bottom: -84px;
+    right: 19px;
+    z-index: 5;
+    height: 28.5rem;
+    width: auto;
   }
 }
