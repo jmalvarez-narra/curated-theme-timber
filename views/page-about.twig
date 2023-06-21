@@ -191,8 +191,9 @@
               </div>
 
               <div class="col-6">
-                <div class="row" style="height: 60%;">
-                  <video width="100%" class="px-0" controls>
+                <div class="row founders-video-wrapper" style="height: 60%; position: relative;">
+                  <img id="founders-video-button" class="active" src="{{ site.theme.link }}/assets/img/play.png" />
+                  <video id="founder-video" width="100%" class="px-0" controls>
                     <source src="{{ site.theme.link }}/dist/assets/legacy_movie.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                   </video>
@@ -341,13 +342,38 @@
       </div>
 
       {# Testimonials Section #}
-      <div id="testimonialsSection" class="row m-0">
+      <div id="testimonialsSection" class="row m-0" style="position: relative;">
         <a href="/testimonials">
-          <img width="100%" style="margin-top: 10vh;" src="{{ site.theme.link }}/assets/img/curated_testimonials.jpg">
+          {% if post.meta('testimonials_image') %}
+            <img width="100%" style="margin-top: 10vh;" src="{{ post.meta('testimonials_image') }}">
+          {% else %}
+            <img width="100%" style="margin-top: 10vh;" src="{{ site.theme.link }}/assets/img/curated_testimonials.jpg">
+          {% endif %}
+
+          <a href="{{ site.link }}/testimonials" style="position: absolute; bottom: 1%; right: 38%; left: 62%;">
+            <button class="btn btn-primary btn-sm">
+              SHOW MORE
+            </button>
+          </a>
         </a>
       </div>
 
       {% include 'partial/instagram-section.twig' %}
     </article>
 	</div>
+
+  <script>
+    $( document ).ready(function() {
+      var ctrlVideo = document.getElementById("founder-video"); 
+      
+      $('#founder-video').click(function(){
+        $('#founders-video-button').toggleClass("active");
+        if ($('#founders-video-button').hasClass("active")){
+          $('#founders-video-button').show();
+        } else {
+          $('#founders-video-button').hide();
+        }
+      });
+    });
+  </script>
 {% endblock %}

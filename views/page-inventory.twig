@@ -8,7 +8,7 @@
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
 				<div class="section-heading pt-sm">
-					<h3 class="title">Inventory</h3>
+					<h3 id="inventory-page-title" class="title">{{post.title}}</h3>
 				</div>
 
         <div class="container-fluid pb-5">
@@ -18,8 +18,8 @@
               <div class="ps-3">
                 <label>DECADE:</label>
 
-                <div class="custom-select">
-                  <select id="filter-car"  class="filter-container">
+                <div class="custom-select custom-select-decade">
+                  <select id="filter-car-1" class="filter-container">
                     <option value="" selected>ALL</option>
 
                     {% for category in year %}
@@ -38,8 +38,8 @@
               <div class="ps-3">
                 <label>BRAND:</label>
 
-                <div class="custom-select">
-                  <select id="filter-car"  class="filter-container">
+                <div class="custom-select custom-select-brand">
+                  <select id="filter-car-2" class="filter-container">
                     <option value="" selected>ALL</option>
 
                     {% for category in brand %}
@@ -69,7 +69,7 @@
                 <label>VIEW:</label>
 
                 <div class="custom-select custom-select-right">
-                  <select id="filter-car" class="filter-container">
+                  <select id="filter-car-3" class="filter-container">
                     <option value="" selected>ALL</option>
                     <option value="Latest">LATEST ARRIVALS</option>
                     <option value="Available">CURRENT INVENTORY</option>
@@ -99,9 +99,85 @@
   <script>
     $(document).ready(function() {
       let page = 0;
+      let categories1 = [];
+      let categories2 = [];
+      let categories = [];
       let page_limit = window.innerWidth <= 992 ? 8 : 9;
 
+      const getNextAllCars = () => {
+        // get page title here
+        // if not equal to inventory set it as the default category
+        const inventory_page_title = $("#inventory-page-title").text();
+        if (inventory_page_title != "Inventory") {
+          console.log(inventory_page_title);
+          console.log("not inventory");
+          categories1.push(inventory_page_title);
+
+          categories.length = 0;
+          categories = [...categories1, ...categories2];
+        }
+
+        page++;
+
+        $("#load-more-car-btn").attr('disabled', true);
+        $(".list-loader").removeClass("d-none");
+
+        $.ajax({
+          type: 'POST',
+          url: '/wp-admin/admin-ajax.php',
+          dataType: 'html',
+          data: {
+            action: 'get_next_all_cars',
+            limit: page_limit,
+            page: page,
+            post_status: 'publish',
+            sort: $("#sort-car").val(),
+            'filter-category': categories
+          },
+          success: function(data) {
+            const carsCount = $('<div></div>').html(data).find('.car-item').size();
+            const element = document.getElementById("car__list");
+            const invalidDiv = document.createElement("div");
+            invalidDiv.innerHTML = "No results...";
+            invalidDiv.style.textAlign = 'center';
+
+            if (carsCount < page_limit) {
+              $("#load-more-car-btn").parent().hide();
+            } else {
+              $("#load-more-car-btn").parent().show();
+            }
+
+            if (carsCount) {
+              $('#car__list').append(data);
+            }
+            else {
+              element.innerHTML = "";
+              element.appendChild(invalidDiv);
+            }
+
+            $("#load-more-car-btn").attr('disabled', false);
+            $(".list-loader").addClass("d-none");
+          },
+          error: function(data) {
+            $("#load-more-car-btn").attr('disabled', false);
+            $(".list-loader").addClass("d-none");
+          }
+        });
+      };
+
       const getCars = () => {
+        // get page title here
+        // if not equal to inventory set it as the default category
+        const inventory_page_title = $("#inventory-page-title").text();
+        if (inventory_page_title != "Inventory") {
+          console.log(inventory_page_title);
+          console.log("not inventory");
+          categories1.push(inventory_page_title);
+
+          categories.length = 0;
+          categories = [...categories1, ...categories2];
+        }
+
         page++;
 
         $("#load-more-car-btn").attr('disabled', true);
@@ -117,10 +193,14 @@
             page: page,
             post_status: 'publish',
             sort: $("#sort-car").val(),
-            'filter-category': $("#filter-car").val()
+            'filter-category': categories
           },
           success: function(data) {
             const carsCount = $('<div></div>').html(data).find('.car-item').size();
+            const element = document.getElementById("car__list");
+            const invalidDiv = document.createElement("div");
+            invalidDiv.innerHTML = "No results...";
+            invalidDiv.style.textAlign = 'center';
 
             if (carsCount < page_limit) {
               $("#load-more-car-btn").parent().hide();
@@ -128,7 +208,13 @@
               $("#load-more-car-btn").parent().show();
             }
 
-            if (carsCount) $('#car__list').append(data);
+            if (carsCount) {
+              $('#car__list').append(data);
+            }
+            else {
+              element.innerHTML = "";
+              element.appendChild(invalidDiv);
+            }
 
             $("#load-more-car-btn").attr('disabled', false);
             $(".list-loader").addClass("d-none");
@@ -143,7 +229,7 @@
       $("#load-more-car-btn").click((e) => {
         e.preventDefault();
 
-        getCars();
+        getNextAllCars();
       });
 
       $("#sort-car").change((e) => {
@@ -163,8 +249,9 @@
             action: 'get_cars',
             limit: page_limit,
             page: page,
+            post_status: 'publish',
             sort: e.target.value,
-            'filter-category': $("#filter-car").val()
+            'filter-category': categories
           },
           success: function(data) {
             const carsCount = $('<div></div>').html(data).find('.car-item').size();
@@ -244,6 +331,25 @@
           c.addEventListener("click", function(e) {
               /* When an item is clicked, update the original select box,
               and the selected item: */
+              const filter1 = $("#filter-car-1").val();
+              const filter2 = $("#filter-car-2").val();
+
+              if (!isNaN(this.innerHTML)) {
+                if (categories1.length != 0) {
+                  categories1.length = 0;
+                }
+                categories1.push(this.innerHTML);
+              }
+              else {
+                if (categories2.length != 0) {
+                  categories2.length = 0;
+                }
+                categories2.push(this.innerHTML);
+              }
+
+              categories.length = 0;
+              categories = [...categories1, ...categories2];
+
               var y, i, k, s, h, sl, yl;
               s = this.parentNode.parentNode.getElementsByTagName("select")[0];
               sl = s.length;
@@ -262,11 +368,16 @@
                       action: 'get_cars',
                       limit: page_limit,
                       page: page,
+                      post_status: 'publish',
                       sort: $("#sort-car").val(),
-                      'filter-category': s.options[i].value,
+                      'filter-category': categories
                     },
                     success: function(data) {
                       const carsCount = $('<div></div>').html(data).find('.car-item').size();
+                      const element = document.getElementById("car__list");
+                      const invalidDiv = document.createElement("div");
+                      invalidDiv.innerHTML = "No results...";
+                      invalidDiv.style.textAlign = 'center';
 
                       if (carsCount < page_limit) {
                         $("#load-more-car-btn").parent().hide();
@@ -277,7 +388,12 @@
                       if (carsCount) {
                         $('#car__list').html(data);
                       }
+                      else {
+                        element.innerHTML = "";
+                        element.appendChild(invalidDiv);
+                      }
 
+                      $categories1 = [];
                       $(".list-loader").addClass("d-none");
                     },
                     error: function(data) {

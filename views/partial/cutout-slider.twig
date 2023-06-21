@@ -12,20 +12,20 @@
       <div class="carousel-item h-100 {% if key == 0  %} {{ 'active' }} {% endif %}">
         <div class="row h-100">
           {% if post.meta('highlights_left_image') %}
-            <div class="col-12 col-md-6 bg-image bg-image-left d-none d-md-block" style="--bg-image: url({{ post.meta('highlights_left_image') }});"></div>
-            <div class="col-12 col-md-6 bg-image bg-image-left d-xs-block d-sm-block d-md-none">
+            <div class="col-12 col-md-7 bg-image bg-image-left d-none d-md-block" style="--bg-image: url({{ post.meta('highlights_left_image') }});"></div>
+            <div class="col-12 col-md-7 bg-image bg-image-left d-xs-block d-sm-block d-md-none">
               <img src="{{ post.meta('highlights_mobile_image') ? post.meta('highlights_mobile_image') : post.thumbnail.src }}" style="width: 100%;" />
             </div>
           {% else %}
-            <div class="col-12 col-md-6 bg-image bg-image-left d-none d-md-block" style="--bg-image: url({{ post.thumbnail.src }});"></div>
-            <div class="col-12 col-md-6 bg-image bg-image-left d-xs-block d-sm-block d-md-none">
+            <div class="col-12 col-md-7 bg-image bg-image-left d-none d-md-block" style="--bg-image: url({{ post.thumbnail.src }});"></div>
+            <div class="col-12 col-md-7 bg-image bg-image-left d-xs-block d-sm-block d-md-none">
               <img src="{{ post.meta('highlights_mobile_image') ? post.meta('highlights_mobile_image') : post.thumbnail.src }}" style="width: 100%;" />
             </div>
           {% endif %}
 
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-5">
             <div class="row h-100">
-              <div class="col-12 col-md-10 bg-grey cutout-slider-content">
+              <div class="col-12 col-md-12 bg-grey cutout-slider-content">
                 <h2 class="grafiti">{{ post.meta('year') }}</h2>
 
                 {% if post.meta('simplified_name') %}
@@ -49,9 +49,9 @@
                   <button type="button" class="btn btn-primary btn-sm">READ MORE</button>
                 </a>
 
-                <h5 class="extra-overlay year">
+                {# <h5 class="extra-overlay year">
                   {{ post.meta('year') }}
-                </h5>
+                </h5> #}
 
                 <button class="d-block d-lg-none carousel-control-prev" type="button" data-bs-target="#carousel-{{ title }}" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -63,11 +63,11 @@
                 </button>
               </div>
 
-              {% if post.meta('highlights_right_image') %}
+              {# {% if post.meta('highlights_right_image') %}
                 <div class="col-12 col-md-2 d-none d-md-block bg-image bg-image-right" style="--bg-image: url({{ post.meta('highlights_right_image') }});"></div>
               {% else %}
                 <div class="col-12 col-md-2 d-none d-md-block bg-image bg-image-right" style="--bg-image: url({{ post.thumbnail.src }});"></div>
-              {% endif %}
+              {% endif %} #}
             </div>
           </div>
         </div>

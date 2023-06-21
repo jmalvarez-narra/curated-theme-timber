@@ -66,11 +66,17 @@ class StarterSite extends Timber\Site {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action( 'wp_ajax_nopriv_get_cars', array( $this, 'get_cars' ) );
+		add_action( 'wp_ajax_nopriv_get_next_all_cars', array( $this, 'get_next_all_cars' ) );
 		add_action( 'wp_ajax_nopriv_get_sold_cars', array( $this, 'get_sold_cars' ) );
+		add_action( 'wp_ajax_nopriv_get_sold_next_all_cars', array( $this, 'get_sold_next_all_cars' ) );
 		add_action( 'wp_ajax_nopriv_get_available_cars', array( $this, 'get_available_cars' ) );
+		add_action( 'wp_ajax_nopriv_get_available_next_all_cars', array( $this, 'get_available_next_all_cars' ) );
 		add_action( 'wp_ajax_get_cars', array( $this, 'get_cars' ) );
+		add_action( 'wp_ajax_get_next_all_cars', array( $this, 'get_next_all_cars' ) );
 		add_action( 'wp_ajax_get_sold_cars', array( $this, 'get_sold_cars' ) );
+		add_action( 'wp_ajax_get_sold_next_all_cars', array( $this, 'get_sold_next_all_cars' ) );
 		add_action( 'wp_ajax_get_available_cars', array( $this, 'get_available_cars' ) );
+		add_action( 'wp_ajax_get_available_next_all_cars', array( $this, 'get_available_next_all_cars' ) );
 		add_action( 'wp_ajax_nopriv_get_journals', array( $this, 'get_journals' ) );
 		add_action( 'wp_ajax_get_journals', array( $this, 'get_journals' ) );
 		add_action( 'wp_ajax_nopriv_contact_us', array( $this, 'contact_us' ) );
@@ -237,6 +243,56 @@ class StarterSite extends Timber\Site {
 		return $twig;
 	}
 
+	function get_next_all_cars() {
+		$context = Timber::get_context();
+		$context['limit'] = empty($_POST['limit']) ? 9 : $_POST['limit'];
+		$context['page'] = empty($_POST['page']) ? 1 : $_POST['page'];
+		$context['sort'] = empty($_POST['sort']) ? 'date-desc' : $_POST['sort'];
+		$context['filter-category'] = empty($_POST['filter-category']) ? '' : $_POST['filter-category'];
+		$orderby = array('date' => 'DESC');
+
+		switch ($context['sort']) {
+			case 'date-desc':
+				$orderby = array('date' => 'DESC');
+				break;
+			case 'date-asc':
+				$orderby = array('date' => 'ASC');
+				break;
+			case 'title-asc':
+				$orderby = array('title' => 'ASC');
+				break;
+			case 'title-desc':
+				$orderby = array('title' => 'DESC');
+				break;
+		}
+
+		$categories = 'inventory';
+		if ($context['filter-category']) {
+			foreach($context['filter-category'] as $categoryitem) {
+				$categoryID = get_categories(array('name' => $categoryitem, 'hide_empty' => 0))[0]->slug;
+				$categories = $categories.'+'.$categoryID;
+			}
+		}
+
+		$args = array(
+			// Get post type car
+			'post_type' => 'cars',
+			// Order by
+			'orderby' => $orderby,
+			// Limit posts
+			'offset' => $context['limit'],
+			'category_name' => $categories,
+			// post status
+			'post_status' => 'publish',
+		);
+
+		$context['cars'] = Timber::get_posts( $args );
+
+		Timber::render('partial/car-list.twig', $context);
+
+		die();
+	}
+
 	function get_cars() {
 		$context = Timber::get_context();
 		$context['limit'] = empty($_POST['limit']) ? 9 : $_POST['limit'];
@@ -260,6 +316,14 @@ class StarterSite extends Timber\Site {
 				break;
 		}
 
+		$categories = 'inventory';
+		if ($context['filter-category']) {
+			foreach($context['filter-category'] as $categoryitem) {
+				$categoryID = get_categories(array('name' => $categoryitem, 'hide_empty' => 0))[0]->slug;
+				$categories = $categories.'+'.$categoryID;
+			}
+		}
+
 		$args = array(
 			// Get post type car
 			'post_type' => 'cars',
@@ -269,14 +333,10 @@ class StarterSite extends Timber\Site {
 			'posts_per_page' => $context['limit'],
 			// current page
 			'paged' => $context['page'],
+			'category_name' => $categories,
 			// post status
 			'post_status' => 'publish',
 		);
-
-		if ($context['filter-category']) {
-			$categoryID = get_categories(array('name' => $context['filter-category'], 'hide_empty' => 0))[0]->cat_ID;
-			$args['category'] = array($categoryID);
-		}
 
 		$context['cars'] = Timber::get_posts( $args );
 
@@ -308,10 +368,12 @@ class StarterSite extends Timber\Site {
 				break;
 		}
 
-		$categories = 'sold';
+		$sold_categories = 'sold';
 		if ($context['filter-category']) {
-			$categoryID = get_categories(array('name' => $context['filter-category'], 'hide_empty' => 0))[0]->slug;
-			$categories = $categories.'+'.$categoryID;
+			foreach($context['filter-category'] as $categoryitem) {
+				$categoryID = get_categories(array('name' => $categoryitem, 'hide_empty' => 0))[0]->slug;
+				$sold_categories = $sold_categories.'+'.$categoryID;
+			}
 		}
 
 		$args = array(
@@ -323,7 +385,64 @@ class StarterSite extends Timber\Site {
 			'posts_per_page' => $context['limit'],
 			// current page
 			'paged' => $context['page'],
-			'category_name' => $categories,
+			'category_name' => $sold_categories,
+			// post status
+			'post_status' => 'publish',
+		);
+
+		// if ($context['filter-category']) {
+		// 	$categoryID = get_categories(array('name' => $context['filter-category'], 'hide_empty' => 0))[0]->cat_ID;
+		// 	$categoryIDSold = get_categories(array('name' => 'sold', 'hide_empty' => 0))[0]->cat_ID;
+		// 	$args['category'] = array($categoryID,$categoryIDSold);
+		// }
+
+		$context['cars'] = Timber::get_posts( $args );
+
+		Timber::render('partial/car-list.twig', $context);
+
+		die();
+	}
+
+	function get_sold_next_all_cars() {
+		$context = Timber::get_context();
+		$context['limit'] = empty($_POST['limit']) ? 9 : $_POST['limit'];
+		$context['page'] = empty($_POST['page']) ? 1 : $_POST['page'];
+		$context['sort'] = empty($_POST['sort']) ? 'date-desc' : $_POST['sort'];
+		$context['filter-category'] = empty($_POST['filter-category']) ? '' : $_POST['filter-category'];
+		$orderby = array('date' => 'DESC');
+
+		switch ($context['sort']) {
+			case 'date-desc':
+				$orderby = array('date' => 'DESC');
+				break;
+			case 'date-asc':
+				$orderby = array('date' => 'ASC');
+				break;
+			case 'title-asc':
+				$orderby = array('title' => 'ASC');
+				break;
+			case 'title-desc':
+				$orderby = array('title' => 'DESC');
+				break;
+		}
+
+		$sold_categories = 'sold';
+		if ($context['filter-category']) {
+			foreach($context['filter-category'] as $categoryitem) {
+				$categoryID = get_categories(array('name' => $categoryitem, 'hide_empty' => 0))[0]->slug;
+				$sold_categories = $sold_categories.'+'.$categoryID;
+			}
+		}
+
+		$args = array(
+			// Get post type car
+			'post_type' => 'cars',
+			// Order by
+			'orderby' => $orderby,
+			// Limit posts
+			'offset' => $context['limit'],
+			// current page
+			'category_name' => $sold_categories,
 			// post status
 			'post_status' => 'publish',
 		);
@@ -366,8 +485,10 @@ class StarterSite extends Timber\Site {
 
 		$available_categories = 'available';
 		if ($context['filter-category']) {
-			$availableCategoryID = get_categories(array('name' => $context['filter-category'], 'hide_empty' => 0))[0]->slug;
-			$available_categories = $available_categories.'+'.$availableCategoryID;
+			foreach($context['filter-category'] as $categoryitem) {
+				$categoryID = get_categories(array('name' => $categoryitem, 'hide_empty' => 0))[0]->slug;
+				$available_categories = $available_categories.'+'.$categoryID;
+			}
 		}
 
 		$args = array(
@@ -379,6 +500,63 @@ class StarterSite extends Timber\Site {
 			'posts_per_page' => $context['limit'],
 			// current page
 			'paged' => $context['page'],
+			'category_name' => $available_categories,
+			// post status
+			'post_status' => 'publish',
+		);
+
+		// if ($context['filter-category']) {
+		// 	$categoryID = get_categories(array('name' => $context['filter-category'], 'hide_empty' => 0))[0]->cat_ID;
+		// 	$categoryIDSold = get_categories(array('name' => 'sold', 'hide_empty' => 0))[0]->cat_ID;
+		// 	$args['category'] = array($categoryID,$categoryIDSold);
+		// }
+
+		$context['cars'] = Timber::get_posts( $args );
+
+		Timber::render('partial/car-list.twig', $context);
+
+		die();
+	}
+
+	function get_available_next_all_cars() {
+		$context = Timber::get_context();
+		$context['limit'] = empty($_POST['limit']) ? 9 : $_POST['limit'];
+		$context['page'] = empty($_POST['page']) ? 1 : $_POST['page'];
+		$context['sort'] = empty($_POST['sort']) ? 'date-desc' : $_POST['sort'];
+		$context['filter-category'] = empty($_POST['filter-category']) ? '' : $_POST['filter-category'];
+		$orderby = array('date' => 'DESC');
+
+		switch ($context['sort']) {
+			case 'date-desc':
+				$orderby = array('date' => 'DESC');
+				break;
+			case 'date-asc':
+				$orderby = array('date' => 'ASC');
+				break;
+			case 'title-asc':
+				$orderby = array('title' => 'ASC');
+				break;
+			case 'title-desc':
+				$orderby = array('title' => 'DESC');
+				break;
+		}
+
+		$available_categories = 'available';
+		if ($context['filter-category']) {
+			foreach($context['filter-category'] as $categoryitem) {
+				$categoryID = get_categories(array('name' => $categoryitem, 'hide_empty' => 0))[0]->slug;
+				$available_categories = $available_categories.'+'.$categoryID;
+			}
+		}
+
+		$args = array(
+			// Get post type car
+			'post_type' => 'cars',
+			// Order by
+			'orderby' => $orderby,
+			// Limit posts
+			'offset' => $context['limit'],
+			// current page
 			'category_name' => $available_categories,
 			// post status
 			'post_status' => 'publish',
