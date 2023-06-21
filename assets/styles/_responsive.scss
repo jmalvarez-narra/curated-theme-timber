@@ -334,6 +334,16 @@
     }
   }
 
+  .polaroid {
+    height: 39vh;
+    bottom: -66px;
+    right: 104px;
+
+    img {
+      height: 330px;
+    }
+  }
+
   .container {
     max-width: 1768px !important;
   }
