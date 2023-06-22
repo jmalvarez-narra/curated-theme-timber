@@ -184,11 +184,19 @@
 }
 
 // 1280×800 , 1280×720
-@media only screen and (min-width: 1263px) and (max-width: 1349px) {
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {
   html {
     font-size: 100%;
   }
-
+  .first-look-carousel .carousel-item-1 .bg-image-left .polaroid {
+    height: 35%;
+    bottom: -50px;
+    right: 130px;
+    width: auto;
+  }
+  .first-look-carousel .carousel-item-1 .bg-image-left .tape-2 {
+    z-index: 9;
+  }
   .youtube-container {
     &.youtube-container-md {
       display: none;
@@ -247,16 +255,25 @@
   }
 
   .first-look-carousel .carousel-item-1 .bg-image-left .polaroid {
-    height: 40vh;
-    bottom: -65px;
+    height: 40%;
+    bottom: -15px;
     right: 124px;
     width: auto;
   }
+
 }
 
 // 1440×900
 @media only screen and (min-width: 1423px) and (max-width: 1518px) {
+  .first-look-carousel .carousel-item-1 .bg-image-left .polaroid {
+    height: 35%;
+    bottom: -50px;
+    right: 130px;
+    width: auto;
+  }
   html {
+  
+
     font-size: 100%;
   }
 
