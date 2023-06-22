@@ -1,3 +1,4 @@
+
 @media only screen and (max-width: 1262px) {
   html {
     font-size: 70%;
@@ -98,6 +99,8 @@
   }
 }
 
+
+//MOBILE
 @media only screen and (max-width: 576px) {
   .offcanvas-end {
     width: 100%;
@@ -109,6 +112,10 @@
 
   .header .offcanvas .social-icons {
     margin: 0 0.75rem;
+  }
+
+  .carousel .carousel-indicators {
+    display: none;
   }
 }
 
