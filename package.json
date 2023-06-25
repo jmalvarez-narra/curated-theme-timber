@@ -161,7 +161,9 @@
       }
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001517"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions",

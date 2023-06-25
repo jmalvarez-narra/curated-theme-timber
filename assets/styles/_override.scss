@@ -322,16 +322,16 @@ body:hover .home-spec {
   padding: 2.5rem;
 }
 
-.product-carousel .overlay h2 {
+.product-carousel .overlay h2, .product-carousel .overlay h1 {
   line-height: 2.2rem;
 }
 
-.product-carousel .overlay h2 span {
+.product-carousel .overlay h2 span, .product-carousel .overlay h1 span {
   font-weight: 400;
   color: black;
 }
 
-.product-carousel .overlay h2::after {
+.product-carousel .overlay h2::after, .product-carousel .overlay h1::after {
   margin-top: 0.9rem !important;
 }
 
@@ -660,8 +660,7 @@ ul.main-navbar-nav > li:hover > a.nav-link:after {
 
 .invalid-class{
 font-family: "SweetSansPro";
-  font-size: 18px;
-  text-transform: uppercase;
+  font-size: 20px;
 }
 
 ul.main-navbar-nav li ul {
