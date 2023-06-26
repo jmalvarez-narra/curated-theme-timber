@@ -35,7 +35,6 @@
   // }
 
   .featured-container {
-    height: 50vh !important;
 
     .featured {
       min-height: 100%;
@@ -92,11 +91,44 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .cutout-slider .cutout-slider-content {
-    justify-content: auto !important;
-    min-height: 30vh !important;
-    padding: 2vh 10vh !important;
+    .featured-container {
+      height: 50vh;
+    .cutout-slider .cutout-slider-content {
+      justify-content: auto !important;
+      min-height: 30vh !important;
+      padding: 2vh 10vh !important;
+    }
   }
+}
+
+@media only screen and (device-width: 768px) {
+  /* For general iPad layouts */
+  .featured-container {
+    height: 50vh;
+
+    .featured {
+      min-height: 100%;
+      background-size: cover;
+      background-position: 47.5% 23%;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  /* For portrait layouts only */
+  .featured-container {
+    height: 50vh;
+
+    .featured {
+      min-height: 100%;
+      background-size: cover;
+      background-position: 47.5% 23%;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
 }
 
 
@@ -106,11 +138,21 @@
     width: 100%;
   }
 
+  .featured-container {
+    height: 35vh !important;
+
+    .featured {
+      min-height: 100%;
+      background-size: cover;
+      background-position: 47.5% 50%;
+    }
+  }
+
   body,html{
     width: 100%;
     overflow-x:  hidden; 
   }
-  
+
   .offcanvas .logo img {
       margin: 0 0.75rem;
   }
