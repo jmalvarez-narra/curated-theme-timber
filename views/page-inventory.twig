@@ -71,9 +71,9 @@
                 <div class="custom-select custom-select-right">
                   <select id="filter-car-3" class="filter-container">
                     <option value="" selected>ALL</option>
-                    <option value="Latest">LATEST ARRIVALS</option>
-                    <option value="Available">CURRENT INVENTORY</option>
-                    <option value="Sold">PREVIOUSLY SOLD</option>
+                    <option value="Latest">Latest</option>
+                    <option value="Available">Available</option>
+                    <option value="Sold">Sold</option>
                   <select>
                 </div>
 
@@ -212,8 +212,9 @@
               $('#car__list').append(data);
             }
             else {
-              element.innerHTML = "";
+              if(page.val>0){
               element.appendChild(invalidDiv);
+              console.log(car__list.val)}
             }
 
             $("#load-more-car-btn").attr('disabled', false);
@@ -229,7 +230,7 @@
       $("#load-more-car-btn").click((e) => {
         e.preventDefault();
 
-        getNextAllCars();
+        getCars();
       });
 
       $("#sort-car").change((e) => {
@@ -285,13 +286,13 @@
 
         switch(e.target.value) {
           case 'Latest':
-            title = "LATEST ARRIVALS"
+            title = "Sold"
             break;
           case 'Available':
-            title = "CURRENT INVENTORY"
+            title = "Sold"
             break;
           case 'Sold':
-            title = "PREVIOUSLY SOLD"
+            title = "Sold"
             break;
           default:
             title = e.target.value ? e.target.value : "Inventory"
@@ -389,8 +390,9 @@
                         $('#car__list').html(data);
                       }
                       else {
-                        element.innerHTML = "";
+                        if(page.val>0){
                         element.appendChild(invalidDiv);
+                        console.log(car__list.val)}
                       }
 
                       $categories1 = [];

@@ -8,8 +8,7 @@
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
 				<div class="section-heading pt-sm">
-					<h3 class="title">Inventory</h3>
-          <h5 class="subtitle my-1">SOLD</h5>
+					<h3 id="inventory-page-title" class="title">{{post.title}}</h3>
 				</div>
 
         <div class="container-fluid pb-5">
@@ -20,7 +19,7 @@
                 <label>DECADE:</label>
 
                 <div class="custom-select custom-select-decade">
-                  <select id="filter-car-1"  class="filter-container">
+                  <select id="filter-car-1" class="filter-container">
                     <option value="" selected>ALL</option>
 
                     {% for category in year %}
@@ -35,12 +34,12 @@
               </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6  col-md-4 filter-container">
+            <div class="col-xs-12 col-sm-6  col-md-4 filter-container d-none">
               <div class="ps-3">
                 <label>BRAND:</label>
 
                 <div class="custom-select custom-select-brand">
-                  <select id="filter-car-2"  class="filter-container">
+                  <select id="filter-car-2" class="filter-container">
                     <option value="" selected>ALL</option>
 
                     {% for category in brand %}
@@ -71,10 +70,10 @@
 
                 <div class="custom-select custom-select-right">
                   <select id="filter-car-3" class="filter-container">
-                    <option value="">ALL</option>
+                    <option value="" selected>ALL</option>
                     <option value="Latest">Latest</option>
                     <option value="Available">Available</option>
-                    <option value="Sold" selected>Sold</option>
+                    <option value="Sold">Sold</option>
                   <select>
                 </div>
 
@@ -99,13 +98,25 @@
 
   <script>
     $(document).ready(function() {
+      let page = 0;
       let categories1 = [];
       let categories2 = [];
       let categories = [];
-      let page = 0;
       let page_limit = window.innerWidth <= 992 ? 8 : 9;
 
-      const getSoldCars = () => {
+      const getNextAllCars = () => {
+        // get page title here
+        // if not equal to inventory set it as the default category
+        const inventory_page_title = $("#inventory-page-title").text();
+        if (inventory_page_title != "Inventory") {
+          console.log(inventory_page_title);
+          console.log("not inventory");
+          categories1.push(inventory_page_title);
+
+          categories.length = 0;
+          categories = [...categories1, ...categories2];
+        }
+
         page++;
 
         $("#load-more-car-btn").attr('disabled', true);
@@ -116,7 +127,7 @@
           url: '/wp-admin/admin-ajax.php',
           dataType: 'html',
           data: {
-            action: 'get_sold_cars',
+            action: 'get_next_all_cars',
             limit: page_limit,
             page: page,
             post_status: 'publish',
@@ -125,6 +136,10 @@
           },
           success: function(data) {
             const carsCount = $('<div></div>').html(data).find('.car-item').size();
+            const element = document.getElementById("car__list");
+            const invalidDiv = document.createElement("div");
+            invalidDiv.innerHTML = "No results...";
+            invalidDiv.style.textAlign = 'center';
 
             if (carsCount < page_limit) {
               $("#load-more-car-btn").parent().hide();
@@ -132,46 +147,13 @@
               $("#load-more-car-btn").parent().show();
             }
 
-            if (carsCount) $('#car__list').append(data);
-
-            $("#load-more-car-btn").attr('disabled', false);
-            $(".list-loader").addClass("d-none");
-          },
-          error: function(data) {
-            $("#load-more-car-btn").attr('disabled', false);
-            $(".list-loader").addClass("d-none");
-          }
-        });
-      };
-
-      const getSoldNextAllCars = () => {
-        page++;
-
-        $("#load-more-car-btn").attr('disabled', true);
-        $(".list-loader").removeClass("d-none");
-
-        $.ajax({
-          type: 'POST',
-          url: '/wp-admin/admin-ajax.php',
-          dataType: 'html',
-          data: {
-            action: 'get_sold_next_all_cars',
-            limit: page_limit,
-
-            post_status: 'publish',
-            sort: $("#sort-car").val(),
-            'filter-category': categories
-          },
-          success: function(data) {
-            const carsCount = $('<div></div>').html(data).find('.car-item').size();
-
-            if (carsCount < page_limit) {
-              $("#load-more-car-btn").parent().hide();
-            } else {
-              $("#load-more-car-btn").parent().show();
+            if (carsCount) {
+              $('#car__list').append(data);
             }
-
-            if (carsCount) $('#car__list').append(data);
+            else {
+              element.innerHTML = "";
+              element.appendChild(invalidDiv);
+            }
 
             $("#load-more-car-btn").attr('disabled', false);
             $(".list-loader").addClass("d-none");
@@ -184,6 +166,18 @@
       };
 
       const getCars = () => {
+        // get page title here
+        // if not equal to inventory set it as the default category
+        const inventory_page_title = $("#inventory-page-title").text();
+        if (inventory_page_title != "Inventory") {
+          console.log(inventory_page_title);
+          console.log("not inventory");
+          categories1.push(inventory_page_title);
+
+          categories.length = 0;
+          categories = [...categories1, ...categories2];
+        }
+
         page++;
 
         $("#load-more-car-btn").attr('disabled', true);
@@ -194,7 +188,7 @@
           url: '/wp-admin/admin-ajax.php',
           dataType: 'html',
           data: {
-            action: 'get_sold_cars',
+            action: 'get_cars',
             limit: page_limit,
             page: page,
             post_status: 'publish',
@@ -203,6 +197,10 @@
           },
           success: function(data) {
             const carsCount = $('<div></div>').html(data).find('.car-item').size();
+            const element = document.getElementById("car__list");
+            const invalidDiv = document.createElement("div");
+            invalidDiv.innerHTML = "No results...";
+            invalidDiv.style.textAlign = 'center';
 
             if (carsCount < page_limit) {
               $("#load-more-car-btn").parent().hide();
@@ -210,7 +208,14 @@
               $("#load-more-car-btn").parent().show();
             }
 
-            if (carsCount) $('#car__list').append(data);
+            if (carsCount) {
+              $('#car__list').append(data);
+            }
+            else {
+              if(page.val>0){
+              element.appendChild(invalidDiv);
+              console.log(car__list.val)}
+            }
 
             $("#load-more-car-btn").attr('disabled', false);
             $(".list-loader").addClass("d-none");
@@ -225,7 +230,7 @@
       $("#load-more-car-btn").click((e) => {
         e.preventDefault();
 
-        getSoldCars();
+        getCars();
       });
 
       $("#sort-car").change((e) => {
@@ -242,11 +247,11 @@
           url: '/wp-admin/admin-ajax.php',
           dataType: 'html',
           data: {
-            action: 'get_sold_cars',
+            action: 'get_cars',
             limit: page_limit,
             page: page,
             post_status: 'publish',
-            sort: $("#sort-car").val(),
+            sort: e.target.value,
             'filter-category': categories
           },
           success: function(data) {
@@ -277,15 +282,14 @@
         $("#width_tmp_option").html($('#filter-car option:selected').text());
         $(this).css("width", `calc(5rem + ${$("#width_tmp_select").width()}px)`);
 
-
         let title;
 
         switch(e.target.value) {
           case 'Latest':
-            title = "Latest"
+            title = "Sold"
             break;
           case 'Available':
-            title = "Available"
+            title = "Sold"
             break;
           case 'Sold':
             title = "Sold"
@@ -303,7 +307,7 @@
         $(".list-loader").removeClass("d-none");
       });
 
-      getSoldCars();
+      getCars();
 
       var x, i, j, l, ll, selElmnt, a, b, c;
       /* Look for any elements with the class "custom-select": */
@@ -362,7 +366,7 @@
                     url: '/wp-admin/admin-ajax.php',
                     dataType: 'html',
                     data: {
-                      action: 'get_sold_cars',
+                      action: 'get_cars',
                       limit: page_limit,
                       page: page,
                       post_status: 'publish',
@@ -386,8 +390,15 @@
                         $('#car__list').html(data);
                       }
                       else {
+                        if(page.val>0){
+                        element.appendChild(invalidDiv);
+                        console.log(car__list.val)
+                        }
+                        else{
                         element.innerHTML = "";
                         element.appendChild(invalidDiv);
+                        }
+                        
                       }
 
                       $categories1 = [];
