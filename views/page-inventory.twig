@@ -101,6 +101,7 @@
       let page = 0;
       let categories1 = [];
       let categories2 = [];
+      let categories3= [];
       let categories = [];
       let page_limit = window.innerWidth <= 992 ? 8 : 9;
 
@@ -113,8 +114,8 @@
           console.log("not inventory");
           categories1.push(inventory_page_title);
 
-          categories.length = 0;
-          categories = [...categories1, ...categories2];
+          categories.push(this.innerHTML);
+          categories = Array.from(new Set(categories));   
         }
 
         page++;
@@ -172,11 +173,15 @@
         if (inventory_page_title != "Inventory") {
           console.log(inventory_page_title);
           console.log("not inventory");
-          categories1.push(inventory_page_title);
+          
+          categories2.push(inventory_page_title);
+          
 
-          categories.length = 0;
-          categories = [...categories1, ...categories2];
+          categories = [...categories1, ...categories2, ...categories3];
+
+          
         }
+
 
         page++;
 
@@ -201,6 +206,7 @@
             const invalidDiv = document.createElement("div");
             invalidDiv.innerHTML = "No results...";
             invalidDiv.style.textAlign = 'center';
+            console.log(carsCount.text)
 
             if (carsCount < page_limit) {
               $("#load-more-car-btn").parent().hide();
@@ -210,11 +216,14 @@
 
             if (carsCount) {
               $('#car__list').append(data);
+             
             }
             else {
-              if(page.val>0){
-              element.appendChild(invalidDiv);
-              console.log(car__list.val)}
+              element.innerHTML = "";
+                        element.appendChild(invalidDiv);
+              // if(page.val>0){
+              // element.appendChild(invalidDiv);
+              // console.log(car__list.val)}
             }
 
             $("#load-more-car-btn").attr('disabled', false);
@@ -327,29 +336,32 @@
         for (j = 1; j < ll; j++) {
           /* For each option in the original select element,
           create a new DIV that will act as an option item: */
+
+
           c = document.createElement("DIV");
           c.innerHTML = selElmnt.options[j].innerHTML;
           c.addEventListener("click", function(e) {
+
+          const selectedDropdownId = this.parentElement.parentElement.querySelector("select").id;
+
+          if (selectedDropdownId === 'filter-car-1') {
+          categories1 = [this.innerHTML];
+          } else if (selectedDropdownId === 'filter-car-2') {
+          categories2 = [this.innerHTML];
+          } else if (selectedDropdownId === 'filter-car-3') {
+          categories3 = [this.innerHTML];
+          }
+
+          categories = [...categories1, ...categories2, ...categories3];
               /* When an item is clicked, update the original select box,
               and the selected item: */
-              const filter1 = $("#filter-car-1").val();
-              const filter2 = $("#filter-car-2").val();
+              // const filter1 = $("#filter-car-1").val();
+              // const filter2 = $("#filter-car-2").val();
 
-              if (!isNaN(this.innerHTML)) {
-                if (categories1.length != 0) {
-                  categories1.length = 0;
-                }
-                categories1.push(this.innerHTML);
-              }
-              else {
-                if (categories2.length != 0) {
-                  categories2.length = 0;
-                }
-                categories2.push(this.innerHTML);
-              }
+              // categories = Array.from(new Set(categories));
+              // categories.push(this.innerHTML);
+              
 
-              categories.length = 0;
-              categories = [...categories1, ...categories2];
 
               var y, i, k, s, h, sl, yl;
               s = this.parentNode.parentNode.getElementsByTagName("select")[0];
@@ -390,9 +402,13 @@
                         $('#car__list').html(data);
                       }
                       else {
-                        if(page.val>0){
+                        // if(page.val>0){
+                        // element.appendChild(invalidDiv);
+                        // console.log(car__list.val)}
+                        // else{
+                        element.innerHTML = "";
                         element.appendChild(invalidDiv);
-                        console.log(car__list.val)}
+                        // }
                       }
 
                       $categories1 = [];
