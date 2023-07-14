@@ -19,7 +19,7 @@
 				<div class="article-body">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-5 order-2 order-md-2">
+							<div class="col-md-5 col-12 order-2 order-md-2">
 								<aside class="car-info mb-5">
 									{% if post.meta('year') %}
 										<p><span class="text-uppercase">Year:</span> {{ post.meta('year') }}</p>
@@ -139,7 +139,7 @@
 								</div>
 							</div>
 
-							<div class="col-md-7 order-1 order-md-2 car-gallery-container">
+							<div class="col-md-7 col-12 order-1 order-md-2 car-gallery-container">
 								<div class="car-featured-image">
 									{% if post.meta('featured_gallery_image') %}
 										<img class="img-fluid" alt="{{post.title}}-featured-gallery-image'" src="{{ post.meta('featured_gallery_image') }}" />

@@ -141,6 +141,7 @@
             const invalidDiv = document.createElement("div");
             invalidDiv.innerHTML = "No results...";
             invalidDiv.style.textAlign = 'center';
+            invalidDiv.classList.add('invalid-class');
 
             if (carsCount < page_limit) {
               $("#load-more-car-btn").parent().hide();
@@ -206,6 +207,7 @@
             const invalidDiv = document.createElement("div");
             invalidDiv.innerHTML = "No results...";
             invalidDiv.style.textAlign = 'center';
+            invalidDiv.classList.add('invalid-class');
             console.log(carsCount.text)
 
             if (carsCount < page_limit) {
@@ -391,6 +393,7 @@
                       const invalidDiv = document.createElement("div");
                       invalidDiv.innerHTML = "No results...";
                       invalidDiv.style.textAlign = 'center';
+                      invalidDiv.classList.add('invalid-class');
 
                       if (carsCount < page_limit) {
                         $("#load-more-car-btn").parent().hide();

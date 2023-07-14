@@ -1,3 +1,11 @@
+html, body{
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  overflow-x: hidden !important;
+}
+
 .flex-wrapper {
   display: flex;
   min-height: 100vh;
@@ -215,6 +223,18 @@ header.header-light a.nav-link:hover::after {
   margin-top: -6px;
   background: black;
   cursor: pointer;
+}
+#lightSlider-journal, #lightSlider-latest {
+  padding: 0px;
+}
+
+img.attachment-large.size-large {
+  max-width: 500px;
+  height: auto;
+}
+
+.car-details>.content{
+  overflow-x: hidden;
 }
 
 .ui-widget.ui-widget-content {
@@ -636,6 +656,11 @@ ul.main-navbar-nav > li:hover > a.nav-link:after {
   height: 3px;
   background-color: #fff;
   width: 2rem;
+}
+
+.invalid-class{
+font-family: "SweetSansPro";
+  font-size: 20px;
 }
 
 ul.main-navbar-nav li ul {
