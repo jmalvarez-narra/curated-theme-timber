@@ -78,7 +78,9 @@ class StarterSite extends Timber\Site {
 		add_action( 'wp_ajax_get_available_cars', array( $this, 'get_available_cars' ) );
 		add_action( 'wp_ajax_get_available_next_all_cars', array( $this, 'get_available_next_all_cars' ) );
 		add_action( 'wp_ajax_nopriv_get_journals', array( $this, 'get_journals' ) );
+		add_action( 'wp_ajax_nopriv_get_first_looks', array( $this, 'get_first_looks' ) );
 		add_action( 'wp_ajax_get_journals', array( $this, 'get_journals' ) );
+		add_action( 'wp_ajax_get_first_looks', array( $this, 'get_first_looks' ) );
 		add_action( 'wp_ajax_nopriv_contact_us', array( $this, 'contact_us' ) );
 		add_action( 'wp_ajax_contact_us', array( $this, 'contact_us' ) );
 		parent::__construct();
@@ -581,6 +583,31 @@ class StarterSite extends Timber\Site {
 		$context['limit'] = empty($_POST['limit']) ? 9 : $_POST['limit'];
 
 		$args = array(
+			// Order by post date
+			'orderby' => array('date' => 'DESC'),
+			// Limit posts
+			'posts_per_page' => $context['limit'],
+			// current page
+			'paged' => $context['page']
+		);
+
+		$context['posts'] = Timber::get_posts( $args );
+
+		Timber::render('partial/journal-list.twig', $context);
+
+		die();
+	}
+
+	function get_first_looks() {
+		$context = Timber::get_context();
+		$context['page'] = empty($_POST['page']) ? 1 : $_POST['page'];
+		$context['limit'] = empty($_POST['limit']) ? 9 : $_POST['limit'];
+
+		$args = array(
+			// Get post type car
+			'post_type' => 'firstlook',
+			// post status
+			'post_status' => 'publish',
 			// Order by post date
 			'orderby' => array('date' => 'DESC'),
 			// Limit posts
