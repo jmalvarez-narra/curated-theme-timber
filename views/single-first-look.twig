@@ -40,7 +40,7 @@
                   <div class="row h-100">
                     <div class="col-12 col-lg-10 first-look-content">
                       <h2 class="grafiti">{{ post.title ? post.title : 'IN THE WORKS' }}</h2>
-                      <h2 class="content-title">{{ post.meta('subtitle') }}</h2>
+                      <!-- <h2 class="content-title">{{ post.meta('subtitle') }}</h2> -->
 
                       <div class="pt-1 pb-4">
                         <p>
@@ -78,21 +78,12 @@
                     </div>
 
                     <div class="col-12 col-lg-10 first-look-content">
-                      <h2 class="grafiti">IN THE WORKS</h2>
-                      <h2 class="content-title">& COMING SOON</h2>
+                      <h2 class="grafiti">{{ post.title ? post.title : 'IN THE WORKS' }}</h2>
+
 
                       <div class="pt-1 pb-4">
                         <p>
-                          After 12 years of buying and selling hundreds of vintage Lamborghini’s and Ferrari’s,
-                          I partnered with Jordi Ricart and Alan Lazowski to prove that the automobile is a viable and consistent alternative investment asset class.
-                          Ignoring the noise of speculating dealers, “Broadway” to Show auction houses and using reason and passion to build an investment automobile collection portfolio.</br></br>
-
-                          We are in the constant pursuit of pairing the worlds greatest automobiles with the worlds greatest collections. We buy, trade and sell ONLY very specific cars.</br></br>
-
-                          After 12 years of buying and selling hundreds of vintage Lamborghini’s and Ferrari’s,
-                          I partnered with Jordi Ricart and Alan Lazowski to prove that the automobile is a viable and consistent</br></br>
-
-                          We are in the constant pursuit of pairing the worlds greatest automobiles with the worlds greatest collections.
+                          {{ post.preview.length(120).read_more(false).end('').strip(false) }}
                         </p>
                       </div>
 
@@ -141,21 +132,12 @@
                 <div class="col-12 col-lg-6">
                   <div class="row h-100">
                     <div class="col-12 col-lg-10 first-look-content">
-                      <h2 class="grafiti">IN THE WORKS</h2>
-                      <h2 class="content-title">& COMING SOON</h2>
+                      <h2 class="grafiti">{{ post.title ? post.title : 'IN THE WORKS' }}</h2>
+
 
                       <div class="pt-1 pb-4">
                         <p>
-                          After 12 years of buying and selling hundreds of vintage Lamborghini’s and Ferrari’s,
-                          I partnered with Jordi Ricart and Alan Lazowski to prove that the automobile is a viable and consistent alternative investment asset class.
-                          Ignoring the noise of speculating dealers, “Broadway” to Show auction houses and using reason and passion to build an investment automobile collection portfolio.</br></br>
-
-                          We are in the constant pursuit of pairing the worlds greatest automobiles with the worlds greatest collections. We buy, trade and sell ONLY very specific cars.</br></br>
-
-                          After 12 years of buying and selling hundreds of vintage Lamborghini’s and Ferrari’s,
-                          I partnered with Jordi Ricart and Alan Lazowski to prove that the automobile is a viable and consistent</br></br>
-
-                          We are in the constant pursuit of pairing the worlds greatest automobiles with the worlds greatest collections.
+                          {{ post.preview.length(120).read_more(false).end('').strip(false) }}
                         </p>
                       </div>
 
