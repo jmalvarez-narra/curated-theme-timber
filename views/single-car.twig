@@ -12,14 +12,14 @@
 		<article class="post-type-{{post.post_type}} single-car" id="post-{{post.ID}}">
 			<section class="article-content {{ gallery ? '' : 'push-top'}}">
 				<div class="section-heading main-heading pt-xs px-2 px-lg-0">
-					<h3 class="title">{{post.title}}</h3>
+					<h1 class="title">{{ post.meta('year') }} {{ post.meta('manufacturer') }} {{ post.meta('model') }} {{ post.meta('model_variant') }}</h1>
 					{# <h6 class="subtitle">AVAILABLE</h6> #}
 				</div>
 
 				<div class="article-body">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-5 order-2 order-md-2">
+							<div class="col-md-5 col-12 order-2 order-md-2">
 								<aside class="car-info mb-5">
 									{% if post.meta('year') %}
 										<p><span class="text-uppercase">Year:</span> {{ post.meta('year') }}</p>
@@ -139,7 +139,7 @@
 								</div>
 							</div>
 
-							<div class="col-md-7 order-1 order-md-2 car-gallery-container">
+							<div class="col-md-7 col-12 order-1 order-md-2 car-gallery-container">
 								<div class="car-featured-image">
 									{% if post.meta('featured_gallery_image') %}
 										<img class="img-fluid" alt="{{post.title}}-featured-gallery-image'" src="{{ post.meta('featured_gallery_image') }}" />
