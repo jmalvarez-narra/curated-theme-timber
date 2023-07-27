@@ -22,10 +22,12 @@ $header-carousel-base-height: 54.5rem;
     height: fit-content !important;
     padding: 2rem !important;
 
-    h2 {
+    h1, h2 {
       font-size: 1.8rem !important;
       font-weight: 700 !important;
       letter-spacing: 0 !important;
+      font-family: 'SweetSansPro';
+      text-transform: uppercase;
     }
   }
 
@@ -37,7 +39,7 @@ $header-carousel-base-height: 54.5rem;
     width: 23rem;
     padding: 2rem;
 
-    h2 {
+    h1, h2 {
       font-weight: 700;
 
       &::after {

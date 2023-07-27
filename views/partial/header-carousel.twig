@@ -22,13 +22,13 @@
   {% if showOverlay %}
     <div class="container slider-overlay-container">
       <div class="overlay header-details">
-        <h2>
+        <h1>
           {{ post.meta('year') }}</br> {{ post.meta('manufacturer') }}</br>
           <span>
             {{ post.meta('model') }}
             {{ post.meta('model_variant') }}
           </span>
-        </h2>
+        </h1>
 
         <ul>
           {% for contact in post.meta('car_box_details') %}
